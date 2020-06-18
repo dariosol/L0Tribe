@@ -1,0 +1,206 @@
+#include <stddef.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <malloc.h>
+#include <string.h>
+#include <io.h>
+#include <time.h>
+#include "system.h"
+#include "altera_msgdma_descriptor_regs.h"
+#include "altera_msgdma_csr_regs.h"
+#include "altera_msgdma_response_regs.h"
+#include "altera_avalon_pio_regs.h"
+#include "altera_msgdma.h"
+#include "sys/alt_irq.h"
+#include "alt_types.h"
+#include <sys/alt_alarm.h>
+#include "sys/alt_cache.h"
+#include "sys/alt_errno.h"
+
+alt_msgdma_standard_descriptor a_descriptor;
+alt_msgdma_standard_descriptor * a_descriptor_ptr = &a_descriptor;
+alt_msgdma_dev dev;
+alt_msgdma_dev *dev_ptr = &dev;
+alt_u32 control = 0;
+alt_u32 rd_addr = 0, len=1024;
+alt_u32 * rd_adr_p = 0x0;
+alt_u32 * ram_access_ptr = &rd_addr;
+
+////////////////////////////////////////
+alt_msgdma_standard_descriptor a_descriptor_wr;
+alt_msgdma_standard_descriptor * a_descriptor_ptr_wr = &a_descriptor_wr;
+alt_msgdma_dev dev_wr;
+alt_msgdma_dev *dev_ptr_wr = &dev_wr;
+alt_u32 control_wr = 0;
+alt_u32 wr_addr = 0, len_wr=256;
+alt_u32 * wr_adr_p = 0x0;
+alt_u32 * ram_access_ptr_wr = &wr_adr_p;
+alt_u32 status;
+
+////////////////////////////////////////
+volatile alt_u8 ISR_transfer_flag = 0;
+volatile int ISR_input_val = 0;
+
+void * ISR_input_ptr = (void *) &ISR_input_val;
+static void ISR_transfer_callback(void * context){
+	volatile int* ISR_input_ptr = (volatile int *) context;
+	*ISR_input_ptr = IORD_ALTERA_AVALON_PIO_EDGE_CAP(PILOT_SIG_BASE);
+	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(PILOT_SIG_BASE,0xf);
+	ISR_transfer_flag = 1;
+}
+
+int main()
+{
+	printf("Interrupt init\n");
+
+	  IOWR_ALTERA_AVALON_PIO_IRQ_MASK(PILOT_SIG_BASE,0xf); //enabling interrupt on all 4 inputs
+	  IOWR_ALTERA_AVALON_PIO_EDGE_CAP(PILOT_SIG_BASE,0xf); //clearing older interrupts
+	  alt_ic_isr_register(PILOT_SIG_IRQ_INTERRUPT_CONTROLLER_ID, PILOT_SIG_IRQ, ISR_transfer_callback, ISR_input_ptr,0x0);//setting interrupt callback
+	 ///////////////////////////
+	  //Test RAM INITIALIZATION:
+	  printf("Starting RAM INIT\n");
+	  ///////////////////////////
+	  alt_u32 SOB = alt_nticks() * alt_ticks_per_second();
+	  alt_u32 EOB = alt_nticks() * alt_ticks_per_second();
+
+	  IOWR(CTRL_SIG_BASE,0,1); //SOB
+	  printf("%lu \n", SOB);
+	  //wait 5 second for PHY initialisation
+	  while(EOB-SOB<5e6) {//To Reset L0TP and L0Tribe
+	 	  	  EOB = alt_nticks() * alt_ticks_per_second();
+	       }
+	  printf("%lu \n", EOB);
+	  IOWR(CTRL_SIG_BASE,0,0); //EOB
+	  for (unsigned int i = 0x0; i < 0xffff; i+=4)
+	   	          {
+	   	            IOWR_32DIRECT(DDR2_RAM_BASE, i,0x0);
+	   }
+	  while(EOB-SOB<7e6) {//To Reset L0TP and L0Tribe
+	  	 	  	  EOB = alt_nticks() * alt_ticks_per_second();
+	  	       }
+	  printf("Ready to fill RAM...\n ");
+	  wr_adr_p=0;
+	  //L0Tribe receives primitives from workstation.
+	  //Every 8 bytes it write a primitive in the FifoToRAM
+	  //When the ethernet packet is finished: a signal called ToRamFULL
+	  //says to the DMA to start moving data to the DDR.
+
+	  dev_ptr_wr = alt_msgdma_open(ETH_DMA_CSR_NAME);
+
+	  while(EOB-SOB<20e6){
+		  if(alt_msgdma_construct_standard_st_to_mm_descriptor(dev_ptr_wr,a_descriptor_ptr_wr,wr_adr_p,len_wr,control_wr)!=-EINVAL) {/*printf("invalid arg\n");*/
+			//  alt_dcache_flush_all();
+			  status = alt_msgdma_standard_descriptor_async_transfer(dev_ptr_wr,a_descriptor_ptr_wr); //switching to async to get a speedup
+			  if(status==0){
+				  wr_adr_p+=64;
+				  printf("***wr_adr_p: %lu; status: %lu\n", wr_adr_p,status);
+			  }
+			  EOB = alt_nticks() * alt_ticks_per_second();
+	  	  }
+	  }
+	  printf("fill complete\n");
+  //Read back what I have written
+	  unsigned int write;
+
+ 	  for (unsigned int i = 0x80a0; i < 0x8200; i+=4)
+ 	          {
+ 	            write = IORD_32DIRECT(DDR2_RAM_BASE, i);
+
+ 	            printf("address: %x; octal-base: %o; data: %x\n",i,i,write);
+ 	          }
+ 	      printf("UDP download to RAM success\n");
+
+
+ 	     return 0;
+
+
+ 	while(EOB-SOB<11e6){
+ 	  	 EOB = alt_nticks() * alt_ticks_per_second();
+ 	     }
+
+  IOWR(CTRL_SIG_BASE,0,1); //SOB
+  printf("Initializing DATA transfer...\n");
+
+  dev_ptr = alt_msgdma_open(DMA_FIFO_SUSBYSTEM_DMA_CSR_NAME);
+
+  alt_u32 startpacket = alt_nticks() * alt_ticks_per_second();
+  alt_u32 endpacket = alt_nticks() * alt_ticks_per_second();
+
+
+  //-----------------MAIN SEND LOOP AFTER THIS LINE----------------------------
+  printf("SOB, time: %lu \n",alt_nticks()* alt_ticks_per_second());
+  len=1024;
+  float pippo=0;
+  alt_u32 g,addr1,addr2;
+  int iaddr=0;
+  alt_u8 addr_update = 1;
+
+  addr2 = IORD_32DIRECT(DDR2_RAM_BASE,iaddr);
+  ISR_transfer_flag = 0;
+  IOWR(CTRL_SIG_BASE,0,1);
+  //while(1) {
+  for (int j=0;j<100;++j) {
+	  if(addr_update){
+		  addr1=addr2;
+		  rd_adr_p = (alt_u32 *) addr1;
+		  iaddr += 4;
+		  addr2=IORD_32DIRECT(DDR2_RAM_BASE,iaddr);
+		  g=addr2-addr1;
+		  printf("ADDR: %lu\tlen: %lu word: %lu\n",(alt_u32)rd_adr_p,g,IORD_32DIRECT(DDR2_RAM_BASE,addr1));
+		  if(alt_msgdma_construct_standard_mm_to_st_descriptor(dev_ptr,a_descriptor_ptr,rd_adr_p,g,control)==-EINVAL) printf("invalid arg\n");
+		  addr_update = 0;
+	  }
+	  if(ISR_transfer_flag){
+		  printf("ISR Send packet\n");
+		  IOWR_8DIRECT(PRIMITIVEINPACKET0_BASE,0,g/8);
+		  status = alt_msgdma_standard_descriptor_async_transfer(dev_ptr,a_descriptor_ptr);
+		  ISR_transfer_flag = 0;
+		  addr_update = 1;
+	  }
+	  EOB = alt_nticks() * alt_ticks_per_second();
+	  	  if(EOB-SOB>16e6) break;
+  }
+  /*
+  for (int i=0;i<2048*16;i+=len) {
+  //for (int i=0;i<40;i+=1) {
+  startpacket = alt_nticks() * alt_ticks_per_second();
+  endpacket = alt_nticks() * alt_ticks_per_second();
+  addr2 = IORD_32DIRECT(DDR2_RAM_BASE, iaddr);
+  addr1 = IORD_32DIRECT(DDR2_RAM_BASE, iaddr+4);
+
+  //printf("%x - %x\n",addr2,addr1);
+  g = addr2-addr1;
+  //printf("packet len: %d\n",g);
+  IOWR_8DIRECT(PRIMITIVEINPACKET0_BASE,0,len/8);
+  if(alt_msgdma_construct_standard_mm_to_st_descriptor(dev_ptr,a_descriptor_ptr,rd_adr_p,len,control)==-EINVAL) printf("invalid arg\n");
+   //if(alt_msgdma_construct_standard_mm_to_st_descriptor(dev_ptr,a_descriptor_ptr,addr1,g,control)==-EINVAL) printf("invalid arg\n");
+  //printf("control: %ld",control);
+  status = alt_msgdma_standard_descriptor_async_transfer(dev_ptr,a_descriptor_ptr); // updated to async to enhance speed
+
+  //a_descriptor_ptr+=len;
+  rd_adr_p +=len/4;
+  iaddr+=4;
+  while(1) {
+ 	  if(IORD(PILOT_SIG_BASE,0) !=0 || IORD(PILOT_SIG_BASE,1) !=0 || IORD(PILOT_SIG_BASE,2) !=0 || IORD(PILOT_SIG_BASE,3) !=0) {
+ 		break;
+ 	  }
+   }
+
+  while(endpacket-startpacket<6){
+  	  endpacket = alt_nticks() * alt_ticks_per_second();
+    }
+
+  //printf("%d) time after dma: %lu \n",i/len,alt_nticks()* alt_ticks_per_second());
+  }
+
+
+
+  while(EOB-SOB<16e6){
+	  EOB = alt_nticks() * alt_ticks_per_second();
+  }
+*/
+
+  IOWR(CTRL_SIG_BASE,0,0);
+  printf("EOB sent\n %lu seconds\n",(EOB-SOB));
+  return 0;
+}

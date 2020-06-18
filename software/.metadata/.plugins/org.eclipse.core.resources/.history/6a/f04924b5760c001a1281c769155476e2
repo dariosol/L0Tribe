@@ -1,0 +1,91 @@
+#include <stddef.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <malloc.h>
+#include <string.h>
+#include <io.h>
+#include <time.h>
+#include "altera_msgdma_descriptor_regs.h"
+#include "altera_msgdma_csr_regs.h"
+#include "altera_msgdma_response_regs.h"
+#include "altera_msgdma.h"
+#include "sys/alt_irq.h"
+#include "alt_types.h"
+#include <sys/alt_alarm.h>
+#include "sys/alt_cache.h"
+#include "sys/alt_errno.h"
+
+alt_msgdma_standard_descriptor a_descriptor;
+alt_msgdma_standard_descriptor * a_descriptor_ptr = &a_descriptor;
+alt_msgdma_dev dev;
+alt_msgdma_dev *dev_ptr = &dev;
+alt_u32 control = 0;
+alt_u32 rd_addr = 0, len=4096;
+alt_u32 * rd_adr_p = 0x0;
+alt_u32 * ram_access_ptr = &rd_addr;
+int main()
+{
+  printf("Hello from DMA_TEST!\n");
+  printf("%x\n",rd_adr_p);
+  /*alt_u32 szData[4];
+  for(int i = 0; i<4;i++){
+	  szData[i]= 0xFFFFFFFF & i;
+	  printf("%ld\n",szData[i]);
+  }
+  alt_u32 nAccessLen = sizeof(szData);
+  memcpy(ram_access_ptr, szData, nAccessLen);*/
+  unsigned int nBytes = 4096;//DDR2_SPAN;
+  unsigned int offset;
+  alt_u16 primID = 0x7051;
+  alt_u8 finetime = 0x0;
+  alt_u8 LTS= 0x0;
+
+  unsigned int read;
+  for (LTS = 0x0, offset = 0; offset < nBytes; LTS++, offset+=4)
+      {
+
+    	IOWR_8DIRECT(DDR2_RAM_BASE, offset, finetime);
+      	IOWR_8DIRECT(DDR2_RAM_BASE, offset+1, LTS);
+      	IOWR_16DIRECT(DDR2_RAM_BASE, offset+2, primID);
+      }
+  alt_dcache_flush_all();
+  for (offset = 0; offset < nBytes;offset+=4)
+        {
+          read = IORD_32DIRECT(DDR2_RAM_BASE, offset);
+          printf("%x: %x\n",offset,read);
+        }
+    printf("ram has been primed\n");
+
+  dev_ptr = alt_msgdma_open(DMA_CSR_NAME);
+  if(alt_msgdma_construct_standard_mm_to_st_descriptor(dev_ptr,a_descriptor_ptr,rd_adr_p,len,control)==-EINVAL) printf("invalid arg\n");
+  printf("descriptor built, initializing transfer\n");
+  IOWR(CTRL_SIG_BASE,0,1);
+  alt_u32 SOB = alt_nticks() * alt_ticks_per_second();
+  printf("%lu \n", SOB);
+  usleep(1);
+  alt_u32 status = alt_msgdma_standard_descriptor_sync_transfer(dev_ptr,a_descriptor_ptr);
+  printf("control: %ld",control);
+  if(0 == status)
+          {
+	  	  	  printf("transfer complete, status %ld\n",status);
+          }
+          else if(-EPERM == status)
+          {
+              printf("operation not permitted due to descriptor type conflict\n");
+          }
+          else if (-ETIME == status)
+          {
+              printf("Time out and skipping the looping after 5 msec\n");
+          }
+          else
+          {
+              printf("Errors flag = %ld\n", status);
+          }
+  alt_u32 EOB = alt_nticks() * alt_ticks_per_second();
+  while(EOB-SOB<25e6){
+	  EOB = alt_nticks() * alt_ticks_per_second();
+  }
+  IOWR(CTRL_SIG_BASE,0,0);
+  printf("EOB sent\n %lu seconds\n",(EOB-SOB));
+  return 0;
+}
