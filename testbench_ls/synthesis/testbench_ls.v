@@ -4,57 +4,66 @@
 
 `timescale 1 ps / 1 ps
 module testbench_ls (
-		output wire         clk_200_out_clk_clk,                  //               clk_200_out_clk.clk
-		input  wire         clk_50_clk,                           //                        clk_50.clk
-		output wire [3:0]   ctrl_sig_export,                      //                      ctrl_sig.export
-		output wire         ddr2_ram_status_local_init_done,      //               ddr2_ram_status.local_init_done
-		output wire         ddr2_ram_status_local_cal_success,    //                              .local_cal_success
-		output wire         ddr2_ram_status_local_cal_fail,       //                              .local_cal_fail
-		output wire [255:0] fifo_stream_fifo_data,                //                   fifo_stream.fifo_data
-		output wire         fifo_stream_fifo_write,               //                              .fifo_write
-		output wire         fifo_stream_fifo_send,                //                              .fifo_send
-		output wire [255:0] fifo_stream_1_fifo_data,              //                 fifo_stream_1.fifo_data
-		output wire         fifo_stream_1_fifo_write,             //                              .fifo_write
-		output wire         fifo_stream_1_fifo_send,              //                              .fifo_send
-		input  wire [63:0]  from_fifo_fifo_data,                  //                     from_fifo.fifo_data
-		output wire         from_fifo_fifo_read,                  //                              .fifo_read
-		input  wire         from_fifo_fifo_empty,                 //                              .fifo_empty
-		input  wire         from_fifo_fifo_full,                  //                              .fifo_full
-		input  wire [7:0]   input_io_external_connection_export,  //  input_io_external_connection.export
-		output wire [13:0]  memory_mem_a,                         //                        memory.mem_a
-		output wire [2:0]   memory_mem_ba,                        //                              .mem_ba
-		output wire [1:0]   memory_mem_ck,                        //                              .mem_ck
-		output wire [1:0]   memory_mem_ck_n,                      //                              .mem_ck_n
-		output wire [0:0]   memory_mem_cke,                       //                              .mem_cke
-		output wire [0:0]   memory_mem_cs_n,                      //                              .mem_cs_n
-		output wire [7:0]   memory_mem_dm,                        //                              .mem_dm
-		output wire [0:0]   memory_mem_ras_n,                     //                              .mem_ras_n
-		output wire [0:0]   memory_mem_cas_n,                     //                              .mem_cas_n
-		output wire [0:0]   memory_mem_we_n,                      //                              .mem_we_n
-		inout  wire [63:0]  memory_mem_dq,                        //                              .mem_dq
-		inout  wire [7:0]   memory_mem_dqs,                       //                              .mem_dqs
-		inout  wire [7:0]   memory_mem_dqs_n,                     //                              .mem_dqs_n
-		output wire [0:0]   memory_mem_odt,                       //                              .mem_odt
-		output wire [13:0]  memory_1_mem_a,                       //                      memory_1.mem_a
-		output wire [2:0]   memory_1_mem_ba,                      //                              .mem_ba
-		output wire [1:0]   memory_1_mem_ck,                      //                              .mem_ck
-		output wire [1:0]   memory_1_mem_ck_n,                    //                              .mem_ck_n
-		output wire [0:0]   memory_1_mem_cke,                     //                              .mem_cke
-		output wire [0:0]   memory_1_mem_cs_n,                    //                              .mem_cs_n
-		output wire [7:0]   memory_1_mem_dm,                      //                              .mem_dm
-		output wire [0:0]   memory_1_mem_ras_n,                   //                              .mem_ras_n
-		output wire [0:0]   memory_1_mem_cas_n,                   //                              .mem_cas_n
-		output wire [0:0]   memory_1_mem_we_n,                    //                              .mem_we_n
-		inout  wire [63:0]  memory_1_mem_dq,                      //                              .mem_dq
-		inout  wire [7:0]   memory_1_mem_dqs,                     //                              .mem_dqs
-		inout  wire [7:0]   memory_1_mem_dqs_n,                   //                              .mem_dqs_n
-		output wire [0:0]   memory_1_mem_odt,                     //                              .mem_odt
-		input  wire         oct_rdn,                              //                           oct.rdn
-		input  wire         oct_rup,                              //                              .rup
-		input  wire         oct_1_rdn,                            //                         oct_1.rdn
-		input  wire         oct_1_rup,                            //                              .rup
-		input  wire [7:0]   pilot_sig_external_connection_export, // pilot_sig_external_connection.export
-		input  wire         reset_reset_n                         //                         reset.reset_n
+		output wire         clk_200_out_clk_clk,                                     //                              clk_200_out_clk.clk
+		input  wire         clk_50_clk,                                              //                                       clk_50.clk
+		output wire [3:0]   ctrl_sig_export,                                         //                                     ctrl_sig.export
+		output wire         ddr2_ram_status_local_init_done,                         //                              ddr2_ram_status.local_init_done
+		output wire         ddr2_ram_status_local_cal_success,                       //                                             .local_cal_success
+		output wire         ddr2_ram_status_local_cal_fail,                          //                                             .local_cal_fail
+		output wire [255:0] dma_fifo_subsystem_2_fifo_stream_conduit_end_fifo_data,  // dma_fifo_subsystem_2_fifo_stream_conduit_end.fifo_data
+		output wire         dma_fifo_subsystem_2_fifo_stream_conduit_end_fifo_write, //                                             .fifo_write
+		output wire         dma_fifo_subsystem_2_fifo_stream_conduit_end_fifo_send,  //                                             .fifo_send
+		output wire [255:0] dma_fifo_subsystem_3_fifo_stream_conduit_end_fifo_data,  // dma_fifo_subsystem_3_fifo_stream_conduit_end.fifo_data
+		output wire         dma_fifo_subsystem_3_fifo_stream_conduit_end_fifo_write, //                                             .fifo_write
+		output wire         dma_fifo_subsystem_3_fifo_stream_conduit_end_fifo_send,  //                                             .fifo_send
+		output wire [255:0] dma_fifo_subsystem_4_fifo_stream_conduit_end_fifo_data,  // dma_fifo_subsystem_4_fifo_stream_conduit_end.fifo_data
+		output wire         dma_fifo_subsystem_4_fifo_stream_conduit_end_fifo_write, //                                             .fifo_write
+		output wire         dma_fifo_subsystem_4_fifo_stream_conduit_end_fifo_send,  //                                             .fifo_send
+		output wire [255:0] fifo_stream_fifo_data,                                   //                                  fifo_stream.fifo_data
+		output wire         fifo_stream_fifo_write,                                  //                                             .fifo_write
+		output wire         fifo_stream_fifo_send,                                   //                                             .fifo_send
+		output wire [255:0] fifo_stream_1_fifo_data,                                 //                                fifo_stream_1.fifo_data
+		output wire         fifo_stream_1_fifo_write,                                //                                             .fifo_write
+		output wire         fifo_stream_1_fifo_send,                                 //                                             .fifo_send
+		input  wire [63:0]  from_fifo_fifo_data,                                     //                                    from_fifo.fifo_data
+		output wire         from_fifo_fifo_read,                                     //                                             .fifo_read
+		input  wire         from_fifo_fifo_empty,                                    //                                             .fifo_empty
+		input  wire         from_fifo_fifo_full,                                     //                                             .fifo_full
+		input  wire [7:0]   input_io_external_connection_export,                     //                 input_io_external_connection.export
+		output wire [13:0]  memory_mem_a,                                            //                                       memory.mem_a
+		output wire [2:0]   memory_mem_ba,                                           //                                             .mem_ba
+		output wire [1:0]   memory_mem_ck,                                           //                                             .mem_ck
+		output wire [1:0]   memory_mem_ck_n,                                         //                                             .mem_ck_n
+		output wire [0:0]   memory_mem_cke,                                          //                                             .mem_cke
+		output wire [0:0]   memory_mem_cs_n,                                         //                                             .mem_cs_n
+		output wire [7:0]   memory_mem_dm,                                           //                                             .mem_dm
+		output wire [0:0]   memory_mem_ras_n,                                        //                                             .mem_ras_n
+		output wire [0:0]   memory_mem_cas_n,                                        //                                             .mem_cas_n
+		output wire [0:0]   memory_mem_we_n,                                         //                                             .mem_we_n
+		inout  wire [63:0]  memory_mem_dq,                                           //                                             .mem_dq
+		inout  wire [7:0]   memory_mem_dqs,                                          //                                             .mem_dqs
+		inout  wire [7:0]   memory_mem_dqs_n,                                        //                                             .mem_dqs_n
+		output wire [0:0]   memory_mem_odt,                                          //                                             .mem_odt
+		output wire [13:0]  memory_1_mem_a,                                          //                                     memory_1.mem_a
+		output wire [2:0]   memory_1_mem_ba,                                         //                                             .mem_ba
+		output wire [1:0]   memory_1_mem_ck,                                         //                                             .mem_ck
+		output wire [1:0]   memory_1_mem_ck_n,                                       //                                             .mem_ck_n
+		output wire [0:0]   memory_1_mem_cke,                                        //                                             .mem_cke
+		output wire [0:0]   memory_1_mem_cs_n,                                       //                                             .mem_cs_n
+		output wire [7:0]   memory_1_mem_dm,                                         //                                             .mem_dm
+		output wire [0:0]   memory_1_mem_ras_n,                                      //                                             .mem_ras_n
+		output wire [0:0]   memory_1_mem_cas_n,                                      //                                             .mem_cas_n
+		output wire [0:0]   memory_1_mem_we_n,                                       //                                             .mem_we_n
+		inout  wire [63:0]  memory_1_mem_dq,                                         //                                             .mem_dq
+		inout  wire [7:0]   memory_1_mem_dqs,                                        //                                             .mem_dqs
+		inout  wire [7:0]   memory_1_mem_dqs_n,                                      //                                             .mem_dqs_n
+		output wire [0:0]   memory_1_mem_odt,                                        //                                             .mem_odt
+		input  wire         oct_rdn,                                                 //                                          oct.rdn
+		input  wire         oct_rup,                                                 //                                             .rup
+		input  wire         oct_1_rdn,                                               //                                        oct_1.rdn
+		input  wire         oct_1_rup,                                               //                                             .rup
+		input  wire [7:0]   pilot_sig_external_connection_export,                    //                pilot_sig_external_connection.export
+		input  wire         reset_reset_n                                            //                                        reset.reset_n
 	);
 
 	wire          from_eth_to_ddr_eth_dma_mm_write_waitrequest;                            // mm_interconnect_0:from_ETH_to_DDR_ETH_DMA_mm_write_waitrequest -> from_ETH_to_DDR:ETH_DMA_mm_write_waitrequest
@@ -85,6 +94,27 @@ module testbench_ls (
 	wire   [31:0] dma_fifo_subsystem_1_dma_mm_read_byteenable;                             // dma_fifo_subsystem_1:dma_mm_read_byteenable -> mm_interconnect_0:dma_fifo_subsystem_1_dma_mm_read_byteenable
 	wire          dma_fifo_subsystem_1_dma_mm_read_readdatavalid;                          // mm_interconnect_0:dma_fifo_subsystem_1_dma_mm_read_readdatavalid -> dma_fifo_subsystem_1:dma_mm_read_readdatavalid
 	wire    [2:0] dma_fifo_subsystem_1_dma_mm_read_burstcount;                             // dma_fifo_subsystem_1:dma_mm_read_burstcount -> mm_interconnect_0:dma_fifo_subsystem_1_dma_mm_read_burstcount
+	wire  [255:0] dma_fifo_subsystem_2_dma_mm_read_readdata;                               // mm_interconnect_0:dma_fifo_subsystem_2_dma_mm_read_readdata -> dma_fifo_subsystem_2:dma_mm_read_readdata
+	wire          dma_fifo_subsystem_2_dma_mm_read_waitrequest;                            // mm_interconnect_0:dma_fifo_subsystem_2_dma_mm_read_waitrequest -> dma_fifo_subsystem_2:dma_mm_read_waitrequest
+	wire   [30:0] dma_fifo_subsystem_2_dma_mm_read_address;                                // dma_fifo_subsystem_2:dma_mm_read_address -> mm_interconnect_0:dma_fifo_subsystem_2_dma_mm_read_address
+	wire          dma_fifo_subsystem_2_dma_mm_read_read;                                   // dma_fifo_subsystem_2:dma_mm_read_read -> mm_interconnect_0:dma_fifo_subsystem_2_dma_mm_read_read
+	wire   [31:0] dma_fifo_subsystem_2_dma_mm_read_byteenable;                             // dma_fifo_subsystem_2:dma_mm_read_byteenable -> mm_interconnect_0:dma_fifo_subsystem_2_dma_mm_read_byteenable
+	wire          dma_fifo_subsystem_2_dma_mm_read_readdatavalid;                          // mm_interconnect_0:dma_fifo_subsystem_2_dma_mm_read_readdatavalid -> dma_fifo_subsystem_2:dma_mm_read_readdatavalid
+	wire    [2:0] dma_fifo_subsystem_2_dma_mm_read_burstcount;                             // dma_fifo_subsystem_2:dma_mm_read_burstcount -> mm_interconnect_0:dma_fifo_subsystem_2_dma_mm_read_burstcount
+	wire  [255:0] dma_fifo_subsystem_3_dma_mm_read_readdata;                               // mm_interconnect_0:dma_fifo_subsystem_3_dma_mm_read_readdata -> dma_fifo_subsystem_3:dma_mm_read_readdata
+	wire          dma_fifo_subsystem_3_dma_mm_read_waitrequest;                            // mm_interconnect_0:dma_fifo_subsystem_3_dma_mm_read_waitrequest -> dma_fifo_subsystem_3:dma_mm_read_waitrequest
+	wire   [30:0] dma_fifo_subsystem_3_dma_mm_read_address;                                // dma_fifo_subsystem_3:dma_mm_read_address -> mm_interconnect_0:dma_fifo_subsystem_3_dma_mm_read_address
+	wire          dma_fifo_subsystem_3_dma_mm_read_read;                                   // dma_fifo_subsystem_3:dma_mm_read_read -> mm_interconnect_0:dma_fifo_subsystem_3_dma_mm_read_read
+	wire   [31:0] dma_fifo_subsystem_3_dma_mm_read_byteenable;                             // dma_fifo_subsystem_3:dma_mm_read_byteenable -> mm_interconnect_0:dma_fifo_subsystem_3_dma_mm_read_byteenable
+	wire          dma_fifo_subsystem_3_dma_mm_read_readdatavalid;                          // mm_interconnect_0:dma_fifo_subsystem_3_dma_mm_read_readdatavalid -> dma_fifo_subsystem_3:dma_mm_read_readdatavalid
+	wire    [2:0] dma_fifo_subsystem_3_dma_mm_read_burstcount;                             // dma_fifo_subsystem_3:dma_mm_read_burstcount -> mm_interconnect_0:dma_fifo_subsystem_3_dma_mm_read_burstcount
+	wire  [255:0] dma_fifo_subsystem_4_dma_mm_read_readdata;                               // mm_interconnect_0:dma_fifo_subsystem_4_dma_mm_read_readdata -> dma_fifo_subsystem_4:dma_mm_read_readdata
+	wire          dma_fifo_subsystem_4_dma_mm_read_waitrequest;                            // mm_interconnect_0:dma_fifo_subsystem_4_dma_mm_read_waitrequest -> dma_fifo_subsystem_4:dma_mm_read_waitrequest
+	wire   [30:0] dma_fifo_subsystem_4_dma_mm_read_address;                                // dma_fifo_subsystem_4:dma_mm_read_address -> mm_interconnect_0:dma_fifo_subsystem_4_dma_mm_read_address
+	wire          dma_fifo_subsystem_4_dma_mm_read_read;                                   // dma_fifo_subsystem_4:dma_mm_read_read -> mm_interconnect_0:dma_fifo_subsystem_4_dma_mm_read_read
+	wire   [31:0] dma_fifo_subsystem_4_dma_mm_read_byteenable;                             // dma_fifo_subsystem_4:dma_mm_read_byteenable -> mm_interconnect_0:dma_fifo_subsystem_4_dma_mm_read_byteenable
+	wire          dma_fifo_subsystem_4_dma_mm_read_readdatavalid;                          // mm_interconnect_0:dma_fifo_subsystem_4_dma_mm_read_readdatavalid -> dma_fifo_subsystem_4:dma_mm_read_readdatavalid
+	wire    [2:0] dma_fifo_subsystem_4_dma_mm_read_burstcount;                             // dma_fifo_subsystem_4:dma_mm_read_burstcount -> mm_interconnect_0:dma_fifo_subsystem_4_dma_mm_read_burstcount
 	wire   [31:0] nios_cpu_instruction_master_readdata;                                    // mm_interconnect_0:nios_cpu_instruction_master_readdata -> nios_cpu:i_readdata
 	wire          nios_cpu_instruction_master_waitrequest;                                 // mm_interconnect_0:nios_cpu_instruction_master_waitrequest -> nios_cpu:i_waitrequest
 	wire   [31:0] nios_cpu_instruction_master_address;                                     // nios_cpu:i_address -> mm_interconnect_0:nios_cpu_instruction_master_address
@@ -148,6 +178,24 @@ module testbench_ls (
 	wire    [3:0] mm_interconnect_0_dma_fifo_subsystem_1_dma_csr_byteenable;               // mm_interconnect_0:dma_fifo_subsystem_1_dma_csr_byteenable -> dma_fifo_subsystem_1:dma_csr_byteenable
 	wire          mm_interconnect_0_dma_fifo_subsystem_1_dma_csr_write;                    // mm_interconnect_0:dma_fifo_subsystem_1_dma_csr_write -> dma_fifo_subsystem_1:dma_csr_write
 	wire   [31:0] mm_interconnect_0_dma_fifo_subsystem_1_dma_csr_writedata;                // mm_interconnect_0:dma_fifo_subsystem_1_dma_csr_writedata -> dma_fifo_subsystem_1:dma_csr_writedata
+	wire   [31:0] mm_interconnect_0_dma_fifo_subsystem_2_dma_csr_readdata;                 // dma_fifo_subsystem_2:dma_csr_readdata -> mm_interconnect_0:dma_fifo_subsystem_2_dma_csr_readdata
+	wire    [2:0] mm_interconnect_0_dma_fifo_subsystem_2_dma_csr_address;                  // mm_interconnect_0:dma_fifo_subsystem_2_dma_csr_address -> dma_fifo_subsystem_2:dma_csr_address
+	wire          mm_interconnect_0_dma_fifo_subsystem_2_dma_csr_read;                     // mm_interconnect_0:dma_fifo_subsystem_2_dma_csr_read -> dma_fifo_subsystem_2:dma_csr_read
+	wire    [3:0] mm_interconnect_0_dma_fifo_subsystem_2_dma_csr_byteenable;               // mm_interconnect_0:dma_fifo_subsystem_2_dma_csr_byteenable -> dma_fifo_subsystem_2:dma_csr_byteenable
+	wire          mm_interconnect_0_dma_fifo_subsystem_2_dma_csr_write;                    // mm_interconnect_0:dma_fifo_subsystem_2_dma_csr_write -> dma_fifo_subsystem_2:dma_csr_write
+	wire   [31:0] mm_interconnect_0_dma_fifo_subsystem_2_dma_csr_writedata;                // mm_interconnect_0:dma_fifo_subsystem_2_dma_csr_writedata -> dma_fifo_subsystem_2:dma_csr_writedata
+	wire   [31:0] mm_interconnect_0_dma_fifo_subsystem_3_dma_csr_readdata;                 // dma_fifo_subsystem_3:dma_csr_readdata -> mm_interconnect_0:dma_fifo_subsystem_3_dma_csr_readdata
+	wire    [2:0] mm_interconnect_0_dma_fifo_subsystem_3_dma_csr_address;                  // mm_interconnect_0:dma_fifo_subsystem_3_dma_csr_address -> dma_fifo_subsystem_3:dma_csr_address
+	wire          mm_interconnect_0_dma_fifo_subsystem_3_dma_csr_read;                     // mm_interconnect_0:dma_fifo_subsystem_3_dma_csr_read -> dma_fifo_subsystem_3:dma_csr_read
+	wire    [3:0] mm_interconnect_0_dma_fifo_subsystem_3_dma_csr_byteenable;               // mm_interconnect_0:dma_fifo_subsystem_3_dma_csr_byteenable -> dma_fifo_subsystem_3:dma_csr_byteenable
+	wire          mm_interconnect_0_dma_fifo_subsystem_3_dma_csr_write;                    // mm_interconnect_0:dma_fifo_subsystem_3_dma_csr_write -> dma_fifo_subsystem_3:dma_csr_write
+	wire   [31:0] mm_interconnect_0_dma_fifo_subsystem_3_dma_csr_writedata;                // mm_interconnect_0:dma_fifo_subsystem_3_dma_csr_writedata -> dma_fifo_subsystem_3:dma_csr_writedata
+	wire   [31:0] mm_interconnect_0_dma_fifo_subsystem_4_dma_csr_readdata;                 // dma_fifo_subsystem_4:dma_csr_readdata -> mm_interconnect_0:dma_fifo_subsystem_4_dma_csr_readdata
+	wire    [2:0] mm_interconnect_0_dma_fifo_subsystem_4_dma_csr_address;                  // mm_interconnect_0:dma_fifo_subsystem_4_dma_csr_address -> dma_fifo_subsystem_4:dma_csr_address
+	wire          mm_interconnect_0_dma_fifo_subsystem_4_dma_csr_read;                     // mm_interconnect_0:dma_fifo_subsystem_4_dma_csr_read -> dma_fifo_subsystem_4:dma_csr_read
+	wire    [3:0] mm_interconnect_0_dma_fifo_subsystem_4_dma_csr_byteenable;               // mm_interconnect_0:dma_fifo_subsystem_4_dma_csr_byteenable -> dma_fifo_subsystem_4:dma_csr_byteenable
+	wire          mm_interconnect_0_dma_fifo_subsystem_4_dma_csr_write;                    // mm_interconnect_0:dma_fifo_subsystem_4_dma_csr_write -> dma_fifo_subsystem_4:dma_csr_write
+	wire   [31:0] mm_interconnect_0_dma_fifo_subsystem_4_dma_csr_writedata;                // mm_interconnect_0:dma_fifo_subsystem_4_dma_csr_writedata -> dma_fifo_subsystem_4:dma_csr_writedata
 	wire          mm_interconnect_0_dma_fifo_susbystem_dma_descriptor_slave_waitrequest;   // dma_fifo_susbystem:dma_descriptor_slave_waitrequest -> mm_interconnect_0:dma_fifo_susbystem_dma_descriptor_slave_waitrequest
 	wire   [15:0] mm_interconnect_0_dma_fifo_susbystem_dma_descriptor_slave_byteenable;    // mm_interconnect_0:dma_fifo_susbystem_dma_descriptor_slave_byteenable -> dma_fifo_susbystem:dma_descriptor_slave_byteenable
 	wire          mm_interconnect_0_dma_fifo_susbystem_dma_descriptor_slave_write;         // mm_interconnect_0:dma_fifo_susbystem_dma_descriptor_slave_write -> dma_fifo_susbystem:dma_descriptor_slave_write
@@ -156,6 +204,18 @@ module testbench_ls (
 	wire   [15:0] mm_interconnect_0_dma_fifo_subsystem_1_dma_descriptor_slave_byteenable;  // mm_interconnect_0:dma_fifo_subsystem_1_dma_descriptor_slave_byteenable -> dma_fifo_subsystem_1:dma_descriptor_slave_byteenable
 	wire          mm_interconnect_0_dma_fifo_subsystem_1_dma_descriptor_slave_write;       // mm_interconnect_0:dma_fifo_subsystem_1_dma_descriptor_slave_write -> dma_fifo_subsystem_1:dma_descriptor_slave_write
 	wire  [127:0] mm_interconnect_0_dma_fifo_subsystem_1_dma_descriptor_slave_writedata;   // mm_interconnect_0:dma_fifo_subsystem_1_dma_descriptor_slave_writedata -> dma_fifo_subsystem_1:dma_descriptor_slave_writedata
+	wire          mm_interconnect_0_dma_fifo_subsystem_2_dma_descriptor_slave_waitrequest; // dma_fifo_subsystem_2:dma_descriptor_slave_waitrequest -> mm_interconnect_0:dma_fifo_subsystem_2_dma_descriptor_slave_waitrequest
+	wire   [15:0] mm_interconnect_0_dma_fifo_subsystem_2_dma_descriptor_slave_byteenable;  // mm_interconnect_0:dma_fifo_subsystem_2_dma_descriptor_slave_byteenable -> dma_fifo_subsystem_2:dma_descriptor_slave_byteenable
+	wire          mm_interconnect_0_dma_fifo_subsystem_2_dma_descriptor_slave_write;       // mm_interconnect_0:dma_fifo_subsystem_2_dma_descriptor_slave_write -> dma_fifo_subsystem_2:dma_descriptor_slave_write
+	wire  [127:0] mm_interconnect_0_dma_fifo_subsystem_2_dma_descriptor_slave_writedata;   // mm_interconnect_0:dma_fifo_subsystem_2_dma_descriptor_slave_writedata -> dma_fifo_subsystem_2:dma_descriptor_slave_writedata
+	wire          mm_interconnect_0_dma_fifo_subsystem_3_dma_descriptor_slave_waitrequest; // dma_fifo_subsystem_3:dma_descriptor_slave_waitrequest -> mm_interconnect_0:dma_fifo_subsystem_3_dma_descriptor_slave_waitrequest
+	wire   [15:0] mm_interconnect_0_dma_fifo_subsystem_3_dma_descriptor_slave_byteenable;  // mm_interconnect_0:dma_fifo_subsystem_3_dma_descriptor_slave_byteenable -> dma_fifo_subsystem_3:dma_descriptor_slave_byteenable
+	wire          mm_interconnect_0_dma_fifo_subsystem_3_dma_descriptor_slave_write;       // mm_interconnect_0:dma_fifo_subsystem_3_dma_descriptor_slave_write -> dma_fifo_subsystem_3:dma_descriptor_slave_write
+	wire  [127:0] mm_interconnect_0_dma_fifo_subsystem_3_dma_descriptor_slave_writedata;   // mm_interconnect_0:dma_fifo_subsystem_3_dma_descriptor_slave_writedata -> dma_fifo_subsystem_3:dma_descriptor_slave_writedata
+	wire          mm_interconnect_0_dma_fifo_subsystem_4_dma_descriptor_slave_waitrequest; // dma_fifo_subsystem_4:dma_descriptor_slave_waitrequest -> mm_interconnect_0:dma_fifo_subsystem_4_dma_descriptor_slave_waitrequest
+	wire   [15:0] mm_interconnect_0_dma_fifo_subsystem_4_dma_descriptor_slave_byteenable;  // mm_interconnect_0:dma_fifo_subsystem_4_dma_descriptor_slave_byteenable -> dma_fifo_subsystem_4:dma_descriptor_slave_byteenable
+	wire          mm_interconnect_0_dma_fifo_subsystem_4_dma_descriptor_slave_write;       // mm_interconnect_0:dma_fifo_subsystem_4_dma_descriptor_slave_write -> dma_fifo_subsystem_4:dma_descriptor_slave_write
+	wire  [127:0] mm_interconnect_0_dma_fifo_subsystem_4_dma_descriptor_slave_writedata;   // mm_interconnect_0:dma_fifo_subsystem_4_dma_descriptor_slave_writedata -> dma_fifo_subsystem_4:dma_descriptor_slave_writedata
 	wire          mm_interconnect_0_system_ram_s1_chipselect;                              // mm_interconnect_0:system_ram_s1_chipselect -> system_ram:chipselect
 	wire   [31:0] mm_interconnect_0_system_ram_s1_readdata;                                // system_ram:readdata -> mm_interconnect_0:system_ram_s1_readdata
 	wire   [16:0] mm_interconnect_0_system_ram_s1_address;                                 // mm_interconnect_0:system_ram_s1_address -> system_ram:address
@@ -183,11 +243,14 @@ module testbench_ls (
 	wire          irq_mapper_receiver0_irq;                                                // from_ETH_to_DDR:ETH_DMA_csr_irq_irq -> irq_mapper:receiver0_irq
 	wire          irq_mapper_receiver1_irq;                                                // dma_fifo_susbystem:dma_csr_irq_irq -> irq_mapper:receiver1_irq
 	wire          irq_mapper_receiver2_irq;                                                // dma_fifo_subsystem_1:dma_csr_irq_irq -> irq_mapper:receiver2_irq
-	wire          irq_mapper_receiver3_irq;                                                // jtag:av_irq -> irq_mapper:receiver3_irq
-	wire          irq_mapper_receiver4_irq;                                                // sys_timer:irq -> irq_mapper:receiver4_irq
-	wire          irq_mapper_receiver5_irq;                                                // pilot_sig:irq -> irq_mapper:receiver5_irq
+	wire          irq_mapper_receiver3_irq;                                                // dma_fifo_subsystem_2:dma_csr_irq_irq -> irq_mapper:receiver3_irq
+	wire          irq_mapper_receiver4_irq;                                                // dma_fifo_subsystem_3:dma_csr_irq_irq -> irq_mapper:receiver4_irq
+	wire          irq_mapper_receiver5_irq;                                                // dma_fifo_subsystem_4:dma_csr_irq_irq -> irq_mapper:receiver5_irq
+	wire          irq_mapper_receiver6_irq;                                                // jtag:av_irq -> irq_mapper:receiver6_irq
+	wire          irq_mapper_receiver7_irq;                                                // sys_timer:irq -> irq_mapper:receiver7_irq
+	wire          irq_mapper_receiver8_irq;                                                // pilot_sig:irq -> irq_mapper:receiver8_irq
 	wire   [31:0] nios_cpu_irq_irq;                                                        // irq_mapper:sender_irq -> nios_cpu:irq
-	wire          rst_controller_reset_out_reset;                                          // rst_controller:reset_out -> [ctrl_sig:reset_n, dma_fifo_subsystem_1:dma_reset_n_reset_n, dma_fifo_subsystem_1:fifo_stream_reset_reset_n, dma_fifo_susbystem:dma_reset_n_reset_n, dma_fifo_susbystem:fifo_stream_reset_reset_n, input_IO:reset_n, irq_mapper:reset, jtag:rst_n, mm_interconnect_0:from_ETH_to_DDR_reset_reset_bridge_in_reset_reset, mm_interconnect_0:nios_cpu_reset_reset_bridge_in_reset_reset, nios_cpu:reset_n, pilot_sig:reset_n, rst_translator:in_reset, sys_timer:reset_n, system_ram:reset]
+	wire          rst_controller_reset_out_reset;                                          // rst_controller:reset_out -> [ctrl_sig:reset_n, dma_fifo_subsystem_1:dma_reset_n_reset_n, dma_fifo_subsystem_1:fifo_stream_reset_reset_n, dma_fifo_subsystem_2:dma_reset_n_reset_n, dma_fifo_subsystem_2:fifo_stream_reset_reset_n, dma_fifo_subsystem_3:dma_reset_n_reset_n, dma_fifo_subsystem_3:fifo_stream_reset_reset_n, dma_fifo_subsystem_4:dma_reset_n_reset_n, dma_fifo_subsystem_4:fifo_stream_reset_reset_n, dma_fifo_susbystem:dma_reset_n_reset_n, dma_fifo_susbystem:fifo_stream_reset_reset_n, input_IO:reset_n, irq_mapper:reset, jtag:rst_n, mm_interconnect_0:from_ETH_to_DDR_reset_reset_bridge_in_reset_reset, mm_interconnect_0:nios_cpu_reset_reset_bridge_in_reset_reset, nios_cpu:reset_n, pilot_sig:reset_n, rst_translator:in_reset, sys_timer:reset_n, system_ram:reset]
 	wire          rst_controller_reset_out_reset_req;                                      // rst_controller:reset_req -> [nios_cpu:reset_req, rst_translator:reset_req_in, system_ram:reset_req]
 	wire          rst_controller_001_reset_out_reset;                                      // rst_controller_001:reset_out -> ddr2_ram:soft_reset_n
 	wire          nios_cpu_debug_reset_request_reset;                                      // nios_cpu:debug_reset_request -> [rst_controller_001:reset_in1, rst_controller_002:reset_in1, rst_controller_003:reset_in1, rst_controller_004:reset_in1]
@@ -312,6 +375,90 @@ module testbench_ls (
 		.fifo_stream_reset_reset_n          (~rst_controller_reset_out_reset)                                          //       fifo_stream_reset.reset_n
 	);
 
+	testbench_ls_dma_fifo_subsystem_2 dma_fifo_subsystem_2 (
+		.dma_clock_clk                      (clk_200_out_clk_clk),                                                     //               dma_clock.clk
+		.dma_csr_writedata                  (mm_interconnect_0_dma_fifo_subsystem_2_dma_csr_writedata),                //                 dma_csr.writedata
+		.dma_csr_write                      (mm_interconnect_0_dma_fifo_subsystem_2_dma_csr_write),                    //                        .write
+		.dma_csr_byteenable                 (mm_interconnect_0_dma_fifo_subsystem_2_dma_csr_byteenable),               //                        .byteenable
+		.dma_csr_readdata                   (mm_interconnect_0_dma_fifo_subsystem_2_dma_csr_readdata),                 //                        .readdata
+		.dma_csr_read                       (mm_interconnect_0_dma_fifo_subsystem_2_dma_csr_read),                     //                        .read
+		.dma_csr_address                    (mm_interconnect_0_dma_fifo_subsystem_2_dma_csr_address),                  //                        .address
+		.dma_csr_irq_irq                    (irq_mapper_receiver3_irq),                                                //             dma_csr_irq.irq
+		.dma_descriptor_slave_write         (mm_interconnect_0_dma_fifo_subsystem_2_dma_descriptor_slave_write),       //    dma_descriptor_slave.write
+		.dma_descriptor_slave_waitrequest   (mm_interconnect_0_dma_fifo_subsystem_2_dma_descriptor_slave_waitrequest), //                        .waitrequest
+		.dma_descriptor_slave_writedata     (mm_interconnect_0_dma_fifo_subsystem_2_dma_descriptor_slave_writedata),   //                        .writedata
+		.dma_descriptor_slave_byteenable    (mm_interconnect_0_dma_fifo_subsystem_2_dma_descriptor_slave_byteenable),  //                        .byteenable
+		.dma_mm_read_address                (dma_fifo_subsystem_2_dma_mm_read_address),                                //             dma_mm_read.address
+		.dma_mm_read_read                   (dma_fifo_subsystem_2_dma_mm_read_read),                                   //                        .read
+		.dma_mm_read_byteenable             (dma_fifo_subsystem_2_dma_mm_read_byteenable),                             //                        .byteenable
+		.dma_mm_read_readdata               (dma_fifo_subsystem_2_dma_mm_read_readdata),                               //                        .readdata
+		.dma_mm_read_waitrequest            (dma_fifo_subsystem_2_dma_mm_read_waitrequest),                            //                        .waitrequest
+		.dma_mm_read_readdatavalid          (dma_fifo_subsystem_2_dma_mm_read_readdatavalid),                          //                        .readdatavalid
+		.dma_mm_read_burstcount             (dma_fifo_subsystem_2_dma_mm_read_burstcount),                             //                        .burstcount
+		.dma_reset_n_reset_n                (~rst_controller_reset_out_reset),                                         //             dma_reset_n.reset_n
+		.fifo_stream_clock_clk              (clk_200_out_clk_clk),                                                     //       fifo_stream_clock.clk
+		.fifo_stream_conduit_end_fifo_data  (dma_fifo_subsystem_2_fifo_stream_conduit_end_fifo_data),                  // fifo_stream_conduit_end.fifo_data
+		.fifo_stream_conduit_end_fifo_write (dma_fifo_subsystem_2_fifo_stream_conduit_end_fifo_write),                 //                        .fifo_write
+		.fifo_stream_conduit_end_fifo_send  (dma_fifo_subsystem_2_fifo_stream_conduit_end_fifo_send),                  //                        .fifo_send
+		.fifo_stream_reset_reset_n          (~rst_controller_reset_out_reset)                                          //       fifo_stream_reset.reset_n
+	);
+
+	testbench_ls_dma_fifo_subsystem_3 dma_fifo_subsystem_3 (
+		.dma_clock_clk                      (clk_200_out_clk_clk),                                                     //               dma_clock.clk
+		.dma_csr_writedata                  (mm_interconnect_0_dma_fifo_subsystem_3_dma_csr_writedata),                //                 dma_csr.writedata
+		.dma_csr_write                      (mm_interconnect_0_dma_fifo_subsystem_3_dma_csr_write),                    //                        .write
+		.dma_csr_byteenable                 (mm_interconnect_0_dma_fifo_subsystem_3_dma_csr_byteenable),               //                        .byteenable
+		.dma_csr_readdata                   (mm_interconnect_0_dma_fifo_subsystem_3_dma_csr_readdata),                 //                        .readdata
+		.dma_csr_read                       (mm_interconnect_0_dma_fifo_subsystem_3_dma_csr_read),                     //                        .read
+		.dma_csr_address                    (mm_interconnect_0_dma_fifo_subsystem_3_dma_csr_address),                  //                        .address
+		.dma_csr_irq_irq                    (irq_mapper_receiver4_irq),                                                //             dma_csr_irq.irq
+		.dma_descriptor_slave_write         (mm_interconnect_0_dma_fifo_subsystem_3_dma_descriptor_slave_write),       //    dma_descriptor_slave.write
+		.dma_descriptor_slave_waitrequest   (mm_interconnect_0_dma_fifo_subsystem_3_dma_descriptor_slave_waitrequest), //                        .waitrequest
+		.dma_descriptor_slave_writedata     (mm_interconnect_0_dma_fifo_subsystem_3_dma_descriptor_slave_writedata),   //                        .writedata
+		.dma_descriptor_slave_byteenable    (mm_interconnect_0_dma_fifo_subsystem_3_dma_descriptor_slave_byteenable),  //                        .byteenable
+		.dma_mm_read_address                (dma_fifo_subsystem_3_dma_mm_read_address),                                //             dma_mm_read.address
+		.dma_mm_read_read                   (dma_fifo_subsystem_3_dma_mm_read_read),                                   //                        .read
+		.dma_mm_read_byteenable             (dma_fifo_subsystem_3_dma_mm_read_byteenable),                             //                        .byteenable
+		.dma_mm_read_readdata               (dma_fifo_subsystem_3_dma_mm_read_readdata),                               //                        .readdata
+		.dma_mm_read_waitrequest            (dma_fifo_subsystem_3_dma_mm_read_waitrequest),                            //                        .waitrequest
+		.dma_mm_read_readdatavalid          (dma_fifo_subsystem_3_dma_mm_read_readdatavalid),                          //                        .readdatavalid
+		.dma_mm_read_burstcount             (dma_fifo_subsystem_3_dma_mm_read_burstcount),                             //                        .burstcount
+		.dma_reset_n_reset_n                (~rst_controller_reset_out_reset),                                         //             dma_reset_n.reset_n
+		.fifo_stream_clock_clk              (clk_200_out_clk_clk),                                                     //       fifo_stream_clock.clk
+		.fifo_stream_conduit_end_fifo_data  (dma_fifo_subsystem_3_fifo_stream_conduit_end_fifo_data),                  // fifo_stream_conduit_end.fifo_data
+		.fifo_stream_conduit_end_fifo_write (dma_fifo_subsystem_3_fifo_stream_conduit_end_fifo_write),                 //                        .fifo_write
+		.fifo_stream_conduit_end_fifo_send  (dma_fifo_subsystem_3_fifo_stream_conduit_end_fifo_send),                  //                        .fifo_send
+		.fifo_stream_reset_reset_n          (~rst_controller_reset_out_reset)                                          //       fifo_stream_reset.reset_n
+	);
+
+	testbench_ls_dma_fifo_subsystem_4 dma_fifo_subsystem_4 (
+		.dma_clock_clk                      (clk_200_out_clk_clk),                                                     //               dma_clock.clk
+		.dma_csr_writedata                  (mm_interconnect_0_dma_fifo_subsystem_4_dma_csr_writedata),                //                 dma_csr.writedata
+		.dma_csr_write                      (mm_interconnect_0_dma_fifo_subsystem_4_dma_csr_write),                    //                        .write
+		.dma_csr_byteenable                 (mm_interconnect_0_dma_fifo_subsystem_4_dma_csr_byteenable),               //                        .byteenable
+		.dma_csr_readdata                   (mm_interconnect_0_dma_fifo_subsystem_4_dma_csr_readdata),                 //                        .readdata
+		.dma_csr_read                       (mm_interconnect_0_dma_fifo_subsystem_4_dma_csr_read),                     //                        .read
+		.dma_csr_address                    (mm_interconnect_0_dma_fifo_subsystem_4_dma_csr_address),                  //                        .address
+		.dma_csr_irq_irq                    (irq_mapper_receiver5_irq),                                                //             dma_csr_irq.irq
+		.dma_descriptor_slave_write         (mm_interconnect_0_dma_fifo_subsystem_4_dma_descriptor_slave_write),       //    dma_descriptor_slave.write
+		.dma_descriptor_slave_waitrequest   (mm_interconnect_0_dma_fifo_subsystem_4_dma_descriptor_slave_waitrequest), //                        .waitrequest
+		.dma_descriptor_slave_writedata     (mm_interconnect_0_dma_fifo_subsystem_4_dma_descriptor_slave_writedata),   //                        .writedata
+		.dma_descriptor_slave_byteenable    (mm_interconnect_0_dma_fifo_subsystem_4_dma_descriptor_slave_byteenable),  //                        .byteenable
+		.dma_mm_read_address                (dma_fifo_subsystem_4_dma_mm_read_address),                                //             dma_mm_read.address
+		.dma_mm_read_read                   (dma_fifo_subsystem_4_dma_mm_read_read),                                   //                        .read
+		.dma_mm_read_byteenable             (dma_fifo_subsystem_4_dma_mm_read_byteenable),                             //                        .byteenable
+		.dma_mm_read_readdata               (dma_fifo_subsystem_4_dma_mm_read_readdata),                               //                        .readdata
+		.dma_mm_read_waitrequest            (dma_fifo_subsystem_4_dma_mm_read_waitrequest),                            //                        .waitrequest
+		.dma_mm_read_readdatavalid          (dma_fifo_subsystem_4_dma_mm_read_readdatavalid),                          //                        .readdatavalid
+		.dma_mm_read_burstcount             (dma_fifo_subsystem_4_dma_mm_read_burstcount),                             //                        .burstcount
+		.dma_reset_n_reset_n                (~rst_controller_reset_out_reset),                                         //             dma_reset_n.reset_n
+		.fifo_stream_clock_clk              (clk_200_out_clk_clk),                                                     //       fifo_stream_clock.clk
+		.fifo_stream_conduit_end_fifo_data  (dma_fifo_subsystem_4_fifo_stream_conduit_end_fifo_data),                  // fifo_stream_conduit_end.fifo_data
+		.fifo_stream_conduit_end_fifo_write (dma_fifo_subsystem_4_fifo_stream_conduit_end_fifo_write),                 //                        .fifo_write
+		.fifo_stream_conduit_end_fifo_send  (dma_fifo_subsystem_4_fifo_stream_conduit_end_fifo_send),                  //                        .fifo_send
+		.fifo_stream_reset_reset_n          (~rst_controller_reset_out_reset)                                          //       fifo_stream_reset.reset_n
+	);
+
 	testbench_ls_dma_fifo_susbystem dma_fifo_susbystem (
 		.dma_clock_clk                      (clk_200_out_clk_clk),                                                   //               dma_clock.clk
 		.dma_csr_writedata                  (mm_interconnect_0_dma_fifo_susbystem_dma_csr_writedata),                //                 dma_csr.writedata
@@ -383,7 +530,7 @@ module testbench_ls (
 		.av_write_n     (~mm_interconnect_0_jtag_avalon_jtag_slave_write),      //                  .write_n
 		.av_writedata   (mm_interconnect_0_jtag_avalon_jtag_slave_writedata),   //                  .writedata
 		.av_waitrequest (mm_interconnect_0_jtag_avalon_jtag_slave_waitrequest), //                  .waitrequest
-		.av_irq         (irq_mapper_receiver3_irq)                              //               irq.irq
+		.av_irq         (irq_mapper_receiver6_irq)                              //               irq.irq
 	);
 
 	testbench_ls_nios_cpu nios_cpu (
@@ -426,7 +573,7 @@ module testbench_ls (
 		.chipselect (mm_interconnect_0_pilot_sig_s1_chipselect), //                    .chipselect
 		.readdata   (mm_interconnect_0_pilot_sig_s1_readdata),   //                    .readdata
 		.in_port    (pilot_sig_external_connection_export),      // external_connection.export
-		.irq        (irq_mapper_receiver5_irq)                   //                 irq.irq
+		.irq        (irq_mapper_receiver8_irq)                   //                 irq.irq
 	);
 
 	testbench_ls_sys_timer sys_timer (
@@ -437,7 +584,7 @@ module testbench_ls (
 		.readdata   (mm_interconnect_0_sys_timer_s1_readdata),   //      .readdata
 		.chipselect (mm_interconnect_0_sys_timer_s1_chipselect), //      .chipselect
 		.write_n    (~mm_interconnect_0_sys_timer_s1_write),     //      .write_n
-		.irq        (irq_mapper_receiver4_irq)                   //   irq.irq
+		.irq        (irq_mapper_receiver7_irq)                   //   irq.irq
 	);
 
 	testbench_ls_system_ram system_ram (
@@ -470,6 +617,27 @@ module testbench_ls (
 		.dma_fifo_subsystem_1_dma_mm_read_read                       (dma_fifo_subsystem_1_dma_mm_read_read),                                   //                                                      .read
 		.dma_fifo_subsystem_1_dma_mm_read_readdata                   (dma_fifo_subsystem_1_dma_mm_read_readdata),                               //                                                      .readdata
 		.dma_fifo_subsystem_1_dma_mm_read_readdatavalid              (dma_fifo_subsystem_1_dma_mm_read_readdatavalid),                          //                                                      .readdatavalid
+		.dma_fifo_subsystem_2_dma_mm_read_address                    (dma_fifo_subsystem_2_dma_mm_read_address),                                //                      dma_fifo_subsystem_2_dma_mm_read.address
+		.dma_fifo_subsystem_2_dma_mm_read_waitrequest                (dma_fifo_subsystem_2_dma_mm_read_waitrequest),                            //                                                      .waitrequest
+		.dma_fifo_subsystem_2_dma_mm_read_burstcount                 (dma_fifo_subsystem_2_dma_mm_read_burstcount),                             //                                                      .burstcount
+		.dma_fifo_subsystem_2_dma_mm_read_byteenable                 (dma_fifo_subsystem_2_dma_mm_read_byteenable),                             //                                                      .byteenable
+		.dma_fifo_subsystem_2_dma_mm_read_read                       (dma_fifo_subsystem_2_dma_mm_read_read),                                   //                                                      .read
+		.dma_fifo_subsystem_2_dma_mm_read_readdata                   (dma_fifo_subsystem_2_dma_mm_read_readdata),                               //                                                      .readdata
+		.dma_fifo_subsystem_2_dma_mm_read_readdatavalid              (dma_fifo_subsystem_2_dma_mm_read_readdatavalid),                          //                                                      .readdatavalid
+		.dma_fifo_subsystem_3_dma_mm_read_address                    (dma_fifo_subsystem_3_dma_mm_read_address),                                //                      dma_fifo_subsystem_3_dma_mm_read.address
+		.dma_fifo_subsystem_3_dma_mm_read_waitrequest                (dma_fifo_subsystem_3_dma_mm_read_waitrequest),                            //                                                      .waitrequest
+		.dma_fifo_subsystem_3_dma_mm_read_burstcount                 (dma_fifo_subsystem_3_dma_mm_read_burstcount),                             //                                                      .burstcount
+		.dma_fifo_subsystem_3_dma_mm_read_byteenable                 (dma_fifo_subsystem_3_dma_mm_read_byteenable),                             //                                                      .byteenable
+		.dma_fifo_subsystem_3_dma_mm_read_read                       (dma_fifo_subsystem_3_dma_mm_read_read),                                   //                                                      .read
+		.dma_fifo_subsystem_3_dma_mm_read_readdata                   (dma_fifo_subsystem_3_dma_mm_read_readdata),                               //                                                      .readdata
+		.dma_fifo_subsystem_3_dma_mm_read_readdatavalid              (dma_fifo_subsystem_3_dma_mm_read_readdatavalid),                          //                                                      .readdatavalid
+		.dma_fifo_subsystem_4_dma_mm_read_address                    (dma_fifo_subsystem_4_dma_mm_read_address),                                //                      dma_fifo_subsystem_4_dma_mm_read.address
+		.dma_fifo_subsystem_4_dma_mm_read_waitrequest                (dma_fifo_subsystem_4_dma_mm_read_waitrequest),                            //                                                      .waitrequest
+		.dma_fifo_subsystem_4_dma_mm_read_burstcount                 (dma_fifo_subsystem_4_dma_mm_read_burstcount),                             //                                                      .burstcount
+		.dma_fifo_subsystem_4_dma_mm_read_byteenable                 (dma_fifo_subsystem_4_dma_mm_read_byteenable),                             //                                                      .byteenable
+		.dma_fifo_subsystem_4_dma_mm_read_read                       (dma_fifo_subsystem_4_dma_mm_read_read),                                   //                                                      .read
+		.dma_fifo_subsystem_4_dma_mm_read_readdata                   (dma_fifo_subsystem_4_dma_mm_read_readdata),                               //                                                      .readdata
+		.dma_fifo_subsystem_4_dma_mm_read_readdatavalid              (dma_fifo_subsystem_4_dma_mm_read_readdatavalid),                          //                                                      .readdatavalid
 		.dma_fifo_susbystem_dma_mm_read_address                      (dma_fifo_susbystem_dma_mm_read_address),                                  //                        dma_fifo_susbystem_dma_mm_read.address
 		.dma_fifo_susbystem_dma_mm_read_waitrequest                  (dma_fifo_susbystem_dma_mm_read_waitrequest),                              //                                                      .waitrequest
 		.dma_fifo_susbystem_dma_mm_read_burstcount                   (dma_fifo_susbystem_dma_mm_read_burstcount),                               //                                                      .burstcount
@@ -531,6 +699,36 @@ module testbench_ls (
 		.dma_fifo_subsystem_1_dma_descriptor_slave_writedata         (mm_interconnect_0_dma_fifo_subsystem_1_dma_descriptor_slave_writedata),   //                                                      .writedata
 		.dma_fifo_subsystem_1_dma_descriptor_slave_byteenable        (mm_interconnect_0_dma_fifo_subsystem_1_dma_descriptor_slave_byteenable),  //                                                      .byteenable
 		.dma_fifo_subsystem_1_dma_descriptor_slave_waitrequest       (mm_interconnect_0_dma_fifo_subsystem_1_dma_descriptor_slave_waitrequest), //                                                      .waitrequest
+		.dma_fifo_subsystem_2_dma_csr_address                        (mm_interconnect_0_dma_fifo_subsystem_2_dma_csr_address),                  //                          dma_fifo_subsystem_2_dma_csr.address
+		.dma_fifo_subsystem_2_dma_csr_write                          (mm_interconnect_0_dma_fifo_subsystem_2_dma_csr_write),                    //                                                      .write
+		.dma_fifo_subsystem_2_dma_csr_read                           (mm_interconnect_0_dma_fifo_subsystem_2_dma_csr_read),                     //                                                      .read
+		.dma_fifo_subsystem_2_dma_csr_readdata                       (mm_interconnect_0_dma_fifo_subsystem_2_dma_csr_readdata),                 //                                                      .readdata
+		.dma_fifo_subsystem_2_dma_csr_writedata                      (mm_interconnect_0_dma_fifo_subsystem_2_dma_csr_writedata),                //                                                      .writedata
+		.dma_fifo_subsystem_2_dma_csr_byteenable                     (mm_interconnect_0_dma_fifo_subsystem_2_dma_csr_byteenable),               //                                                      .byteenable
+		.dma_fifo_subsystem_2_dma_descriptor_slave_write             (mm_interconnect_0_dma_fifo_subsystem_2_dma_descriptor_slave_write),       //             dma_fifo_subsystem_2_dma_descriptor_slave.write
+		.dma_fifo_subsystem_2_dma_descriptor_slave_writedata         (mm_interconnect_0_dma_fifo_subsystem_2_dma_descriptor_slave_writedata),   //                                                      .writedata
+		.dma_fifo_subsystem_2_dma_descriptor_slave_byteenable        (mm_interconnect_0_dma_fifo_subsystem_2_dma_descriptor_slave_byteenable),  //                                                      .byteenable
+		.dma_fifo_subsystem_2_dma_descriptor_slave_waitrequest       (mm_interconnect_0_dma_fifo_subsystem_2_dma_descriptor_slave_waitrequest), //                                                      .waitrequest
+		.dma_fifo_subsystem_3_dma_csr_address                        (mm_interconnect_0_dma_fifo_subsystem_3_dma_csr_address),                  //                          dma_fifo_subsystem_3_dma_csr.address
+		.dma_fifo_subsystem_3_dma_csr_write                          (mm_interconnect_0_dma_fifo_subsystem_3_dma_csr_write),                    //                                                      .write
+		.dma_fifo_subsystem_3_dma_csr_read                           (mm_interconnect_0_dma_fifo_subsystem_3_dma_csr_read),                     //                                                      .read
+		.dma_fifo_subsystem_3_dma_csr_readdata                       (mm_interconnect_0_dma_fifo_subsystem_3_dma_csr_readdata),                 //                                                      .readdata
+		.dma_fifo_subsystem_3_dma_csr_writedata                      (mm_interconnect_0_dma_fifo_subsystem_3_dma_csr_writedata),                //                                                      .writedata
+		.dma_fifo_subsystem_3_dma_csr_byteenable                     (mm_interconnect_0_dma_fifo_subsystem_3_dma_csr_byteenable),               //                                                      .byteenable
+		.dma_fifo_subsystem_3_dma_descriptor_slave_write             (mm_interconnect_0_dma_fifo_subsystem_3_dma_descriptor_slave_write),       //             dma_fifo_subsystem_3_dma_descriptor_slave.write
+		.dma_fifo_subsystem_3_dma_descriptor_slave_writedata         (mm_interconnect_0_dma_fifo_subsystem_3_dma_descriptor_slave_writedata),   //                                                      .writedata
+		.dma_fifo_subsystem_3_dma_descriptor_slave_byteenable        (mm_interconnect_0_dma_fifo_subsystem_3_dma_descriptor_slave_byteenable),  //                                                      .byteenable
+		.dma_fifo_subsystem_3_dma_descriptor_slave_waitrequest       (mm_interconnect_0_dma_fifo_subsystem_3_dma_descriptor_slave_waitrequest), //                                                      .waitrequest
+		.dma_fifo_subsystem_4_dma_csr_address                        (mm_interconnect_0_dma_fifo_subsystem_4_dma_csr_address),                  //                          dma_fifo_subsystem_4_dma_csr.address
+		.dma_fifo_subsystem_4_dma_csr_write                          (mm_interconnect_0_dma_fifo_subsystem_4_dma_csr_write),                    //                                                      .write
+		.dma_fifo_subsystem_4_dma_csr_read                           (mm_interconnect_0_dma_fifo_subsystem_4_dma_csr_read),                     //                                                      .read
+		.dma_fifo_subsystem_4_dma_csr_readdata                       (mm_interconnect_0_dma_fifo_subsystem_4_dma_csr_readdata),                 //                                                      .readdata
+		.dma_fifo_subsystem_4_dma_csr_writedata                      (mm_interconnect_0_dma_fifo_subsystem_4_dma_csr_writedata),                //                                                      .writedata
+		.dma_fifo_subsystem_4_dma_csr_byteenable                     (mm_interconnect_0_dma_fifo_subsystem_4_dma_csr_byteenable),               //                                                      .byteenable
+		.dma_fifo_subsystem_4_dma_descriptor_slave_write             (mm_interconnect_0_dma_fifo_subsystem_4_dma_descriptor_slave_write),       //             dma_fifo_subsystem_4_dma_descriptor_slave.write
+		.dma_fifo_subsystem_4_dma_descriptor_slave_writedata         (mm_interconnect_0_dma_fifo_subsystem_4_dma_descriptor_slave_writedata),   //                                                      .writedata
+		.dma_fifo_subsystem_4_dma_descriptor_slave_byteenable        (mm_interconnect_0_dma_fifo_subsystem_4_dma_descriptor_slave_byteenable),  //                                                      .byteenable
+		.dma_fifo_subsystem_4_dma_descriptor_slave_waitrequest       (mm_interconnect_0_dma_fifo_subsystem_4_dma_descriptor_slave_waitrequest), //                                                      .waitrequest
 		.dma_fifo_susbystem_dma_csr_address                          (mm_interconnect_0_dma_fifo_susbystem_dma_csr_address),                    //                            dma_fifo_susbystem_dma_csr.address
 		.dma_fifo_susbystem_dma_csr_write                            (mm_interconnect_0_dma_fifo_susbystem_dma_csr_write),                      //                                                      .write
 		.dma_fifo_susbystem_dma_csr_read                             (mm_interconnect_0_dma_fifo_susbystem_dma_csr_read),                       //                                                      .read
@@ -596,6 +794,9 @@ module testbench_ls (
 		.receiver3_irq (irq_mapper_receiver3_irq),       // receiver3.irq
 		.receiver4_irq (irq_mapper_receiver4_irq),       // receiver4.irq
 		.receiver5_irq (irq_mapper_receiver5_irq),       // receiver5.irq
+		.receiver6_irq (irq_mapper_receiver6_irq),       // receiver6.irq
+		.receiver7_irq (irq_mapper_receiver7_irq),       // receiver7.irq
+		.receiver8_irq (irq_mapper_receiver8_irq),       // receiver8.irq
 		.sender_irq    (nios_cpu_irq_irq)                //    sender.irq
 	);
 

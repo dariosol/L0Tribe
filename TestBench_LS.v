@@ -264,7 +264,7 @@ module TestBench_LS(
    wire [10:0] 					fifoWRusedW[4:0];
    wire [10:0] 					fifoRDusedW[4:0];
    
-   wire [3:0] 					fifoSEND;
+   wire [4:0] 					fifoSEND;
 
    wire [63:0] 					ToRamQ;            
    wire 					ToRamRR;           
@@ -427,6 +427,21 @@ module TestBench_LS(
 		    .fifo_stream_1_fifo_write             (fifoWR[1]),        //                .fifo_write
 		    .fifo_stream_1_fifo_send              (fifoSEND[1]),      //                .fifo_send
 		    
+			 .dma_fifo_subsystem_2_fifo_stream_conduit_end_fifo_data  (fifoDATA[2]),  
+			 .dma_fifo_subsystem_2_fifo_stream_conduit_end_fifo_write (fifoWR[2]),
+			 .dma_fifo_subsystem_2_fifo_stream_conduit_end_fifo_send  (fifoSEND[2]),
+			 
+			 .dma_fifo_subsystem_3_fifo_stream_conduit_end_fifo_data  (fifoDATA[3]),
+			 .dma_fifo_subsystem_3_fifo_stream_conduit_end_fifo_write (fifoWR[3]),
+			 .dma_fifo_subsystem_3_fifo_stream_conduit_end_fifo_send  (fifoSEND[3]),
+			 
+			 .dma_fifo_subsystem_4_fifo_stream_conduit_end_fifo_data  (fifoDATA[4]),
+			 .dma_fifo_subsystem_4_fifo_stream_conduit_end_fifo_write (fifoWR[4]),
+			 .dma_fifo_subsystem_4_fifo_stream_conduit_end_fifo_send  (fifoSEND[4]),
+			 
+			 
+			 
+			 
 		    //DDR2 RAM   
 		    .memory_mem_a                         (M1_DDR2_addr),
 		    .memory_mem_ba                        (M1_DDR2_ba),

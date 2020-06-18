@@ -50,7 +50,16 @@ module testbench_ls (
 	oct_1_rdn,
 	oct_1_rup,
 	pilot_sig_external_connection_export,
-	reset_reset_n);	
+	reset_reset_n,
+	dma_fifo_subsystem_2_fifo_stream_conduit_end_fifo_data,
+	dma_fifo_subsystem_2_fifo_stream_conduit_end_fifo_write,
+	dma_fifo_subsystem_2_fifo_stream_conduit_end_fifo_send,
+	dma_fifo_subsystem_3_fifo_stream_conduit_end_fifo_data,
+	dma_fifo_subsystem_3_fifo_stream_conduit_end_fifo_write,
+	dma_fifo_subsystem_3_fifo_stream_conduit_end_fifo_send,
+	dma_fifo_subsystem_4_fifo_stream_conduit_end_fifo_data,
+	dma_fifo_subsystem_4_fifo_stream_conduit_end_fifo_write,
+	dma_fifo_subsystem_4_fifo_stream_conduit_end_fifo_send);	
 
 	output		clk_200_out_clk_clk;
 	input		clk_50_clk;
@@ -103,4 +112,13 @@ module testbench_ls (
 	input		oct_1_rup;
 	input	[7:0]	pilot_sig_external_connection_export;
 	input		reset_reset_n;
+	output	[255:0]	dma_fifo_subsystem_2_fifo_stream_conduit_end_fifo_data;
+	output		dma_fifo_subsystem_2_fifo_stream_conduit_end_fifo_write;
+	output		dma_fifo_subsystem_2_fifo_stream_conduit_end_fifo_send;
+	output	[255:0]	dma_fifo_subsystem_3_fifo_stream_conduit_end_fifo_data;
+	output		dma_fifo_subsystem_3_fifo_stream_conduit_end_fifo_write;
+	output		dma_fifo_subsystem_3_fifo_stream_conduit_end_fifo_send;
+	output	[255:0]	dma_fifo_subsystem_4_fifo_stream_conduit_end_fifo_data;
+	output		dma_fifo_subsystem_4_fifo_stream_conduit_end_fifo_write;
+	output		dma_fifo_subsystem_4_fifo_stream_conduit_end_fifo_send;
 endmodule

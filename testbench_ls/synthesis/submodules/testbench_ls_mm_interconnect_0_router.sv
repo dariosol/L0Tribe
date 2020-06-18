@@ -49,21 +49,21 @@ module testbench_ls_mm_interconnect_0_router_default_decode
                DEFAULT_RD_CHANNEL = -1,
                DEFAULT_DESTID = 2 
    )
-  (output [353 - 350 : 0] default_destination_id,
-   output [15-1 : 0] default_wr_channel,
-   output [15-1 : 0] default_rd_channel,
-   output [15-1 : 0] default_src_channel
+  (output [355 - 351 : 0] default_destination_id,
+   output [21-1 : 0] default_wr_channel,
+   output [21-1 : 0] default_rd_channel,
+   output [21-1 : 0] default_src_channel
   );
 
   assign default_destination_id = 
-    DEFAULT_DESTID[353 - 350 : 0];
+    DEFAULT_DESTID[355 - 351 : 0];
 
   generate
     if (DEFAULT_CHANNEL == -1) begin : no_default_channel_assignment
       assign default_src_channel = '0;
     end
     else begin : default_channel_assignment
-      assign default_src_channel = 15'b1 << DEFAULT_CHANNEL;
+      assign default_src_channel = 21'b1 << DEFAULT_CHANNEL;
     end
   endgenerate
 
@@ -73,8 +73,8 @@ module testbench_ls_mm_interconnect_0_router_default_decode
       assign default_rd_channel = '0;
     end
     else begin : default_rw_channel_assignment
-      assign default_wr_channel = 15'b1 << DEFAULT_WR_CHANNEL;
-      assign default_rd_channel = 15'b1 << DEFAULT_RD_CHANNEL;
+      assign default_wr_channel = 21'b1 << DEFAULT_WR_CHANNEL;
+      assign default_rd_channel = 21'b1 << DEFAULT_RD_CHANNEL;
     end
   endgenerate
 
@@ -93,7 +93,7 @@ module testbench_ls_mm_interconnect_0_router
     // Command Sink (Input)
     // -------------------
     input                       sink_valid,
-    input  [367-1 : 0]    sink_data,
+    input  [369-1 : 0]    sink_data,
     input                       sink_startofpacket,
     input                       sink_endofpacket,
     output                      sink_ready,
@@ -102,8 +102,8 @@ module testbench_ls_mm_interconnect_0_router
     // Command Source (Output)
     // -------------------
     output                          src_valid,
-    output reg [367-1    : 0] src_data,
-    output reg [15-1 : 0] src_channel,
+    output reg [369-1    : 0] src_data,
+    output reg [21-1 : 0] src_channel,
     output                          src_startofpacket,
     output                          src_endofpacket,
     input                           src_ready
@@ -114,12 +114,12 @@ module testbench_ls_mm_interconnect_0_router
     // -------------------------------------------------------
     localparam PKT_ADDR_H = 319;
     localparam PKT_ADDR_L = 288;
-    localparam PKT_DEST_ID_H = 353;
-    localparam PKT_DEST_ID_L = 350;
-    localparam PKT_PROTECTION_H = 357;
-    localparam PKT_PROTECTION_L = 355;
-    localparam ST_DATA_W = 367;
-    localparam ST_CHANNEL_W = 15;
+    localparam PKT_DEST_ID_H = 355;
+    localparam PKT_DEST_ID_L = 351;
+    localparam PKT_PROTECTION_H = 359;
+    localparam PKT_PROTECTION_L = 357;
+    localparam ST_DATA_W = 369;
+    localparam ST_CHANNEL_W = 21;
     localparam DECODER_TYPE = 0;
 
     localparam PKT_TRANS_WRITE = 322;
@@ -165,7 +165,7 @@ module testbench_ls_mm_interconnect_0_router
     assign src_startofpacket = sink_startofpacket;
     assign src_endofpacket   = sink_endofpacket;
     wire [PKT_DEST_ID_W-1:0] default_destid;
-    wire [15-1 : 0] default_src_channel;
+    wire [21-1 : 0] default_src_channel;
 
 
 
@@ -191,13 +191,13 @@ module testbench_ls_mm_interconnect_0_router
 
     // ( 0x0 .. 0x40000000 )
     if ( {address[RG:PAD0],{PAD0{1'b0}}} == 31'h0   ) begin
-            src_channel = 15'b01;
+            src_channel = 21'b01;
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 2;
     end
 
     // ( 0x40000000 .. 0x80000000 )
     if ( {address[RG:PAD1],{PAD1{1'b0}}} == 31'h40000000   ) begin
-            src_channel = 15'b10;
+            src_channel = 21'b10;
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 1;
     end
 
