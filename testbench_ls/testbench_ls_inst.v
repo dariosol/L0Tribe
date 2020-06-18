@@ -15,6 +15,7 @@
 		.from_fifo_fifo_read                  (<connected-to-from_fifo_fifo_read>),                  //                              .fifo_read
 		.from_fifo_fifo_empty                 (<connected-to-from_fifo_fifo_empty>),                 //                              .fifo_empty
 		.from_fifo_fifo_full                  (<connected-to-from_fifo_fifo_full>),                  //                              .fifo_full
+		.input_io_external_connection_export  (<connected-to-input_io_external_connection_export>),  //  input_io_external_connection.export
 		.memory_mem_a                         (<connected-to-memory_mem_a>),                         //                        memory.mem_a
 		.memory_mem_ba                        (<connected-to-memory_mem_ba>),                        //                              .mem_ba
 		.memory_mem_ck                        (<connected-to-memory_mem_ck>),                        //                              .mem_ck
@@ -48,7 +49,6 @@
 		.oct_1_rdn                            (<connected-to-oct_1_rdn>),                            //                         oct_1.rdn
 		.oct_1_rup                            (<connected-to-oct_1_rup>),                            //                              .rup
 		.pilot_sig_external_connection_export (<connected-to-pilot_sig_external_connection_export>), // pilot_sig_external_connection.export
-		.reset_reset_n                        (<connected-to-reset_reset_n>),                        //                         reset.reset_n
-		.input_io_external_connection_export  (<connected-to-input_io_external_connection_export>)   //  input_io_external_connection.export
+		.reset_reset_n                        (<connected-to-reset_reset_n>)                         //                         reset.reset_n
 	);
 

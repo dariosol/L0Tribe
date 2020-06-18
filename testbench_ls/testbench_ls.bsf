@@ -90,8 +90,8 @@ https://fpgasoftware.intel.com/eula.
 	(port
 		(pt 0 1104)
 		(input)
-		(text "pilot_sig_external_connection_export[3..0]" (rect 0 0 165 12)(font "Arial" (font_size 8)))
-		(text "pilot_sig_external_connection_export[3..0]" (rect 4 1093 256 1104)(font "Arial" (font_size 8)))
+		(text "pilot_sig_external_connection_export[7..0]" (rect 0 0 165 12)(font "Arial" (font_size 8)))
+		(text "pilot_sig_external_connection_export[7..0]" (rect 4 1093 256 1104)(font "Arial" (font_size 8)))
 		(line (pt 0 1104)(pt 224 1104)(line_width 3))
 	)
 	(port

@@ -2,7 +2,7 @@ set_global_assignment -entity "testbench_ls" -library "testbench_ls" -name IP_TO
 set_global_assignment -entity "testbench_ls" -library "testbench_ls" -name IP_TOOL_VERSION "18.1"
 set_global_assignment -entity "testbench_ls" -library "testbench_ls" -name IP_TOOL_ENV "Qsys"
 set_global_assignment -library "testbench_ls" -name SOPCINFO_FILE [file join $::quartus(qip_path) "../../testbench_ls.sopcinfo"]
-set_global_assignment -entity "testbench_ls" -library "testbench_ls" -name SLD_INFO "QSYS_NAME testbench_ls HAS_SOPCINFO 1 GENERATION_ID 1592393432"
+set_global_assignment -entity "testbench_ls" -library "testbench_ls" -name SLD_INFO "QSYS_NAME testbench_ls HAS_SOPCINFO 1 GENERATION_ID 1592487040"
 set_global_assignment -library "testbench_ls" -name MISC_FILE [file join $::quartus(qip_path) "../testbench_ls.cmp"]
 set_global_assignment -library "testbench_ls" -name SLD_FILE [file join $::quartus(qip_path) "testbench_ls.regmap"]
 set_global_assignment -library "testbench_ls" -name SLD_FILE [file join $::quartus(qip_path) "testbench_ls.debuginfo"]
@@ -16,7 +16,7 @@ set_global_assignment -entity "testbench_ls" -library "testbench_ls" -name IP_CO
 set_global_assignment -entity "testbench_ls" -library "testbench_ls" -name IP_COMPONENT_REPORT_HIERARCHY "On"
 set_global_assignment -entity "testbench_ls" -library "testbench_ls" -name IP_COMPONENT_INTERNAL "Off"
 set_global_assignment -entity "testbench_ls" -library "testbench_ls" -name IP_COMPONENT_VERSION "MS4w"
-set_global_assignment -entity "testbench_ls" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTU5MjM5MzQzMg==::QXV0byBHRU5FUkFUSU9OX0lE"
+set_global_assignment -entity "testbench_ls" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTU5MjQ4NzA0MA==::QXV0byBHRU5FUkFUSU9OX0lE"
 set_global_assignment -entity "testbench_ls" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::U3RyYXRpeCBJVg==::QXV0byBERVZJQ0VfRkFNSUxZ"
 set_global_assignment -entity "testbench_ls" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0U=::RVA0U0dYMjMwS0Y0MEMy::QXV0byBERVZJQ0U="
 set_global_assignment -entity "testbench_ls" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfU1BFRURHUkFERQ==::Mg==::QXV0byBERVZJQ0VfU1BFRURHUkFERQ=="
@@ -1090,7 +1090,7 @@ set_global_assignment -entity "testbench_ls_pilot_sig" -library "testbench_ls" -
 set_global_assignment -entity "testbench_ls_pilot_sig" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "Z2VuZXJhdGVJUlE=::dHJ1ZQ==::R2VuZXJhdGUgSVJR"
 set_global_assignment -entity "testbench_ls_pilot_sig" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "aXJxVHlwZQ==::RURHRQ==::SVJRIFR5cGU="
 set_global_assignment -entity "testbench_ls_pilot_sig" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "c2ltRG9UZXN0QmVuY2hXaXJpbmc=::ZmFsc2U=::SGFyZHdpcmUgUElPIGlucHV0cyBpbiB0ZXN0IGJlbmNo"
-set_global_assignment -entity "testbench_ls_pilot_sig" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "d2lkdGg=::NA==::V2lkdGggKDEtMzIgYml0cyk="
+set_global_assignment -entity "testbench_ls_pilot_sig" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "d2lkdGg=::OA==::V2lkdGggKDEtMzIgYml0cyk="
 set_global_assignment -entity "testbench_ls_pilot_sig" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "Y2xvY2tSYXRl::MjAwMDAwMDAw::Y2xvY2tSYXRl"
 set_global_assignment -entity "testbench_ls_pilot_sig" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "ZGVyaXZlZF9oYXNfdHJp::ZmFsc2U=::ZGVyaXZlZF9oYXNfdHJp"
 set_global_assignment -entity "testbench_ls_pilot_sig" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "ZGVyaXZlZF9oYXNfb3V0::ZmFsc2U=::ZGVyaXZlZF9oYXNfb3V0"
@@ -1491,7 +1491,7 @@ set_global_assignment -entity "testbench_ls_from_ETH_to_DDR" -library "testbench
 set_global_assignment -entity "testbench_ls_from_ETH_to_DDR" -library "testbench_ls" -name IP_COMPONENT_REPORT_HIERARCHY "On"
 set_global_assignment -entity "testbench_ls_from_ETH_to_DDR" -library "testbench_ls" -name IP_COMPONENT_INTERNAL "Off"
 set_global_assignment -entity "testbench_ls_from_ETH_to_DDR" -library "testbench_ls" -name IP_COMPONENT_VERSION "MS4w"
-set_global_assignment -entity "testbench_ls_from_ETH_to_DDR" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTU5MjM5MzQzMg==::QXV0byBHRU5FUkFUSU9OX0lE"
+set_global_assignment -entity "testbench_ls_from_ETH_to_DDR" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTU5MjQ4NzA0MA==::QXV0byBHRU5FUkFUSU9OX0lE"
 set_global_assignment -entity "testbench_ls_from_ETH_to_DDR" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "QVVUT19VTklRVUVfSUQ=::dGVzdGJlbmNoX2xzX2Zyb21fRVRIX3RvX0REUg==::QXV0byBVTklRVUVfSUQ="
 set_global_assignment -entity "testbench_ls_from_ETH_to_DDR" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::U3RyYXRpeCBJVg==::QXV0byBERVZJQ0VfRkFNSUxZ"
 set_global_assignment -entity "testbench_ls_from_ETH_to_DDR" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0U=::RVA0U0dYMjMwS0Y0MEMy::QXV0byBERVZJQ0U="
@@ -1669,7 +1669,7 @@ set_global_assignment -entity "testbench_ls_dma_fifo_susbystem" -library "testbe
 set_global_assignment -entity "testbench_ls_dma_fifo_susbystem" -library "testbench_ls" -name IP_COMPONENT_REPORT_HIERARCHY "On"
 set_global_assignment -entity "testbench_ls_dma_fifo_susbystem" -library "testbench_ls" -name IP_COMPONENT_INTERNAL "Off"
 set_global_assignment -entity "testbench_ls_dma_fifo_susbystem" -library "testbench_ls" -name IP_COMPONENT_VERSION "MS4w"
-set_global_assignment -entity "testbench_ls_dma_fifo_susbystem" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTU5MjM5MzQzMg==::QXV0byBHRU5FUkFUSU9OX0lE"
+set_global_assignment -entity "testbench_ls_dma_fifo_susbystem" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTU5MjQ4NzA0MA==::QXV0byBHRU5FUkFUSU9OX0lE"
 set_global_assignment -entity "testbench_ls_dma_fifo_susbystem" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "QVVUT19VTklRVUVfSUQ=::dGVzdGJlbmNoX2xzX2RtYV9maWZvX3N1c2J5c3RlbQ==::QXV0byBVTklRVUVfSUQ="
 set_global_assignment -entity "testbench_ls_dma_fifo_susbystem" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::U3RyYXRpeCBJVg==::QXV0byBERVZJQ0VfRkFNSUxZ"
 set_global_assignment -entity "testbench_ls_dma_fifo_susbystem" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0U=::RVA0U0dYMjMwS0Y0MEMy::QXV0byBERVZJQ0U="
@@ -1766,7 +1766,7 @@ set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_1" -library "test
 set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_1" -library "testbench_ls" -name IP_COMPONENT_REPORT_HIERARCHY "On"
 set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_1" -library "testbench_ls" -name IP_COMPONENT_INTERNAL "Off"
 set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_1" -library "testbench_ls" -name IP_COMPONENT_VERSION "MS4w"
-set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_1" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTU5MjM5MzQzMg==::QXV0byBHRU5FUkFUSU9OX0lE"
+set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_1" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTU5MjQ4NzA0MA==::QXV0byBHRU5FUkFUSU9OX0lE"
 set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_1" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "QVVUT19VTklRVUVfSUQ=::dGVzdGJlbmNoX2xzX2RtYV9maWZvX3N1YnN5c3RlbV8x::QXV0byBVTklRVUVfSUQ="
 set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_1" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::U3RyYXRpeCBJVg==::QXV0byBERVZJQ0VfRkFNSUxZ"
 set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_1" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0U=::RVA0U0dYMjMwS0Y0MEMy::QXV0byBERVZJQ0U="

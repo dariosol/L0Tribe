@@ -53,7 +53,7 @@ module testbench_ls (
 		input  wire         oct_rup,                              //                              .rup
 		input  wire         oct_1_rdn,                            //                         oct_1.rdn
 		input  wire         oct_1_rup,                            //                              .rup
-		input  wire [3:0]   pilot_sig_external_connection_export, // pilot_sig_external_connection.export
+		input  wire [7:0]   pilot_sig_external_connection_export, // pilot_sig_external_connection.export
 		input  wire         reset_reset_n                         //                         reset.reset_n
 	);
 

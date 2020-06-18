@@ -16,6 +16,7 @@ module testbench_ls (
 	from_fifo_fifo_read,
 	from_fifo_fifo_empty,
 	from_fifo_fifo_full,
+	input_io_external_connection_export,
 	memory_mem_a,
 	memory_mem_ba,
 	memory_mem_ck,
@@ -49,8 +50,7 @@ module testbench_ls (
 	oct_1_rdn,
 	oct_1_rup,
 	pilot_sig_external_connection_export,
-	reset_reset_n,
-	input_io_external_connection_export);	
+	reset_reset_n);	
 
 	output		clk_200_out_clk_clk;
 	input		clk_50_clk;
@@ -68,6 +68,7 @@ module testbench_ls (
 	output		from_fifo_fifo_read;
 	input		from_fifo_fifo_empty;
 	input		from_fifo_fifo_full;
+	input	[7:0]	input_io_external_connection_export;
 	output	[13:0]	memory_mem_a;
 	output	[2:0]	memory_mem_ba;
 	output	[1:0]	memory_mem_ck;
@@ -100,7 +101,6 @@ module testbench_ls (
 	input		oct_rup;
 	input		oct_1_rdn;
 	input		oct_1_rup;
-	input	[3:0]	pilot_sig_external_connection_export;
+	input	[7:0]	pilot_sig_external_connection_export;
 	input		reset_reset_n;
-	input	[7:0]	input_io_external_connection_export;
 endmodule

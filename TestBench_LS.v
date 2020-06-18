@@ -240,7 +240,7 @@ module TestBench_LS(
    wire 					lock40MHz;
    wire 					lock125MHz;
 
-   reg [3:0] 					interrupt;
+   reg [7:0] 					interrupt;
 
    wire                                         wECRST;
    wire                                         wBCRST;
@@ -252,17 +252,17 @@ module TestBench_LS(
    assign FAN_CTRL	= 1'bz;	// don't control
 
    //Primitive FIFO connections
-   //4 positions: one for each port.
-   wire [3:0] 					fifoWR;
-   wire [3:0] 					fifoRR;
-   wire [3:0] 					fifoEMPTY;
-   wire [3:0] 					fifoFULL;
+   //5 positions: one for each port.
+   wire [4:0] 					fifoWR;
+   wire [4:0] 					fifoRR;
+   wire [4:0] 					fifoEMPTY;
+   wire [4:0] 					fifoFULL;
    
    //Dual port with input at 256,output at 32//  
-   wire [255:0] 				fifoDATA[3:0];
-   wire [31:0] 					fifoQ[3:0];
-   wire [10:0] 					fifoWRusedW[3:0];
-   wire [10:0] 					fifoRDusedW[3:0];
+   wire [255:0] 				fifoDATA[4:0];
+   wire [31:0] 					fifoQ[4:0];
+   wire [10:0] 					fifoWRusedW[4:0];
+   wire [10:0] 					fifoRDusedW[4:0];
    
    wire [3:0] 					fifoSEND;
 
@@ -318,7 +318,7 @@ module TestBench_LS(
    SOBEOBDispatcher SOBEOBDispatcher0(
 				      .clk(clk_pll_40),
 				      .BURST(ctrl_sig[0]),
-				      .reset(~rstn),
+				      .reset(~rstn | ctrl_sig[1]),
 				      .ECRST(wECRST),
 				      .BCRST(wBCRST)
 				      );
@@ -326,7 +326,7 @@ module TestBench_LS(
 
    //port 0
    primitiveFIFO fifo0 (
-			.aclr(~rstn),
+			.aclr(~rstn | ctrl_sig[1]),
 			.data(fifoDATA[0]),
 			.rdclk(clk_pll_125),
 			.rdreq(fifoRR[0]),
@@ -341,7 +341,7 @@ module TestBench_LS(
 
    //port 1
    primitiveFIFO fifo1 (
-			.aclr(~rstn),
+			.aclr(~rstn | ctrl_sig[1]),
 			.data(fifoDATA[1]),
 			.rdclk(clk_pll_125),
 			.rdreq(fifoRR[1]),
@@ -356,7 +356,7 @@ module TestBench_LS(
 
    //port 2
    primitiveFIFO fifo2 (
-			.aclr(~rstn),
+			.aclr(~rstn | ctrl_sig[1]),
 			.data(fifoDATA[2]),
 			.rdclk(clk_pll_125),
 			.rdreq(fifoRR[2]),
@@ -371,7 +371,7 @@ module TestBench_LS(
 
    //port 3
    primitiveFIFO fifo3 (
-			.aclr(~rstn),
+			.aclr(~rstn | ctrl_sig[1]),
 			.data(fifoDATA[3]),
 			.rdclk(clk_pll_125),
 			.rdreq(fifoRR[3]),
@@ -382,10 +382,22 @@ module TestBench_LS(
 			.wrfull(fifoFULL[3])
 			);
 
+			//port 3
+   primitiveFIFO fifo4 (
+			.aclr(~rstn | ctrl_sig[1]),
+			.data(fifoDATA[4]),
+			.rdclk(clk_pll_125),
+			.rdreq(fifoRR[4]),
+			.wrclk(clk_200),
+			.wrreq(fifoWR[4]),
+			.q(fifoQ[4]),
+			.rdempty(fifoEMPTY[4]),
+			.wrfull(fifoFULL[4])
+			);
 
    //FIFO to Transfer data from NIOS to external RAM
    FifoToRAM fifoToRAM0 (
-			 .aclr(~rstn),
+			 .aclr(~rstn | ctrl_sig[1]),
 			 .data(ToRamDATA),
 			 .rdclk(clk_200),
 			 .rdreq(ToRamRR),
@@ -464,7 +476,7 @@ module TestBench_LS(
    Controller c0    (
 		     .clkin_50          (OSC_50_BANK6),
 		     .clkin_125         (clk_pll_125),
-		     .cpu_resetn        ( rstn),
+		     .cpu_resetn        ( rstn | ~ctrl_sig[1]),
 		     .enet_rxp          ( ETH_RX_p ),
 		     .mdio_sin          ( mdio_sin ),
 		     .USER_DIPSW        ( SW ),
@@ -535,6 +547,16 @@ module TestBench_LS(
 	interrupt[3] = 1'b0;
      end
 
+	   always @ (posedge clk_pll_200)
+     if(ctrl_sig[0]) begin //IN BUST
+	if (fifoWRusedW[4] < 11'h80) interrupt[4] = 1'b1; //if I have less than 128 words, ask NIOS to transfer
+	else interrupt[4] = 1'b0;
+     end
+     else begin
+	interrupt[4] = 1'b0;
+     end
+
+	  
 always @ (FSMReset) begin
    
          case (FSMReset)
