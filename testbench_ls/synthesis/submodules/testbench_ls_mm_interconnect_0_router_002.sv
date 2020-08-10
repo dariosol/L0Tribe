@@ -47,23 +47,23 @@ module testbench_ls_mm_interconnect_0_router_002_default_decode
      parameter DEFAULT_CHANNEL = 0,
                DEFAULT_WR_CHANNEL = -1,
                DEFAULT_RD_CHANNEL = -1,
-               DEFAULT_DESTID = 3 
+               DEFAULT_DESTID = 2 
    )
-  (output [352 - 349 : 0] default_destination_id,
-   output [12-1 : 0] default_wr_channel,
-   output [12-1 : 0] default_rd_channel,
-   output [12-1 : 0] default_src_channel
+  (output [355 - 351 : 0] default_destination_id,
+   output [26-1 : 0] default_wr_channel,
+   output [26-1 : 0] default_rd_channel,
+   output [26-1 : 0] default_src_channel
   );
 
   assign default_destination_id = 
-    DEFAULT_DESTID[352 - 349 : 0];
+    DEFAULT_DESTID[355 - 351 : 0];
 
   generate
     if (DEFAULT_CHANNEL == -1) begin : no_default_channel_assignment
       assign default_src_channel = '0;
     end
     else begin : default_channel_assignment
-      assign default_src_channel = 12'b1 << DEFAULT_CHANNEL;
+      assign default_src_channel = 26'b1 << DEFAULT_CHANNEL;
     end
   endgenerate
 
@@ -73,8 +73,8 @@ module testbench_ls_mm_interconnect_0_router_002_default_decode
       assign default_rd_channel = '0;
     end
     else begin : default_rw_channel_assignment
-      assign default_wr_channel = 12'b1 << DEFAULT_WR_CHANNEL;
-      assign default_rd_channel = 12'b1 << DEFAULT_RD_CHANNEL;
+      assign default_wr_channel = 26'b1 << DEFAULT_WR_CHANNEL;
+      assign default_rd_channel = 26'b1 << DEFAULT_RD_CHANNEL;
     end
   endgenerate
 
@@ -93,7 +93,7 @@ module testbench_ls_mm_interconnect_0_router_002
     // Command Sink (Input)
     // -------------------
     input                       sink_valid,
-    input  [366-1 : 0]    sink_data,
+    input  [369-1 : 0]    sink_data,
     input                       sink_startofpacket,
     input                       sink_endofpacket,
     output                      sink_ready,
@@ -102,8 +102,8 @@ module testbench_ls_mm_interconnect_0_router_002
     // Command Source (Output)
     // -------------------
     output                          src_valid,
-    output reg [366-1    : 0] src_data,
-    output reg [12-1 : 0] src_channel,
+    output reg [369-1    : 0] src_data,
+    output reg [26-1 : 0] src_channel,
     output                          src_startofpacket,
     output                          src_endofpacket,
     input                           src_ready
@@ -112,18 +112,18 @@ module testbench_ls_mm_interconnect_0_router_002
     // -------------------------------------------------------
     // Local parameters and variables
     // -------------------------------------------------------
-    localparam PKT_ADDR_H = 318;
+    localparam PKT_ADDR_H = 319;
     localparam PKT_ADDR_L = 288;
-    localparam PKT_DEST_ID_H = 352;
-    localparam PKT_DEST_ID_L = 349;
-    localparam PKT_PROTECTION_H = 356;
-    localparam PKT_PROTECTION_L = 354;
-    localparam ST_DATA_W = 366;
-    localparam ST_CHANNEL_W = 12;
+    localparam PKT_DEST_ID_H = 355;
+    localparam PKT_DEST_ID_L = 351;
+    localparam PKT_PROTECTION_H = 359;
+    localparam PKT_PROTECTION_L = 357;
+    localparam ST_DATA_W = 369;
+    localparam ST_CHANNEL_W = 26;
     localparam DECODER_TYPE = 0;
 
-    localparam PKT_TRANS_WRITE = 321;
-    localparam PKT_TRANS_READ  = 322;
+    localparam PKT_TRANS_WRITE = 322;
+    localparam PKT_TRANS_READ  = 323;
 
     localparam PKT_ADDR_W = PKT_ADDR_H-PKT_ADDR_L + 1;
     localparam PKT_DEST_ID_W = PKT_DEST_ID_H-PKT_DEST_ID_L + 1;
@@ -159,7 +159,7 @@ module testbench_ls_mm_interconnect_0_router_002
     assign src_startofpacket = sink_startofpacket;
     assign src_endofpacket   = sink_endofpacket;
     wire [PKT_DEST_ID_W-1:0] default_destid;
-    wire [12-1 : 0] default_src_channel;
+    wire [26-1 : 0] default_src_channel;
 
 
 
@@ -185,8 +185,8 @@ module testbench_ls_mm_interconnect_0_router_002
            
          
           // ( 0 .. 40000000 )
-          src_channel = 12'b1;
-          src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 3;
+          src_channel = 26'b1;
+          src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 2;
 	     
         
 

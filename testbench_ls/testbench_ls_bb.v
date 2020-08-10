@@ -6,6 +6,15 @@ module testbench_ls (
 	ddr2_ram_status_local_init_done,
 	ddr2_ram_status_local_cal_success,
 	ddr2_ram_status_local_cal_fail,
+	dma_fifo_subsystem_2_fifo_stream_conduit_end_fifo_data,
+	dma_fifo_subsystem_2_fifo_stream_conduit_end_fifo_write,
+	dma_fifo_subsystem_2_fifo_stream_conduit_end_fifo_send,
+	dma_fifo_subsystem_3_fifo_stream_conduit_end_fifo_data,
+	dma_fifo_subsystem_3_fifo_stream_conduit_end_fifo_write,
+	dma_fifo_subsystem_3_fifo_stream_conduit_end_fifo_send,
+	dma_fifo_subsystem_4_fifo_stream_conduit_end_fifo_data,
+	dma_fifo_subsystem_4_fifo_stream_conduit_end_fifo_write,
+	dma_fifo_subsystem_4_fifo_stream_conduit_end_fifo_send,
 	fifo_stream_fifo_data,
 	fifo_stream_fifo_write,
 	fifo_stream_fifo_send,
@@ -16,6 +25,11 @@ module testbench_ls (
 	from_fifo_fifo_read,
 	from_fifo_fifo_empty,
 	from_fifo_fifo_full,
+	input_io_0_external_connection_export,
+	input_io_1_external_connection_export,
+	input_io_2_external_connection_export,
+	input_io_3_external_connection_export,
+	input_io_4_external_connection_export,
 	input_io_external_connection_export,
 	memory_mem_a,
 	memory_mem_ba,
@@ -50,16 +64,7 @@ module testbench_ls (
 	oct_1_rdn,
 	oct_1_rup,
 	pilot_sig_external_connection_export,
-	reset_reset_n,
-	dma_fifo_subsystem_2_fifo_stream_conduit_end_fifo_data,
-	dma_fifo_subsystem_2_fifo_stream_conduit_end_fifo_write,
-	dma_fifo_subsystem_2_fifo_stream_conduit_end_fifo_send,
-	dma_fifo_subsystem_3_fifo_stream_conduit_end_fifo_data,
-	dma_fifo_subsystem_3_fifo_stream_conduit_end_fifo_write,
-	dma_fifo_subsystem_3_fifo_stream_conduit_end_fifo_send,
-	dma_fifo_subsystem_4_fifo_stream_conduit_end_fifo_data,
-	dma_fifo_subsystem_4_fifo_stream_conduit_end_fifo_write,
-	dma_fifo_subsystem_4_fifo_stream_conduit_end_fifo_send);	
+	reset_reset_n);	
 
 	output		clk_200_out_clk_clk;
 	input		clk_50_clk;
@@ -67,6 +72,15 @@ module testbench_ls (
 	output		ddr2_ram_status_local_init_done;
 	output		ddr2_ram_status_local_cal_success;
 	output		ddr2_ram_status_local_cal_fail;
+	output	[255:0]	dma_fifo_subsystem_2_fifo_stream_conduit_end_fifo_data;
+	output		dma_fifo_subsystem_2_fifo_stream_conduit_end_fifo_write;
+	output		dma_fifo_subsystem_2_fifo_stream_conduit_end_fifo_send;
+	output	[255:0]	dma_fifo_subsystem_3_fifo_stream_conduit_end_fifo_data;
+	output		dma_fifo_subsystem_3_fifo_stream_conduit_end_fifo_write;
+	output		dma_fifo_subsystem_3_fifo_stream_conduit_end_fifo_send;
+	output	[255:0]	dma_fifo_subsystem_4_fifo_stream_conduit_end_fifo_data;
+	output		dma_fifo_subsystem_4_fifo_stream_conduit_end_fifo_write;
+	output		dma_fifo_subsystem_4_fifo_stream_conduit_end_fifo_send;
 	output	[255:0]	fifo_stream_fifo_data;
 	output		fifo_stream_fifo_write;
 	output		fifo_stream_fifo_send;
@@ -77,6 +91,11 @@ module testbench_ls (
 	output		from_fifo_fifo_read;
 	input		from_fifo_fifo_empty;
 	input		from_fifo_fifo_full;
+	input	[7:0]	input_io_0_external_connection_export;
+	input	[7:0]	input_io_1_external_connection_export;
+	input	[7:0]	input_io_2_external_connection_export;
+	input	[7:0]	input_io_3_external_connection_export;
+	input	[7:0]	input_io_4_external_connection_export;
 	input	[7:0]	input_io_external_connection_export;
 	output	[13:0]	memory_mem_a;
 	output	[2:0]	memory_mem_ba;
@@ -112,13 +131,4 @@ module testbench_ls (
 	input		oct_1_rup;
 	input	[7:0]	pilot_sig_external_connection_export;
 	input		reset_reset_n;
-	output	[255:0]	dma_fifo_subsystem_2_fifo_stream_conduit_end_fifo_data;
-	output		dma_fifo_subsystem_2_fifo_stream_conduit_end_fifo_write;
-	output		dma_fifo_subsystem_2_fifo_stream_conduit_end_fifo_send;
-	output	[255:0]	dma_fifo_subsystem_3_fifo_stream_conduit_end_fifo_data;
-	output		dma_fifo_subsystem_3_fifo_stream_conduit_end_fifo_write;
-	output		dma_fifo_subsystem_3_fifo_stream_conduit_end_fifo_send;
-	output	[255:0]	dma_fifo_subsystem_4_fifo_stream_conduit_end_fifo_data;
-	output		dma_fifo_subsystem_4_fifo_stream_conduit_end_fifo_write;
-	output		dma_fifo_subsystem_4_fifo_stream_conduit_end_fifo_send;
 endmodule

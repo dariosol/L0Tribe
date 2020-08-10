@@ -29,6 +29,11 @@ module testbench_ls (
 		output wire         from_fifo_fifo_read,                                     //                                             .fifo_read
 		input  wire         from_fifo_fifo_empty,                                    //                                             .fifo_empty
 		input  wire         from_fifo_fifo_full,                                     //                                             .fifo_full
+		input  wire [7:0]   input_io_0_external_connection_export,                   //               input_io_0_external_connection.export
+		input  wire [7:0]   input_io_1_external_connection_export,                   //               input_io_1_external_connection.export
+		input  wire [7:0]   input_io_2_external_connection_export,                   //               input_io_2_external_connection.export
+		input  wire [7:0]   input_io_3_external_connection_export,                   //               input_io_3_external_connection.export
+		input  wire [7:0]   input_io_4_external_connection_export,                   //               input_io_4_external_connection.export
 		input  wire [7:0]   input_io_external_connection_export,                     //                 input_io_external_connection.export
 		output wire [13:0]  memory_mem_a,                                            //                                       memory.mem_a
 		output wire [2:0]   memory_mem_ba,                                           //                                             .mem_ba
@@ -82,32 +87,30 @@ module testbench_ls (
 	wire   [31:0] nios_cpu_data_master_writedata;                                          // nios_cpu:d_writedata -> mm_interconnect_0:nios_cpu_data_master_writedata
 	wire  [255:0] dma_fifo_susbystem_dma_mm_read_readdata;                                 // mm_interconnect_0:dma_fifo_susbystem_dma_mm_read_readdata -> dma_fifo_susbystem:dma_mm_read_readdata
 	wire          dma_fifo_susbystem_dma_mm_read_waitrequest;                              // mm_interconnect_0:dma_fifo_susbystem_dma_mm_read_waitrequest -> dma_fifo_susbystem:dma_mm_read_waitrequest
-	wire   [30:0] dma_fifo_susbystem_dma_mm_read_address;                                  // dma_fifo_susbystem:dma_mm_read_address -> mm_interconnect_0:dma_fifo_susbystem_dma_mm_read_address
+	wire   [29:0] dma_fifo_susbystem_dma_mm_read_address;                                  // dma_fifo_susbystem:dma_mm_read_address -> mm_interconnect_0:dma_fifo_susbystem_dma_mm_read_address
 	wire          dma_fifo_susbystem_dma_mm_read_read;                                     // dma_fifo_susbystem:dma_mm_read_read -> mm_interconnect_0:dma_fifo_susbystem_dma_mm_read_read
 	wire   [31:0] dma_fifo_susbystem_dma_mm_read_byteenable;                               // dma_fifo_susbystem:dma_mm_read_byteenable -> mm_interconnect_0:dma_fifo_susbystem_dma_mm_read_byteenable
 	wire          dma_fifo_susbystem_dma_mm_read_readdatavalid;                            // mm_interconnect_0:dma_fifo_susbystem_dma_mm_read_readdatavalid -> dma_fifo_susbystem:dma_mm_read_readdatavalid
 	wire    [2:0] dma_fifo_susbystem_dma_mm_read_burstcount;                               // dma_fifo_susbystem:dma_mm_read_burstcount -> mm_interconnect_0:dma_fifo_susbystem_dma_mm_read_burstcount
 	wire  [255:0] dma_fifo_subsystem_1_dma_mm_read_readdata;                               // mm_interconnect_0:dma_fifo_subsystem_1_dma_mm_read_readdata -> dma_fifo_subsystem_1:dma_mm_read_readdata
 	wire          dma_fifo_subsystem_1_dma_mm_read_waitrequest;                            // mm_interconnect_0:dma_fifo_subsystem_1_dma_mm_read_waitrequest -> dma_fifo_subsystem_1:dma_mm_read_waitrequest
-	wire   [30:0] dma_fifo_subsystem_1_dma_mm_read_address;                                // dma_fifo_subsystem_1:dma_mm_read_address -> mm_interconnect_0:dma_fifo_subsystem_1_dma_mm_read_address
+	wire   [29:0] dma_fifo_subsystem_1_dma_mm_read_address;                                // dma_fifo_subsystem_1:dma_mm_read_address -> mm_interconnect_0:dma_fifo_subsystem_1_dma_mm_read_address
 	wire          dma_fifo_subsystem_1_dma_mm_read_read;                                   // dma_fifo_subsystem_1:dma_mm_read_read -> mm_interconnect_0:dma_fifo_subsystem_1_dma_mm_read_read
 	wire   [31:0] dma_fifo_subsystem_1_dma_mm_read_byteenable;                             // dma_fifo_subsystem_1:dma_mm_read_byteenable -> mm_interconnect_0:dma_fifo_subsystem_1_dma_mm_read_byteenable
 	wire          dma_fifo_subsystem_1_dma_mm_read_readdatavalid;                          // mm_interconnect_0:dma_fifo_subsystem_1_dma_mm_read_readdatavalid -> dma_fifo_subsystem_1:dma_mm_read_readdatavalid
 	wire    [2:0] dma_fifo_subsystem_1_dma_mm_read_burstcount;                             // dma_fifo_subsystem_1:dma_mm_read_burstcount -> mm_interconnect_0:dma_fifo_subsystem_1_dma_mm_read_burstcount
 	wire  [255:0] dma_fifo_subsystem_2_dma_mm_read_readdata;                               // mm_interconnect_0:dma_fifo_subsystem_2_dma_mm_read_readdata -> dma_fifo_subsystem_2:dma_mm_read_readdata
 	wire          dma_fifo_subsystem_2_dma_mm_read_waitrequest;                            // mm_interconnect_0:dma_fifo_subsystem_2_dma_mm_read_waitrequest -> dma_fifo_subsystem_2:dma_mm_read_waitrequest
-	wire   [30:0] dma_fifo_subsystem_2_dma_mm_read_address;                                // dma_fifo_subsystem_2:dma_mm_read_address -> mm_interconnect_0:dma_fifo_subsystem_2_dma_mm_read_address
+	wire   [29:0] dma_fifo_subsystem_2_dma_mm_read_address;                                // dma_fifo_subsystem_2:dma_mm_read_address -> mm_interconnect_0:dma_fifo_subsystem_2_dma_mm_read_address
 	wire          dma_fifo_subsystem_2_dma_mm_read_read;                                   // dma_fifo_subsystem_2:dma_mm_read_read -> mm_interconnect_0:dma_fifo_subsystem_2_dma_mm_read_read
 	wire   [31:0] dma_fifo_subsystem_2_dma_mm_read_byteenable;                             // dma_fifo_subsystem_2:dma_mm_read_byteenable -> mm_interconnect_0:dma_fifo_subsystem_2_dma_mm_read_byteenable
 	wire          dma_fifo_subsystem_2_dma_mm_read_readdatavalid;                          // mm_interconnect_0:dma_fifo_subsystem_2_dma_mm_read_readdatavalid -> dma_fifo_subsystem_2:dma_mm_read_readdatavalid
 	wire    [2:0] dma_fifo_subsystem_2_dma_mm_read_burstcount;                             // dma_fifo_subsystem_2:dma_mm_read_burstcount -> mm_interconnect_0:dma_fifo_subsystem_2_dma_mm_read_burstcount
-	wire  [255:0] dma_fifo_subsystem_3_dma_mm_read_readdata;                               // mm_interconnect_0:dma_fifo_subsystem_3_dma_mm_read_readdata -> dma_fifo_subsystem_3:dma_mm_read_readdata
-	wire          dma_fifo_subsystem_3_dma_mm_read_waitrequest;                            // mm_interconnect_0:dma_fifo_subsystem_3_dma_mm_read_waitrequest -> dma_fifo_subsystem_3:dma_mm_read_waitrequest
-	wire   [30:0] dma_fifo_subsystem_3_dma_mm_read_address;                                // dma_fifo_subsystem_3:dma_mm_read_address -> mm_interconnect_0:dma_fifo_subsystem_3_dma_mm_read_address
-	wire          dma_fifo_subsystem_3_dma_mm_read_read;                                   // dma_fifo_subsystem_3:dma_mm_read_read -> mm_interconnect_0:dma_fifo_subsystem_3_dma_mm_read_read
-	wire   [31:0] dma_fifo_subsystem_3_dma_mm_read_byteenable;                             // dma_fifo_subsystem_3:dma_mm_read_byteenable -> mm_interconnect_0:dma_fifo_subsystem_3_dma_mm_read_byteenable
-	wire          dma_fifo_subsystem_3_dma_mm_read_readdatavalid;                          // mm_interconnect_0:dma_fifo_subsystem_3_dma_mm_read_readdatavalid -> dma_fifo_subsystem_3:dma_mm_read_readdatavalid
-	wire    [2:0] dma_fifo_subsystem_3_dma_mm_read_burstcount;                             // dma_fifo_subsystem_3:dma_mm_read_burstcount -> mm_interconnect_0:dma_fifo_subsystem_3_dma_mm_read_burstcount
+	wire   [31:0] nios_cpu_instruction_master_readdata;                                    // mm_interconnect_0:nios_cpu_instruction_master_readdata -> nios_cpu:i_readdata
+	wire          nios_cpu_instruction_master_waitrequest;                                 // mm_interconnect_0:nios_cpu_instruction_master_waitrequest -> nios_cpu:i_waitrequest
+	wire   [31:0] nios_cpu_instruction_master_address;                                     // nios_cpu:i_address -> mm_interconnect_0:nios_cpu_instruction_master_address
+	wire          nios_cpu_instruction_master_read;                                        // nios_cpu:i_read -> mm_interconnect_0:nios_cpu_instruction_master_read
+	wire          nios_cpu_instruction_master_readdatavalid;                               // mm_interconnect_0:nios_cpu_instruction_master_readdatavalid -> nios_cpu:i_readdatavalid
 	wire  [255:0] dma_fifo_subsystem_4_dma_mm_read_readdata;                               // mm_interconnect_0:dma_fifo_subsystem_4_dma_mm_read_readdata -> dma_fifo_subsystem_4:dma_mm_read_readdata
 	wire          dma_fifo_subsystem_4_dma_mm_read_waitrequest;                            // mm_interconnect_0:dma_fifo_subsystem_4_dma_mm_read_waitrequest -> dma_fifo_subsystem_4:dma_mm_read_waitrequest
 	wire   [30:0] dma_fifo_subsystem_4_dma_mm_read_address;                                // dma_fifo_subsystem_4:dma_mm_read_address -> mm_interconnect_0:dma_fifo_subsystem_4_dma_mm_read_address
@@ -115,11 +118,13 @@ module testbench_ls (
 	wire   [31:0] dma_fifo_subsystem_4_dma_mm_read_byteenable;                             // dma_fifo_subsystem_4:dma_mm_read_byteenable -> mm_interconnect_0:dma_fifo_subsystem_4_dma_mm_read_byteenable
 	wire          dma_fifo_subsystem_4_dma_mm_read_readdatavalid;                          // mm_interconnect_0:dma_fifo_subsystem_4_dma_mm_read_readdatavalid -> dma_fifo_subsystem_4:dma_mm_read_readdatavalid
 	wire    [2:0] dma_fifo_subsystem_4_dma_mm_read_burstcount;                             // dma_fifo_subsystem_4:dma_mm_read_burstcount -> mm_interconnect_0:dma_fifo_subsystem_4_dma_mm_read_burstcount
-	wire   [31:0] nios_cpu_instruction_master_readdata;                                    // mm_interconnect_0:nios_cpu_instruction_master_readdata -> nios_cpu:i_readdata
-	wire          nios_cpu_instruction_master_waitrequest;                                 // mm_interconnect_0:nios_cpu_instruction_master_waitrequest -> nios_cpu:i_waitrequest
-	wire   [31:0] nios_cpu_instruction_master_address;                                     // nios_cpu:i_address -> mm_interconnect_0:nios_cpu_instruction_master_address
-	wire          nios_cpu_instruction_master_read;                                        // nios_cpu:i_read -> mm_interconnect_0:nios_cpu_instruction_master_read
-	wire          nios_cpu_instruction_master_readdatavalid;                               // mm_interconnect_0:nios_cpu_instruction_master_readdatavalid -> nios_cpu:i_readdatavalid
+	wire  [255:0] dma_fifo_subsystem_3_dma_mm_read_readdata;                               // mm_interconnect_0:dma_fifo_subsystem_3_dma_mm_read_readdata -> dma_fifo_subsystem_3:dma_mm_read_readdata
+	wire          dma_fifo_subsystem_3_dma_mm_read_waitrequest;                            // mm_interconnect_0:dma_fifo_subsystem_3_dma_mm_read_waitrequest -> dma_fifo_subsystem_3:dma_mm_read_waitrequest
+	wire   [30:0] dma_fifo_subsystem_3_dma_mm_read_address;                                // dma_fifo_subsystem_3:dma_mm_read_address -> mm_interconnect_0:dma_fifo_subsystem_3_dma_mm_read_address
+	wire          dma_fifo_subsystem_3_dma_mm_read_read;                                   // dma_fifo_subsystem_3:dma_mm_read_read -> mm_interconnect_0:dma_fifo_subsystem_3_dma_mm_read_read
+	wire   [31:0] dma_fifo_subsystem_3_dma_mm_read_byteenable;                             // dma_fifo_subsystem_3:dma_mm_read_byteenable -> mm_interconnect_0:dma_fifo_subsystem_3_dma_mm_read_byteenable
+	wire          dma_fifo_subsystem_3_dma_mm_read_readdatavalid;                          // mm_interconnect_0:dma_fifo_subsystem_3_dma_mm_read_readdatavalid -> dma_fifo_subsystem_3:dma_mm_read_readdatavalid
+	wire    [2:0] dma_fifo_subsystem_3_dma_mm_read_burstcount;                             // dma_fifo_subsystem_3:dma_mm_read_burstcount -> mm_interconnect_0:dma_fifo_subsystem_3_dma_mm_read_burstcount
 	wire          mm_interconnect_0_ddr2_ram_avl_beginbursttransfer;                       // mm_interconnect_0:ddr2_ram_avl_beginbursttransfer -> ddr2_ram:avl_burstbegin
 	wire  [255:0] mm_interconnect_0_ddr2_ram_avl_readdata;                                 // ddr2_ram:avl_rdata -> mm_interconnect_0:ddr2_ram_avl_readdata
 	wire          mm_interconnect_0_ddr2_ram_avl_waitrequest;                              // ddr2_ram:avl_ready -> mm_interconnect_0:ddr2_ram_avl_waitrequest
@@ -238,8 +243,36 @@ module testbench_ls (
 	wire    [1:0] mm_interconnect_0_pilot_sig_s1_address;                                  // mm_interconnect_0:pilot_sig_s1_address -> pilot_sig:address
 	wire          mm_interconnect_0_pilot_sig_s1_write;                                    // mm_interconnect_0:pilot_sig_s1_write -> pilot_sig:write_n
 	wire   [31:0] mm_interconnect_0_pilot_sig_s1_writedata;                                // mm_interconnect_0:pilot_sig_s1_writedata -> pilot_sig:writedata
+	wire          mm_interconnect_0_input_io_s1_chipselect;                                // mm_interconnect_0:input_IO_s1_chipselect -> input_IO:chipselect
 	wire   [31:0] mm_interconnect_0_input_io_s1_readdata;                                  // input_IO:readdata -> mm_interconnect_0:input_IO_s1_readdata
 	wire    [1:0] mm_interconnect_0_input_io_s1_address;                                   // mm_interconnect_0:input_IO_s1_address -> input_IO:address
+	wire          mm_interconnect_0_input_io_s1_write;                                     // mm_interconnect_0:input_IO_s1_write -> input_IO:write_n
+	wire   [31:0] mm_interconnect_0_input_io_s1_writedata;                                 // mm_interconnect_0:input_IO_s1_writedata -> input_IO:writedata
+	wire          mm_interconnect_0_input_io_0_s1_chipselect;                              // mm_interconnect_0:input_IO_0_s1_chipselect -> input_IO_0:chipselect
+	wire   [31:0] mm_interconnect_0_input_io_0_s1_readdata;                                // input_IO_0:readdata -> mm_interconnect_0:input_IO_0_s1_readdata
+	wire    [1:0] mm_interconnect_0_input_io_0_s1_address;                                 // mm_interconnect_0:input_IO_0_s1_address -> input_IO_0:address
+	wire          mm_interconnect_0_input_io_0_s1_write;                                   // mm_interconnect_0:input_IO_0_s1_write -> input_IO_0:write_n
+	wire   [31:0] mm_interconnect_0_input_io_0_s1_writedata;                               // mm_interconnect_0:input_IO_0_s1_writedata -> input_IO_0:writedata
+	wire          mm_interconnect_0_input_io_1_s1_chipselect;                              // mm_interconnect_0:input_IO_1_s1_chipselect -> input_IO_1:chipselect
+	wire   [31:0] mm_interconnect_0_input_io_1_s1_readdata;                                // input_IO_1:readdata -> mm_interconnect_0:input_IO_1_s1_readdata
+	wire    [1:0] mm_interconnect_0_input_io_1_s1_address;                                 // mm_interconnect_0:input_IO_1_s1_address -> input_IO_1:address
+	wire          mm_interconnect_0_input_io_1_s1_write;                                   // mm_interconnect_0:input_IO_1_s1_write -> input_IO_1:write_n
+	wire   [31:0] mm_interconnect_0_input_io_1_s1_writedata;                               // mm_interconnect_0:input_IO_1_s1_writedata -> input_IO_1:writedata
+	wire          mm_interconnect_0_input_io_2_s1_chipselect;                              // mm_interconnect_0:input_IO_2_s1_chipselect -> input_IO_2:chipselect
+	wire   [31:0] mm_interconnect_0_input_io_2_s1_readdata;                                // input_IO_2:readdata -> mm_interconnect_0:input_IO_2_s1_readdata
+	wire    [1:0] mm_interconnect_0_input_io_2_s1_address;                                 // mm_interconnect_0:input_IO_2_s1_address -> input_IO_2:address
+	wire          mm_interconnect_0_input_io_2_s1_write;                                   // mm_interconnect_0:input_IO_2_s1_write -> input_IO_2:write_n
+	wire   [31:0] mm_interconnect_0_input_io_2_s1_writedata;                               // mm_interconnect_0:input_IO_2_s1_writedata -> input_IO_2:writedata
+	wire          mm_interconnect_0_input_io_3_s1_chipselect;                              // mm_interconnect_0:input_IO_3_s1_chipselect -> input_IO_3:chipselect
+	wire   [31:0] mm_interconnect_0_input_io_3_s1_readdata;                                // input_IO_3:readdata -> mm_interconnect_0:input_IO_3_s1_readdata
+	wire    [1:0] mm_interconnect_0_input_io_3_s1_address;                                 // mm_interconnect_0:input_IO_3_s1_address -> input_IO_3:address
+	wire          mm_interconnect_0_input_io_3_s1_write;                                   // mm_interconnect_0:input_IO_3_s1_write -> input_IO_3:write_n
+	wire   [31:0] mm_interconnect_0_input_io_3_s1_writedata;                               // mm_interconnect_0:input_IO_3_s1_writedata -> input_IO_3:writedata
+	wire          mm_interconnect_0_input_io_4_s1_chipselect;                              // mm_interconnect_0:input_IO_4_s1_chipselect -> input_IO_4:chipselect
+	wire   [31:0] mm_interconnect_0_input_io_4_s1_readdata;                                // input_IO_4:readdata -> mm_interconnect_0:input_IO_4_s1_readdata
+	wire    [1:0] mm_interconnect_0_input_io_4_s1_address;                                 // mm_interconnect_0:input_IO_4_s1_address -> input_IO_4:address
+	wire          mm_interconnect_0_input_io_4_s1_write;                                   // mm_interconnect_0:input_IO_4_s1_write -> input_IO_4:write_n
+	wire   [31:0] mm_interconnect_0_input_io_4_s1_writedata;                               // mm_interconnect_0:input_IO_4_s1_writedata -> input_IO_4:writedata
 	wire          irq_mapper_receiver0_irq;                                                // from_ETH_to_DDR:ETH_DMA_csr_irq_irq -> irq_mapper:receiver0_irq
 	wire          irq_mapper_receiver1_irq;                                                // dma_fifo_susbystem:dma_csr_irq_irq -> irq_mapper:receiver1_irq
 	wire          irq_mapper_receiver2_irq;                                                // dma_fifo_subsystem_1:dma_csr_irq_irq -> irq_mapper:receiver2_irq
@@ -248,9 +281,8 @@ module testbench_ls (
 	wire          irq_mapper_receiver5_irq;                                                // dma_fifo_subsystem_4:dma_csr_irq_irq -> irq_mapper:receiver5_irq
 	wire          irq_mapper_receiver6_irq;                                                // jtag:av_irq -> irq_mapper:receiver6_irq
 	wire          irq_mapper_receiver7_irq;                                                // sys_timer:irq -> irq_mapper:receiver7_irq
-	wire          irq_mapper_receiver8_irq;                                                // pilot_sig:irq -> irq_mapper:receiver8_irq
 	wire   [31:0] nios_cpu_irq_irq;                                                        // irq_mapper:sender_irq -> nios_cpu:irq
-	wire          rst_controller_reset_out_reset;                                          // rst_controller:reset_out -> [ctrl_sig:reset_n, dma_fifo_subsystem_1:dma_reset_n_reset_n, dma_fifo_subsystem_1:fifo_stream_reset_reset_n, dma_fifo_subsystem_2:dma_reset_n_reset_n, dma_fifo_subsystem_2:fifo_stream_reset_reset_n, dma_fifo_subsystem_3:dma_reset_n_reset_n, dma_fifo_subsystem_3:fifo_stream_reset_reset_n, dma_fifo_subsystem_4:dma_reset_n_reset_n, dma_fifo_subsystem_4:fifo_stream_reset_reset_n, dma_fifo_susbystem:dma_reset_n_reset_n, dma_fifo_susbystem:fifo_stream_reset_reset_n, input_IO:reset_n, irq_mapper:reset, jtag:rst_n, mm_interconnect_0:from_ETH_to_DDR_reset_reset_bridge_in_reset_reset, mm_interconnect_0:nios_cpu_reset_reset_bridge_in_reset_reset, nios_cpu:reset_n, pilot_sig:reset_n, rst_translator:in_reset, sys_timer:reset_n, system_ram:reset]
+	wire          rst_controller_reset_out_reset;                                          // rst_controller:reset_out -> [ctrl_sig:reset_n, dma_fifo_subsystem_1:dma_reset_n_reset_n, dma_fifo_subsystem_1:fifo_stream_reset_reset_n, dma_fifo_subsystem_2:dma_reset_n_reset_n, dma_fifo_subsystem_2:fifo_stream_reset_reset_n, dma_fifo_subsystem_3:dma_reset_n_reset_n, dma_fifo_subsystem_3:fifo_stream_reset_reset_n, dma_fifo_subsystem_4:dma_reset_n_reset_n, dma_fifo_subsystem_4:fifo_stream_reset_reset_n, dma_fifo_susbystem:dma_reset_n_reset_n, dma_fifo_susbystem:fifo_stream_reset_reset_n, input_IO:reset_n, input_IO_0:reset_n, input_IO_1:reset_n, input_IO_2:reset_n, input_IO_3:reset_n, input_IO_4:reset_n, irq_mapper:reset, jtag:rst_n, mm_interconnect_0:from_ETH_to_DDR_reset_reset_bridge_in_reset_reset, mm_interconnect_0:nios_cpu_reset_reset_bridge_in_reset_reset, nios_cpu:reset_n, pilot_sig:reset_n, rst_translator:in_reset, sys_timer:reset_n, system_ram:reset]
 	wire          rst_controller_reset_out_reset_req;                                      // rst_controller:reset_req -> [nios_cpu:reset_req, rst_translator:reset_req_in, system_ram:reset_req]
 	wire          rst_controller_001_reset_out_reset;                                      // rst_controller_001:reset_out -> ddr2_ram:soft_reset_n
 	wire          nios_cpu_debug_reset_request_reset;                                      // nios_cpu:debug_reset_request -> [rst_controller_001:reset_in1, rst_controller_002:reset_in1, rst_controller_003:reset_in1, rst_controller_004:reset_in1]
@@ -513,11 +545,69 @@ module testbench_ls (
 	);
 
 	testbench_ls_input_IO input_io (
-		.clk      (clk_200_out_clk_clk),                    //                 clk.clk
-		.reset_n  (~rst_controller_reset_out_reset),        //               reset.reset_n
-		.address  (mm_interconnect_0_input_io_s1_address),  //                  s1.address
-		.readdata (mm_interconnect_0_input_io_s1_readdata), //                    .readdata
-		.in_port  (input_io_external_connection_export)     // external_connection.export
+		.clk        (clk_200_out_clk_clk),                      //                 clk.clk
+		.reset_n    (~rst_controller_reset_out_reset),          //               reset.reset_n
+		.address    (mm_interconnect_0_input_io_s1_address),    //                  s1.address
+		.write_n    (~mm_interconnect_0_input_io_s1_write),     //                    .write_n
+		.writedata  (mm_interconnect_0_input_io_s1_writedata),  //                    .writedata
+		.chipselect (mm_interconnect_0_input_io_s1_chipselect), //                    .chipselect
+		.readdata   (mm_interconnect_0_input_io_s1_readdata),   //                    .readdata
+		.in_port    (input_io_external_connection_export)       // external_connection.export
+	);
+
+	testbench_ls_input_IO input_io_0 (
+		.clk        (clk_200_out_clk_clk),                        //                 clk.clk
+		.reset_n    (~rst_controller_reset_out_reset),            //               reset.reset_n
+		.address    (mm_interconnect_0_input_io_0_s1_address),    //                  s1.address
+		.write_n    (~mm_interconnect_0_input_io_0_s1_write),     //                    .write_n
+		.writedata  (mm_interconnect_0_input_io_0_s1_writedata),  //                    .writedata
+		.chipselect (mm_interconnect_0_input_io_0_s1_chipselect), //                    .chipselect
+		.readdata   (mm_interconnect_0_input_io_0_s1_readdata),   //                    .readdata
+		.in_port    (input_io_0_external_connection_export)       // external_connection.export
+	);
+
+	testbench_ls_input_IO input_io_1 (
+		.clk        (clk_200_out_clk_clk),                        //                 clk.clk
+		.reset_n    (~rst_controller_reset_out_reset),            //               reset.reset_n
+		.address    (mm_interconnect_0_input_io_1_s1_address),    //                  s1.address
+		.write_n    (~mm_interconnect_0_input_io_1_s1_write),     //                    .write_n
+		.writedata  (mm_interconnect_0_input_io_1_s1_writedata),  //                    .writedata
+		.chipselect (mm_interconnect_0_input_io_1_s1_chipselect), //                    .chipselect
+		.readdata   (mm_interconnect_0_input_io_1_s1_readdata),   //                    .readdata
+		.in_port    (input_io_1_external_connection_export)       // external_connection.export
+	);
+
+	testbench_ls_input_IO input_io_2 (
+		.clk        (clk_200_out_clk_clk),                        //                 clk.clk
+		.reset_n    (~rst_controller_reset_out_reset),            //               reset.reset_n
+		.address    (mm_interconnect_0_input_io_2_s1_address),    //                  s1.address
+		.write_n    (~mm_interconnect_0_input_io_2_s1_write),     //                    .write_n
+		.writedata  (mm_interconnect_0_input_io_2_s1_writedata),  //                    .writedata
+		.chipselect (mm_interconnect_0_input_io_2_s1_chipselect), //                    .chipselect
+		.readdata   (mm_interconnect_0_input_io_2_s1_readdata),   //                    .readdata
+		.in_port    (input_io_2_external_connection_export)       // external_connection.export
+	);
+
+	testbench_ls_input_IO input_io_3 (
+		.clk        (clk_200_out_clk_clk),                        //                 clk.clk
+		.reset_n    (~rst_controller_reset_out_reset),            //               reset.reset_n
+		.address    (mm_interconnect_0_input_io_3_s1_address),    //                  s1.address
+		.write_n    (~mm_interconnect_0_input_io_3_s1_write),     //                    .write_n
+		.writedata  (mm_interconnect_0_input_io_3_s1_writedata),  //                    .writedata
+		.chipselect (mm_interconnect_0_input_io_3_s1_chipselect), //                    .chipselect
+		.readdata   (mm_interconnect_0_input_io_3_s1_readdata),   //                    .readdata
+		.in_port    (input_io_3_external_connection_export)       // external_connection.export
+	);
+
+	testbench_ls_input_IO input_io_4 (
+		.clk        (clk_200_out_clk_clk),                        //                 clk.clk
+		.reset_n    (~rst_controller_reset_out_reset),            //               reset.reset_n
+		.address    (mm_interconnect_0_input_io_4_s1_address),    //                  s1.address
+		.write_n    (~mm_interconnect_0_input_io_4_s1_write),     //                    .write_n
+		.writedata  (mm_interconnect_0_input_io_4_s1_writedata),  //                    .writedata
+		.chipselect (mm_interconnect_0_input_io_4_s1_chipselect), //                    .chipselect
+		.readdata   (mm_interconnect_0_input_io_4_s1_readdata),   //                    .readdata
+		.in_port    (input_io_4_external_connection_export)       // external_connection.export
 	);
 
 	testbench_ls_jtag jtag (
@@ -572,8 +662,7 @@ module testbench_ls (
 		.writedata  (mm_interconnect_0_pilot_sig_s1_writedata),  //                    .writedata
 		.chipselect (mm_interconnect_0_pilot_sig_s1_chipselect), //                    .chipselect
 		.readdata   (mm_interconnect_0_pilot_sig_s1_readdata),   //                    .readdata
-		.in_port    (pilot_sig_external_connection_export),      // external_connection.export
-		.irq        (irq_mapper_receiver8_irq)                   //                 irq.irq
+		.in_port    (pilot_sig_external_connection_export)       // external_connection.export
 	);
 
 	testbench_ls_sys_timer sys_timer (
@@ -750,7 +839,35 @@ module testbench_ls (
 		.from_ETH_to_DDR_ETH_DMA_descriptor_slave_byteenable         (mm_interconnect_0_from_eth_to_ddr_eth_dma_descriptor_slave_byteenable),   //                                                      .byteenable
 		.from_ETH_to_DDR_ETH_DMA_descriptor_slave_waitrequest        (mm_interconnect_0_from_eth_to_ddr_eth_dma_descriptor_slave_waitrequest),  //                                                      .waitrequest
 		.input_IO_s1_address                                         (mm_interconnect_0_input_io_s1_address),                                   //                                           input_IO_s1.address
+		.input_IO_s1_write                                           (mm_interconnect_0_input_io_s1_write),                                     //                                                      .write
 		.input_IO_s1_readdata                                        (mm_interconnect_0_input_io_s1_readdata),                                  //                                                      .readdata
+		.input_IO_s1_writedata                                       (mm_interconnect_0_input_io_s1_writedata),                                 //                                                      .writedata
+		.input_IO_s1_chipselect                                      (mm_interconnect_0_input_io_s1_chipselect),                                //                                                      .chipselect
+		.input_IO_0_s1_address                                       (mm_interconnect_0_input_io_0_s1_address),                                 //                                         input_IO_0_s1.address
+		.input_IO_0_s1_write                                         (mm_interconnect_0_input_io_0_s1_write),                                   //                                                      .write
+		.input_IO_0_s1_readdata                                      (mm_interconnect_0_input_io_0_s1_readdata),                                //                                                      .readdata
+		.input_IO_0_s1_writedata                                     (mm_interconnect_0_input_io_0_s1_writedata),                               //                                                      .writedata
+		.input_IO_0_s1_chipselect                                    (mm_interconnect_0_input_io_0_s1_chipselect),                              //                                                      .chipselect
+		.input_IO_1_s1_address                                       (mm_interconnect_0_input_io_1_s1_address),                                 //                                         input_IO_1_s1.address
+		.input_IO_1_s1_write                                         (mm_interconnect_0_input_io_1_s1_write),                                   //                                                      .write
+		.input_IO_1_s1_readdata                                      (mm_interconnect_0_input_io_1_s1_readdata),                                //                                                      .readdata
+		.input_IO_1_s1_writedata                                     (mm_interconnect_0_input_io_1_s1_writedata),                               //                                                      .writedata
+		.input_IO_1_s1_chipselect                                    (mm_interconnect_0_input_io_1_s1_chipselect),                              //                                                      .chipselect
+		.input_IO_2_s1_address                                       (mm_interconnect_0_input_io_2_s1_address),                                 //                                         input_IO_2_s1.address
+		.input_IO_2_s1_write                                         (mm_interconnect_0_input_io_2_s1_write),                                   //                                                      .write
+		.input_IO_2_s1_readdata                                      (mm_interconnect_0_input_io_2_s1_readdata),                                //                                                      .readdata
+		.input_IO_2_s1_writedata                                     (mm_interconnect_0_input_io_2_s1_writedata),                               //                                                      .writedata
+		.input_IO_2_s1_chipselect                                    (mm_interconnect_0_input_io_2_s1_chipselect),                              //                                                      .chipselect
+		.input_IO_3_s1_address                                       (mm_interconnect_0_input_io_3_s1_address),                                 //                                         input_IO_3_s1.address
+		.input_IO_3_s1_write                                         (mm_interconnect_0_input_io_3_s1_write),                                   //                                                      .write
+		.input_IO_3_s1_readdata                                      (mm_interconnect_0_input_io_3_s1_readdata),                                //                                                      .readdata
+		.input_IO_3_s1_writedata                                     (mm_interconnect_0_input_io_3_s1_writedata),                               //                                                      .writedata
+		.input_IO_3_s1_chipselect                                    (mm_interconnect_0_input_io_3_s1_chipselect),                              //                                                      .chipselect
+		.input_IO_4_s1_address                                       (mm_interconnect_0_input_io_4_s1_address),                                 //                                         input_IO_4_s1.address
+		.input_IO_4_s1_write                                         (mm_interconnect_0_input_io_4_s1_write),                                   //                                                      .write
+		.input_IO_4_s1_readdata                                      (mm_interconnect_0_input_io_4_s1_readdata),                                //                                                      .readdata
+		.input_IO_4_s1_writedata                                     (mm_interconnect_0_input_io_4_s1_writedata),                               //                                                      .writedata
+		.input_IO_4_s1_chipselect                                    (mm_interconnect_0_input_io_4_s1_chipselect),                              //                                                      .chipselect
 		.jtag_avalon_jtag_slave_address                              (mm_interconnect_0_jtag_avalon_jtag_slave_address),                        //                                jtag_avalon_jtag_slave.address
 		.jtag_avalon_jtag_slave_write                                (mm_interconnect_0_jtag_avalon_jtag_slave_write),                          //                                                      .write
 		.jtag_avalon_jtag_slave_read                                 (mm_interconnect_0_jtag_avalon_jtag_slave_read),                           //                                                      .read
@@ -796,7 +913,6 @@ module testbench_ls (
 		.receiver5_irq (irq_mapper_receiver5_irq),       // receiver5.irq
 		.receiver6_irq (irq_mapper_receiver6_irq),       // receiver6.irq
 		.receiver7_irq (irq_mapper_receiver7_irq),       // receiver7.irq
-		.receiver8_irq (irq_mapper_receiver8_irq),       // receiver8.irq
 		.sender_irq    (nios_cpu_irq_irq)                //    sender.irq
 	);
 

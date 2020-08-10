@@ -1,68 +1,95 @@
-15:00:59 **** Incremental Build of configuration Nios II for project TestBench_FW ****
+11:33:20 **** Incremental Build of configuration Nios II for project TestBench_FW ****
 make all 
 Info: Building ../testbench_ls_bsp/
 make --no-print-directory -C ../testbench_ls_bsp/
 [BSP build complete]
 Info: Compiling hello_world.c to obj/default/hello_world.o
 nios2-elf-gcc -xc -MP -MMD -c -I../testbench_ls_bsp//HAL/inc -I../testbench_ls_bsp/ -I../testbench_ls_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mhw-mulx -mgpopt=global  -o obj/default/hello_world.o hello_world.c
-hello_world.c:73:22: warning: initialization makes pointer from integer without a cast [-Wint-conversion]
- alt_u32 * wr_adr_p = 0x80;
-                      ^
-hello_world.c:74:31: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
- alt_u32 * ram_access_ptr_wr = &wr_adr_p;
-                               ^
 hello_world.c: In function 'main':
-hello_world.c:203:11: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
-   wr_adr_p=0x80;//skip first addresses: they are reset every time
-           ^
-hello_world.c:215:16: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
-       wr_adr_p = addressRAM0[0];
-                ^
-hello_world.c:228:16: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
-       wr_adr_p = addressRAM0[1];
-                ^
-hello_world.c:241:16: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
-       wr_adr_p = addressRAM0[2];
-                ^
-hello_world.c:255:16: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
-       wr_adr_p = addressRAM1[0]+DDR2_RAM_1_BASE;
-                ^
-hello_world.c:269:16: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
-       wr_adr_p = addressRAM1[1]+DDR2_RAM_1_BASE;
-                ^
-hello_world.c:379:10: warning: format '%x' expects argument of type 'unsigned int', but argument 2 has type 'long unsigned int' [-Wformat=]
-   printf("Port 0: First init starting from \n ADDR: %x \tlen: %lu word: %x\n",(alt_u32)rd_adr_p[2],g,IORD_32DIRECT(DDR2_RAM_BASE,addressRAM0[2]));
+hello_world.c:242:24: warning: initialization makes pointer from integer without a cast [-Wint-conversion]
+   alt_u32 * wr_adr_p = addressRAM0_0;
+                        ^
+hello_world.c:243:33: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
+   alt_u32 * ram_access_ptr_wr = &wr_adr_p;
+                                 ^
+hello_world.c:516:10: warning: format '%x' expects argument of type 'unsigned int', but argument 2 has type 'long unsigned int' [-Wformat=]
+   printf("Port 0 - CHOD   : First init from \n ADDR: %x \tlen: %lu word: %x\n",(alt_u32)rd_adr_p[0],g,IORD_32DIRECT(DDR2_RAM_BASE,addressRAM0_0));
           ^
-hello_world.c:379:10: warning: format '%x' expects argument of type 'unsigned int', but argument 2 has type 'long unsigned int' [-Wformat=]
-hello_world.c:380:10: warning: format '%x' expects argument of type 'unsigned int', but argument 2 has type 'long unsigned int' [-Wformat=]
-   printf("Port 1: First init starting from \n ADDR: %x \tlen: %lu word: %x\n",(alt_u32)rd_adr_p[4],g,IORD_32DIRECT(DDR2_RAM_1_BASE,addressRAM1[1]));
+hello_world.c:516:10: warning: format '%x' expects argument of type 'unsigned int', but argument 2 has type 'long unsigned int' [-Wformat=]
+hello_world.c:517:10: warning: format '%x' expects argument of type 'unsigned int', but argument 2 has type 'long unsigned int' [-Wformat=]
+   printf("Port 1 - RICH   : First init from \n ADDR: %x \tlen: %lu word: %x\n",(alt_u32)rd_adr_p[1],g,IORD_32DIRECT(DDR2_RAM_BASE,addressRAM0_1));
           ^
-hello_world.c:380:10: warning: format '%x' expects argument of type 'unsigned int', but argument 2 has type 'long unsigned int' [-Wformat=]
-hello_world.c:451:10: warning: format '%d' expects argument of type 'int', but argument 2 has type 'alt_u32 {aka long unsigned int}' [-Wformat=]
-   printf("Port0: ninterrupt: %d \n",ninterrupt[0]);
+hello_world.c:517:10: warning: format '%x' expects argument of type 'unsigned int', but argument 2 has type 'long unsigned int' [-Wformat=]
+hello_world.c:518:10: warning: format '%x' expects argument of type 'unsigned int', but argument 2 has type 'long unsigned int' [-Wformat=]
+   printf("Port 2 - LKr    : First init from \n ADDR: %x \tlen: %lu word: %x\n",(alt_u32)rd_adr_p[2],g,IORD_32DIRECT(DDR2_RAM_BASE,addressRAM0_2));
           ^
-hello_world.c:451:10: warning: format '%d' expects argument of type 'int', but argument 2 has type 'alt_u32 {aka long unsigned int}' [-Wformat=]
-hello_world.c:452:10: warning: format '%d' expects argument of type 'int', but argument 2 has type 'alt_u32 {aka long unsigned int}' [-Wformat=]
-   printf("Port1: ninterrupt: %d \n",ninterrupt[1]);
+hello_world.c:518:10: warning: format '%x' expects argument of type 'unsigned int', but argument 2 has type 'long unsigned int' [-Wformat=]
+hello_world.c:519:10: warning: format '%x' expects argument of type 'unsigned int', but argument 2 has type 'long unsigned int' [-Wformat=]
+   printf("Port 3 - MUV3   : First init from \n ADDR: %x \tlen: %lu word: %x\n",(alt_u32)rd_adr_p[3],g,IORD_32DIRECT(DDR2_RAM_1_BASE,addressRAM1_0));
           ^
-hello_world.c:452:10: warning: format '%d' expects argument of type 'int', but argument 2 has type 'alt_u32 {aka long unsigned int}' [-Wformat=]
-hello_world.c:353:19: warning: unused variable 'addr2' [-Wunused-variable]
-   alt_u32 g,addr1,addr2;
-                   ^
-hello_world.c:353:13: warning: unused variable 'addr1' [-Wunused-variable]
-   alt_u32 g,addr1,addr2;
+hello_world.c:519:10: warning: format '%x' expects argument of type 'unsigned int', but argument 2 has type 'long unsigned int' [-Wformat=]
+hello_world.c:520:10: warning: format '%x' expects argument of type 'unsigned int', but argument 2 has type 'long unsigned int' [-Wformat=]
+   printf("Port 4 - NewCHOD: First init from \n ADDR: %x \tlen: %lu word: %x\n",(alt_u32)rd_adr_p[4],g,IORD_32DIRECT(DDR2_RAM_1_BASE,addressRAM1_1));
+          ^
+hello_world.c:520:10: warning: format '%x' expects argument of type 'unsigned int', but argument 2 has type 'long unsigned int' [-Wformat=]
+hello_world.c:529:8: warning: format '%d' expects argument of type 'int', but argument 2 has type 'alt_u32 {aka volatile long unsigned int}' [-Wformat=]
+ printf("FIFOUSEDW0 %d\n",*FIFOUSEDW0);
+        ^
+hello_world.c:529:8: warning: format '%d' expects argument of type 'int', but argument 2 has type 'alt_u32 {aka volatile long unsigned int}' [-Wformat=]
+hello_world.c:530:8: warning: format '%d' expects argument of type 'int', but argument 2 has type 'alt_u32 {aka volatile long unsigned int}' [-Wformat=]
+ printf("FIFOUSEDW1 %d\n",*FIFOUSEDW1);
+        ^
+hello_world.c:530:8: warning: format '%d' expects argument of type 'int', but argument 2 has type 'alt_u32 {aka volatile long unsigned int}' [-Wformat=]
+hello_world.c:531:8: warning: format '%d' expects argument of type 'int', but argument 2 has type 'alt_u32 {aka volatile long unsigned int}' [-Wformat=]
+ printf("FIFOUSEDW2 %d\n",*FIFOUSEDW2);
+        ^
+hello_world.c:531:8: warning: format '%d' expects argument of type 'int', but argument 2 has type 'alt_u32 {aka volatile long unsigned int}' [-Wformat=]
+hello_world.c:532:8: warning: format '%d' expects argument of type 'int', but argument 2 has type 'alt_u32 {aka volatile long unsigned int}' [-Wformat=]
+ printf("FIFOUSEDW3 %d\n",*FIFOUSEDW3);
+        ^
+hello_world.c:532:8: warning: format '%d' expects argument of type 'int', but argument 2 has type 'alt_u32 {aka volatile long unsigned int}' [-Wformat=]
+hello_world.c:533:8: warning: format '%d' expects argument of type 'int', but argument 2 has type 'alt_u32 {aka volatile long unsigned int}' [-Wformat=]
+ printf("FIFOUSEDW4 %d\n",*FIFOUSEDW4);
+        ^
+hello_world.c:533:8: warning: format '%d' expects argument of type 'int', but argument 2 has type 'alt_u32 {aka volatile long unsigned int}' [-Wformat=]
+hello_world.c:605:12: warning: format '%d' expects argument of type 'int', but argument 3 has type 'alt_u32 {aka long unsigned int}' [-Wformat=]
+     printf("Port%d: ninterrupt: %d \n",i,ninterrupt[i]);
+            ^
+hello_world.c:605:12: warning: format '%d' expects argument of type 'int', but argument 3 has type 'alt_u32 {aka long unsigned int}' [-Wformat=]
+hello_world.c:607:10: warning: format '%d' expects argument of type 'int', but argument 2 has type 'alt_u32 {aka volatile long unsigned int}' [-Wformat=]
+   printf("FIFOUSEDW0 %d\n",*FIFOUSEDW0);
+          ^
+hello_world.c:607:10: warning: format '%d' expects argument of type 'int', but argument 2 has type 'alt_u32 {aka volatile long unsigned int}' [-Wformat=]
+hello_world.c:608:10: warning: format '%d' expects argument of type 'int', but argument 2 has type 'alt_u32 {aka volatile long unsigned int}' [-Wformat=]
+   printf("FIFOUSEDW1 %d\n",*FIFOUSEDW1);
+          ^
+hello_world.c:608:10: warning: format '%d' expects argument of type 'int', but argument 2 has type 'alt_u32 {aka volatile long unsigned int}' [-Wformat=]
+hello_world.c:609:10: warning: format '%d' expects argument of type 'int', but argument 2 has type 'alt_u32 {aka volatile long unsigned int}' [-Wformat=]
+   printf("FIFOUSEDW2 %d\n",*FIFOUSEDW2);
+          ^
+hello_world.c:609:10: warning: format '%d' expects argument of type 'int', but argument 2 has type 'alt_u32 {aka volatile long unsigned int}' [-Wformat=]
+hello_world.c:610:10: warning: format '%d' expects argument of type 'int', but argument 2 has type 'alt_u32 {aka volatile long unsigned int}' [-Wformat=]
+   printf("FIFOUSEDW3 %d\n",*FIFOUSEDW3);
+          ^
+hello_world.c:610:10: warning: format '%d' expects argument of type 'int', but argument 2 has type 'alt_u32 {aka volatile long unsigned int}' [-Wformat=]
+hello_world.c:611:10: warning: format '%d' expects argument of type 'int', but argument 2 has type 'alt_u32 {aka volatile long unsigned int}' [-Wformat=]
+   printf("FIFOUSEDW4 %d\n",*FIFOUSEDW4);
+          ^
+hello_world.c:611:10: warning: format '%d' expects argument of type 'int', but argument 2 has type 'alt_u32 {aka volatile long unsigned int}' [-Wformat=]
+hello_world.c:243:13: warning: unused variable 'ram_access_ptr_wr' [-Wunused-variable]
+   alt_u32 * ram_access_ptr_wr = &wr_adr_p;
              ^
-hello_world.c:206:11: warning: unused variable 'time1' [-Wunused-variable]
+hello_world.c:231:11: warning: unused variable 'time1' [-Wunused-variable]
    alt_u32 time1 = alt_nticks() * alt_ticks_per_second();
            ^
-hello_world.c:205:11: warning: unused variable 'time0' [-Wunused-variable]
+hello_world.c:230:11: warning: unused variable 'time0' [-Wunused-variable]
    alt_u32 time0 = alt_nticks() * alt_ticks_per_second();
            ^
 Info: Linking TestBench_FW.elf
 nios2-elf-g++  -T'../testbench_ls_bsp//linker.x' -msys-crt0='../testbench_ls_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../testbench_ls_bsp/   -Wl,-Map=TestBench_FW.map   -O0 -g -Wall   -mno-hw-div -mhw-mul -mhw-mulx -mgpopt=global  -o TestBench_FW.elf obj/default/hello_world.o obj/default/terasic_debug.o -lm -msys-lib=m
-nios2-elf-insert TestBench_FW.elf --thread_model hal --cpu_name nios_cpu --qsys true --simulation_enabled false --stderr_dev jtag --stdin_dev jtag --stdout_dev jtag --sopc_system_name testbench_ls --quartus_project_dir "/home/na62torino/Data/TestBench_CLONE_RECOVERED" --jdi ../..//output_files/TestBench_LS.jdi --sopcinfo /home/na62torino/Data/TestBench_CLONE_RECOVERED/software/testbench_ls_bsp/../../testbench_ls.sopcinfo
-Info: (TestBench_FW.elf) 99 KBytes program size (code + initialized data).
-Info:                    393 KBytes free for stack + heap.
+nios2-elf-insert TestBench_FW.elf --thread_model hal --cpu_name nios_cpu --qsys true --simulation_enabled false --stderr_dev jtag --stdin_dev jtag --stdout_dev jtag --sopc_system_name testbench_ls --quartus_project_dir "/home/na62torino/Data/L0Tribe/l0tribe" --jdi ../..//output_files/TestBench_LS.jdi --sopcinfo /home/na62torino/Data/L0Tribe/l0tribe/software/testbench_ls_bsp/../../testbench_ls.sopcinfo
+Info: (TestBench_FW.elf) 101 KBytes program size (code + initialized data).
+Info:                    390 KBytes free for stack + heap.
 Info: Creating TestBench_FW.objdump
 nios2-elf-objdump --disassemble --syms --all-header --source TestBench_FW.elf >TestBench_FW.objdump
 [TestBench_FW build complete]

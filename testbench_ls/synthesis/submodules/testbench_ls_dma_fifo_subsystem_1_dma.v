@@ -7,7 +7,7 @@
 
 `timescale 1 ps / 1 ps
 module testbench_ls_dma_fifo_subsystem_1_dma (
-		output wire [30:0]  mm_read_address,              //          mm_read.address
+		output wire [29:0]  mm_read_address,              //          mm_read.address
 		output wire         mm_read_read,                 //                 .read
 		output wire [31:0]  mm_read_byteenable,           //                 .byteenable
 		input  wire [255:0] mm_read_readdata,             //                 .readdata
@@ -99,7 +99,7 @@ module testbench_ls_dma_fifo_subsystem_1_dma (
 		.CHANNEL_WIDTH             (8),
 		.BYTE_ENABLE_WIDTH         (32),
 		.BYTE_ENABLE_WIDTH_LOG2    (5),
-		.ADDRESS_WIDTH             (31),
+		.ADDRESS_WIDTH             (30),
 		.FIFO_DEPTH_LOG2           (11),
 		.SYMBOL_WIDTH              (8),
 		.NUMBER_OF_SYMBOLS         (32),

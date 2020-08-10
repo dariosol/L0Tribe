@@ -50,9 +50,9 @@ module testbench_ls_mm_interconnect_0_router_008_default_decode
                DEFAULT_DESTID = 5 
    )
   (output [355 - 351 : 0] default_destination_id,
-   output [21-1 : 0] default_wr_channel,
-   output [21-1 : 0] default_rd_channel,
-   output [21-1 : 0] default_src_channel
+   output [26-1 : 0] default_wr_channel,
+   output [26-1 : 0] default_rd_channel,
+   output [26-1 : 0] default_src_channel
   );
 
   assign default_destination_id = 
@@ -63,7 +63,7 @@ module testbench_ls_mm_interconnect_0_router_008_default_decode
       assign default_src_channel = '0;
     end
     else begin : default_channel_assignment
-      assign default_src_channel = 21'b1 << DEFAULT_CHANNEL;
+      assign default_src_channel = 26'b1 << DEFAULT_CHANNEL;
     end
   endgenerate
 
@@ -73,8 +73,8 @@ module testbench_ls_mm_interconnect_0_router_008_default_decode
       assign default_rd_channel = '0;
     end
     else begin : default_rw_channel_assignment
-      assign default_wr_channel = 21'b1 << DEFAULT_WR_CHANNEL;
-      assign default_rd_channel = 21'b1 << DEFAULT_RD_CHANNEL;
+      assign default_wr_channel = 26'b1 << DEFAULT_WR_CHANNEL;
+      assign default_rd_channel = 26'b1 << DEFAULT_RD_CHANNEL;
     end
   endgenerate
 
@@ -103,7 +103,7 @@ module testbench_ls_mm_interconnect_0_router_008
     // -------------------
     output                          src_valid,
     output reg [369-1    : 0] src_data,
-    output reg [21-1 : 0] src_channel,
+    output reg [26-1 : 0] src_channel,
     output                          src_startofpacket,
     output                          src_endofpacket,
     input                           src_ready
@@ -119,7 +119,7 @@ module testbench_ls_mm_interconnect_0_router_008
     localparam PKT_PROTECTION_H = 359;
     localparam PKT_PROTECTION_L = 357;
     localparam ST_DATA_W = 369;
-    localparam ST_CHANNEL_W = 21;
+    localparam ST_CHANNEL_W = 26;
     localparam DECODER_TYPE = 1;
 
     localparam PKT_TRANS_WRITE = 322;
@@ -158,7 +158,7 @@ module testbench_ls_mm_interconnect_0_router_008
     assign src_valid         = sink_valid;
     assign src_startofpacket = sink_startofpacket;
     assign src_endofpacket   = sink_endofpacket;
-    wire [21-1 : 0] default_src_channel;
+    wire [26-1 : 0] default_src_channel;
 
 
 
@@ -192,31 +192,23 @@ module testbench_ls_mm_interconnect_0_router_008
 
 
         if (destid == 5  && write_transaction) begin
-            src_channel = 21'b0000001;
+            src_channel = 26'b00001;
         end
 
         if (destid == 6 ) begin
-            src_channel = 21'b0000010;
+            src_channel = 26'b00010;
         end
 
         if (destid == 4  && read_transaction) begin
-            src_channel = 21'b0000100;
+            src_channel = 26'b00100;
         end
 
         if (destid == 0  && read_transaction) begin
-            src_channel = 21'b0001000;
+            src_channel = 26'b01000;
         end
 
         if (destid == 1  && read_transaction) begin
-            src_channel = 21'b0010000;
-        end
-
-        if (destid == 2  && read_transaction) begin
-            src_channel = 21'b0100000;
-        end
-
-        if (destid == 3  && read_transaction) begin
-            src_channel = 21'b1000000;
+            src_channel = 26'b10000;
         end
 
 

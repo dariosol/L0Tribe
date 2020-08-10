@@ -10,13 +10,7 @@ module TestBench_LS(
 		    //////// CLOCK //////////
 		    GCLKIN,
 		    GCLKOUT_FPGA,
-		    OSC_50_BANK2,
-		    OSC_50_BANK3,
-		    OSC_50_BANK4,
-		    OSC_50_BANK5,
 		    OSC_50_BANK6,
-		    OSC_50_BANK7,
-		    PLL_CLKIN_p,
 		    
 		    //Clock 40 MHz To L0TP:
 		    SMA_clkout_p,
@@ -85,20 +79,32 @@ module TestBench_LS(
 		    M2_DDR2_oct_rdn,
 		    M2_DDR2_oct_rup,
 
-
-
-		    
-
 		    ////ETHLINK/////
-		    ETH_RST_n,
-		    ETH_RX_p, 
-		    ETH_TX_p, 
-		    ETH_MDC,  
-		    ETH_MDIO, 
+		    // SGMII(0 to 3): Onboard ethernet links 
+		    ETH_RST_n    ,
+		    ETH_RX_p     , 
+		    ETH_TX_p     , 
+
+
+		    // RGMII(0 to 1) : HSMC Port A -------------
+		    // RGMII(2 to 3) : HSMC Port B -------------
+		    ENET_RST_n  ,
+		    ENET_TX_EN  ,
+		    ENET_TX_ER  ,
+		    ENET_GTX_CLK,
+		    ENET_TX_D0  ,
+		    ENET_TX_D1  ,
+		    ENET_TX_D2  ,
+		    ENET_TX_D3  ,
+		    ENET_RX_DV  ,
+		    ENET_RX_ER  ,
+		    ENET_RX_CLK ,
+		    ENET_RX_D0  ,
+		    ENET_RX_D1  ,
+		    ENET_RX_D2  ,
+		    ENET_RX_D3  ,
 		   //DIP SWITCHES
 		    SW,
-		  //SLIDE SWITCHES
-		    SLIDE_SW,
 		    //////// 3-port High-Speed USB OTG //////////
 		    OTG_A,
 		    OTG_CS_n,
@@ -129,13 +135,7 @@ module TestBench_LS(
    input		          		GCLKIN;
    output 					GCLKOUT_FPGA;
    output                                       SMA_clkout_p;
-   input		          		OSC_50_BANK2;
-   input		          		OSC_50_BANK3;
-   input		          		OSC_50_BANK4;
-   input		          		OSC_50_BANK5;
    input		          		OSC_50_BANK6;
-   input		          		OSC_50_BANK7;
-   input		          		PLL_CLKIN_p;
 
    //////////// External PLL //////////
    output 					MAX_I2C_SCLK;
@@ -204,29 +204,47 @@ module TestBench_LS(
 
    
    /////////// ETHLINK //////////
-   output 					ETH_RST_n; 
-   input [0:3] 					ETH_RX_p;  
-   output [0:3] 				ETH_TX_p;
-   output [0:3] 				ETH_MDC;  
-   inout [0:3] 					ETH_MDIO;
-   input [7:0] 					SW;
-   input [3:0] 					SLIDE_SW;
+   input [7:0]                                  SW;
 
+   // SGMII(0 to 3): Onboard ethernet links
+   output                                      ETH_RST_n;
+   input [0:3] 				       ETH_RX_p ;
+   output [0:3] 			       ETH_TX_p ;
+   
+   
+   // RGMII(0 to 1) : HSMC Port A -------------
+   // RGMII(2 to 3) : HSMC Port B -------------
+
+   output [0:3]				       ENET_RST_n  ;
+   output [0:3] 			       ENET_TX_EN  ;
+   output [0:3] 			       ENET_TX_ER  ;
+   output [0:3] 			       ENET_GTX_CLK;
+   output [7:0]			               ENET_TX_D0  ;
+   output [7:0] 			       ENET_TX_D1  ;
+   output [7:0] 			       ENET_TX_D2  ;
+   output [7:0] 			       ENET_TX_D3  ;
+   input [0:3] 				       ENET_RX_DV  ;
+   input [0:3] 				       ENET_RX_ER  ;
+   input [0:3] 				       ENET_RX_CLK ;
+   input [7:0]   			       ENET_RX_D0;
+   input [7:0] 			               ENET_RX_D1;
+   input [7:0] 			               ENET_RX_D2;
+   input [7:0] 			               ENET_RX_D3;
    ///////////USB/////////////////
-   output [17:1] 				OTG_A;
-   output 					OTG_CS_n;
-   inout [31:0] 				OTG_D;
-   output 					OTG_DC_DACK;
-   input 					OTG_DC_DREQ;
-   input 					OTG_DC_IRQ;
-   output 					OTG_HC_DACK;
-   input 					OTG_HC_DREQ;
-   input 					OTG_HC_IRQ;
-   output 					OTG_OE_n;
-   output 					OTG_RESET_n;
-   output 					OTG_WE_n;
-   output                                       BCRST;
-   output                                       ECRST;
+   output [17:1] 			       OTG_A;
+   output 				       OTG_CS_n;
+   inout [31:0] 			       OTG_D;
+   output 				       OTG_DC_DACK;
+   input 				       OTG_DC_DREQ;
+   input 				       OTG_DC_IRQ;
+   output 				       OTG_HC_DACK;
+   input 				       OTG_HC_DREQ;
+   input 				       OTG_HC_IRQ;
+   output 				       OTG_OE_n;
+   output 				       OTG_RESET_n;
+   output 				       OTG_WE_n;
+   output 				       BCRST;
+   output 				       ECRST;
 
 
    //===== ==================================================
@@ -245,7 +263,6 @@ module TestBench_LS(
    wire                                         wECRST;
    wire                                         wBCRST;
    
-   reg [3:0] 					clk_count = 3'h0;
 //   assign rstn = CPU_RESET_n;
    
    
@@ -261,7 +278,7 @@ module TestBench_LS(
    //Dual port with input at 256,output at 32//  
    wire [255:0] 				fifoDATA[4:0];
    wire [31:0] 					fifoQ[4:0];
-   wire [10:0] 					fifoWRusedW[4:0];
+   wire [7:0] 					fifoWRusedW[4:0];
    wire [10:0] 					fifoRDusedW[4:0];
    
    wire [4:0] 					fifoSEND;
@@ -318,7 +335,7 @@ module TestBench_LS(
    SOBEOBDispatcher SOBEOBDispatcher0(
 				      .clk(clk_pll_40),
 				      .BURST(ctrl_sig[0]),
-				      .reset(~rstn | ctrl_sig[1]),
+				      .reset(~rstn),
 				      .ECRST(wECRST),
 				      .BCRST(wBCRST)
 				      );
@@ -326,7 +343,7 @@ module TestBench_LS(
 
    //port 0
    primitiveFIFO fifo0 (
-			.aclr(~rstn | ctrl_sig[1]),
+			.aclr(~rstn),
 			.data(fifoDATA[0]),
 			.rdclk(clk_pll_125),
 			.rdreq(fifoRR[0]),
@@ -341,7 +358,7 @@ module TestBench_LS(
 
    //port 1
    primitiveFIFO fifo1 (
-			.aclr(~rstn | ctrl_sig[1]),
+			.aclr(~rstn),
 			.data(fifoDATA[1]),
 			.rdclk(clk_pll_125),
 			.rdreq(fifoRR[1]),
@@ -356,7 +373,7 @@ module TestBench_LS(
 
    //port 2
    primitiveFIFO fifo2 (
-			.aclr(~rstn | ctrl_sig[1]),
+			.aclr(~rstn),
 			.data(fifoDATA[2]),
 			.rdclk(clk_pll_125),
 			.rdreq(fifoRR[2]),
@@ -371,7 +388,7 @@ module TestBench_LS(
 
    //port 3
    primitiveFIFO fifo3 (
-			.aclr(~rstn | ctrl_sig[1]),
+			.aclr(~rstn),
 			.data(fifoDATA[3]),
 			.rdclk(clk_pll_125),
 			.rdreq(fifoRR[3]),
@@ -379,12 +396,14 @@ module TestBench_LS(
 			.wrreq(fifoWR[3]),
 			.q(fifoQ[3]),
 			.rdempty(fifoEMPTY[3]),
-			.wrfull(fifoFULL[3])
+			.wrfull(fifoFULL[3]),
+			.wrusedw(fifoWRusedW[3]),
+			.rdusedw(fifoRDusedW[3])
 			);
 
 			//port 3
    primitiveFIFO fifo4 (
-			.aclr(~rstn | ctrl_sig[1]),
+			.aclr(~rstn),
 			.data(fifoDATA[4]),
 			.rdclk(clk_pll_125),
 			.rdreq(fifoRR[4]),
@@ -392,12 +411,14 @@ module TestBench_LS(
 			.wrreq(fifoWR[4]),
 			.q(fifoQ[4]),
 			.rdempty(fifoEMPTY[4]),
-			.wrfull(fifoFULL[4])
+			.wrfull(fifoFULL[4]),
+			.wrusedw(fifoWRusedW[4]),
+			.rdusedw(fifoRDusedW[4])
 			);
 
    //FIFO to Transfer data from NIOS to external RAM
    FifoToRAM fifoToRAM0 (
-			 .aclr(~rstn | ctrl_sig[1]),
+			 .aclr(~rstn),
 			 .data(ToRamDATA),
 			 .rdclk(clk_200),
 			 .rdreq(ToRamRR),
@@ -409,12 +430,10 @@ module TestBench_LS(
 			 );
 
 
-   wire [3:0] int_wire;
-
    testbench_ls u0 (
 		    .clk_200_out_clk_clk                  (clk_200),          //     clk_200_out.clk
 		    .clk_50_clk                           (OSC_50_BANK6),     //     clk_50.clk
-		    .ctrl_sig_export                      (ctrl_sig[0]),      //     ctrl_sig.export
+		    .ctrl_sig_export                      (ctrl_sig),      //     ctrl_sig.export
 		    .ddr2_ram_status_local_init_done      (),                 // ddr2_ram_status.local_init_done
 		    .ddr2_ram_status_local_cal_success    (),                 //                .local_cal_success
 		    .ddr2_ram_status_local_cal_fail       (),                 //                .local_cal_fail
@@ -427,18 +446,18 @@ module TestBench_LS(
 		    .fifo_stream_1_fifo_write             (fifoWR[1]),        //                .fifo_write
 		    .fifo_stream_1_fifo_send              (fifoSEND[1]),      //                .fifo_send
 		    
-			 .dma_fifo_subsystem_2_fifo_stream_conduit_end_fifo_data  (fifoDATA[2]),  
-			 .dma_fifo_subsystem_2_fifo_stream_conduit_end_fifo_write (fifoWR[2]),
-			 .dma_fifo_subsystem_2_fifo_stream_conduit_end_fifo_send  (fifoSEND[2]),
-			 
-			 .dma_fifo_subsystem_3_fifo_stream_conduit_end_fifo_data  (fifoDATA[3]),
-			 .dma_fifo_subsystem_3_fifo_stream_conduit_end_fifo_write (fifoWR[3]),
-			 .dma_fifo_subsystem_3_fifo_stream_conduit_end_fifo_send  (fifoSEND[3]),
-			 
-			 .dma_fifo_subsystem_4_fifo_stream_conduit_end_fifo_data  (fifoDATA[4]),
-			 .dma_fifo_subsystem_4_fifo_stream_conduit_end_fifo_write (fifoWR[4]),
-			 .dma_fifo_subsystem_4_fifo_stream_conduit_end_fifo_send  (fifoSEND[4]),
-			 
+		    .dma_fifo_subsystem_2_fifo_stream_conduit_end_fifo_data  (fifoDATA[2]),  
+		    .dma_fifo_subsystem_2_fifo_stream_conduit_end_fifo_write (fifoWR[2]),
+		    .dma_fifo_subsystem_2_fifo_stream_conduit_end_fifo_send  (fifoSEND[2]),
+		    
+		    .dma_fifo_subsystem_3_fifo_stream_conduit_end_fifo_data  (fifoDATA[3]),
+		    .dma_fifo_subsystem_3_fifo_stream_conduit_end_fifo_write (fifoWR[3]),
+		    .dma_fifo_subsystem_3_fifo_stream_conduit_end_fifo_send  (fifoSEND[3]),
+		    
+		    .dma_fifo_subsystem_4_fifo_stream_conduit_end_fifo_data  (fifoDATA[4]),
+		    .dma_fifo_subsystem_4_fifo_stream_conduit_end_fifo_write (fifoWR[4]),
+		    .dma_fifo_subsystem_4_fifo_stream_conduit_end_fifo_send  (fifoSEND[4]),
+		    
 			 
 			 
 			 
@@ -477,13 +496,18 @@ module TestBench_LS(
 		    .oct_1_rdn                              (M2_DDR2_oct_rdn),
 		    .oct_1_rup                              (M2_DDR2_oct_rup),
 		    
-		    .reset_reset_n                        (rstn),                 //           reset.reset_n
+		    .reset_reset_n                        (rstn),  //           reset.reset_n
 		    .from_fifo_fifo_data                  (ToRamQ),               //       from_fifo.fifo_data
 		    .from_fifo_fifo_read                  (ToRamRR),              //                .fifo_read
 		    .from_fifo_fifo_empty                 (ToRamEMPTY),           //                .fifo_empty
 		    .from_fifo_fifo_full                  (ToRamFULL),	         //                .fifo_full
 		    .pilot_sig_external_connection_export (interrupt),
-		    .input_io_external_connection_export  (detectorUnderInit)
+		    .input_io_external_connection_export  (detectorUnderInit),
+		    .input_io_0_external_connection_export  (fifoWRusedW[0]),
+		    .input_io_1_external_connection_export  (fifoWRusedW[1]),
+		    .input_io_2_external_connection_export  (fifoWRusedW[2]),
+		    .input_io_3_external_connection_export  (fifoWRusedW[3]),
+		    .input_io_4_external_connection_export  (fifoWRusedW[4])
 		    );
    
 
@@ -491,17 +515,9 @@ module TestBench_LS(
    Controller c0    (
 		     .clkin_50          (OSC_50_BANK6),
 		     .clkin_125         (clk_pll_125),
-		     .cpu_resetn        ( rstn | ~ctrl_sig[1]),
-		     .enet_rxp          ( ETH_RX_p ),
-		     .mdio_sin          ( mdio_sin ),
+		     .cpu_resetn        ( rstn),
 		     .USER_DIPSW        ( SW ),
-		     .enet_resetn       ( ETH_RST_n ),
-		     .enet_txp          ( ETH_TX_p ),
-		     .enet_mdc          ( ETH_MDC ),
-		     .mdio_sout         ( mdio_sout ),
-		     .mdio_sena         ( mdio_sena ),
 		     .startdata         (ctrl_sig[0]),
-		     .ETH_MDIO          (ETH_MDIO),
 		     
 		     .datasend0         (fifoQ[0]),
 		     .txready0          (fifoRR[0]),
@@ -518,58 +534,59 @@ module TestBench_LS(
 		     .datasend3          (fifoQ[3]),
 		     .txready3           (fifoRR[3]),
 		     .primitiveFIFOempty3(fifoEMPTY[3]),
+
+		     .datasend4          (fifoQ[4]),
+		     .txready4           (fifoRR[4]),
+		     .primitiveFIFOempty4(fifoEMPTY[4]),
 		     
 		     .macdata            (ToRamDATA),   
 		     .macreceived        (ToRamWR),  
 		     .packetreceived     (ToRamFULL),
-		     .detectorUnderInit (detectorUnderInit[3:0])
+		     .detectorUnderInit  (detectorUnderInit[3:0]),
+		     .cETH_RX_p          (ETH_RX_p),
+		     .cENET_RX_CLK       (ENET_RX_CLK),
+		     .cENET_RX_DV        (ENET_RX_DV),
+		     .cENET_RX_ER        (ENET_RX_ER),
+		     .cENET_RX_D0        (ENET_RX_D0),
+		     .cENET_RX_D1        (ENET_RX_D1),
+		     .cENET_RX_D2        (ENET_RX_D2),
+		     .cENET_RX_D3        (ENET_RX_D3),
+		     .cETH_RST_n         (ETH_RST_n),
+		     .cETH_TX_p          (ETH_TX_p),
+		     .cENET_RST_n        (ENET_RST_n),
+		     .cENET_GTX_CLK      (ENET_GTX_CLK),
+		     .cENET_TX_EN        (ENET_TX_EN),
+		     .cENET_TX_ER        (ENET_TX_ER),
+		     .cENET_TX_D0        (ENET_TX_D0),
+		     .cENET_TX_D1        (ENET_TX_D1),
+		     .cENET_TX_D2        (ENET_TX_D2),
+		     .cENET_TX_D3        (ENET_TX_D3)
+		     		     
+		     
 		     );
 
 
-   always @ (posedge clk_pll_200)
+   always @ (fifoWRusedW)
      if(ctrl_sig[0]) begin //IN BUST
 	if (fifoWRusedW[0] < 11'h80) interrupt[0] = 1'b1; //if I have less than 128 words, ask NIOS to transfer
 	else interrupt[0] = 1'b0;
-     end
-     else begin
-	interrupt[0] = 1'b0;
-     end
 
-   always @ (posedge clk_pll_200)
-     if(ctrl_sig[0]) begin //IN BUST
 	if (fifoWRusedW[1] < 11'h80) interrupt[1] = 1'b1; //if I have less than 128 words, ask NIOS to transfer
 	else interrupt[1] = 1'b0;
-     end
-     else begin
-	interrupt[1] = 1'b0;
-     end
 
-   always @ (posedge clk_pll_200)
-     if(ctrl_sig[0]) begin //IN BUST
 	if (fifoWRusedW[2] < 11'h80) interrupt[2] = 1'b1; //if I have less than 128 words, ask NIOS to transfer
 	else interrupt[2] = 1'b0;
-     end
-     else begin
-	interrupt[2] = 1'b0;
-     end
 
-   always @ (posedge clk_pll_200)
-     if(ctrl_sig[0]) begin //IN BUST
 	if (fifoWRusedW[3] < 11'h80) interrupt[3] = 1'b1; //if I have less than 128 words, ask NIOS to transfer
 	else interrupt[3] = 1'b0;
+
+	if (fifoWRusedW[4] < 11'h80) interrupt[4] = 1'b1; //if I have less than 128 words, ask NIOS to transfer
+	else interrupt[4] = 1'b0;	
      end
      else begin
-	interrupt[3] = 1'b0;
+	interrupt = detectorUnderInit;
      end
 
-	   always @ (posedge clk_pll_200)
-     if(ctrl_sig[0]) begin //IN BUST
-	if (fifoWRusedW[4] < 11'h80) interrupt[4] = 1'b1; //if I have less than 128 words, ask NIOS to transfer
-	else interrupt[4] = 1'b0;
-     end
-     else begin
-	interrupt[4] = 1'b0;
-     end
 
 	  
 always @ (FSMReset) begin
@@ -612,15 +629,19 @@ end // always @ (FSMReset)
 	     else 
 	       FSMReset<=S3;
 	     S3:
-	       FSMReset<=S3;
+	       if(ctrl_sig[1]==1) begin
+		  FSMReset <=S0;
+	       end
+	     
+	       else begin 
+		 FSMReset<=S3;
+	       end
 	   endcase // case (FSMReset)
 	end // always @ (posedge OSC_50_BANK6 or CPU_RESET_n)
       
 
 
-//always @( SLIDE_SW ) begin
-   // detectorUnderInit[3:0] = SLIDE_SW;
-//end
+
    
 
 

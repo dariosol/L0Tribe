@@ -46,7 +46,7 @@ module testbench_ls_dma_fifo_subsystem_4 (
 		.asi_data    (dma_st_source_data)                  //            .data
 	);
 
-	testbench_ls_dma_fifo_subsystem_1_dma dma (
+	testbench_ls_dma_fifo_subsystem_3_dma dma (
 		.mm_read_address              (dma_mm_read_address),              //          mm_read.address
 		.mm_read_read                 (dma_mm_read_read),                 //                 .read
 		.mm_read_byteenable           (dma_mm_read_byteenable),           //                 .byteenable

@@ -16,7 +16,7 @@ module testbench_ls_dma_fifo_susbystem (
 		output wire         dma_descriptor_slave_waitrequest,   //                        .waitrequest
 		input  wire [127:0] dma_descriptor_slave_writedata,     //                        .writedata
 		input  wire [15:0]  dma_descriptor_slave_byteenable,    //                        .byteenable
-		output wire [30:0]  dma_mm_read_address,                //             dma_mm_read.address
+		output wire [29:0]  dma_mm_read_address,                //             dma_mm_read.address
 		output wire         dma_mm_read_read,                   //                        .read
 		output wire [31:0]  dma_mm_read_byteenable,             //                        .byteenable
 		input  wire [255:0] dma_mm_read_readdata,               //                        .readdata

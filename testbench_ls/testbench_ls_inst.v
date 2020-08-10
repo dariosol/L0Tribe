@@ -5,6 +5,15 @@
 		.ddr2_ram_status_local_init_done                         (<connected-to-ddr2_ram_status_local_init_done>),                         //                              ddr2_ram_status.local_init_done
 		.ddr2_ram_status_local_cal_success                       (<connected-to-ddr2_ram_status_local_cal_success>),                       //                                             .local_cal_success
 		.ddr2_ram_status_local_cal_fail                          (<connected-to-ddr2_ram_status_local_cal_fail>),                          //                                             .local_cal_fail
+		.dma_fifo_subsystem_2_fifo_stream_conduit_end_fifo_data  (<connected-to-dma_fifo_subsystem_2_fifo_stream_conduit_end_fifo_data>),  // dma_fifo_subsystem_2_fifo_stream_conduit_end.fifo_data
+		.dma_fifo_subsystem_2_fifo_stream_conduit_end_fifo_write (<connected-to-dma_fifo_subsystem_2_fifo_stream_conduit_end_fifo_write>), //                                             .fifo_write
+		.dma_fifo_subsystem_2_fifo_stream_conduit_end_fifo_send  (<connected-to-dma_fifo_subsystem_2_fifo_stream_conduit_end_fifo_send>),  //                                             .fifo_send
+		.dma_fifo_subsystem_3_fifo_stream_conduit_end_fifo_data  (<connected-to-dma_fifo_subsystem_3_fifo_stream_conduit_end_fifo_data>),  // dma_fifo_subsystem_3_fifo_stream_conduit_end.fifo_data
+		.dma_fifo_subsystem_3_fifo_stream_conduit_end_fifo_write (<connected-to-dma_fifo_subsystem_3_fifo_stream_conduit_end_fifo_write>), //                                             .fifo_write
+		.dma_fifo_subsystem_3_fifo_stream_conduit_end_fifo_send  (<connected-to-dma_fifo_subsystem_3_fifo_stream_conduit_end_fifo_send>),  //                                             .fifo_send
+		.dma_fifo_subsystem_4_fifo_stream_conduit_end_fifo_data  (<connected-to-dma_fifo_subsystem_4_fifo_stream_conduit_end_fifo_data>),  // dma_fifo_subsystem_4_fifo_stream_conduit_end.fifo_data
+		.dma_fifo_subsystem_4_fifo_stream_conduit_end_fifo_write (<connected-to-dma_fifo_subsystem_4_fifo_stream_conduit_end_fifo_write>), //                                             .fifo_write
+		.dma_fifo_subsystem_4_fifo_stream_conduit_end_fifo_send  (<connected-to-dma_fifo_subsystem_4_fifo_stream_conduit_end_fifo_send>),  //                                             .fifo_send
 		.fifo_stream_fifo_data                                   (<connected-to-fifo_stream_fifo_data>),                                   //                                  fifo_stream.fifo_data
 		.fifo_stream_fifo_write                                  (<connected-to-fifo_stream_fifo_write>),                                  //                                             .fifo_write
 		.fifo_stream_fifo_send                                   (<connected-to-fifo_stream_fifo_send>),                                   //                                             .fifo_send
@@ -15,6 +24,11 @@
 		.from_fifo_fifo_read                                     (<connected-to-from_fifo_fifo_read>),                                     //                                             .fifo_read
 		.from_fifo_fifo_empty                                    (<connected-to-from_fifo_fifo_empty>),                                    //                                             .fifo_empty
 		.from_fifo_fifo_full                                     (<connected-to-from_fifo_fifo_full>),                                     //                                             .fifo_full
+		.input_io_0_external_connection_export                   (<connected-to-input_io_0_external_connection_export>),                   //               input_io_0_external_connection.export
+		.input_io_1_external_connection_export                   (<connected-to-input_io_1_external_connection_export>),                   //               input_io_1_external_connection.export
+		.input_io_2_external_connection_export                   (<connected-to-input_io_2_external_connection_export>),                   //               input_io_2_external_connection.export
+		.input_io_3_external_connection_export                   (<connected-to-input_io_3_external_connection_export>),                   //               input_io_3_external_connection.export
+		.input_io_4_external_connection_export                   (<connected-to-input_io_4_external_connection_export>),                   //               input_io_4_external_connection.export
 		.input_io_external_connection_export                     (<connected-to-input_io_external_connection_export>),                     //                 input_io_external_connection.export
 		.memory_mem_a                                            (<connected-to-memory_mem_a>),                                            //                                       memory.mem_a
 		.memory_mem_ba                                           (<connected-to-memory_mem_ba>),                                           //                                             .mem_ba
@@ -49,15 +63,6 @@
 		.oct_1_rdn                                               (<connected-to-oct_1_rdn>),                                               //                                        oct_1.rdn
 		.oct_1_rup                                               (<connected-to-oct_1_rup>),                                               //                                             .rup
 		.pilot_sig_external_connection_export                    (<connected-to-pilot_sig_external_connection_export>),                    //                pilot_sig_external_connection.export
-		.reset_reset_n                                           (<connected-to-reset_reset_n>),                                           //                                        reset.reset_n
-		.dma_fifo_subsystem_2_fifo_stream_conduit_end_fifo_data  (<connected-to-dma_fifo_subsystem_2_fifo_stream_conduit_end_fifo_data>),  // dma_fifo_subsystem_2_fifo_stream_conduit_end.fifo_data
-		.dma_fifo_subsystem_2_fifo_stream_conduit_end_fifo_write (<connected-to-dma_fifo_subsystem_2_fifo_stream_conduit_end_fifo_write>), //                                             .fifo_write
-		.dma_fifo_subsystem_2_fifo_stream_conduit_end_fifo_send  (<connected-to-dma_fifo_subsystem_2_fifo_stream_conduit_end_fifo_send>),  //                                             .fifo_send
-		.dma_fifo_subsystem_3_fifo_stream_conduit_end_fifo_data  (<connected-to-dma_fifo_subsystem_3_fifo_stream_conduit_end_fifo_data>),  // dma_fifo_subsystem_3_fifo_stream_conduit_end.fifo_data
-		.dma_fifo_subsystem_3_fifo_stream_conduit_end_fifo_write (<connected-to-dma_fifo_subsystem_3_fifo_stream_conduit_end_fifo_write>), //                                             .fifo_write
-		.dma_fifo_subsystem_3_fifo_stream_conduit_end_fifo_send  (<connected-to-dma_fifo_subsystem_3_fifo_stream_conduit_end_fifo_send>),  //                                             .fifo_send
-		.dma_fifo_subsystem_4_fifo_stream_conduit_end_fifo_data  (<connected-to-dma_fifo_subsystem_4_fifo_stream_conduit_end_fifo_data>),  // dma_fifo_subsystem_4_fifo_stream_conduit_end.fifo_data
-		.dma_fifo_subsystem_4_fifo_stream_conduit_end_fifo_write (<connected-to-dma_fifo_subsystem_4_fifo_stream_conduit_end_fifo_write>), //                                             .fifo_write
-		.dma_fifo_subsystem_4_fifo_stream_conduit_end_fifo_send  (<connected-to-dma_fifo_subsystem_4_fifo_stream_conduit_end_fifo_send>)   //                                             .fifo_send
+		.reset_reset_n                                           (<connected-to-reset_reset_n>)                                            //                                        reset.reset_n
 	);
 

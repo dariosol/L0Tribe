@@ -1,53 +1,75 @@
 # # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
 # 
+preplace inst testbench_ls.dma_fifo_subsystem_3.dma -pg 1
 preplace inst testbench_ls.from_ETH_to_DDR.ETH_DMA.cb_inst -pg 1
+preplace inst testbench_ls.dma_fifo_subsystem_4.dma.rst_inst -pg 1
 preplace inst testbench_ls.ddr2_ram.dmaster.b2p -pg 1
 preplace inst testbench_ls.ddr2_ram_1.afi_reset_export -pg 1
-preplace inst testbench_ls.dma_fifo_subsystem_1 -pg 1 -lvl 1 -y 50
+preplace inst testbench_ls.dma_fifo_subsystem_1 -pg 1 -lvl 1 -y 260
 preplace inst testbench_ls.ddr2_ram_1.dmaster.clk_rst -pg 1
+preplace inst testbench_ls.input_IO_0 -pg 1 -lvl 4 -y 30
+preplace inst testbench_ls.dma_fifo_subsystem_2 -pg 1 -lvl 4 -y 260
 preplace inst testbench_ls.dma_fifo_subsystem_1.dma.dispatcher_internal -pg 1
 preplace inst testbench_ls.ddr2_ram_1.dmaster.clk_src -pg 1
-preplace inst testbench_ls.dma_fifo_susbystem -pg 1 -lvl 1 -y 270
+preplace inst testbench_ls.input_IO_1 -pg 1 -lvl 4 -y 130
+preplace inst testbench_ls.dma_fifo_susbystem -pg 1 -lvl 1 -y 520
+preplace inst testbench_ls.dma_fifo_subsystem_3 -pg 1 -lvl 4 -y 480
+preplace inst testbench_ls.dma_fifo_subsystem_2.FIFO_stream -pg 1
 preplace inst testbench_ls.ddr2_ram_1.dll0 -pg 1
 preplace inst testbench_ls.ddr2_ram.dmaster -pg 1
-preplace inst testbench_ls.jtag -pg 1 -lvl 4 -y 460
+preplace inst testbench_ls.jtag -pg 1 -lvl 4 -y 680
+preplace inst testbench_ls.input_IO_2 -pg 1 -lvl 4 -y 1570
 preplace inst testbench_ls.dma_fifo_susbystem.dma.read_mstr_internal -pg 1
+preplace inst testbench_ls.dma_fifo_subsystem_4 -pg 1 -lvl 4 -y 1030
+preplace inst testbench_ls.dma_fifo_subsystem_2.dma.read_mstr_internal -pg 1
 preplace inst testbench_ls.ddr2_ram_1.c0.a0 -pg 1
 preplace inst testbench_ls.ddr2_ram_1.m0 -pg 1
 preplace inst testbench_ls.ddr2_ram.global_reset -pg 1
 preplace inst testbench_ls.ddr2_ram.c0.afi_reset -pg 1
+preplace inst testbench_ls.input_IO_3 -pg 1 -lvl 4 -y 1770
 preplace inst testbench_ls.ddr2_ram.dll0 -pg 1
 preplace inst testbench_ls.ddr2_ram.c0.ng0 -pg 1
+preplace inst testbench_ls.input_IO_4 -pg 1 -lvl 4 -y 1670
+preplace inst testbench_ls.dma_fifo_subsystem_2.dma.rst_inst -pg 1
 preplace inst testbench_ls.ddr2_ram_1.global_reset -pg 1
 preplace inst testbench_ls.ddr2_ram_1.dmaster.p2b -pg 1
 preplace inst testbench_ls.ddr2_ram_1.dmaster.jtag_phy_embedded_in_jtag_master -pg 1
 preplace inst testbench_ls.from_ETH_to_DDR.eth_fifo -pg 1
+preplace inst testbench_ls.dma_fifo_subsystem_3.dma.rst_inst -pg 1
 preplace inst testbench_ls.ddr2_ram_1.afi_half_clk -pg 1
 preplace inst testbench_ls.ddr2_ram_1.as0 -pg 1
 preplace inst testbench_ls.ddr2_ram_1.p0 -pg 1
+preplace inst testbench_ls.dma_fifo_subsystem_4.FIFO_stream -pg 1
 preplace inst testbench_ls.ddr2_ram.oct0 -pg 1
 preplace inst testbench_ls.ddr2_ram.pll_ref_clk -pg 1
 preplace inst testbench_ls.ddr2_ram.dmaster.b2p_adapter -pg 1
 preplace inst testbench_ls.ddr2_ram.afi_clk -pg 1
 preplace inst testbench_ls.nios_cpu.clock_bridge -pg 1
-preplace inst testbench_ls.from_ETH_to_DDR -pg 1 -lvl 1 -y 510
+preplace inst testbench_ls.from_ETH_to_DDR -pg 1 -lvl 1 -y 780
 preplace inst testbench_ls.ddr2_ram.dmaster.clk_rst -pg 1
 preplace inst testbench_ls.ddr2_ram_1.dmaster.p2b_adapter -pg 1
+preplace inst testbench_ls.dma_fifo_subsystem_4.dma.cb_inst -pg 1
+preplace inst testbench_ls.dma_fifo_subsystem_4.dma -pg 1
 preplace inst testbench_ls.ddr2_ram_1.c0.afi_half_clk -pg 1
 preplace inst testbench_ls.ddr2_ram.dmaster.clk_src -pg 1
+preplace inst testbench_ls.dma_fifo_subsystem_4.dma.dispatcher_internal -pg 1
 preplace inst testbench_ls.from_ETH_to_DDR.clk_0 -pg 1
 preplace inst testbench_ls.dma_fifo_susbystem.dma.rst_inst -pg 1
+preplace inst testbench_ls.dma_fifo_subsystem_2.dma.cb_inst -pg 1
 preplace inst testbench_ls -pg 1 -lvl 1 -y 40 -regy -20
 preplace inst testbench_ls.ddr2_ram_1.c0.afi_reset -pg 1
 preplace inst testbench_ls.dma_fifo_subsystem_1.dma.cb_inst -pg 1
 preplace inst testbench_ls.from_ETH_to_DDR.ETH_DMA.rst_inst -pg 1
+preplace inst testbench_ls.dma_fifo_subsystem_2.dma.dispatcher_internal -pg 1
 preplace inst testbench_ls.ddr2_ram.afi_half_clk -pg 1
 preplace inst testbench_ls.ddr2_ram.soft_reset -pg 1
 preplace inst testbench_ls.ddr2_ram_1.c0 -pg 1
 preplace inst testbench_ls.ddr2_ram.afi_reset -pg 1
 preplace inst testbench_ls.ddr2_ram_1.s0 -pg 1
-preplace inst testbench_ls.nios_cpu -pg 1 -lvl 2 -y 570
+preplace inst testbench_ls.nios_cpu -pg 1 -lvl 2 -y 760
+preplace inst testbench_ls.dma_fifo_subsystem_3.dma.dispatcher_internal -pg 1
 preplace inst testbench_ls.ddr2_ram_1.dmaster.b2p_adapter -pg 1
+preplace inst testbench_ls.dma_fifo_subsystem_3.FIFO_stream -pg 1
 preplace inst testbench_ls.dma_fifo_subsystem_1.dma.read_mstr_internal -pg 1
 preplace inst testbench_ls.ddr2_ram_1.dmaster -pg 1
 preplace inst testbench_ls.ddr2_ram.dmaster.p2b_adapter -pg 1
@@ -61,11 +83,12 @@ preplace inst testbench_ls.ddr2_ram.p0 -pg 1
 preplace inst testbench_ls.dma_fifo_subsystem_1.dma -pg 1
 preplace inst testbench_ls.ddr2_ram_1.c0.afi_clk -pg 1
 preplace inst testbench_ls.ddr2_ram_1.dmaster.fifo -pg 1
-preplace inst testbench_ls.input_IO -pg 1 -lvl 4 -y 1120
+preplace inst testbench_ls.input_IO -pg 1 -lvl 4 -y 1470
 preplace inst testbench_ls.dma_fifo_susbystem.dma.cb_inst -pg 1
 preplace inst testbench_ls.ddr2_ram.as0 -pg 1
+preplace inst testbench_ls.dma_fifo_subsystem_3.dma.read_mstr_internal -pg 1
 preplace inst testbench_ls.ddr2_ram_1.oct0 -pg 1
-preplace inst testbench_ls.clk_50 -pg 1 -lvl 2 -y 990
+preplace inst testbench_ls.clk_50 -pg 1 -lvl 2 -y 1210
 preplace inst testbench_ls.ddr2_ram_1.c0.ng0 -pg 1
 preplace inst testbench_ls.ddr2_ram_1.dmaster.b2p -pg 1
 preplace inst testbench_ls.ddr2_ram.dmaster.jtag_phy_embedded_in_jtag_master -pg 1
@@ -73,51 +96,62 @@ preplace inst testbench_ls.ddr2_ram.dmaster.timing_adt -pg 1
 preplace inst testbench_ls.from_ETH_to_DDR.data_format_adapter_0 -pg 1
 preplace inst testbench_ls.dma_fifo_susbystem.dma -pg 1
 preplace inst testbench_ls.dma_fifo_subsystem_1.FIFO_stream -pg 1
-preplace inst testbench_ls.ddr2_ram_1 -pg 1 -lvl 3 -y 750
+preplace inst testbench_ls.ddr2_ram_1 -pg 1 -lvl 3 -y 970
 preplace inst testbench_ls.ddr2_ram.dmaster.p2b -pg 1
 preplace inst testbench_ls.ddr2_ram_1.afi_clk -pg 1
 preplace inst testbench_ls.ddr2_ram_1.soft_reset -pg 1
-preplace inst testbench_ls.pilot_sig -pg 1 -lvl 4 -y 660
+preplace inst testbench_ls.pilot_sig -pg 1 -lvl 4 -y 880
 preplace inst testbench_ls.ddr2_ram_1.afi_reset -pg 1
 preplace inst testbench_ls.ddr2_ram_1.pll_ref_clk -pg 1
-preplace inst testbench_ls.ctrl_sig -pg 1 -lvl 4 -y 920
+preplace inst testbench_ls.ctrl_sig -pg 1 -lvl 4 -y 1330
 preplace inst testbench_ls.ddr2_ram_1.dmaster.transacto -pg 1
 preplace inst testbench_ls.ddr2_ram_1.dmaster.timing_adt -pg 1
-preplace inst testbench_ls.system_ram -pg 1 -lvl 4 -y 820
+preplace inst testbench_ls.system_ram -pg 1 -lvl 4 -y 1250
 preplace inst testbench_ls.ddr2_ram.c0.afi_half_clk -pg 1
 preplace inst testbench_ls.ddr2_ram.dmaster.fifo -pg 1
 preplace inst testbench_ls.from_ETH_to_DDR.ETH_DMA.write_mstr_internal -pg 1
 preplace inst testbench_ls.from_ETH_to_DDR.ETH_DMA.dispatcher_internal -pg 1
+preplace inst testbench_ls.dma_fifo_subsystem_4.dma.read_mstr_internal -pg 1
 preplace inst testbench_ls.ddr2_ram.s0 -pg 1
 preplace inst testbench_ls.ddr2_ram.c0.afi_clk -pg 1
-preplace inst testbench_ls.sys_timer -pg 1 -lvl 4 -y 560
+preplace inst testbench_ls.sys_timer -pg 1 -lvl 4 -y 780
 preplace inst testbench_ls.dma_fifo_susbystem.FIFO_stream -pg 1
+preplace inst testbench_ls.dma_fifo_subsystem_3.dma.cb_inst -pg 1
 preplace inst testbench_ls.from_ETH_to_DDR.ETH_DMA -pg 1
 preplace inst testbench_ls.dma_fifo_susbystem.dma.dispatcher_internal -pg 1
+preplace inst testbench_ls.dma_fifo_subsystem_2.dma -pg 1
 preplace inst testbench_ls.dma_fifo_subsystem_1.dma.rst_inst -pg 1
 preplace inst testbench_ls.ddr2_ram.m0 -pg 1
 preplace inst testbench_ls.ddr2_ram.c0.a0 -pg 1
-preplace inst testbench_ls.clk_200 -pg 1 -lvl 4 -y 1020
+preplace inst testbench_ls.clk_200 -pg 1 -lvl 4 -y 1430
 preplace inst testbench_ls.ddr2_ram_1.pll0 -pg 1
-preplace inst testbench_ls.ddr2_ram -pg 1 -lvl 3 -y 990
-preplace netloc EXPORT<net_container>testbench_ls</net_container>(SLAVE)ddr2_ram_1.oct,(SLAVE)testbench_ls.oct_1) 1 0 3 NJ 820 NJ 820 NJ
-preplace netloc INTERCONNECT<net_container>testbench_ls</net_container>(SLAVE)jtag.reset,(SLAVE)dma_fifo_susbystem.fifo_stream_reset,(SLAVE)dma_fifo_subsystem_1.dma_reset_n,(SLAVE)ddr2_ram.global_reset,(SLAVE)nios_cpu.reset,(MASTER)nios_cpu.debug_reset_request,(SLAVE)ctrl_sig.reset,(SLAVE)ddr2_ram_1.global_reset,(SLAVE)dma_fifo_susbystem.dma_reset_n,(SLAVE)ddr2_ram_1.soft_reset,(SLAVE)pilot_sig.reset,(SLAVE)system_ram.reset1,(SLAVE)dma_fifo_subsystem_1.fifo_stream_reset,(SLAVE)sys_timer.reset,(SLAVE)input_IO.reset,(MASTER)clk_50.clk_reset,(SLAVE)ddr2_ram.soft_reset,(SLAVE)from_ETH_to_DDR.reset) 1 0 4 280 690 670 770 1050 1170 1430
-preplace netloc EXPORT<net_container>testbench_ls</net_container>(MASTER)testbench_ls.clk_200_out_clk,(MASTER)clk_200.out_clk) 1 4 1 NJ
-preplace netloc EXPORT<net_container>testbench_ls</net_container>(SLAVE)ddr2_ram.oct,(SLAVE)testbench_ls.oct) 1 0 3 NJ 1060 NJ 1060 NJ
-preplace netloc EXPORT<net_container>testbench_ls</net_container>(SLAVE)testbench_ls.ddr2_ram_status,(SLAVE)ddr2_ram.status) 1 0 3 NJ 1120 NJ 1120 NJ
-preplace netloc EXPORT<net_container>testbench_ls</net_container>(SLAVE)testbench_ls.input_io_external_connection,(SLAVE)input_IO.external_connection) 1 0 4 NJ 1190 NJ 1190 NJ 1190 NJ
-preplace netloc FAN_OUT<net_container>testbench_ls</net_container>(MASTER)ddr2_ram.afi_clk,(SLAVE)nios_cpu.clk,(SLAVE)dma_fifo_subsystem_1.dma_clock,(SLAVE)ctrl_sig.clk,(SLAVE)dma_fifo_subsystem_1.fifo_stream_clock,(SLAVE)system_ram.clk1,(SLAVE)from_ETH_to_DDR.clk,(SLAVE)clk_200.in_clk,(SLAVE)sys_timer.clk,(SLAVE)jtag.clk,(SLAVE)pilot_sig.clk,(SLAVE)input_IO.clk,(SLAVE)dma_fifo_susbystem.dma_clock,(SLAVE)dma_fifo_susbystem.fifo_stream_clock) 1 0 4 240 470 630 490 NJ 490 1410
+preplace inst testbench_ls.ddr2_ram -pg 1 -lvl 3 -y 1210
+preplace netloc EXPORT<net_container>testbench_ls</net_container>(SLAVE)testbench_ls.input_io_4_external_connection,(SLAVE)input_IO_4.external_connection) 1 0 4 NJ 1700 NJ 1700 NJ 1700 NJ
+preplace netloc INTERCONNECT<net_container>testbench_ls</net_container>(SLAVE)dma_fifo_subsystem_4.dma_csr,(MASTER)dma_fifo_subsystem_2.dma_mm_read,(SLAVE)ddr2_ram.avl,(SLAVE)from_ETH_to_DDR.ETH_DMA_csr,(SLAVE)from_ETH_to_DDR.ETH_DMA_descriptor_slave,(SLAVE)system_ram.s1,(MASTER)dma_fifo_subsystem_1.dma_mm_read,(SLAVE)dma_fifo_susbystem.dma_descriptor_slave,(SLAVE)dma_fifo_subsystem_1.dma_csr,(SLAVE)dma_fifo_subsystem_3.dma_csr,(SLAVE)ddr2_ram_1.avl,(SLAVE)input_IO_3.s1,(SLAVE)pilot_sig.s1,(SLAVE)ctrl_sig.s1,(SLAVE)input_IO_2.s1,(SLAVE)dma_fifo_subsystem_1.dma_descriptor_slave,(MASTER)dma_fifo_susbystem.dma_mm_read,(SLAVE)nios_cpu.debug_mem_slave,(SLAVE)dma_fifo_subsystem_2.dma_descriptor_slave,(SLAVE)dma_fifo_susbystem.dma_csr,(MASTER)nios_cpu.instruction_master,(MASTER)dma_fifo_subsystem_3.dma_mm_read,(SLAVE)input_IO_4.s1,(SLAVE)input_IO.s1,(MASTER)from_ETH_to_DDR.ETH_DMA_mm_write,(SLAVE)dma_fifo_subsystem_3.dma_descriptor_slave,(SLAVE)input_IO_1.s1,(SLAVE)jtag.avalon_jtag_slave,(SLAVE)input_IO_0.s1,(MASTER)dma_fifo_subsystem_4.dma_mm_read,(SLAVE)dma_fifo_subsystem_2.dma_csr,(SLAVE)dma_fifo_subsystem_4.dma_descriptor_slave,(SLAVE)sys_timer.s1,(MASTER)nios_cpu.data_master) 1 0 5 250 960 680 960 1200 1410 1640 990 1950
+preplace netloc EXPORT<net_container>testbench_ls</net_container>(SLAVE)ddr2_ram.oct,(SLAVE)testbench_ls.oct) 1 0 3 NJ 1280 NJ 1280 NJ
+preplace netloc EXPORT<net_container>testbench_ls</net_container>(SLAVE)testbench_ls.input_io_external_connection,(SLAVE)input_IO.external_connection) 1 0 4 NJ 1500 NJ 1500 NJ 1500 NJ
+preplace netloc FAN_OUT<net_container>testbench_ls</net_container>(SLAVE)dma_fifo_subsystem_3.fifo_stream_clock,(SLAVE)input_IO_4.clk,(SLAVE)dma_fifo_subsystem_2.fifo_stream_clock,(MASTER)ddr2_ram.afi_clk,(SLAVE)input_IO_1.clk,(SLAVE)dma_fifo_subsystem_1.dma_clock,(SLAVE)input_IO_0.clk,(SLAVE)dma_fifo_susbystem.dma_clock,(SLAVE)dma_fifo_subsystem_4.dma_clock,(SLAVE)jtag.clk,(SLAVE)clk_200.in_clk,(SLAVE)ctrl_sig.clk,(SLAVE)dma_fifo_subsystem_3.dma_clock,(SLAVE)pilot_sig.clk,(SLAVE)dma_fifo_subsystem_1.fifo_stream_clock,(SLAVE)sys_timer.clk,(SLAVE)input_IO_2.clk,(SLAVE)dma_fifo_subsystem_4.fifo_stream_clock,(SLAVE)input_IO.clk,(SLAVE)dma_fifo_susbystem.fifo_stream_clock,(SLAVE)input_IO_3.clk,(SLAVE)system_ram.clk1,(SLAVE)from_ETH_to_DDR.clk,(SLAVE)nios_cpu.clk,(SLAVE)dma_fifo_subsystem_2.dma_clock) 1 0 4 230 980 700 920 NJ 830 1600
+preplace netloc EXPORT<net_container>testbench_ls</net_container>(SLAVE)testbench_ls.input_io_1_external_connection,(SLAVE)input_IO_1.external_connection) 1 0 4 NJ 460 NJ 160 NJ 160 NJ
+preplace netloc EXPORT<net_container>testbench_ls</net_container>(SLAVE)ddr2_ram.memory,(SLAVE)testbench_ls.memory) 1 0 3 NJ 1400 NJ 1400 NJ
+preplace netloc EXPORT<net_container>testbench_ls</net_container>(SLAVE)testbench_ls.input_io_2_external_connection,(SLAVE)input_IO_2.external_connection) 1 0 4 NJ 1600 NJ 1600 NJ 1600 NJ
 preplace netloc EXPORT<net_container>testbench_ls</net_container>(SLAVE)testbench_ls.fifo_stream,(SLAVE)dma_fifo_susbystem.fifo_stream_conduit_end) 1 0 1 NJ
-preplace netloc EXPORT<net_container>testbench_ls</net_container>(SLAVE)pilot_sig.external_connection,(SLAVE)testbench_ls.pilot_sig_external_connection) 1 0 4 NJ 730 NJ 730 NJ 690 NJ
-preplace netloc EXPORT<net_container>testbench_ls</net_container>(SLAVE)ctrl_sig.external_connection,(SLAVE)testbench_ls.ctrl_sig) 1 0 4 NJ 950 NJ 950 NJ 950 NJ
-preplace netloc EXPORT<net_container>testbench_ls</net_container>(SLAVE)clk_50.clk_in_reset,(SLAVE)testbench_ls.reset) 1 0 2 NJ 1020 NJ
-preplace netloc EXPORT<net_container>testbench_ls</net_container>(SLAVE)testbench_ls.clk_50,(SLAVE)clk_50.clk_in) 1 0 2 NJ 1000 NJ
-preplace netloc FAN_OUT<net_container>testbench_ls</net_container>(SLAVE)jtag.irq,(SLAVE)sys_timer.irq,(SLAVE)from_ETH_to_DDR.ETH_DMA_csr_irq,(SLAVE)dma_fifo_subsystem_1.dma_csr_irq,(SLAVE)dma_fifo_susbystem.dma_csr_irq,(MASTER)nios_cpu.irq,(SLAVE)pilot_sig.irq) 1 0 4 220 710 NJ 710 1030 710 1370
+preplace netloc EXPORT<net_container>testbench_ls</net_container>(SLAVE)pilot_sig.external_connection,(SLAVE)testbench_ls.pilot_sig_external_connection) 1 0 4 NJ 740 NJ 660 NJ 850 NJ
+preplace netloc EXPORT<net_container>testbench_ls</net_container>(SLAVE)ctrl_sig.external_connection,(SLAVE)testbench_ls.ctrl_sig) 1 0 4 NJ 1430 NJ 1430 NJ 1430 NJ
+preplace netloc EXPORT<net_container>testbench_ls</net_container>(SLAVE)clk_50.clk_in_reset,(SLAVE)testbench_ls.reset) 1 0 2 NJ 1240 NJ
+preplace netloc EXPORT<net_container>testbench_ls</net_container>(SLAVE)dma_fifo_subsystem_2.fifo_stream_conduit_end,(SLAVE)testbench_ls.dma_fifo_subsystem_2_fifo_stream_conduit_end) 1 0 4 NJ 480 NJ 390 NJ 390 NJ
+preplace netloc EXPORT<net_container>testbench_ls</net_container>(SLAVE)testbench_ls.clk_50,(SLAVE)clk_50.clk_in) 1 0 2 NJ 1220 NJ
+preplace netloc FAN_OUT<net_container>testbench_ls</net_container>(SLAVE)dma_fifo_subsystem_3.dma_csr_irq,(SLAVE)from_ETH_to_DDR.ETH_DMA_csr_irq,(SLAVE)jtag.irq,(SLAVE)dma_fifo_subsystem_1.dma_csr_irq,(SLAVE)dma_fifo_subsystem_2.dma_csr_irq,(MASTER)nios_cpu.irq,(SLAVE)dma_fifo_susbystem.dma_csr_irq,(SLAVE)sys_timer.irq,(SLAVE)dma_fifo_subsystem_4.dma_csr_irq) 1 0 4 290 940 NJ 900 1260 1150 1560
+preplace netloc EXPORT<net_container>testbench_ls</net_container>(SLAVE)dma_fifo_subsystem_3.fifo_stream_conduit_end,(SLAVE)testbench_ls.dma_fifo_subsystem_3_fifo_stream_conduit_end) 1 0 4 NJ 720 NJ 610 NJ 610 NJ
+preplace netloc EXPORT<net_container>testbench_ls</net_container>(SLAVE)testbench_ls.input_io_3_external_connection,(SLAVE)input_IO_3.external_connection) 1 0 4 NJ 1800 NJ 1800 NJ 1800 NJ
+preplace netloc EXPORT<net_container>testbench_ls</net_container>(MASTER)clk_200.out_clk,(MASTER)testbench_ls.clk_200_out_clk) 1 4 1 N
 preplace netloc EXPORT<net_container>testbench_ls</net_container>(SLAVE)dma_fifo_subsystem_1.fifo_stream_conduit_end,(SLAVE)testbench_ls.fifo_stream_1) 1 0 1 NJ
-preplace netloc EXPORT<net_container>testbench_ls</net_container>(SLAVE)ddr2_ram_1.memory,(SLAVE)testbench_ls.memory_1) 1 0 3 NJ 800 NJ 800 NJ
-preplace netloc EXPORT<net_container>testbench_ls</net_container>(SLAVE)testbench_ls.memory,(SLAVE)ddr2_ram.memory) 1 0 3 NJ 980 NJ 980 NJ
-preplace netloc INTERCONNECT<net_container>testbench_ls</net_container>(SLAVE)nios_cpu.debug_mem_slave,(SLAVE)dma_fifo_susbystem.dma_csr,(SLAVE)from_ETH_to_DDR.ETH_DMA_csr,(SLAVE)sys_timer.s1,(SLAVE)input_IO.s1,(SLAVE)dma_fifo_subsystem_1.dma_descriptor_slave,(SLAVE)pilot_sig.s1,(MASTER)dma_fifo_subsystem_1.dma_mm_read,(SLAVE)ctrl_sig.s1,(SLAVE)ddr2_ram.avl,(SLAVE)system_ram.s1,(MASTER)dma_fifo_susbystem.dma_mm_read,(SLAVE)jtag.avalon_jtag_slave,(SLAVE)ddr2_ram_1.avl,(SLAVE)from_ETH_to_DDR.ETH_DMA_descriptor_slave,(MASTER)nios_cpu.data_master,(MASTER)nios_cpu.instruction_master,(SLAVE)dma_fifo_subsystem_1.dma_csr,(SLAVE)dma_fifo_susbystem.dma_descriptor_slave,(MASTER)from_ETH_to_DDR.ETH_DMA_mm_write) 1 0 4 260 670 650 750 1090 930 1390
+preplace netloc EXPORT<net_container>testbench_ls</net_container>(SLAVE)ddr2_ram_1.memory,(SLAVE)testbench_ls.memory_1) 1 0 3 NJ 1020 NJ 1020 NJ
+preplace netloc EXPORT<net_container>testbench_ls</net_container>(SLAVE)ddr2_ram.status,(SLAVE)testbench_ls.ddr2_ram_status) 1 0 3 NJ 1200 NJ 1200 NJ
+preplace netloc INTERCONNECT<net_container>testbench_ls</net_container>(SLAVE)ctrl_sig.reset,(SLAVE)dma_fifo_subsystem_3.fifo_stream_reset,(SLAVE)ddr2_ram_1.global_reset,(SLAVE)pilot_sig.reset,(SLAVE)input_IO_4.reset,(SLAVE)sys_timer.reset,(SLAVE)dma_fifo_subsystem_1.dma_reset_n,(SLAVE)dma_fifo_subsystem_1.fifo_stream_reset,(SLAVE)dma_fifo_subsystem_4.dma_reset_n,(SLAVE)jtag.reset,(SLAVE)from_ETH_to_DDR.reset,(MASTER)clk_50.clk_reset,(SLAVE)ddr2_ram.global_reset,(SLAVE)input_IO_0.reset,(SLAVE)ddr2_ram_1.soft_reset,(SLAVE)system_ram.reset1,(SLAVE)dma_fifo_subsystem_2.dma_reset_n,(SLAVE)dma_fifo_susbystem.fifo_stream_reset,(SLAVE)input_IO.reset,(SLAVE)nios_cpu.reset,(MASTER)nios_cpu.debug_reset_request,(SLAVE)input_IO_2.reset,(SLAVE)input_IO_1.reset,(SLAVE)dma_fifo_subsystem_4.fifo_stream_reset,(SLAVE)dma_fifo_susbystem.dma_reset_n,(SLAVE)dma_fifo_subsystem_2.fifo_stream_reset,(SLAVE)ddr2_ram.soft_reset,(SLAVE)dma_fifo_subsystem_3.dma_reset_n,(SLAVE)input_IO_3.reset) 1 0 4 270 1000 740 980 1180 1390 1620
+preplace netloc EXPORT<net_container>testbench_ls</net_container>(SLAVE)testbench_ls.oct_1,(SLAVE)ddr2_ram_1.oct) 1 0 3 NJ 1380 NJ 1380 NJ
 preplace netloc EXPORT<net_container>testbench_ls</net_container>(SLAVE)testbench_ls.from_fifo,(SLAVE)from_ETH_to_DDR.eth_fifo_tofifo) 1 0 1 NJ
-preplace netloc FAN_OUT<net_container>testbench_ls</net_container>(SLAVE)ddr2_ram.pll_ref_clk,(SLAVE)ddr2_ram_1.pll_ref_clk,(MASTER)clk_50.clk) 1 2 1 1070
-levelinfo -pg 1 0 190 1740
-levelinfo -hier testbench_ls 200 450 790 1190 1460 1610
+preplace netloc EXPORT<net_container>testbench_ls</net_container>(SLAVE)testbench_ls.input_io_0_external_connection,(SLAVE)input_IO_0.external_connection) 1 0 4 NJ 60 NJ 60 NJ 60 NJ
+preplace netloc FAN_OUT<net_container>testbench_ls</net_container>(SLAVE)ddr2_ram.pll_ref_clk,(SLAVE)ddr2_ram_1.pll_ref_clk,(MASTER)clk_50.clk) 1 2 1 1160
+preplace netloc EXPORT<net_container>testbench_ls</net_container>(SLAVE)dma_fifo_subsystem_4.fifo_stream_conduit_end,(SLAVE)testbench_ls.dma_fifo_subsystem_4_fifo_stream_conduit_end) 1 0 4 NJ 1040 NJ 1040 NJ 930 NJ
+levelinfo -pg 1 0 200 2100
+levelinfo -hier testbench_ls 210 460 880 1380 1800 1970

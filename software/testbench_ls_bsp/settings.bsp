@@ -2,10 +2,10 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Jun 17, 2020 1:46:16 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1592394376255</BspGeneratedUnixTimeStamp>
-        <BspGeneratedLocation>/home/na62torino/Data/TestBench_CLONE_RECOVERED/software/testbench_ls_bsp</BspGeneratedLocation>
-        <BspSettingsFile>/home/na62torino/Data/TestBench_CLONE_RECOVERED/software/testbench_ls_bsp/settings.bsp</BspSettingsFile>
+        <BspGeneratedTimeStamp>Jul 21, 2020 3:28:38 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1595338118106</BspGeneratedUnixTimeStamp>
+        <BspGeneratedLocation>/home/na62torino/Data/L0Tribe/l0tribe/software/testbench_ls_bsp</BspGeneratedLocation>
+        <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>../../testbench_ls.sopcinfo</SopcDesignFile>
         <JdiFile>default</JdiFile>
         <Cpu>nios_cpu</Cpu>
@@ -923,62 +923,128 @@
                 <attributes>timer</attributes>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>dma_fifo_subsystem_1_dma_csr</slaveDescriptor>
+                <slaveDescriptor>dma_fifo_subsystem_4_dma_csr</slaveDescriptor>
                 <addressRange>0x80101020 - 0x8010103F</addressRange>
                 <addressSpan>32</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>dma_fifo_susbystem_dma_csr</slaveDescriptor>
+                <slaveDescriptor>dma_fifo_subsystem_3_dma_csr</slaveDescriptor>
                 <addressRange>0x80101040 - 0x8010105F</addressRange>
                 <addressSpan>32</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>from_ETH_to_DDR_ETH_DMA_csr</slaveDescriptor>
+                <slaveDescriptor>dma_fifo_subsystem_2_dma_csr</slaveDescriptor>
                 <addressRange>0x80101060 - 0x8010107F</addressRange>
                 <addressSpan>32</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
+                <slaveDescriptor>dma_fifo_subsystem_1_dma_csr</slaveDescriptor>
+                <addressRange>0x80101080 - 0x8010109F</addressRange>
+                <addressSpan>32</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>dma_fifo_susbystem_dma_csr</slaveDescriptor>
+                <addressRange>0x801010A0 - 0x801010BF</addressRange>
+                <addressSpan>32</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>from_ETH_to_DDR_ETH_DMA_csr</slaveDescriptor>
+                <addressRange>0x801010C0 - 0x801010DF</addressRange>
+                <addressSpan>32</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>input_IO_4</slaveDescriptor>
+                <addressRange>0x801010E0 - 0x801010EF</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>input_IO_3</slaveDescriptor>
+                <addressRange>0x801010F0 - 0x801010FF</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>input_IO_2</slaveDescriptor>
+                <addressRange>0x80101100 - 0x8010110F</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>input_IO_1</slaveDescriptor>
+                <addressRange>0x80101110 - 0x8010111F</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>input_IO_0</slaveDescriptor>
+                <addressRange>0x80101120 - 0x8010112F</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
                 <slaveDescriptor>input_IO</slaveDescriptor>
-                <addressRange>0x80101080 - 0x8010108F</addressRange>
+                <addressRange>0x80101130 - 0x8010113F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>pilot_sig</slaveDescriptor>
-                <addressRange>0x80101090 - 0x8010109F</addressRange>
+                <addressRange>0x80101140 - 0x8010114F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>ctrl_sig</slaveDescriptor>
-                <addressRange>0x801010A0 - 0x801010AF</addressRange>
+                <addressRange>0x80101150 - 0x8010115F</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>dma_fifo_subsystem_4_dma_descriptor_slave</slaveDescriptor>
+                <addressRange>0x80101160 - 0x8010116F</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>dma_fifo_subsystem_3_dma_descriptor_slave</slaveDescriptor>
+                <addressRange>0x80101170 - 0x8010117F</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>dma_fifo_subsystem_2_dma_descriptor_slave</slaveDescriptor>
+                <addressRange>0x80101180 - 0x8010118F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>dma_fifo_subsystem_1_dma_descriptor_slave</slaveDescriptor>
-                <addressRange>0x801010B0 - 0x801010BF</addressRange>
+                <addressRange>0x80101190 - 0x8010119F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>dma_fifo_susbystem_dma_descriptor_slave</slaveDescriptor>
-                <addressRange>0x801010C0 - 0x801010CF</addressRange>
+                <addressRange>0x801011A0 - 0x801011AF</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>from_ETH_to_DDR_ETH_DMA_descriptor_slave</slaveDescriptor>
-                <addressRange>0x801010D0 - 0x801010DF</addressRange>
+                <addressRange>0x801011B0 - 0x801011BF</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>jtag</slaveDescriptor>
-                <addressRange>0x801010E0 - 0x801010E7</addressRange>
+                <addressRange>0x801011C0 - 0x801011C7</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes>printable</attributes>
         </MemoryMap>

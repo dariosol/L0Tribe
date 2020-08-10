@@ -47,7 +47,7 @@
    {
       datum baseAddress
       {
-         value = "2148536624";
+         value = "2148536656";
          type = "String";
       }
    }
@@ -113,7 +113,7 @@
    {
       datum baseAddress
       {
-         value = "2148536640";
+         value = "2148536720";
          type = "String";
       }
    }
@@ -129,7 +129,7 @@
    {
       datum baseAddress
       {
-         value = "2148536384";
+         value = "2148536416";
          type = "String";
       }
    }
@@ -137,7 +137,7 @@
    {
       datum baseAddress
       {
-         value = "2148536576";
+         value = "2148536704";
          type = "String";
       }
    }
@@ -153,7 +153,7 @@
    {
       datum baseAddress
       {
-         value = "2148536352";
+         value = "2148536384";
          type = "String";
       }
    }
@@ -161,7 +161,7 @@
    {
       datum baseAddress
       {
-         value = "2148536560";
+         value = "2148536688";
          type = "String";
       }
    }
@@ -177,7 +177,7 @@
    {
       datum baseAddress
       {
-         value = "2148536320";
+         value = "2148536352";
          type = "String";
       }
    }
@@ -185,7 +185,7 @@
    {
       datum baseAddress
       {
-         value = "2148536544";
+         value = "2148536672";
          type = "String";
       }
    }
@@ -214,7 +214,7 @@
    {
       datum baseAddress
       {
-         value = "2148536656";
+         value = "2148536736";
          type = "String";
       }
    }
@@ -238,7 +238,7 @@
    {
       datum baseAddress
       {
-         value = "2148536672";
+         value = "2148536752";
          type = "String";
       }
    }
@@ -254,7 +254,87 @@
    {
       datum baseAddress
       {
+         value = "2148536624";
+         type = "String";
+      }
+   }
+   element input_IO_0
+   {
+      datum _sortIndex
+      {
+         value = "17";
+         type = "int";
+      }
+   }
+   element input_IO_0.s1
+   {
+      datum baseAddress
+      {
+         value = "2148536608";
+         type = "String";
+      }
+   }
+   element input_IO_1
+   {
+      datum _sortIndex
+      {
+         value = "18";
+         type = "int";
+      }
+   }
+   element input_IO_1.s1
+   {
+      datum baseAddress
+      {
          value = "2148536592";
+         type = "String";
+      }
+   }
+   element input_IO_2
+   {
+      datum _sortIndex
+      {
+         value = "19";
+         type = "int";
+      }
+   }
+   element input_IO_2.s1
+   {
+      datum baseAddress
+      {
+         value = "2148536576";
+         type = "String";
+      }
+   }
+   element input_IO_3
+   {
+      datum _sortIndex
+      {
+         value = "20";
+         type = "int";
+      }
+   }
+   element input_IO_3.s1
+   {
+      datum baseAddress
+      {
+         value = "2148536560";
+         type = "String";
+      }
+   }
+   element input_IO_4
+   {
+      datum _sortIndex
+      {
+         value = "21";
+         type = "int";
+      }
+   }
+   element input_IO_4.s1
+   {
+      datum baseAddress
+      {
+         value = "2148536544";
          type = "String";
       }
    }
@@ -275,7 +355,7 @@
    {
       datum baseAddress
       {
-         value = "2148536688";
+         value = "2148536768";
          type = "String";
       }
    }
@@ -312,7 +392,7 @@
    {
       datum baseAddress
       {
-         value = "2148536608";
+         value = "2148536640";
          type = "String";
       }
    }
@@ -333,7 +413,7 @@
    {
       datum baseAddress
       {
-         value = "2148536416";
+         value = "2148536320";
          type = "String";
       }
    }
@@ -495,6 +575,31 @@
  <interface
    name="from_fifo"
    internal="from_ETH_to_DDR.eth_fifo_tofifo"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="input_io_0_external_connection"
+   internal="input_IO_0.external_connection"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="input_io_1_external_connection"
+   internal="input_IO_1.external_connection"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="input_io_2_external_connection"
+   internal="input_IO_2.external_connection"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="input_io_3_external_connection"
+   internal="input_IO_3.external_connection"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="input_io_4_external_connection"
+   internal="input_IO_4.external_connection"
    type="conduit"
    dir="end" />
  <interface
@@ -1184,8 +1289,8 @@
   <parameter name="AUTO_DMA_CLOCK_CLOCK_DOMAIN" value="4" />
   <parameter name="AUTO_DMA_CLOCK_CLOCK_RATE" value="200000000" />
   <parameter name="AUTO_DMA_CLOCK_RESET_DOMAIN" value="4" />
-  <parameter name="AUTO_DMA_MM_READ_ADDRESS_MAP"><![CDATA[<address-map><slave name='ddr2_ram.avl' start='0x0' end='0x40000000' /><slave name='ddr2_ram_1.avl' start='0x40000000' end='0x80000000' /></address-map>]]></parameter>
-  <parameter name="AUTO_DMA_MM_READ_ADDRESS_WIDTH" value="AddressWidth = 31" />
+  <parameter name="AUTO_DMA_MM_READ_ADDRESS_MAP"><![CDATA[<address-map><slave name='ddr2_ram.avl' start='0x0' end='0x40000000' /></address-map>]]></parameter>
+  <parameter name="AUTO_DMA_MM_READ_ADDRESS_WIDTH" value="AddressWidth = 30" />
   <parameter name="AUTO_FIFO_STREAM_CLOCK_CLOCK_DOMAIN" value="4" />
   <parameter name="AUTO_FIFO_STREAM_CLOCK_CLOCK_RATE" value="200000000" />
   <parameter name="AUTO_FIFO_STREAM_CLOCK_RESET_DOMAIN" value="4" />
@@ -1203,8 +1308,8 @@
   <parameter name="AUTO_DMA_CLOCK_CLOCK_DOMAIN" value="4" />
   <parameter name="AUTO_DMA_CLOCK_CLOCK_RATE" value="200000000" />
   <parameter name="AUTO_DMA_CLOCK_RESET_DOMAIN" value="4" />
-  <parameter name="AUTO_DMA_MM_READ_ADDRESS_MAP"><![CDATA[<address-map><slave name='ddr2_ram.avl' start='0x0' end='0x40000000' /><slave name='ddr2_ram_1.avl' start='0x40000000' end='0x80000000' /></address-map>]]></parameter>
-  <parameter name="AUTO_DMA_MM_READ_ADDRESS_WIDTH" value="AddressWidth = 31" />
+  <parameter name="AUTO_DMA_MM_READ_ADDRESS_MAP"><![CDATA[<address-map><slave name='ddr2_ram.avl' start='0x0' end='0x40000000' /></address-map>]]></parameter>
+  <parameter name="AUTO_DMA_MM_READ_ADDRESS_WIDTH" value="AddressWidth = 30" />
   <parameter name="AUTO_FIFO_STREAM_CLOCK_CLOCK_DOMAIN" value="4" />
   <parameter name="AUTO_FIFO_STREAM_CLOCK_CLOCK_RATE" value="200000000" />
   <parameter name="AUTO_FIFO_STREAM_CLOCK_RESET_DOMAIN" value="4" />
@@ -1222,7 +1327,7 @@
   <parameter name="AUTO_DMA_CLOCK_CLOCK_DOMAIN" value="4" />
   <parameter name="AUTO_DMA_CLOCK_CLOCK_RATE" value="200000000" />
   <parameter name="AUTO_DMA_CLOCK_RESET_DOMAIN" value="4" />
-  <parameter name="AUTO_DMA_MM_READ_ADDRESS_MAP"><![CDATA[<address-map><slave name='ddr2_ram.avl' start='0x0' end='0x40000000' /><slave name='ddr2_ram_1.avl' start='0x40000000' end='0x80000000' /></address-map>]]></parameter>
+  <parameter name="AUTO_DMA_MM_READ_ADDRESS_MAP"><![CDATA[<address-map><slave name='ddr2_ram_1.avl' start='0x40000000' end='0x80000000' /></address-map>]]></parameter>
   <parameter name="AUTO_DMA_MM_READ_ADDRESS_WIDTH" value="AddressWidth = 31" />
   <parameter name="AUTO_FIFO_STREAM_CLOCK_CLOCK_DOMAIN" value="4" />
   <parameter name="AUTO_FIFO_STREAM_CLOCK_CLOCK_RATE" value="200000000" />
@@ -1241,7 +1346,7 @@
   <parameter name="AUTO_DMA_CLOCK_CLOCK_DOMAIN" value="4" />
   <parameter name="AUTO_DMA_CLOCK_CLOCK_RATE" value="200000000" />
   <parameter name="AUTO_DMA_CLOCK_RESET_DOMAIN" value="4" />
-  <parameter name="AUTO_DMA_MM_READ_ADDRESS_MAP"><![CDATA[<address-map><slave name='ddr2_ram.avl' start='0x0' end='0x40000000' /><slave name='ddr2_ram_1.avl' start='0x40000000' end='0x80000000' /></address-map>]]></parameter>
+  <parameter name="AUTO_DMA_MM_READ_ADDRESS_MAP"><![CDATA[<address-map><slave name='ddr2_ram_1.avl' start='0x40000000' end='0x80000000' /></address-map>]]></parameter>
   <parameter name="AUTO_DMA_MM_READ_ADDRESS_WIDTH" value="AddressWidth = 31" />
   <parameter name="AUTO_FIFO_STREAM_CLOCK_CLOCK_DOMAIN" value="4" />
   <parameter name="AUTO_FIFO_STREAM_CLOCK_CLOCK_RATE" value="200000000" />
@@ -1256,8 +1361,8 @@
   <parameter name="AUTO_DMA_CLOCK_CLOCK_DOMAIN" value="4" />
   <parameter name="AUTO_DMA_CLOCK_CLOCK_RATE" value="200000000" />
   <parameter name="AUTO_DMA_CLOCK_RESET_DOMAIN" value="4" />
-  <parameter name="AUTO_DMA_MM_READ_ADDRESS_MAP"><![CDATA[<address-map><slave name='ddr2_ram.avl' start='0x0' end='0x40000000' /><slave name='ddr2_ram_1.avl' start='0x40000000' end='0x80000000' /></address-map>]]></parameter>
-  <parameter name="AUTO_DMA_MM_READ_ADDRESS_WIDTH" value="AddressWidth = 31" />
+  <parameter name="AUTO_DMA_MM_READ_ADDRESS_MAP"><![CDATA[<address-map><slave name='ddr2_ram.avl' start='0x0' end='0x40000000' /></address-map>]]></parameter>
+  <parameter name="AUTO_DMA_MM_READ_ADDRESS_WIDTH" value="AddressWidth = 30" />
   <parameter name="AUTO_FIFO_STREAM_CLOCK_CLOCK_DOMAIN" value="4" />
   <parameter name="AUTO_FIFO_STREAM_CLOCK_CLOCK_RATE" value="200000000" />
   <parameter name="AUTO_FIFO_STREAM_CLOCK_RESET_DOMAIN" value="4" />
@@ -1277,9 +1382,79 @@
   <parameter name="AUTO_UNIQUE_ID">$${FILENAME}_from_ETH_to_DDR</parameter>
  </module>
  <module name="input_IO" kind="altera_avalon_pio" version="18.1" enabled="1">
-  <parameter name="bitClearingEdgeCapReg" value="false" />
+  <parameter name="bitClearingEdgeCapReg" value="true" />
   <parameter name="bitModifyingOutReg" value="false" />
-  <parameter name="captureEdge" value="false" />
+  <parameter name="captureEdge" value="true" />
+  <parameter name="clockRate" value="200000000" />
+  <parameter name="direction" value="Input" />
+  <parameter name="edgeType" value="RISING" />
+  <parameter name="generateIRQ" value="false" />
+  <parameter name="irqType" value="LEVEL" />
+  <parameter name="resetValue" value="0" />
+  <parameter name="simDoTestBenchWiring" value="false" />
+  <parameter name="simDrivenValue" value="0" />
+  <parameter name="width" value="8" />
+ </module>
+ <module name="input_IO_0" kind="altera_avalon_pio" version="18.1" enabled="1">
+  <parameter name="bitClearingEdgeCapReg" value="true" />
+  <parameter name="bitModifyingOutReg" value="false" />
+  <parameter name="captureEdge" value="true" />
+  <parameter name="clockRate" value="200000000" />
+  <parameter name="direction" value="Input" />
+  <parameter name="edgeType" value="RISING" />
+  <parameter name="generateIRQ" value="false" />
+  <parameter name="irqType" value="LEVEL" />
+  <parameter name="resetValue" value="0" />
+  <parameter name="simDoTestBenchWiring" value="false" />
+  <parameter name="simDrivenValue" value="0" />
+  <parameter name="width" value="8" />
+ </module>
+ <module name="input_IO_1" kind="altera_avalon_pio" version="18.1" enabled="1">
+  <parameter name="bitClearingEdgeCapReg" value="true" />
+  <parameter name="bitModifyingOutReg" value="false" />
+  <parameter name="captureEdge" value="true" />
+  <parameter name="clockRate" value="200000000" />
+  <parameter name="direction" value="Input" />
+  <parameter name="edgeType" value="RISING" />
+  <parameter name="generateIRQ" value="false" />
+  <parameter name="irqType" value="LEVEL" />
+  <parameter name="resetValue" value="0" />
+  <parameter name="simDoTestBenchWiring" value="false" />
+  <parameter name="simDrivenValue" value="0" />
+  <parameter name="width" value="8" />
+ </module>
+ <module name="input_IO_2" kind="altera_avalon_pio" version="18.1" enabled="1">
+  <parameter name="bitClearingEdgeCapReg" value="true" />
+  <parameter name="bitModifyingOutReg" value="false" />
+  <parameter name="captureEdge" value="true" />
+  <parameter name="clockRate" value="200000000" />
+  <parameter name="direction" value="Input" />
+  <parameter name="edgeType" value="RISING" />
+  <parameter name="generateIRQ" value="false" />
+  <parameter name="irqType" value="LEVEL" />
+  <parameter name="resetValue" value="0" />
+  <parameter name="simDoTestBenchWiring" value="false" />
+  <parameter name="simDrivenValue" value="0" />
+  <parameter name="width" value="8" />
+ </module>
+ <module name="input_IO_3" kind="altera_avalon_pio" version="18.1" enabled="1">
+  <parameter name="bitClearingEdgeCapReg" value="true" />
+  <parameter name="bitModifyingOutReg" value="false" />
+  <parameter name="captureEdge" value="true" />
+  <parameter name="clockRate" value="200000000" />
+  <parameter name="direction" value="Input" />
+  <parameter name="edgeType" value="RISING" />
+  <parameter name="generateIRQ" value="false" />
+  <parameter name="irqType" value="LEVEL" />
+  <parameter name="resetValue" value="0" />
+  <parameter name="simDoTestBenchWiring" value="false" />
+  <parameter name="simDrivenValue" value="0" />
+  <parameter name="width" value="8" />
+ </module>
+ <module name="input_IO_4" kind="altera_avalon_pio" version="18.1" enabled="1">
+  <parameter name="bitClearingEdgeCapReg" value="true" />
+  <parameter name="bitModifyingOutReg" value="false" />
+  <parameter name="captureEdge" value="true" />
   <parameter name="clockRate" value="200000000" />
   <parameter name="direction" value="Input" />
   <parameter name="edgeType" value="RISING" />
@@ -1325,7 +1500,7 @@
   <parameter name="dataAddrWidth" value="32" />
   <parameter name="dataMasterHighPerformanceAddrWidth" value="1" />
   <parameter name="dataMasterHighPerformanceMapParam" value="" />
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='ddr2_ram.avl' start='0x0' end='0x40000000' type='altera_mem_if_ddr2_emif.avl' /><slave name='ddr2_ram_1.avl' start='0x40000000' end='0x80000000' type='altera_mem_if_ddr2_emif.avl' /><slave name='system_ram.s1' start='0x80080000' end='0x800FD000' type='altera_avalon_onchip_memory2.s1' /><slave name='nios_cpu.debug_mem_slave' start='0x80100800' end='0x80101000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='dma_fifo_subsystem_4_dma.csr' start='0x80101000' end='0x80101020' type='altera_msgdma.csr' /><slave name='dma_fifo_subsystem_3_dma.csr' start='0x80101020' end='0x80101040' type='altera_msgdma.csr' /><slave name='dma_fifo_subsystem_2_dma.csr' start='0x80101040' end='0x80101060' type='altera_msgdma.csr' /><slave name='sys_timer.s1' start='0x80101060' end='0x80101080' type='altera_avalon_timer.s1' /><slave name='dma_fifo_subsystem_1_dma.csr' start='0x80101080' end='0x801010A0' type='altera_msgdma.csr' /><slave name='dma_fifo_susbystem_dma.csr' start='0x801010A0' end='0x801010C0' type='altera_msgdma.csr' /><slave name='from_ETH_to_DDR_ETH_DMA.csr' start='0x801010C0' end='0x801010E0' type='altera_msgdma.csr' /><slave name='dma_fifo_subsystem_4_dma.descriptor_slave' start='0x801010E0' end='0x801010F0' type='altera_msgdma.descriptor_slave' /><slave name='dma_fifo_subsystem_3_dma.descriptor_slave' start='0x801010F0' end='0x80101100' type='altera_msgdma.descriptor_slave' /><slave name='dma_fifo_subsystem_2_dma.descriptor_slave' start='0x80101100' end='0x80101110' type='altera_msgdma.descriptor_slave' /><slave name='input_IO.s1' start='0x80101110' end='0x80101120' type='altera_avalon_pio.s1' /><slave name='pilot_sig.s1' start='0x80101120' end='0x80101130' type='altera_avalon_pio.s1' /><slave name='ctrl_sig.s1' start='0x80101130' end='0x80101140' type='altera_avalon_pio.s1' /><slave name='dma_fifo_subsystem_1_dma.descriptor_slave' start='0x80101140' end='0x80101150' type='altera_msgdma.descriptor_slave' /><slave name='dma_fifo_susbystem_dma.descriptor_slave' start='0x80101150' end='0x80101160' type='altera_msgdma.descriptor_slave' /><slave name='from_ETH_to_DDR_ETH_DMA.descriptor_slave' start='0x80101160' end='0x80101170' type='altera_msgdma.descriptor_slave' /><slave name='jtag.avalon_jtag_slave' start='0x80101170' end='0x80101178' type='altera_avalon_jtag_uart.avalon_jtag_slave' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='ddr2_ram.avl' start='0x0' end='0x40000000' type='altera_mem_if_ddr2_emif.avl' /><slave name='ddr2_ram_1.avl' start='0x40000000' end='0x80000000' type='altera_mem_if_ddr2_emif.avl' /><slave name='system_ram.s1' start='0x80080000' end='0x800FD000' type='altera_avalon_onchip_memory2.s1' /><slave name='nios_cpu.debug_mem_slave' start='0x80100800' end='0x80101000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='sys_timer.s1' start='0x80101000' end='0x80101020' type='altera_avalon_timer.s1' /><slave name='dma_fifo_subsystem_4_dma.csr' start='0x80101020' end='0x80101040' type='altera_msgdma.csr' /><slave name='dma_fifo_subsystem_3_dma.csr' start='0x80101040' end='0x80101060' type='altera_msgdma.csr' /><slave name='dma_fifo_subsystem_2_dma.csr' start='0x80101060' end='0x80101080' type='altera_msgdma.csr' /><slave name='dma_fifo_subsystem_1_dma.csr' start='0x80101080' end='0x801010A0' type='altera_msgdma.csr' /><slave name='dma_fifo_susbystem_dma.csr' start='0x801010A0' end='0x801010C0' type='altera_msgdma.csr' /><slave name='from_ETH_to_DDR_ETH_DMA.csr' start='0x801010C0' end='0x801010E0' type='altera_msgdma.csr' /><slave name='input_IO_4.s1' start='0x801010E0' end='0x801010F0' type='altera_avalon_pio.s1' /><slave name='input_IO_3.s1' start='0x801010F0' end='0x80101100' type='altera_avalon_pio.s1' /><slave name='input_IO_2.s1' start='0x80101100' end='0x80101110' type='altera_avalon_pio.s1' /><slave name='input_IO_1.s1' start='0x80101110' end='0x80101120' type='altera_avalon_pio.s1' /><slave name='input_IO_0.s1' start='0x80101120' end='0x80101130' type='altera_avalon_pio.s1' /><slave name='input_IO.s1' start='0x80101130' end='0x80101140' type='altera_avalon_pio.s1' /><slave name='pilot_sig.s1' start='0x80101140' end='0x80101150' type='altera_avalon_pio.s1' /><slave name='ctrl_sig.s1' start='0x80101150' end='0x80101160' type='altera_avalon_pio.s1' /><slave name='dma_fifo_subsystem_4_dma.descriptor_slave' start='0x80101160' end='0x80101170' type='altera_msgdma.descriptor_slave' /><slave name='dma_fifo_subsystem_3_dma.descriptor_slave' start='0x80101170' end='0x80101180' type='altera_msgdma.descriptor_slave' /><slave name='dma_fifo_subsystem_2_dma.descriptor_slave' start='0x80101180' end='0x80101190' type='altera_msgdma.descriptor_slave' /><slave name='dma_fifo_subsystem_1_dma.descriptor_slave' start='0x80101190' end='0x801011A0' type='altera_msgdma.descriptor_slave' /><slave name='dma_fifo_susbystem_dma.descriptor_slave' start='0x801011A0' end='0x801011B0' type='altera_msgdma.descriptor_slave' /><slave name='from_ETH_to_DDR_ETH_DMA.descriptor_slave' start='0x801011B0' end='0x801011C0' type='altera_msgdma.descriptor_slave' /><slave name='jtag.avalon_jtag_slave' start='0x801011C0' end='0x801011C8' type='altera_avalon_jtag_uart.avalon_jtag_slave' /></address-map>]]></parameter>
   <parameter name="data_master_high_performance_paddr_base" value="0" />
   <parameter name="data_master_high_performance_paddr_size" value="0" />
   <parameter name="data_master_paddr_base" value="0" />
@@ -1371,7 +1546,7 @@
   <parameter name="instruction_master_high_performance_paddr_size" value="0" />
   <parameter name="instruction_master_paddr_base" value="0" />
   <parameter name="instruction_master_paddr_size" value="0" />
-  <parameter name="internalIrqMaskSystemInfo" value="511" />
+  <parameter name="internalIrqMaskSystemInfo" value="255" />
   <parameter name="io_regionbase" value="0" />
   <parameter name="io_regionsize" value="0" />
   <parameter name="master_addr_map" value="false" />
@@ -1489,9 +1664,9 @@
   <parameter name="captureEdge" value="true" />
   <parameter name="clockRate" value="200000000" />
   <parameter name="direction" value="Input" />
-  <parameter name="edgeType" value="RISING" />
-  <parameter name="generateIRQ" value="true" />
-  <parameter name="irqType" value="EDGE" />
+  <parameter name="edgeType" value="ANY" />
+  <parameter name="generateIRQ" value="false" />
+  <parameter name="irqType" value="LEVEL" />
   <parameter name="resetValue" value="0" />
   <parameter name="simDoTestBenchWiring" value="false" />
   <parameter name="simDrivenValue" value="0" />
@@ -1578,7 +1753,7 @@
    start="nios_cpu.data_master"
    end="from_ETH_to_DDR.ETH_DMA_descriptor_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x80101160" />
+  <parameter name="baseAddress" value="0x801011b0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1587,7 +1762,7 @@
    start="nios_cpu.data_master"
    end="jtag.avalon_jtag_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x80101170" />
+  <parameter name="baseAddress" value="0x801011c0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1641,7 +1816,7 @@
    start="nios_cpu.data_master"
    end="dma_fifo_subsystem_2.dma_csr">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x80101040" />
+  <parameter name="baseAddress" value="0x80101060" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1650,7 +1825,7 @@
    start="nios_cpu.data_master"
    end="dma_fifo_subsystem_3.dma_csr">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x80101020" />
+  <parameter name="baseAddress" value="0x80101040" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1659,7 +1834,7 @@
    start="nios_cpu.data_master"
    end="dma_fifo_subsystem_4.dma_csr">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x80101000" />
+  <parameter name="baseAddress" value="0x80101020" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1668,7 +1843,7 @@
    start="nios_cpu.data_master"
    end="dma_fifo_susbystem.dma_descriptor_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x80101150" />
+  <parameter name="baseAddress" value="0x801011a0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1677,7 +1852,7 @@
    start="nios_cpu.data_master"
    end="dma_fifo_subsystem_1.dma_descriptor_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x80101140" />
+  <parameter name="baseAddress" value="0x80101190" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1686,7 +1861,7 @@
    start="nios_cpu.data_master"
    end="dma_fifo_subsystem_2.dma_descriptor_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x80101100" />
+  <parameter name="baseAddress" value="0x80101180" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1695,7 +1870,7 @@
    start="nios_cpu.data_master"
    end="dma_fifo_subsystem_3.dma_descriptor_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x801010f0" />
+  <parameter name="baseAddress" value="0x80101170" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1704,7 +1879,7 @@
    start="nios_cpu.data_master"
    end="dma_fifo_subsystem_4.dma_descriptor_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x801010e0" />
+  <parameter name="baseAddress" value="0x80101160" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1722,7 +1897,7 @@
    start="nios_cpu.data_master"
    end="ctrl_sig.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x80101130" />
+  <parameter name="baseAddress" value="0x80101150" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1731,7 +1906,7 @@
    start="nios_cpu.data_master"
    end="sys_timer.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x80101060" />
+  <parameter name="baseAddress" value="0x80101000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1740,7 +1915,7 @@
    start="nios_cpu.data_master"
    end="pilot_sig.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x80101120" />
+  <parameter name="baseAddress" value="0x80101140" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1749,12 +1924,57 @@
    start="nios_cpu.data_master"
    end="input_IO.s1">
   <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x80101130" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="nios_cpu.data_master"
+   end="input_IO_0.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x80101120" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="nios_cpu.data_master"
+   end="input_IO_1.s1">
+  <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x80101110" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
    kind="avalon"
    version="18.1"
+   start="nios_cpu.data_master"
+   end="input_IO_2.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x80101100" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="nios_cpu.data_master"
+   end="input_IO_3.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x801010f0" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="nios_cpu.data_master"
+   end="input_IO_4.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x801010e0" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
    start="dma_fifo_susbystem.dma_mm_read"
    end="ddr2_ram.avl">
   <parameter name="arbitrationPriority" value="1" />
@@ -1773,43 +1993,7 @@
  <connection
    kind="avalon"
    version="18.1"
-   start="dma_fifo_susbystem.dma_mm_read"
-   end="ddr2_ram_1.avl">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x40000000" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="18.1"
-   start="dma_fifo_subsystem_1.dma_mm_read"
-   end="ddr2_ram_1.avl">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x40000000" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="18.1"
    start="dma_fifo_subsystem_2.dma_mm_read"
-   end="ddr2_ram_1.avl">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x40000000" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="18.1"
-   start="dma_fifo_subsystem_2.dma_mm_read"
-   end="ddr2_ram.avl">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0000" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="18.1"
-   start="dma_fifo_subsystem_3.dma_mm_read"
    end="ddr2_ram.avl">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x0000" />
@@ -1831,15 +2015,6 @@
    end="ddr2_ram_1.avl">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x40000000" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="18.1"
-   start="dma_fifo_subsystem_4.dma_mm_read"
-   end="ddr2_ram.avl">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1891,6 +2066,31 @@
    version="18.1"
    start="ddr2_ram.afi_clk"
    end="input_IO.clk" />
+ <connection
+   kind="clock"
+   version="18.1"
+   start="ddr2_ram.afi_clk"
+   end="input_IO_0.clk" />
+ <connection
+   kind="clock"
+   version="18.1"
+   start="ddr2_ram.afi_clk"
+   end="input_IO_1.clk" />
+ <connection
+   kind="clock"
+   version="18.1"
+   start="ddr2_ram.afi_clk"
+   end="input_IO_2.clk" />
+ <connection
+   kind="clock"
+   version="18.1"
+   start="ddr2_ram.afi_clk"
+   end="input_IO_3.clk" />
+ <connection
+   kind="clock"
+   version="18.1"
+   start="ddr2_ram.afi_clk"
+   end="input_IO_4.clk" />
  <connection
    kind="clock"
    version="18.1"
@@ -1966,59 +2166,52 @@
    version="18.1"
    start="nios_cpu.irq"
    end="from_ETH_to_DDR.ETH_DMA_csr_irq">
-  <parameter name="irqNumber" value="3" />
- </connection>
- <connection
-   kind="interrupt"
-   version="18.1"
-   start="nios_cpu.irq"
-   end="dma_fifo_susbystem.dma_csr_irq">
   <parameter name="irqNumber" value="0" />
  </connection>
  <connection
    kind="interrupt"
    version="18.1"
    start="nios_cpu.irq"
-   end="dma_fifo_subsystem_1.dma_csr_irq">
-  <parameter name="irqNumber" value="5" />
- </connection>
- <connection
-   kind="interrupt"
-   version="18.1"
-   start="nios_cpu.irq"
-   end="dma_fifo_subsystem_2.dma_csr_irq">
-  <parameter name="irqNumber" value="6" />
- </connection>
- <connection
-   kind="interrupt"
-   version="18.1"
-   start="nios_cpu.irq"
-   end="dma_fifo_subsystem_3.dma_csr_irq">
-  <parameter name="irqNumber" value="7" />
- </connection>
- <connection
-   kind="interrupt"
-   version="18.1"
-   start="nios_cpu.irq"
-   end="dma_fifo_subsystem_4.dma_csr_irq">
-  <parameter name="irqNumber" value="8" />
- </connection>
- <connection kind="interrupt" version="18.1" start="nios_cpu.irq" end="jtag.irq">
+   end="dma_fifo_susbystem.dma_csr_irq">
   <parameter name="irqNumber" value="1" />
  </connection>
  <connection
    kind="interrupt"
    version="18.1"
    start="nios_cpu.irq"
-   end="sys_timer.irq">
+   end="dma_fifo_subsystem_1.dma_csr_irq">
   <parameter name="irqNumber" value="2" />
  </connection>
  <connection
    kind="interrupt"
    version="18.1"
    start="nios_cpu.irq"
-   end="pilot_sig.irq">
+   end="dma_fifo_subsystem_2.dma_csr_irq">
+  <parameter name="irqNumber" value="3" />
+ </connection>
+ <connection
+   kind="interrupt"
+   version="18.1"
+   start="nios_cpu.irq"
+   end="dma_fifo_subsystem_3.dma_csr_irq">
   <parameter name="irqNumber" value="4" />
+ </connection>
+ <connection
+   kind="interrupt"
+   version="18.1"
+   start="nios_cpu.irq"
+   end="dma_fifo_subsystem_4.dma_csr_irq">
+  <parameter name="irqNumber" value="5" />
+ </connection>
+ <connection kind="interrupt" version="18.1" start="nios_cpu.irq" end="jtag.irq">
+  <parameter name="irqNumber" value="6" />
+ </connection>
+ <connection
+   kind="interrupt"
+   version="18.1"
+   start="nios_cpu.irq"
+   end="sys_timer.irq">
+  <parameter name="irqNumber" value="7" />
  </connection>
  <connection
    kind="reset"
@@ -2111,6 +2304,31 @@
    version="18.1"
    start="clk_50.clk_reset"
    end="input_IO.reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="clk_50.clk_reset"
+   end="input_IO_0.reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="clk_50.clk_reset"
+   end="input_IO_1.reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="clk_50.clk_reset"
+   end="input_IO_2.reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="clk_50.clk_reset"
+   end="input_IO_3.reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="clk_50.clk_reset"
+   end="input_IO_4.reset" />
  <connection
    kind="reset"
    version="18.1"

@@ -106,7 +106,7 @@ VCCIO7B                      : A15       : power  :                   : 1.8V    
 M2_DDR2_dq[17]               : A16       : bidir  : SSTL-18 Class I   :         : 7B        : Y              
 M2_DDR2_clk_n[1]             : A17       : bidir  : Differential 1.8-V SSTL Class I :         : 7C        : Y              
 M2_DDR2_SA[0]                : A18       : output : 1.8 V             :         : 7C        : Y              
-OSC_50_BANK7                 : A19       : input  : 1.8 V             :         : 7C        : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : A19       :        :                   :         : 7C        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : A20       :        :                   :         : 7C        :                
 GCLKIN                       : A21       : input  : 1.8 V             :         : 7C        : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : A22       :        :                   :         : 8C        :                
@@ -192,10 +192,10 @@ VCC                          : AB24      : power  :                   : 0.9V    
 GND                          : AB25      : gnd    :                   :         :           :                
 VCCPD2A                      : AB26      : power  :                   : 2.5V    : 2A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AB27      :        :                   :         : 2C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AB28      :        :                   :         : 2C        :                
+ENET_RX_D1[7]                : AB28      : input  : 2.5 V             :         : 2C        : Y              
 VREFB2CN0                    : AB29      : power  :                   :         : 2C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AB30      :        :                   :         : 2C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AB31      :        :                   :         : 2C        :                
+ENET_RX_D1[1]                : AB30      : input  : 2.5 V             :         : 2C        : Y              
+ENET_RX_D1[5]                : AB31      : input  : 2.5 V             :         : 2C        : Y              
 VCC                          : AB32      : power  :                   : 0.9V    :           :                
 GND                          : AB33      : gnd    :                   :         :           :                
 GND+                         : AB34      :        :                   :         : 1C        :                
@@ -209,7 +209,7 @@ GXB_GND*                     : AC2       :        :                   :         
 GND                          : AC3       : gnd    :                   :         :           :                
 GND                          : AC4       : gnd    :                   :         :           :                
 GND+                         : AC5       :        :                   :         : 5C        :                
-OSC_50_BANK5                 : AC6       : input  : 2.5 V             :         : 5C        : Y              
+GND+                         : AC6       :        :                   :         : 5C        :                
 GND                          : AC7       : gnd    :                   :         :           :                
 SW[5]                        : AC8       : input  : 2.5 V             :         : 5C        : Y              
 GND                          : AC9       : gnd    :                   :         :           :                
@@ -231,14 +231,14 @@ GND                          : AC24      : gnd    :                   :         
 VCC                          : AC25      : power  :                   : 0.9V    :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AC26      :        :                   :         : 2A        :                
 GND                          : AC27      : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AC28      :        :                   :         : 2C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AC29      :        :                   :         : 2C        :                
+ENET_RX_D0[2]                : AC28      : input  : 2.5 V             :         : 2C        : Y              
+ENET_RX_D0[0]                : AC29      : input  : 2.5 V             :         : 2C        : Y              
 GND                          : AC30      : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AC31      :        :                   :         : 2C        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AC32      :        :                   :         : 2C        :                
 GND                          : AC33      : gnd    :                   :         :           :                
 GND+                         : AC34      :        :                   :         : 2C        :                
-OSC_50_BANK2                 : AC35      : input  : 2.5 V             :         : 2C        : Y              
+GND+                         : AC35      :        :                   :         : 2C        :                
 GND                          : AC36      : gnd    :                   :         :           :                
 GND                          : AC37      : gnd    :                   :         :           :                
 GXB_GND*                     : AC38      :        :                   :         : QL1       :                
@@ -269,11 +269,11 @@ GND                          : AD23      : gnd    :                   :         
 VCCPD3A                      : AD24      : power  :                   : 2.5V    : 3A        :                
 M1_DDR2_ba[1]                : AD25      : output : SSTL-18 Class I   :         : 3A        : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AD26      :        :                   :         : 2A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AD27      :        :                   :         : 2A        :                
+ENET_RX_D1[6]                : AD27      : input  : 2.5 V             :         : 2A        : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AD28      :        :                   :         : 2C        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AD29      :        :                   :         : 2C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AD30      :        :                   :         : 2C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AD31      :        :                   :         : 2C        :                
+ENET_TX_D0[7]                : AD30      : output : 2.5 V             :         : 2C        : Y              
+ENET_RX_ER[0]                : AD31      : input  : 2.5 V             :         : 2C        : Y              
 GND                          : AD32      : gnd    :                   :         :           :                
 VCCL_GXBL0                   : AD33      : power  :                   : 1.1V    : QL0       :                
 GND                          : AD34      : gnd    :                   :         :           :                
@@ -307,10 +307,10 @@ M1_DDR2_dq[31]               : AE22      : bidir  : SSTL-18 Class I   :         
 M1_DDR2_dq[27]               : AE23      : bidir  : SSTL-18 Class I   :         : 3B        : Y              
 M1_DDR2_odt[1]               : AE24      : output : 1.8 V             :         : 3A        : Y              
 M1_DDR2_cs_n[1]              : AE25      : output : 1.8 V             :         : 3A        : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AE26      :        :                   :         : 2A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AE27      :        :                   :         : 2A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AE28      :        :                   :         : 2C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AE29      :        :                   :         : 2C        :                
+ENET_TX_ER[1]                : AE26      : output : 2.5 V             :         : 2A        : Y              
+ENET_RX_D1[3]                : AE27      : input  : 2.5 V             :         : 2A        : Y              
+ENET_TX_D1[1]                : AE28      : output : 2.5 V             :         : 2C        : Y              
+ENET_TX_D1[5]                : AE29      : output : 2.5 V             :         : 2C        : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE30      :        :                   :         : 2C        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE31      :        :                   :         : 2C        :                
 VCC                          : AE32      : power  :                   : 0.9V    :           :                
@@ -346,7 +346,7 @@ M1_DDR2_dq[26]               : AF22      : bidir  : SSTL-18 Class I   :         
 M1_DDR2_dq[30]               : AF23      : bidir  : SSTL-18 Class I   :         : 3B        : Y              
 GND                          : AF24      : gnd    :                   :         :           :                
 M1_DDR2_oct_rup              : AF25      : input  : 1.8 V             :         : 3A        : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AF26      :        :                   :         : 2A        :                
+ENET_TX_EN[1]                : AF26      : output : 2.5 V             :         : 2A        : Y              
 GND                          : AF27      : gnd    :                   :         :           :                
 VREFB2AN0                    : AF28      : power  :                   :         : 2A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF29      :        :                   :         : 2C        :                
@@ -386,12 +386,12 @@ VCCIO3B                      : AG23      : power  :                   : 1.8V    
 M1_DDR2_SDA                  : AG24      : bidir  : 1.8 V             :         : 3A        : Y              
 M1_DDR2_oct_rdn              : AG25      : input  : 1.8 V             :         : 3A        : Y              
 VCCIO2A                      : AG26      : power  :                   : 2.5V    : 2A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AG27      :        :                   :         : 2A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AG28      :        :                   :         : 2A        :                
+ENET_TX_D0[0]                : AG27      : output : 2.5 V             :         : 2A        : Y              
+ENET_GTX_CLK[1]              : AG28      : output : 2.5 V             :         : 2A        : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG29      :        :                   :         : 2A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG30      :        :                   :         : 2C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AG31      :        :                   :         : 2C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AG32      :        :                   :         : 2C        :                
+ENET_TX_D1[0]                : AG31      : output : 2.5 V             :         : 2C        : Y              
+ENET_TX_D1[4]                : AG32      : output : 2.5 V             :         : 2C        : Y              
 VCCIO2C                      : AG33      : power  :                   : 2.5V    : 2C        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG34      :        :                   :         : 2C        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG35      :        :                   :         : 2C        :                
@@ -425,15 +425,15 @@ M1_DDR2_dq[25]               : AH23      : bidir  : SSTL-18 Class I   :         
 M1_DDR2_SCL                  : AH24      : output : 1.8 V             :         : 3A        : Y              
 VCCIO3A                      : AH25      : power  :                   : 1.8V    : 3A        :                
 M1_DDR2_ba[0]                : AH26      : output : SSTL-18 Class I   :         : 3A        : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AH27      :        :                   :         : 2A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AH28      :        :                   :         : 2A        :                
+ENET_TX_D0[4]                : AH27      : output : 2.5 V             :         : 2A        : Y              
+ENET_GTX_CLK[0]              : AH28      : output : 2.5 V             :         : 2A        : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AH29      :        :                   :         : 2A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AH30      :        :                   :         : 2A        :                
 VCCIO2C                      : AH31      : power  :                   : 2.5V    : 2C        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AH32      :        :                   :         : 2C        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AH33      :        :                   :         : 2C        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AH34      :        :                   :         : 2C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AH35      :        :                   :         : 2C        :                
+ENET_RX_D1[2]                : AH35      : input  : 2.5 V             :         : 2C        : Y              
 GXB_NC                       : AH36      :        :                   :         : QL0       :                
 GXB_NC                       : AH37      :        :                   :         : QL0       :                
 GND                          : AH38      : gnd    :                   :         :           :                
@@ -466,13 +466,13 @@ M1_DDR2_cas_n                : AJ25      : output : SSTL-18 Class I   :         
 M1_DDR2_addr[10]             : AJ26      : output : SSTL-18 Class I   :         : 3A        : Y              
 GND                          : AJ27      : gnd    :                   :         :           :                
 VCCIO2A                      : AJ28      : power  :                   : 2.5V    : 2A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AJ29      :        :                   :         : 2A        :                
+ENET_RX_DV[0]                : AJ29      : input  : 2.5 V             :         : 2A        : Y              
 GND                          : AJ30      : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AJ31      :        :                   :         : 2A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AJ32      :        :                   :         : 2C        :                
 GND                          : AJ33      : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AJ34      :        :                   :         : 2C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AJ35      :        :                   :         : 2C        :                
+ENET_RX_D1[0]                : AJ34      : input  : 2.5 V             :         : 2C        : Y              
+ENET_RX_D1[4]                : AJ35      : input  : 2.5 V             :         : 2C        : Y              
 GND                          : AJ36      : gnd    :                   :         :           :                
 GND                          : AJ37      : gnd    :                   :         :           :                
 GXB_GND*                     : AJ38      :        :                   :         : QL0       :                
@@ -482,7 +482,7 @@ GND                          : AK2       : gnd    :                   :         
 GXB_NC                       : AK3       :        :                   :         : QR0       :                
 GXB_NC                       : AK4       :        :                   :         : QR0       :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AK5       :        :                   :         : 5C        :                
-SLIDE_SW[2]                  : AK6       : input  : 2.5 V             :         : 5C        : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AK6       :        :                   :         : 5C        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AK7       :        :                   :         : 5C        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AK8       :        :                   :         : 5C        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AK9       :        :                   :         : 5A        :                
@@ -505,13 +505,13 @@ M1_DDR2_we_n                 : AK25      : output : SSTL-18 Class I   :         
 M1_DDR2_addr[5]              : AK26      : output : SSTL-18 Class I   :         : 3A        : Y              
 M1_DDR2_cke[1]               : AK27      : output : 1.8 V             :         : 3A        : Y              
 VCCPGM                       : AK28      : power  :                   : 1.8V/2.5V/3.0V :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AK29      :        :                   :         : 2A        :                
+ENET_TX_D0[5]                : AK29      : output : 2.5 V             :         : 2A        : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AK30      :        :                   :         : 2A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AK31      :        :                   :         : 2A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AK32      :        :                   :         : 2A        :                
+ENET_TX_D0[6]                : AK31      : output : 2.5 V             :         : 2A        : Y              
+ENET_TX_ER[0]                : AK32      : output : 2.5 V             :         : 2A        : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AK33      :        :                   :         : 2C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AK34      :        :                   :         : 2C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AK35      :        :                   :         : 2C        :                
+ENET_RX_DV[1]                : AK34      : input  : 2.5 V             :         : 2C        : Y              
+ENET_RX_CLK[1]               : AK35      : input  : 2.5 V             :         : 2C        : Y              
 GXB_NC                       : AK36      :        :                   :         : QL0       :                
 GXB_NC                       : AK37      :        :                   :         : QL0       :                
 GND                          : AK38      : gnd    :                   :         :           :                
@@ -547,7 +547,7 @@ VCCAUX                       : AL28      : power  :                   : 2.5V    
 RESERVED_INPUT_WITH_WEAK_PULLUP : AL29      :        :                   :         : 2A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AL30      :        :                   :         : 2A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AL31      :        :                   :         : 2A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AL32      :        :                   :         : 2A        :                
+ENET_TX_EN[0]                : AL32      : output : 2.5 V             :         : 2A        : Y              
 VCCIO2C                      : AL33      : power  :                   : 2.5V    : 2C        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AL34      :        :                   :         : 2C        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AL35      :        :                   :         : 2C        :                
@@ -585,11 +585,11 @@ GND                          : AM27      : gnd    :                   :         
 NC                           : AM28      :        :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AM29      :        :                   :         : 2A        :                
 GND                          : AM30      : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AM31      :        :                   :         : 2A        :                
+ENET_RST_n[1]                : AM31      : output : 2.5 V             :         : 2A        : Y              
 VCCIO2A                      : AM32      : power  :                   : 2.5V    : 2A        :                
 GND                          : AM33      : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AM34      :        :                   :         : 2C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AM35      :        :                   :         : 2C        :                
+ENET_TX_D1[6]                : AM34      : output : 2.5 V             :         : 2C        : Y              
+ENET_TX_D1[7]                : AM35      : output : 2.5 V             :         : 2C        : Y              
 GXB_NC                       : AM36      :        :                   :         : QL0       :                
 GXB_NC                       : AM37      :        :                   :         : QL0       :                
 GND                          : AM38      : gnd    :                   :         :           :                
@@ -626,7 +626,7 @@ nCE                          : AN29      :        :                   :         
 RESERVED_INPUT_WITH_WEAK_PULLUP : AN30      :        :                   :         : 2A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AN31      :        :                   :         : 2A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AN32      :        :                   :         : 2A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AN33      :        :                   :         : 2A        :                
+ENET_TX_D1[2]                : AN33      : output : 2.5 V             :         : 2A        : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AN34      :        :                   :         : 2C        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AN35      :        :                   :         : 2C        :                
 GND                          : AN36      : gnd    :                   :         :           :                
@@ -662,12 +662,12 @@ M1_DDR2_addr[12]             : AP26      : output : SSTL-18 Class I   :         
 M1_DDR2_ba[2]                : AP27      : output : SSTL-18 Class I   :         : 3A        : Y              
 M1_DDR2_clk[0]               : AP28      : bidir  : Differential 1.8-V SSTL Class I :         : 3A        : Y              
 PORSEL                       : AP29      :        :                   :         : 1A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AP30      :        :                   :         : 2A        :                
+ENET_RX_ER[1]                : AP30      : input  : 2.5 V             :         : 2A        : Y              
 VCCIO2A                      : AP31      : power  :                   : 2.5V    : 2A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AP32      :        :                   :         : 2A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AP33      :        :                   :         : 2A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AP34      :        :                   :         : 2A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AP35      :        :                   :         : 2A        :                
+ENET_RST_n[0]                : AP33      : output : 2.5 V             :         : 2A        : Y              
+ENET_TX_D1[3]                : AP34      : output : 2.5 V             :         : 2A        : Y              
+ENET_TX_D0[2]                : AP35      : output : 2.5 V             :         : 2A        : Y              
 GXB_NC                       : AP36      :        :                   :         : QL0       :                
 GXB_NC                       : AP37      :        :                   :         : QL0       :                
 GND                          : AP38      : gnd    :                   :         :           :                
@@ -702,11 +702,11 @@ GND                          : AR27      : gnd    :                   :         
 M1_DDR2_clk_n[0]             : AR28      : bidir  : Differential 1.8-V SSTL Class I :         : 3A        : Y              
 VCCIO3A                      : AR29      : power  :                   : 1.8V    : 3A        :                
 GND                          : AR30      : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AR31      :        :                   :         : 2A        :                
+ENET_RX_D0[7]                : AR31      : input  : 2.5 V             :         : 2A        : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AR32      :        :                   :         : 2A        :                
 GND                          : AR33      : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AR34      :        :                   :         : 2A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AR35      :        :                   :         : 2A        :                
+ENET_TX_D0[3]                : AR35      : output : 2.5 V             :         : 2A        : Y              
 GND                          : AR36      : gnd    :                   :         :           :                
 GND                          : AR37      : gnd    :                   :         :           :                
 GXB_GND*                     : AR38      :        :                   :         : QL0       :                
@@ -740,9 +740,9 @@ M1_DDR2_dqs[1]               : AT26      : bidir  : Differential 1.8-V SSTL Clas
 M1_DDR2_addr[7]              : AT27      : output : SSTL-18 Class I   :         : 3A        : Y              
 M1_DDR2_cke[0]               : AT28      : output : SSTL-18 Class I   :         : 3A        : Y              
 M1_DDR2_addr[15]             : AT29      : output : 1.8 V             :         : 3A        : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AT30      :        :                   :         : 2A        :                
+ENET_RX_D0[4]                : AT30      : input  : 2.5 V             :         : 2A        : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AT31      :        :                   :         : 2A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AT32      :        :                   :         : 2A        :                
+ENET_RX_D0[1]                : AT32      : input  : 2.5 V             :         : 2A        : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AT33      :        :                   :         : 2A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AT34      :        :                   :         : 2A        :                
 VCCIO2A                      : AT35      : power  :                   : 2.5V    : 2A        :                
@@ -780,10 +780,10 @@ M1_DDR2_addr[6]              : AU27      : output : SSTL-18 Class I   :         
 M1_DDR2_addr[11]             : AU28      : output : SSTL-18 Class I   :         : 3A        : Y              
 M1_DDR2_addr[14]             : AU29      : output : 1.8 V             :         : 3A        : Y              
 VCCIO3A                      : AU30      : power  :                   : 1.8V    : 3A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AU31      :        :                   :         : 2A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AU32      :        :                   :         : 2A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AU33      :        :                   :         : 2A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AU34      :        :                   :         : 2A        :                
+ENET_TX_D0[1]                : AU31      : output : 2.5 V             :         : 2A        : Y              
+ENET_RX_CLK[0]               : AU32      : input  : 2.5 V             :         : 2A        : Y              
+ENET_RX_D0[6]                : AU33      : input  : 2.5 V             :         : 2A        : Y              
+ENET_RX_D0[5]                : AU34      : input  : 2.5 V             :         : 2A        : Y              
 NC                           : AU35      :        :                   :         :           :                
 GND                          : AU36      : gnd    :                   :         :           :                
 GND                          : AU37      : gnd    :                   :         :           :                
@@ -807,10 +807,10 @@ GND                          : AV15      : gnd    :                   :         
 OTG_D[13]                    : AV16      : bidir  : SSTL-18 Class I   :         : 4B        : Y              
 OTG_D[15]                    : AV17      : bidir  : 2.5 V             :         : 4C        : Y              
 GND                          : AV18      : gnd    :                   :         :           :                
-OSC_50_BANK4                 : AV19      : input  : 2.5 V             :         : 4C        : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AV19      :        :                   :         : 4C        :                
 SD_CMD                       : AV20      : bidir  : 2.5 V             :         : 4C        : Y              
 GND                          : AV21      : gnd    :                   :         :           :                
-OSC_50_BANK3                 : AV22      : input  : SSTL-18 Class I   :         : 3C        : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AV22      :        :                   :         : 3C        :                
 M1_DDR2_addr[0]              : AV23      : output : SSTL-18 Class I   :         : 3C        : Y              
 GND                          : AV24      : gnd    :                   :         :           :                
 M1_DDR2_SA[0]                : AV25      : output : SSTL-18 Class I   :         : 3C        : Y              
@@ -822,7 +822,7 @@ GND                          : AV30      : gnd    :                   :         
 M1_DDR2_dq[1]                : AV31      : bidir  : SSTL-18 Class I   :         : 3A        : Y              
 M1_DDR2_dq[0]                : AV32      : bidir  : SSTL-18 Class I   :         : 3A        : Y              
 GND                          : AV33      : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AV34      :        :                   :         : 2A        :                
+ENET_RX_D0[3]                : AV34      : input  : 2.5 V             :         : 2A        : Y              
 CONF_DONE                    : AV35      :        :                   :         : 1A        :                
 NC                           : AV36      :        :                   :         :           :                
 GND                          : AV37      : gnd    :                   :         :           :                
@@ -886,7 +886,7 @@ GND                          : B18       : gnd    :                   :         
 M2_DDR2_SA[1]                : B19       : output : 1.8 V             :         : 7C        : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : B20       :        :                   :         : 7C        :                
 GND                          : B21       : gnd    :                   :         :           :                
-PLL_CLKIN_p                  : B22       : input  : 2.5 V             :         : 8C        : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : B22       :        :                   :         : 8C        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : B23       :        :                   :         : 8C        :                
 GND                          : B24       : gnd    :                   :         :           :                
 M2_DDR2_dm[5]                : B25       : output : SSTL-18 Class I   :         : 8B        : Y              
@@ -910,10 +910,10 @@ GND                          : C3        : gnd    :                   :         
 GND                          : C4        : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : C5        :        :                   :         : 6A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : C6        :        :                   :         : 6A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : C7        :        :                   :         : 6A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : C8        :        :                   :         : 6A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : C9        :        :                   :         : 6A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : C10       :        :                   :         : 6A        :                
+ENET_RX_ER[3]                : C7        : input  : 2.5 V             :         : 6A        : Y              
+ENET_RX_CLK[3]               : C8        : input  : 2.5 V             :         : 6A        : Y              
+ENET_RX_D3[4]                : C9        : input  : 2.5 V             :         : 6A        : Y              
+ENET_RX_D3[2]                : C10       : input  : 2.5 V             :         : 6A        : Y              
 M2_DDR2_addr[5]              : C11       : output : SSTL-18 Class I   :         : 7A        : Y              
 M2_DDR2_ba[0]                : C12       : output : SSTL-18 Class I   :         : 7A        : Y              
 M2_DDR2_addr[4]              : C13       : output : SSTL-18 Class I   :         : 7A        : Y              
@@ -950,8 +950,8 @@ GXB_NC                       : D4        :        :                   :         
 RESERVED_INPUT_WITH_WEAK_PULLUP : D5        :        :                   :         : 6A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D6        :        :                   :         : 6A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D7        :        :                   :         : 6A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : D8        :        :                   :         : 6A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : D9        :        :                   :         : 6A        :                
+ENET_RX_DV[3]                : D8        : input  : 2.5 V             :         : 6A        : Y              
+ENET_RX_D3[0]                : D9        : input  : 2.5 V             :         : 6A        : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : D10       :        :                   :         : 6A        :                
 M2_DDR2_cke[0]               : D11       : output : SSTL-18 Class I   :         : 7A        : Y              
 VCCIO7A                      : D12       : power  :                   : 1.8V    : 7A        :                
@@ -991,7 +991,7 @@ GND                          : E6        : gnd    :                   :         
 RESERVED_INPUT_WITH_WEAK_PULLUP : E7        :        :                   :         : 6A        :                
 VCCIO6A                      : E8        : power  :                   : 2.5V    : 6A        :                
 GND                          : E9        : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : E10       :        :                   :         : 6A        :                
+ENET_TX_D3[7]                : E10       : output : 2.5 V             :         : 6A        : Y              
 TEMPDIODEn                   : E11       :        :                   :         :           :                
 GND                          : E12       : gnd    :                   :         :           :                
 M2_DDR2_dqsn[0]              : E13       : bidir  : Differential 1.8-V SSTL Class I :         : 7A        : Y              
@@ -1026,11 +1026,11 @@ GND                          : F2        : gnd    :                   :         
 GXB_NC                       : F3        :        :                   :         : QR2       :                
 GXB_NC                       : F4        :        :                   :         : QR2       :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : F5        :        :                   :         : 6A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : F6        :        :                   :         : 6A        :                
+ENET_TX_D3[3]                : F6        : output : 2.5 V             :         : 6A        : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : F7        :        :                   :         : 6A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : F8        :        :                   :         : 6A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : F9        :        :                   :         : 6A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : F10       :        :                   :         : 6A        :                
+ENET_RX_D2[4]                : F8        : input  : 2.5 V             :         : 6A        : Y              
+ENET_RX_D2[6]                : F9        : input  : 2.5 V             :         : 6A        : Y              
+ENET_TX_D3[6]                : F10       : output : 2.5 V             :         : 6A        : Y              
 NC                           : F11       :        :                   :         :           :                
 M2_DDR2_dq[0]                : F12       : bidir  : SSTL-18 Class I   :         : 7A        : Y              
 M2_DDR2_dqs[0]               : F13       : bidir  : Differential 1.8-V SSTL Class I :         : 7A        : Y              
@@ -1064,10 +1064,10 @@ GXB_GND*                     : G1        :        :                   :         
 GXB_GND*                     : G2        :        :                   :         : QR2       :                
 GND                          : G3        : gnd    :                   :         :           :                
 GND                          : G4        : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : G5        :        :                   :         : 6A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : G6        :        :                   :         : 6A        :                
+ENET_RST_n[3]                : G5        : output : 2.5 V             :         : 6A        : Y              
+ENET_TX_D3[2]                : G6        : output : 2.5 V             :         : 6A        : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : G7        :        :                   :         : 6A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : G8        :        :                   :         : 6A        :                
+ENET_RX_D2[7]                : G8        : input  : 2.5 V             :         : 6A        : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : G9        :        :                   :         : 6A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : G10       :        :                   :         : 6A        :                
 VCCAUX                       : G11       : power  :                   : 2.5V    :           :                
@@ -1142,12 +1142,12 @@ GXB_GND*                     : J1        :        :                   :         
 GXB_GND*                     : J2        :        :                   :         : QR2       :                
 GND                          : J3        : gnd    :                   :         :           :                
 GND                          : J4        : gnd    :                   :         :           :                
-ETH_MDIO[1]                  : J5        : bidir  : 2.5 V             :         : 6C        : Y              
-ETH_MDC[1]                   : J6        : output : 2.5 V             :         : 6C        : Y              
-SLIDE_SW[0]                  : J7        : input  : 2.5 V             :         : 6C        : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : J8        :        :                   :         : 6A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : J9        :        :                   :         : 6A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : J10       :        :                   :         : 6A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : J5        :        :                   :         : 6C        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : J6        :        :                   :         : 6C        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : J7        :        :                   :         : 6C        :                
+ENET_GTX_CLK[2]              : J8        : output : 2.5 V             :         : 6A        : Y              
+ENET_RX_D3[7]                : J9        : input  : 2.5 V             :         : 6A        : Y              
+ENET_RX_D3[5]                : J10       : input  : 2.5 V             :         : 6A        : Y              
 MSEL0                        : J11       :        :                   :         : 1A        :                
 M2_DDR2_dq[4]                : J12       : bidir  : SSTL-18 Class I   :         : 7A        : Y              
 M2_DDR2_dq[5]                : J13       : bidir  : SSTL-18 Class I   :         : 7A        : Y              
@@ -1172,7 +1172,7 @@ VCCIO1A                      : J31       : power  :                   : 2.5V    
 RESERVED_INPUT_WITH_WEAK_PULLUP : J32       :        :                   :         : 1A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : J33       :        :                   :         : 1A        :                
 ETH_RX_p[3]                  : J34       : input  : LVDS              :         : 1C        : Y              
-ETH_RX_p[3](n)               : J35       : input  : LVDS              :         : 1C        : N              
+ETH_RX_p[3](n)               : J35       : input  : LVDS              :         : 1C        : Y              
 GND                          : J36       : gnd    :                   :         :           :                
 GND                          : J37       : gnd    :                   :         :           :                
 GXB_GND*                     : J38       :        :                   :         : QL2       :                
@@ -1181,12 +1181,12 @@ GND                          : K1        : gnd    :                   :         
 GND                          : K2        : gnd    :                   :         :           :                
 GXB_NC                       : K3        :        :                   :         : QR2       :                
 GXB_NC                       : K4        :        :                   :         : QR2       :                
-ETH_MDIO[2]                  : K5        : bidir  : 2.5 V             :         : 6C        : Y              
-ETH_MDC[2]                   : K6        : output : 2.5 V             :         : 6C        : Y              
-SLIDE_SW[1]                  : K7        : input  : 2.5 V             :         : 6C        : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : K8        :        :                   :         : 6A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : K5        :        :                   :         : 6C        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : K6        :        :                   :         : 6C        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : K7        :        :                   :         : 6C        :                
+ENET_GTX_CLK[3]              : K8        : output : 2.5 V             :         : 6A        : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : K9        :        :                   :         : 6A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : K10       :        :                   :         : 6A        :                
+ENET_RX_D3[1]                : K10       : input  : 2.5 V             :         : 6A        : Y              
 VCCBAT                       : K11       : power  :                   : 3.0V    :           :                
 M2_DDR2_cke[1]               : K12       : output : 1.8 V             :         : 7A        : Y              
 M2_DDR2_clk_n[0]             : K13       : bidir  : Differential 1.8-V SSTL Class I :         : 7A        : Y              
@@ -1211,7 +1211,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : K31       :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : K32       :        :                   :         : 1A        :                
 VCCIO1C                      : K33       : power  :                   : 2.5V    : 1C        :                
 ETH_RX_p[2]                  : K34       : input  : LVDS              :         : 1C        : Y              
-ETH_RX_p[2](n)               : K35       : input  : LVDS              :         : 1C        : N              
+ETH_RX_p[2](n)               : K35       : input  : LVDS              :         : 1C        : Y              
 GXB_NC                       : K36       :        :                   :         : QL2       :                
 GXB_NC                       : K37       :        :                   :         : QL2       :                
 GND                          : K38       : gnd    :                   :         :           :                
@@ -1220,13 +1220,13 @@ GXB_GND*                     : L1        :        :                   :         
 GXB_GND*                     : L2        :        :                   :         : QR2       :                
 GND                          : L3        : gnd    :                   :         :           :                
 GND                          : L4        : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : L5        :        :                   :         : 6C        :                
+ENET_RX_CLK[2]               : L5        : input  : 2.5 V             :         : 6C        : Y              
 GND                          : L6        : gnd    :                   :         :           :                
-SLIDE_SW[3]                  : L7        : input  : 2.5 V             :         : 6C        : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : L7        :        :                   :         : 6C        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : L8        :        :                   :         : 6C        :                
 GND                          : L9        : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : L10       :        :                   :         : 6A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : L11       :        :                   :         : 6A        :                
+ENET_RX_D2[0]                : L10       : input  : 2.5 V             :         : 6A        : Y              
+ENET_RX_ER[2]                : L11       : input  : 2.5 V             :         : 6A        : Y              
 GND                          : L12       : gnd    :                   :         :           :                
 M2_DDR2_clk[0]               : L13       : bidir  : Differential 1.8-V SSTL Class I :         : 7A        : Y              
 M2_DDR2_addr[11]             : L14       : output : SSTL-18 Class I   :         : 7A        : Y              
@@ -1247,7 +1247,7 @@ NC                           : L28       :        :                   :         
 RESERVED_INPUT_WITH_WEAK_PULLUP : L29       :        :                   :         : 1A        :                
 GND                          : L30       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : L31       :        :                   :         : 1A        :                
-ETH_TX_p[2](n)               : L32       : output : LVDS              :         : 1C        : N              
+ETH_TX_p[2](n)               : L32       : output : LVDS              :         : 1C        : Y              
 GND                          : L33       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : L34       :        :                   :         : 1C        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : L35       :        :                   :         : 1C        :                
@@ -1260,12 +1260,12 @@ GND                          : M2        : gnd    :                   :         
 GXB_NC                       : M3        :        :                   :         : QR2       :                
 GXB_NC                       : M4        :        :                   :         : QR2       :                
 VCCA_R                       : M5        : power  :                   : 2.5V    :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : M6        :        :                   :         : 6C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : M7        :        :                   :         : 6C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : M8        :        :                   :         : 6C        :                
+ENET_RX_D2[1]                : M6        : input  : 2.5 V             :         : 6C        : Y              
+ENET_TX_D2[5]                : M7        : output : 2.5 V             :         : 6C        : Y              
+ENET_RX_DV[2]                : M8        : input  : 2.5 V             :         : 6C        : Y              
 VCCIO6A                      : M9        : power  :                   : 2.5V    : 6A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : M10       :        :                   :         : 6A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : M11       :        :                   :         : 6A        :                
+ENET_RX_D2[2]                : M10       : input  : 2.5 V             :         : 6A        : Y              
+ENET_TX_D2[7]                : M11       : output : 2.5 V             :         : 6A        : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : M12       :        :                   :         : 6A        :                
 M2_DDR2_addr[15]             : M13       : output : 1.8 V             :         : 7A        : Y              
 M2_DDR2_addr[9]              : M14       : output : SSTL-18 Class I   :         : 7A        : Y              
@@ -1298,13 +1298,13 @@ GXB_GND*                     : N1        :        :                   :         
 GXB_GND*                     : N2        :        :                   :         : QR2       :                
 GND                          : N3        : gnd    :                   :         :           :                
 GND                          : N4        : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : N5        :        :                   :         : 6C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : N6        :        :                   :         : 6C        :                
-ETH_MDC[3]                   : N7        : output : 2.5 V             :         : 6C        : Y              
-ETH_MDIO[3]                  : N8        : bidir  : 2.5 V             :         : 6C        : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : N9        :        :                   :         : 6C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : N10       :        :                   :         : 6A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : N11       :        :                   :         : 6A        :                
+ENET_RX_D2[3]                : N5        : input  : 2.5 V             :         : 6C        : Y              
+ENET_RX_D2[5]                : N6        : input  : 2.5 V             :         : 6C        : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : N7        :        :                   :         : 6C        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : N8        :        :                   :         : 6C        :                
+ENET_TX_ER[2]                : N9        : output : 2.5 V             :         : 6C        : Y              
+ENET_RX_D3[3]                : N10       : input  : 2.5 V             :         : 6A        : Y              
+ENET_RX_D3[6]                : N11       : input  : 2.5 V             :         : 6A        : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : N12       :        :                   :         : 6A        :                
 M2_DDR2_addr[7]              : N13       : output : SSTL-18 Class I   :         : 7A        : Y              
 M2_DDR2_oct_rdn              : N14       : input  : 1.8 V             :         : 7A        : Y              
@@ -1327,7 +1327,7 @@ LED[7]                       : N30       : output : 2.5 V             :         
 RESERVED_INPUT_WITH_WEAK_PULLUP : N31       :        :                   :         : 1A        :                
 VCCIO1C                      : N32       : power  :                   : 2.5V    : 1C        :                
 ETH_RX_p[1]                  : N33       : input  : LVDS              :         : 1C        : Y              
-ETH_RX_p[1](n)               : N34       : input  : LVDS              :         : 1C        : N              
+ETH_RX_p[1](n)               : N34       : input  : LVDS              :         : 1C        : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : N35       :        :                   :         : 1C        :                
 GND                          : N36       : gnd    :                   :         :           :                
 GND                          : N37       : gnd    :                   :         :           :                
@@ -1338,14 +1338,14 @@ GND                          : P2        : gnd    :                   :         
 GXB_NC                       : P3        :        :                   :         : QR1       :                
 GXB_NC                       : P4        :        :                   :         : QR1       :                
 VCCT_R                       : P5        : power  :                   : 1.1V    :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : P6        :        :                   :         : 6C        :                
+ENET_TX_D2[3]                : P6        : output : 2.5 V             :         : 6C        : Y              
 GND                          : P7        : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : P8        :        :                   :         : 6C        :                
+ENET_TX_EN[2]                : P8        : output : 2.5 V             :         : 6C        : Y              
 GND                          : P9        : gnd    :                   :         :           :                
 VCCIO6C                      : P10       : power  :                   : 2.5V    : 6C        :                
 VREFB6AN0                    : P11       : power  :                   :         : 6A        :                
 GND                          : P12       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : P13       :        :                   :         : 6A        :                
+ENET_TX_D3[4]                : P13       : output : 2.5 V             :         : 6A        : Y              
 M2_DDR2_oct_rup              : P14       : input  : 1.8 V             :         : 7A        : Y              
 GND                          : P15       : gnd    :                   :         :           :                
 M2_DDR2_dq[12]               : P16       : bidir  : SSTL-18 Class I   :         : 7B        : Y              
@@ -1364,7 +1364,7 @@ VREFB1AN0                    : P28       : power  :                   :         
 LED[3]                       : P29       : output : 2.5 V             :         : 1A        : Y              
 GND                          : P30       : gnd    :                   :         :           :                
 ETH_TX_p[3]                  : P31       : output : LVDS              :         : 1C        : Y              
-ETH_TX_p[3](n)               : P32       : output : LVDS              :         : 1C        : N              
+ETH_TX_p[3](n)               : P32       : output : LVDS              :         : 1C        : Y              
 GND                          : P33       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : P34       :        :                   :         : 1C        :                
 VCCT_L                       : P35       : power  :                   : 1.1V    :           :                
@@ -1376,15 +1376,15 @@ GXB_GND*                     : R1        :        :                   :         
 GXB_GND*                     : R2        :        :                   :         : QR1       :                
 GND                          : R3        : gnd    :                   :         :           :                
 GND                          : R4        : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : R5        :        :                   :         : 6C        :                
+ENET_TX_D2[1]                : R5        : output : 2.5 V             :         : 6C        : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : R6        :        :                   :         : 6C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : R7        :        :                   :         : 6C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : R8        :        :                   :         : 6C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : R9        :        :                   :         : 6C        :                
+ENET_TX_D2[2]                : R7        : output : 2.5 V             :         : 6C        : Y              
+ENET_TX_D2[4]                : R8        : output : 2.5 V             :         : 6C        : Y              
+ENET_TX_D2[0]                : R9        : output : 2.5 V             :         : 6C        : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : R10       :        :                   :         : 6C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : R11       :        :                   :         : 6A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : R12       :        :                   :         : 6A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : R13       :        :                   :         : 6A        :                
+ENET_TX_D3[5]                : R11       : output : 2.5 V             :         : 6A        : Y              
+ENET_TX_D3[1]                : R12       : output : 2.5 V             :         : 6A        : Y              
+ENET_TX_D3[0]                : R13       : output : 2.5 V             :         : 6A        : Y              
 M2_DDR2_addr[3]              : R14       : output : SSTL-18 Class I   :         : 7A        : Y              
 VCCPD7A                      : R15       : power  :                   : 2.5V    : 7A        :                
 NC                           : R16       :        :                   :         :           :                
@@ -1401,10 +1401,10 @@ NC                           : R26       :        :                   :         
 RESERVED_INPUT_WITH_WEAK_PULLUP : R27       :        :                   :         : 1A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : R28       :        :                   :         : 1A        :                
 LED[2]                       : R29       : output : 2.5 V             :         : 1A        : Y              
-ETH_MDC[0]                   : R30       : output : 2.5 V             :         : 1C        : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : R30       :        :                   :         : 1C        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : R31       :        :                   :         : 1C        :                
 ETH_TX_p[1]                  : R32       : output : LVDS              :         : 1C        : Y              
-ETH_TX_p[1](n)               : R33       : output : LVDS              :         : 1C        : N              
+ETH_TX_p[1](n)               : R33       : output : LVDS              :         : 1C        : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : R34       :        :                   :         : 1C        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : R35       :        :                   :         : 1C        :                
 GND                          : R36       : gnd    :                   :         :           :                
@@ -1422,8 +1422,8 @@ GND                          : T8        : gnd    :                   :         
 RESERVED_INPUT_WITH_WEAK_PULLUP : T9        :        :                   :         : 6C        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : T10       :        :                   :         : 6C        :                
 VCCIO6C                      : T11       : power  :                   : 2.5V    : 6C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : T12       :        :                   :         : 6A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : T13       :        :                   :         : 6A        :                
+ENET_TX_EN[3]                : T12       : output : 2.5 V             :         : 6A        : Y              
+ENET_TX_ER[3]                : T13       : output : 2.5 V             :         : 6A        : Y              
 VCC                          : T14       : power  :                   : 0.9V    :           :                
 GND                          : T15       : gnd    :                   :         :           :                
 VCC                          : T16       : power  :                   : 0.9V    :           :                
@@ -1454,12 +1454,12 @@ GXB_GND*                     : U1        :        :                   :         
 GXB_GND*                     : U2        :        :                   :         : QR1       :                
 GND                          : U3        : gnd    :                   :         :           :                
 GND                          : U4        : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : U5        :        :                   :         : 6C        :                
+ENET_RST_n[2]                : U5        : output : 2.5 V             :         : 6C        : Y              
 VCCH_GXBR2                   : U6        : power  :                   : 1.4V    : QR2       :                
 VCCL_GXBR2                   : U7        : power  :                   : 1.1V    : QR2       :                
 VCC                          : U8        : power  :                   : 0.9V    :           :                
 GND                          : U9        : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : U10       :        :                   :         : 6C        :                
+ENET_TX_D2[6]                : U10       : output : 2.5 V             :         : 6C        : Y              
 VREFB6CN0                    : U11       : power  :                   :         : 6C        :                
 GND                          : U12       : gnd    :                   :         :           :                
 VCCPD6A                      : U13       : power  :                   : 2.5V    : 6A        :                
@@ -1519,7 +1519,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : V27       :        :                   :      
 LED[0]                       : V28       : output : 2.5 V             :         : 1C        : Y              
 ETH_RST_n                    : V29       : output : 2.5 V             :         : 1C        : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : V30       :        :                   :         : 1C        :                
-ETH_RX_p[0](n)               : V31       : input  : LVDS              :         : 1C        : N              
+ETH_RX_p[0](n)               : V31       : input  : LVDS              :         : 1C        : Y              
 VCC                          : V32       : power  :                   : 0.9V    :           :                
 GND                          : V33       : gnd    :                   :         :           :                
 CPU_RESET_n                  : V34       : input  : 2.5 V             :         : 1C        : Y              
@@ -1559,7 +1559,7 @@ LED[1]                       : W28       : output : 2.5 V             :         
 RESERVED_INPUT_WITH_WEAK_PULLUP : W29       :        :                   :         : 1C        :                
 ~ALTERA_DATA0~ / RESERVED_INPUT : W30       : input  : 1.8 V             :         : 1C        : N              
 VCCHIP_L                     : W31       : power  :                   : 0.9V    :           :                
-ETH_MDIO[0]                  : W32       : bidir  : 2.5 V             :         : 1C        : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : W32       :        :                   :         : 1C        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : W33       :        :                   :         : 1C        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : W34       :        :                   :         : 1C        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : W35       :        :                   :         : 1C        :                
