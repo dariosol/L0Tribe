@@ -253,7 +253,7 @@ module TestBench_LS(
    wire 					clk_pll_40;
    wire 					clk_pll_200;
    wire 					clk_pll_125;
-   wire 					clk_pll_400;
+//   wire 					clk_pll_400;
 
    wire 					lock40MHz;
    wire 					lock125MHz;
@@ -318,7 +318,7 @@ module TestBench_LS(
 		       .inclk0(clk_200),
 		       .c0(clk_pll_40),  //out at 40MHz	
 		       .c1(clk_pll_200),  //out at 200MHz
-		       .c2(clk_pll_400),  //out at 400MHz
+//		       .c2(clk_pll_400),  //out at 400MHz
 		       .locked(lock40MHz)
 		       );
 
