@@ -275,11 +275,11 @@ module TestBench_LS(
    wire [4:0] 					fifoEMPTY;
    wire [4:0] 					fifoFULL;
    
-   //Dual port with input at 256,output at 32//  
+   //FIFO  containing primitives
    wire [255:0] 				fifoDATA[4:0];
-   wire [31:0] 					fifoQ[4:0];
+   wire [255:0]					fifoQ[4:0];
    wire [7:0] 					fifoWRusedW[4:0];
-   wire [10:0] 					fifoRDusedW[4:0];
+   wire [7:0] 					fifoRDusedW[4:0];
    
    wire [4:0] 					fifoSEND;
 
@@ -520,23 +520,23 @@ module TestBench_LS(
 		     .startdata         (ctrl_sig[0]),
 		     
 		     .datasend0         (fifoQ[0]),
-		     .txready0          (fifoRR[0]),
+		     .readfromfifo0     (fifoRR[0]),
 		     .primitiveFIFOempty0(fifoEMPTY[0]),
 
 		     .datasend1          (fifoQ[1]),
-		     .txready1           (fifoRR[1]),
+		     .readfromfifo1      (fifoRR[1]),
 		     .primitiveFIFOempty1(fifoEMPTY[1]),
 
 		     .datasend2          (fifoQ[2]),
-		     .txready2           (fifoRR[2]),
+		     .readfromfifo2      (fifoRR[2]),
 		     .primitiveFIFOempty2(fifoEMPTY[2]),
 
 		     .datasend3          (fifoQ[3]),
-		     .txready3           (fifoRR[3]),
+		     .readfromfifo3           (fifoRR[3]),
 		     .primitiveFIFOempty3(fifoEMPTY[3]),
 
 		     .datasend4          (fifoQ[4]),
-		     .txready4           (fifoRR[4]),
+		     .readfromfifo4      (fifoRR[4]),
 		     .primitiveFIFOempty4(fifoEMPTY[4]),
 		     
 		     .macdata            (ToRamDATA),   

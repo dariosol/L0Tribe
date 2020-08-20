@@ -67,21 +67,12 @@ alt_u32 * rd_adr_p[ndet];
 alt_u32 * ram_access_ptr[ndet];
 
 
-////////////////////////////////////////
-//alt_msgdma_standard_descriptor a_descriptor_wr;
-//alt_msgdma_standard_descriptor * a_descriptor_ptr_wr = &a_descriptor_wr;
-//alt_msgdma_dev dev_wr;
-//alt_msgdma_dev *dev_ptr_wr = &dev_wr;
-//alt_u32 control_wr = 0;
-//alt_u32 wr_addr = 0x80, len_wr=256;
-//alt_u32 * wr_adr_p = 0x80;
-//alt_u32 * ram_access_ptr_wr = &wr_adr_p;
 alt_u32 status=-1;
 
 ///Which detector is ready to be initialized
 alt_u8 detectorUnderInit=15;
 
-//volatile alt_u32 * FIFOEMPTY = (alt_u32*) PILOT_SIG_BASE;
+volatile alt_u32 * FIFOEMPTY = (alt_u32*) PILOT_SIG_BASE;
 volatile alt_u32 * FIFOUSEDW0= (alt_u32*) INPUT_IO_0_BASE;
 volatile alt_u32 * FIFOUSEDW1= (alt_u32*) INPUT_IO_1_BASE;
 volatile alt_u32 * FIFOUSEDW2= (alt_u32*) INPUT_IO_2_BASE;
@@ -92,19 +83,19 @@ volatile alt_u32 * FIFOUSEDW4= (alt_u32*) INPUT_IO_4_BASE;
 ////////////////////////////////////////
 ////Function for interrupt
 ////////////////////////////////////////
-//volatile alt_u8 ISR_transfer_flag = 0;
-//volatile int ISR_input_val = 0;
+volatile alt_u8 ISR_transfer_flag = 0;
+volatile int ISR_input_val = 0;
 //
-//void * ISR_input_ptr = (void *) &(ISR_input_val);
-//static void ISR_transfer_callback(void * context){
-//  volatile int* ISR_input_ptr = (volatile int *) context;
-//
-//  *ISR_input_ptr = IORD_ALTERA_AVALON_PIO_EDGE_CAP(PILOT_SIG_BASE);
-//  IOWR_ALTERA_AVALON_PIO_EDGE_CAP(PILOT_SIG_BASE,0x1f);
-//  ISR_transfer_flag = *ISR_input_ptr;
-//  //printf("ISR_transfer_flag 0x%x\n",ISR_transfer_flag );
-//
-//}
+void * ISR_input_ptr = (void *) &(ISR_input_val);
+static void ISR_transfer_callback(void * context){
+  volatile int* ISR_input_ptr = (volatile int *) context;
+
+  *ISR_input_ptr = IORD_ALTERA_AVALON_PIO_EDGE_CAP(PILOT_SIG_BASE);
+  IOWR_ALTERA_AVALON_PIO_EDGE_CAP(PILOT_SIG_BASE,0xf);
+  ISR_transfer_flag = *ISR_input_ptr;
+  //printf("ISR_transfer_flag 0x%x\n",ISR_transfer_flag );
+
+}
 
 
 
@@ -160,8 +151,8 @@ int main()
   for (int i=0;i<ndet;++i) rd_addr[i] = 0x0;
   for (int i=0;i<ndet;++i) ram_access_ptr[i] = &rd_addr[i];
 
-  IOWR_ALTERA_AVALON_PIO_IRQ_MASK(PILOT_SIG_BASE,0x0); //enabling interrupt on all 4 inputs
-//  IOWR_ALTERA_AVALON_PIO_EDGE_CAP(PILOT_SIG_BASE,0x1f); //clearing older interrupts
+//  IOWR_ALTERA_AVALON_PIO_IRQ_MASK(PILOT_SIG_BASE,0xf); //enabling interrupt on all 4 inputs
+//  IOWR_ALTERA_AVALON_PIO_EDGE_CAP(PILOT_SIG_BASE,0xf); //clearing older interrupts
 //  alt_ic_isr_register(PILOT_SIG_IRQ_INTERRUPT_CONTROLLER_ID, PILOT_SIG_IRQ, ISR_transfer_callback, ISR_input_ptr,0x0);//setting interrupt callback
 
 
@@ -395,7 +386,7 @@ int main()
   //Read back what I have written
   unsigned int write;
 
-  for (unsigned int i = addressRAM0_0-0x80; i <  addressRAM0_0+0x20; i+=4)
+  for (unsigned int i = addressRAM0_0-0x80; i <  addressRAM0_0+0x5500; i+=4)
     {
       write = IORD_32DIRECT(DDR2_RAM_BASE, i);
 
@@ -450,7 +441,7 @@ int main()
 
 
   //DEBUG://///////////////////////////////
-//  int fff=0;
+  //  int fff=0;
 
   //for (unsigned int i = addressRAM0_0-0x20; i <  DDR2_RAM_SPAN; i+=4)
   //  {
@@ -489,7 +480,7 @@ int main()
   alt_u8  addr_update[ndet];
   alt_u32 ninterrupt[ndet];
 
-  //ISR_transfer_flag = 0;
+  ISR_transfer_flag = 0;
 
   //INIT DETECTORS
   for(int i = 0; i < ndet; ++i) {
@@ -526,11 +517,11 @@ int main()
     printf ("Port %d status: %d\n",i, (int)status);
   }
 
-printf("FIFOUSEDW0 %d\n",*FIFOUSEDW0);
-printf("FIFOUSEDW1 %d\n",*FIFOUSEDW1);
-printf("FIFOUSEDW2 %d\n",*FIFOUSEDW2);
-printf("FIFOUSEDW3 %d\n",*FIFOUSEDW3);
-printf("FIFOUSEDW4 %d\n",*FIFOUSEDW4);
+  printf("FIFOUSEDW0 %d\n",*FIFOUSEDW0);
+  printf("FIFOUSEDW1 %d\n",*FIFOUSEDW1);
+  printf("FIFOUSEDW2 %d\n",*FIFOUSEDW2);
+  printf("FIFOUSEDW3 %d\n",*FIFOUSEDW3);
+  printf("FIFOUSEDW4 %d\n",*FIFOUSEDW4);
 
   printf(" Are you ready to start the burst? ");
 
@@ -550,49 +541,56 @@ printf("FIFOUSEDW4 %d\n",*FIFOUSEDW4);
   IOWR(CTRL_SIG_BASE,0,1); //SOB
 
   while(1) {
-	  if(EOB-SOB > 6.5e6) break;
+    if(EOB-SOB > 6.5e6) break;
     //CHOD
     for(int i=0;i<1;++i) {
       if(addr_update[i]) {
 	//Preparing new transer and waiting for ISR
 	rd_adr_p[i] = rd_adr_p[i] + gdiv4;
-	if(alt_msgdma_construct_standard_mm_to_st_descriptor(dev_ptr[i], a_descriptor_ptr[i], rd_adr_p[i], g, control)==-EINVAL) printf("invalid arg\n");
+	alt_msgdma_construct_standard_mm_to_st_descriptor(dev_ptr[i], a_descriptor_ptr[i], rd_adr_p[i], g, control);
 	addr_update[i] = 0;
-	//ninterrupt[i]+=1;
+	ninterrupt[i]+=1;
       }
     }
     ////////INTERRUPTS TO REFILL THE FIFOS:///////////////////////////////////////
     ////CHOD:
-  //  printf("*(FIFOUSEDW0+0x3) %u FIFOUSEDW0 %u addr_update[0] %d\n",*(FIFOUSEDW0+0x3),*(FIFOUSEDW0),addr_update[0]);
+    //    printf("*(FIFOUSEDW0+0x3) %u FIFOUSEDW0 %u time %f %u\n",*(FIFOUSEDW0+0x3),*(FIFOUSEDW0),(EOB-SOB)*0.000001);
+    
+    //if((ISR_transfer_flag&1) == 1 ) {
+    //  alt_msgdma_standard_descriptor_async_transfer(dev_ptr[0],a_descriptor_ptr[0]);
+    //  ISR_transfer_flag &= ~(1UL << 0);
+    //  addr_update[0] = 1;
+    //}
 
-   // if(*(FIFOUSEDW0+0x3)!=0) {
-      if(*(FIFOUSEDW0)<128 && addr_update[0]==0) { //Primitive FIFO usedw < 0x80: send new data
-      alt_msgdma_standard_descriptor_async_transfer(dev_ptr[0],a_descriptor_ptr[0]);
-      addr_update[0] = 1;
-      }
-    //  *(FIFOUSEDW0+0x3)=0;
-  //}
+    if(*(FIFOUSEDW0) < 128 && addr_update[0]==0) {
+    alt_msgdma_standard_descriptor_async_transfer(dev_ptr[0],a_descriptor_ptr[0]);
+       addr_update[0] = 1;
+    }
+    
+
+
+
     ////RICH:
-  //  if(*(FIFOUSEDW1)< 128 && addr_update[1]==0) { //Primitive FIFO usedw < 0x80: send new data
+    //  if(*(FIFOUSEDW1)< 128 && addr_update[1]==0) { //Primitive FIFO usedw < 0x80: send new data
     //   status = alt_msgdma_standard_descriptor_async_transfer(dev_ptr[1],a_descriptor_ptr[1]);
- //     addr_update[1] = 1;
- //   }
+    //     addr_update[1] = 1;
+    //   }
     ////LKr:
- //   if((*FIFOUSEDW2)< 128 && addr_update[2]==0) { //Primitive FIFO usedw < 0x80: send new data
- //     status = alt_msgdma_standard_descriptor_async_transfer(dev_ptr[2],a_descriptor_ptr[2]);
- //     addr_update[2] = 1;
-  //  }
+    //   if((*FIFOUSEDW2)< 128 && addr_update[2]==0) { //Primitive FIFO usedw < 0x80: send new data
+    //     status = alt_msgdma_standard_descriptor_async_transfer(dev_ptr[2],a_descriptor_ptr[2]);
+    //     addr_update[2] = 1;
+    //  }
     ////MUV3:
-  //  if((*FIFOUSEDW3)< 128 && addr_update[3]==0) { //Primitive FIFO usedw < 0x80: send new data
-  //    status = alt_msgdma_standard_descriptor_async_transfer(dev_ptr[3],a_descriptor_ptr[3]);
-  //    addr_update[3] = 1;
-  //  }
+    //  if((*FIFOUSEDW3)< 128 && addr_update[3]==0) { //Primitive FIFO usedw < 0x80: send new data
+    //    status = alt_msgdma_standard_descriptor_async_transfer(dev_ptr[3],a_descriptor_ptr[3]);
+    //    addr_update[3] = 1;
+    //  }
     ////newCHOD:
-  //  if((*FIFOUSEDW4)< 128 && addr_update[4]==0){ //Primitive FIFO usedw < 0x80: send new data
- //    status = alt_msgdma_standard_descriptor_async_transfer(dev_ptr[4],a_descriptor_ptr[4]);
- //     addr_update[4] = 1;
-  //  }
-   // }
+    //  if((*FIFOUSEDW4)< 128 && addr_update[4]==0){ //Primitive FIFO usedw < 0x80: send new data
+    //    status = alt_msgdma_standard_descriptor_async_transfer(dev_ptr[4],a_descriptor_ptr[4]);
+    //     addr_update[4] = 1;
+    //  }
+    // }
     EOB = alt_nticks() * alt_ticks_per_second();
     if(EOB-SOB > 6.5e6) break;
   }

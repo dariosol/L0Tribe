@@ -6,7 +6,7 @@
 -- Author     : na62torino  <na62torino@na62torino-WorkStation>
 -- Company    : 
 -- Created    : 2020-02-12
--- Last update: 2020-07-10
+-- Last update: 2020-08-18
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -34,13 +34,14 @@ package component_ethlink is
 
   
   type FSMSend_t is (S0, S1, S1_header,S1_1,S1_2, S1_3,S2);
-  type FSMBuffer_t is (S0,S1,S1_1,S1_1_1,S2,S2_2,S2_2_2,S3);
+  type FSMBuffer_t is (S0,S1,S1_Latency,S1_1_Latency,S2,S2_Latency,S2_2_Latency,S3);
   type FSMReceive32bit_t is (S0, S1, S2,S3_1,S3_2,S3_3,S3_4,S3_5,S3_6,S3_7,S3_8,S4);
   type FSMSend_vector_t is array(natural range <>) of FSMSend_t;
   type FSMBuffer_vector_t is array(natural range <>) of FSMBuffer_t;      
 
   
   type vector is array(natural range <>) of std_logic;
+  type vector3 is array(natural range <>) of std_logic_vector(2 downto 0);
   type vector4 is array(natural range <>) of std_logic_vector(3 downto 0);
   type vector8 is array(natural range <>) of std_logic_vector(7 downto 0);
   type vector14 is array(natural range <>) of std_logic_vector(13 downto 0);
@@ -49,6 +50,7 @@ package component_ethlink is
   type vector24 is array(natural range <>) of std_logic_vector(23 downto 0);
   type vector32 is array(natural range <>) of std_logic_vector(31 downto 0);
   type vector64 is array(natural range <>) of std_logic_vector(63 downto 0);
+  type vector256 is array(natural range <>) of std_logic_vector(255 downto 0);
 
 
   type ethlink_inputs_t is record
@@ -77,14 +79,7 @@ package component_ethlink is
     primitiveFIFOempty4: std_logic;
     primitiveFIFOempty5: std_logic; 
     
-    datasend0          : std_logic_vector(31 downto 0);
-    datasend1          : std_logic_vector(31 downto 0);
-    datasend2          : std_logic_vector(31 downto 0);
-    datasend3          : std_logic_vector(31 downto 0);
-    datasend4          : std_logic_vector(31 downto 0);
-    datasend5          : std_logic_vector(31 downto 0);
-
-    
+    PrimitiveDataIn   : vector256(0 to ethlink_NODES -2);
   end record;
 
 
@@ -102,12 +97,14 @@ package component_ethlink is
     macdata           : std_logic_vector(63 downto 0);
     macreceived       : std_logic;
     packetreceived    : std_logic;
-    txready0          : std_logic;
-    txready1          : std_logic;
-    txready2          : std_logic;
-    txready3          : std_logic;
-    txready4          : std_logic;
-    txready5          : std_logic;
+
+    --read the new data from the fifo (passed to the serializer)
+    readfromfifo0          : std_logic;
+    readfromfifo1          : std_logic;
+    readfromfifo2          : std_logic;
+    readfromfifo3          : std_logic;
+    readfromfifo4          : std_logic;
+    readfromfifo5          : std_logic;
     
     detectorUnderInit : std_logic_vector(3 downto 0);
   end record;
@@ -147,6 +144,7 @@ use work.component_mac_sgmii.all;
 use work.component_mac_rgmii.all;
 use work.component_txport1.all;
 use work.component_bufferfifo.all;
+use work.component_PrimitiveSerializer.all;
 
 
 entity ethlink is
@@ -176,8 +174,7 @@ architecture rtl of ethlink is
     FSMReceive32bit     : FSMReceive32bit_t;
     FSMReceive32bitRGMII: FSMReceive32bit_t;
     FSMBuffer           : FSMBuffer_vector_t(0 to ethlink_NODES-2);
-    txready             : std_logic_vector(0 to ethlink_NODES-2);
-    datasend            : vector32(0 to ethlink_NODES-2);
+    readfromfifo        : std_logic_vector(0 to ethlink_NODES-2);
     startData           : std_logic;
     sendflag            : std_logic_vector(0 to ethlink_NODES-2);
     latency             : vector16(0 to  ethlink_NODES-2);
@@ -203,6 +200,7 @@ architecture rtl of ethlink is
     framecounter        : vector24(0 to ethlink_NODES-2);
     framecounter_copy   : vector24(0 to ethlink_NODES-2 );
     tstmpword           : vector32(0 to ethlink_NODES-2);
+    offset              : vector8(0 to ethlink_NODES-2);
   end record;
 
   constant reglist_clk125_default : reglist_clk125_t :=
@@ -214,8 +212,7 @@ architecture rtl of ethlink is
       wena                => (others => '0'),
       rena                => (others => '0'),
       hwaddress           => "00000000",
-      txready             => (others =>'0'),
-      datasend            => (others=>X"00000000"),
+      readfromfifo        => (others =>'0'),
       startData           => '0',
       sendflag            => "0000000",
       latency             => (others=>X"031F"),
@@ -240,8 +237,8 @@ architecture rtl of ethlink is
       MTPLength           => (others =>X"0000"),
       framecounter        => (others=>X"000000"),
       framecounter_copy   => (others=>X"000000"),
-      tstmpword           => (others=>X"00000000")
-      
+      tstmpword           => (others=>X"00000000"),
+      offset              => (others=>X"00")
       );
 
 
@@ -266,6 +263,7 @@ architecture rtl of ethlink is
     MAC         : mac_sgmii_vector_t(0 to SGMII_NODES - 1);
     enet_MAC    : mac_rgmii_vector_t(0 to RGMII_NODES - 1);
     bufferfifo  : bufferfifo_vector_t(0 to ethlink_NODES - 2);
+    PrimitiveSerializer : PrimitiveSerializer_vector_t(0 to ethlink_NODES - 2);
   end record;
 
 
@@ -325,6 +323,14 @@ begin
       (
         inputs  => allnets.bufferfifo(index).inputs,
         outputs => allnets.bufferfifo(index).outputs
+        );
+  end generate;
+
+  PrimitiveSerializer_inst : for index in 0 to ethlink_NODES-2 generate
+    PrimitiveSerializer_inst : PrimitiveSerializer port map
+      (
+        inputs  => allnets.PrimitiveSerializer(index).inputs,
+        outputs => allnets.PrimitiveSerializer(index).outputs
         );
   end generate;
 
@@ -414,54 +420,13 @@ begin
       r.clk125.startData               := i.startData;
       r.clk125.framecounter_copy       := ro.clk125.framecounter;
 
-      r.clk125.datasend(0)(7 downto 0)   := i.datasend0(31 downto 24);
-      r.clk125.datasend(0)(15 downto 8)  := i.datasend0(23 downto 16);
-      r.clk125.datasend(0)(23 downto 16) := i.datasend0(15 downto 8);
-      r.clk125.datasend(0)(31 downto 24) := i.datasend0(7 downto 0);
 
-      r.clk125.datasend(1)(7 downto 0)   := i.datasend1(31 downto 24);
-      r.clk125.datasend(1)(15 downto 8)  := i.datasend1(23 downto 16);
-      r.clk125.datasend(1)(23 downto 16) := i.datasend1(15 downto 8);
-      r.clk125.datasend(1)(31 downto 24) := i.datasend1(7 downto 0);
-
-      r.clk125.datasend(2)(7 downto 0)   := i.datasend2(31 downto 24);
-      r.clk125.datasend(2)(15 downto 8)  := i.datasend2(23 downto 16);
-      r.clk125.datasend(2)(23 downto 16) := i.datasend2(15 downto 8);
-      r.clk125.datasend(2)(31 downto 24) := i.datasend2(7 downto 0);
-
-      r.clk125.datasend(3)(7 downto 0)   := i.datasend3(31 downto 24);
-      r.clk125.datasend(3)(15 downto 8)  := i.datasend3(23 downto 16);
-      r.clk125.datasend(3)(23 downto 16) := i.datasend3(15 downto 8);
-      r.clk125.datasend(3)(31 downto 24) := i.datasend3(7 downto 0);
-
-      r.clk125.datasend(4)(7 downto 0)   := i.datasend4(31 downto 24);
-      r.clk125.datasend(4)(15 downto 8)  := i.datasend4(23 downto 16);
-      r.clk125.datasend(4)(23 downto 16) := i.datasend4(15 downto 8);
-      r.clk125.datasend(4)(31 downto 24) := i.datasend4(7 downto 0);
-
-      r.clk125.datasend(5)(7 downto 0)   := i.datasend5(31 downto 24);
-      r.clk125.datasend(5)(15 downto 8)  := i.datasend5(23 downto 16);
-      r.clk125.datasend(5)(23 downto 16) := i.datasend5(15 downto 8);
-      r.clk125.datasend(5)(31 downto 24) := i.datasend5(7 downto 0);
-
-      r.clk125.datasend(6)(7 downto 0)   := (others => '0');
-      r.clk125.datasend(6)(15 downto 8)  := (others => '0');
-      r.clk125.datasend(6)(23 downto 16) := (others => '0');
-      r.clk125.datasend(6)(31 downto 24) := (others => '0');
-
-    
-      
-      o.txready0                       := ro.clk125.txready(0); --reading fifo
-                                                                --CHOD
-      o.txready1                       := ro.clk125.txready(1); --reading fifo
-                                                                --RICH
-      o.txready2                       := ro.clk125.txready(2); --reading fifo
-                                                                --LKr
-      o.txready3                       := ro.clk125.txready(3); --reading fifo
-                                                                --MUV3
-      o.txready4                       := ro.clk125.txready(4); --reading fifo
-                                                                --IRC
-      o.txready5                       := '0'; --reading fifo
+      r.clk125.offset(0) := X"02";
+      r.clk125.offset(1) := X"02";
+      r.clk125.offset(2) := X"04";
+      r.clk125.offset(3) := X"02";
+      r.clk125.offset(4) := X"02";
+      r.clk125.offset(5) := X"02";
 
       r.clk125.primitiveFIFOempty(0)   := i.primitiveFIFOempty0;
       r.clk125.primitiveFIFOempty(1)   := i.primitiveFIFOempty1;
@@ -470,8 +435,13 @@ begin
       r.clk125.primitiveFIFOempty(4)   := i.primitiveFIFOempty4;
       r.clk125.primitiveFIFOempty(5)   := '0';
       r.clk125.primitiveFIFOempty(6)   := '0';
-      
-      
+
+      o.readfromfifo0               := ro.clk125.readfromfifo(0);
+      o.readfromfifo1               := ro.clk125.readfromfifo(1);
+      o.readfromfifo2               := ro.clk125.readfromfifo(2);
+      o.readfromfifo3               := ro.clk125.readfromfifo(3);
+      o.readfromfifo4               := ro.clk125.readfromfifo(4);
+
 
       o.macdata                        := ro.clk125.macdata;
       o.macreceived                    := ro.clk125.macreceived;
@@ -486,7 +456,13 @@ begin
         n.bufferfifo(index).inputs.rdreq := '0';        
         n.bufferfifo(index).inputs.clk   := n.clk125;
         n.bufferfifo(index).inputs.aclr  := not i.cpu_resetn;
-        end loop;
+
+        n.PrimitiveSerializer(index).inputs.clk    := n.clk125;
+        n.PrimitiveSerializer(index).inputs.aclr   := not(i.cpu_resetn);
+        n.PrimitiveSerializer(index).inputs.datain := i.PrimitiveDataIn(index);
+        n.PrimitiveSerializer(index).inputs.rdreq  := '0';        
+
+      end loop;
       
       for index in 0 to SGMII_NODES-1 loop
       
@@ -668,106 +644,110 @@ begin
       FOR index IN 0 to ethlink_NODES-2 LOOP
         n.bufferfifo(index).inputs.wrreq :='0';
         n.bufferfifo(index).inputs.data  := (others => '0');
-        n.bufferfifo(index).inputs.clk   := n.clk125;
-        n.bufferfifo(index).inputs.aclr  := '0';
         r.sendflag(index) := '0';
-        r.txready(index)  := '0';
+        n.PrimitiveSerializer(index).inputs.rdreq  := '0';
+        r.readfromfifo(index) :='0';
         
         case ro.FSMBuffer(index) is
 
           when S0 =>
             if ro.startData = '1' then
               if ro.primitiveFIFOempty(index) ='0' then
-                r.txready(index)       := '1'; --read primitive FIFO
-                r.FSMBuffer(index)     := S1;
+                r.readfromfifo(index) := '1';--read primitive FIFO
+                r.FSMBuffer(index)     := S1_Latency;
               end if;
             else
               n.bufferfifo(index).inputs.aclr  := '1';
               r.FSMBuffer(index)     := S0;
             end if;
+
+           when S1_Latency => --WAITING DATA TO BE UPDATE IN THE SERIALIZER
+            if ro.startData = '1' then
+              r.FSMBuffer(index)     := S1_1_LATENCY;
+            else
+              r.FSMBuffer(index)     := S0;
+            end if;
+
+          when S1_1_Latency => --WAITING DATA TO BE UPDATE IN THE SERIALIZER
+            if ro.startData = '1' then
+              r.FSMBuffer(index)     := S1;
+            else
+              r.FSMBuffer(index)     := S0;
+            end if;
             
           when S1 => --timestamp word handling
             if ro.startData = '1' then
-              if index = 2 then 
-                if ro.datasend(index)(31 downto 24) = X"00" and SLV(UINT(ro.datasend(index)(23 downto 0))+4,24) = ro.framecounter_copy(index)  and ro.primitiveFIFOempty(index) ='0' and UINT(ro.framecounter_copy(index)) > 0 then --timestamp word      
-                  n.bufferfifo(index).inputs.data  := ro.datasend(index); --write the
+                if n.PrimitiveSerializer(index).outputs.dataout(31 downto 24) = X"00" and SLV(UINT(n.PrimitiveSerializer(index).outputs.dataout(23 downto 0)) + UINT(ro.offset(index)),24) = ro.framecounter_copy(index)  and ro.primitiveFIFOempty(index) ='0' and UINT(ro.framecounter_copy(index)) > 0  then --timestamp word      
+                  n.bufferfifo(index).inputs.data  := n.PrimitiveSerializer(index).outputs.dataout; --write the
                                                                           --timestamp word
                   n.bufferfifo(index).inputs.wrreq := '1';
                   r.primitiveinpacket(index)      := X"00"; --reset primitive in packet
-                  r.txready(index)        := '1'; --read a second word
-                  r.FSMBuffer(index)      := S1_1;
-                  
+
+                if( n.PrimitiveSerializer(index).outputs.rdpointer /="111") then
+                    n.PrimitiveSerializer(index).inputs.rdreq := '1'; --read a new
+                                                                      --word
+                                                                      --from serializer
+                    r.FSMBuffer(index)      := S2;
+                  else
+                    r.readfromfifo(index) := '1';
+                    r.FSMBuffer(index)      := S2_latency;
+                  end if;
+                    
                 else
                   r.FSMBuffer(index)     := S1;
                 end if;
-
-              else
-                if ro.datasend(index)(31 downto 24) = X"00" and SLV(UINT(ro.datasend(index)(23 downto 0))+2,24) = ro.framecounter_copy(index)  and ro.primitiveFIFOempty(index) ='0' and UINT(ro.framecounter_copy(index)) > 0 then --timestamp word      
-                  n.bufferfifo(index).inputs.data  := ro.datasend(index); --write the
-                                                                          --timestamp word
-                  n.bufferfifo(index).inputs.wrreq := '1';
-                  r.primitiveinpacket(index)      := X"00"; --reset primitive in packet
-                  r.txready(index)        := '1'; --read a second word
-                  r.FSMBuffer(index)      := S1_1;
-                  
-                else
-                  r.FSMBuffer(index)     := S1;
-                end if;
-
-              end if;
-              
-            else 
-              r.FSMBuffer(index)     := S0;
-            end if;
-
-            
-
-          when S1_1 =>
-            if ro.startData = '1' then      
-              r.FSMBuffer(index)     := S1_1_1;
-            else 
-              r.FSMBuffer(index)     := S0;
-            end if;
-
-          when S1_1_1 =>
-            if ro.startData = '1' then      
-              r.FSMBuffer(index)     := S2;
             else 
               r.FSMBuffer(index)     := S0;
             end if;
             
+           -- when S1_WAITOUT =>
+           -- if ro.startData = '1' then
+           --   r.FSMBuffer(index)     := S2;
+           -- else
+           --   r.FSMBuffer(index)     := S0;
+           -- end if;
+
           when S2 => --primitive word handling
             if ro.startData = '1' then
-              if ro.datasend(index)(31 downto 24) = X"00"  then --found another timestamp
+              if n.PrimitiveSerializer(index).outputs.dataout(31 downto 24) = X"00"  then --found another timestamp
                                                                 --word: go back to S1
                 r.FSMBuffer(index)     := S3;
                 r.sendflag(index)      :='1'; --ready to write everything in the MAC
               else
-                r.txready(index)       := '1';
-                n.bufferfifo(index).inputs.data := ro.datasend(index); --primitive data
+                
+                if(n.PrimitiveSerializer(index).outputs.rdpointer/="111") then
+                  n.PrimitiveSerializer(index).inputs.rdreq := '1';
+                  r.FSMBuffer(index)      := S2;
+                else
+                   r.readfromfifo(index) := '1'; --Read new word from FIFO
+                   r.FSMBuffer(index)      := S2_latency;
+                 end if;
+
+                n.bufferfifo(index).inputs.data := n.PrimitiveSerializer(index).outputs.dataout; --primitive data
                 n.bufferfifo(index).inputs.wrreq := '1';
                 r.primitiveinpacket(index) := SLV(UINT(ro.primitiveinpacket(index))+1,8);
-                r.FSMBuffer(index)     := S2_2;
+                
               end if;
             else 
               r.FSMBuffer(index)     := S0;
             end if;
 
-          when S2_2 =>
-            if ro.startData = '1' then      
-              r.FSMBuffer(index)     := S2_2_2;
-            else 
+            when S2_Latency =>
+            if ro.startData = '1' then
+              n.PrimitiveSerializer(index).inputs.rdreq := '1'; -- It goes to 0
+              r.FSMBuffer(index)     := S2_2_LATENCY;
+            else
               r.FSMBuffer(index)     := S0;
             end if;
 
-          when S2_2_2 =>
-            if ro.startData = '1' then      
+          when S2_2_Latency =>
+            if ro.startData = '1' then
+
               r.FSMBuffer(index)     := S2;
-            else 
+            else
               r.FSMBuffer(index)     := S0;
             end if;
-
-
+            
           when S3 =>
             if ro.startData = '1' then      
               r.FSMBuffer(index)     := S1;

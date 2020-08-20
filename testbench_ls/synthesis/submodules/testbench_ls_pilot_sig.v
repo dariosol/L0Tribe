@@ -29,10 +29,12 @@ module testbench_ls_pilot_sig (
                                  writedata,
 
                                 // outputs:
+                                 irq,
                                  readdata
                               )
 ;
 
+  output           irq;
   output  [ 31: 0] readdata;
   input   [  1: 0] address;
   input            chipselect;
@@ -50,11 +52,14 @@ wire    [  7: 0] data_in;
 reg     [  7: 0] edge_capture;
 wire             edge_capture_wr_strobe;
 wire    [  7: 0] edge_detect;
+wire             irq;
+reg     [  7: 0] irq_mask;
 wire    [  7: 0] read_mux_out;
 reg     [ 31: 0] readdata;
   assign clk_en = 1;
   //s1, which is an e_avalon_slave
   assign read_mux_out = ({8 {(address == 0)}} & data_in) |
+    ({8 {(address == 2)}} & irq_mask) |
     ({8 {(address == 3)}} & edge_capture);
 
   always @(posedge clk or negedge reset_n)
@@ -67,6 +72,16 @@ reg     [ 31: 0] readdata;
 
 
   assign data_in = in_port;
+  always @(posedge clk or negedge reset_n)
+    begin
+      if (reset_n == 0)
+          irq_mask <= 0;
+      else if (chipselect && ~write_n && (address == 2))
+          irq_mask <= writedata[7 : 0];
+    end
+
+
+  assign irq = |(edge_capture & irq_mask);
   assign edge_capture_wr_strobe = chipselect && ~write_n && (address == 3);
   always @(posedge clk or negedge reset_n)
     begin
@@ -179,7 +194,7 @@ reg     [ 31: 0] readdata;
     end
 
 
-  assign edge_detect = d1_data_in ^  d2_data_in;
+  assign edge_detect = d1_data_in & ~d2_data_in;
 
 endmodule
 

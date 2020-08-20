@@ -99,5 +99,5 @@ lappend arg_list "--system-info=DEVICE_FAMILY=STRATIXIV"
 lappend arg_list "--report-file=sopcinfo:testbench_ls_ddr2_ram_s0.sopcinfo"
 lappend arg_list "--report-file=txt:testbench_ls_ddr2_ram_s0_seq_ipd_report.txt"
 lappend arg_list "--file-set=QUARTUS_SYNTH"
-catch { eval [concat [list exec "/home/na62torino/intelFPGA/18.1/quartus/sopc_builder/bin/ip-generate" --component-name=qsys_sequencer_110] $arg_list] } temp
+catch { eval [concat [list exec "/home/dsoldi/altera/18.1/quartus/sopc_builder/bin/ip-generate" --component-name=qsys_sequencer_110] $arg_list] } temp
 puts $temp

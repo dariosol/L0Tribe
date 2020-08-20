@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios_cpu' in SOPC Builder design 'testbench_ls'
  * SOPC Builder design path: ../../testbench_ls.sopcinfo
  *
- * Generated: Tue Jul 21 15:28:38 CEST 2020
+ * Generated: Wed Aug 19 14:05:39 CEST 2020
  */
 
 /*
@@ -899,14 +899,14 @@
 #define PILOT_SIG_DATA_WIDTH 8
 #define PILOT_SIG_DO_TEST_BENCH_WIRING 0
 #define PILOT_SIG_DRIVEN_SIM_VALUE 0
-#define PILOT_SIG_EDGE_TYPE "ANY"
+#define PILOT_SIG_EDGE_TYPE "RISING"
 #define PILOT_SIG_FREQ 200000000
 #define PILOT_SIG_HAS_IN 1
 #define PILOT_SIG_HAS_OUT 0
 #define PILOT_SIG_HAS_TRI 0
-#define PILOT_SIG_IRQ -1
-#define PILOT_SIG_IRQ_INTERRUPT_CONTROLLER_ID -1
-#define PILOT_SIG_IRQ_TYPE "NONE"
+#define PILOT_SIG_IRQ 8
+#define PILOT_SIG_IRQ_INTERRUPT_CONTROLLER_ID 0
+#define PILOT_SIG_IRQ_TYPE "EDGE"
 #define PILOT_SIG_NAME "/dev/pilot_sig"
 #define PILOT_SIG_RESET_VALUE 0
 #define PILOT_SIG_SPAN 16

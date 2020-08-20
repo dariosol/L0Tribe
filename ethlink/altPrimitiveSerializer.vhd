@@ -2,282 +2,99 @@ library ieee;
 use ieee.std_logic_1164.all;
 --use ieee.numeric_std.all;
 use IEEE.NUMERIC_BIT.all;
-use work.globals.all;
 use work.userlib.all;
 
 entity altPrimitiveSerializer is
-   port (aclr             : in std_logic; 
+   port (
          clk              : in std_logic;
+         aclr             : in std_logic;
 	 datain           : in std_logic_vector(255 downto 0);
          rdreq            : in std_logic;
 	 dataout          : out std_logic_vector(31 downto 0);
-         readfromfifo     : out std_logic
+         rdpointer        : out std_logic_vector(2 downto 0)
 	 );
 
 end altPrimitiveSerializer;
 
 architecture rtl of altPrimitiveSerializer is
 
-  type FSMSerialization_t is (Idle,Chokestate,Dead_time0,Dead_time1,Dead_time2,Dead_time3);
-  signal FSMSerialization : FSMSerialization_t;
-
-  signal s_datain  : std_logic_vector(256 downto 0);
-  signal s_databuffer : std_logic_vector(31 downto 0);
+ 
+  signal s_datain : std_logic_vector(255 downto 0);
+  signal s_rdpointer : std_logic_vector(2 downto 0);
 
 begin
 
-   s_datain <= datain;
-   dataout  <= s_databuffer;
+   s_datain   <= datain;
    
-	
-	
-process(clk, aclr) is
+   rdpointer <= s_rdpointer;
+
+ process(aclr,clk) is                  
  begin
-    if(aclr = '1') then
-	 s_databuffer <= (others=>'0');
-         readfromfifo <= '0';
-         
-    elsif (clk='1' and clk'event)  then
-
-
-    end if;
- end process;
---
---
--- process(clk40, reset) is
--- begin
---    if(rising_edge(clk40)) then
---       if(reset = '1') then
---          ERROR_s1 <= (others=>'0');
---          ERROR_s2 <= (others=>'0');
---       else
---          ERROR_s1 <= s_ERROR;
---          ERROR_s2 <= ERROR_s1;
---       end if;
---    end if;
--- end process;
---
-
-   P1: PROCESS(clk40,s_ECRST,s_BCRST,startRUN)
-   begin
-       if(clk40='1' and clk40'event)  then
-	 if startRUN ='1' then --FROM USB
-	    if(s_ECRST='1' and s_BCRST='1')then --SOB
-	       s_BURST<='1';
-	    elsif (s_BCRST='0' and s_ECRST='1')  then --EOB
-	       s_BURST <='0';
-	    else
-	       s_BURST <= s_BURST;
-	    end if;	
-	 else
-	    s_BURST<='0';
-	 end if;
-     end if;	
-   end PROCESS;
-
- PError: PROCESS(clk40,s_ECRST,s_BCRST)
- begin
-   if(clk40='1' and clk40'event)  then
-     if (s_ECRST='1' and s_BCRST='1' and s_BURST = '1')  then --sob without eob
-       s_BURSTERROR <= "100000";
-     elsif (s_ECRST='1' and s_BCRST='1' and s_BURST = '0')  then --good sob
-       s_BURSTERROR <= "000000";
+   if(aclr = '1') then
+     s_rdpointer <= (others => '0');
+   elsif(clk'event and clk='1') then
+     if(rdreq = '1') then
+       s_rdpointer <= SLV(UINT(s_rdpointer)+1,3);
      else
-       s_BURSTERROR  <=s_BURSTERROR;
+       s_rdpointer <= s_rdpointer;
      end if;
-    end if;      
-   end PROCESS;
-
-
- 
-
- 
-   CHOKE_P: PROCESS(reset,clk40,CHOKE_s2,s_FAKECHOKE)
-   begin
-      if reset ='1' then 
-	 
-	 FSMChoke <= Idle;
-
-      elsif rising_edge(clk40) then
-	 
-	 case FSMChoke is
-	    
-	    when idle =>
-	       if activateCHOKE ='1' then --FROM USB
-		  if (CHOKE_s2 or s_FAKECHOKE) = "00000000000000"   then
-		     FSMChoke <= Idle;
-		  else
-		     FSMChoke <= Chokestate;
-		  end if;
-	       else
-		  FSMChoke <= Idle;
-	       end if;
-	       
-	    when Chokestate =>
-	       if activateCHOKE ='1' then --FROM USB
-		  if (CHOKE_s2 or s_FAKECHOKE) = "00000000000000"  then
-		     FSMChoke <= Dead_time0;
-		  else
-		     FSMChoke <= Chokestate;
-		  end if;
-	       else
-		  FSMChoke <= Idle;
-	       end if;
-
-	    when Dead_time0 =>
-	       
-	       if activateCHOKE ='1' then --FROM USB
-		  if (CHOKE_s2 or s_FAKECHOKE) = "00000000000000"  then
-		     FSMChoke <= Dead_time1;
-		  else
-		     FSMChoke <= Chokestate;
-		  end if;
-	       else
-		  FSMChoke <= Idle;
-	       end if;
-	       
-	    when Dead_time1 =>
-	      if activateCHOKE ='1' then --FROM USB
-	        if (CHOKE_s2 or s_FAKECHOKE) = "00000000000000"  then
-		     FSMChoke <= Dead_time2;
-		  else
-		     FSMChoke <= Chokestate;
-		  end if;
-	       else
-		  FSMChoke <= Idle;
-	       end if;
-
-         when Dead_time2 =>
-           if activateCHOKE ='1' then --FROM USB
-	        if (CHOKE_s2 or s_FAKECHOKE) = "00000000000000"  then
-		     FSMChoke <= Dead_time3;
-		else
-		     FSMChoke <= Chokestate;
-	       end if;
-
-	    else
-                FSMChoke <= Idle;
-	    end if;
-
-	 when Dead_time3 =>
-           if activateCHOKE ='1' then --FROM USB
-	        if (CHOKE_s2 or s_FAKECHOKE) = "00000000000000"  then
-		   FSMChoke <= Idle;
-		  else
-		     FSMChoke <= Chokestate;
-		  end if;
-	       else
-		  FSMChoke <= Idle;
-	       end if;
-	 end case;
-      end if;
-   end PROCESS;
-
--- Output depends on the current state
-   process (FSMChoke)
-   begin
-      s_CHOKE_ON  <='0';
-      s_CHOKE_OFF <='1';
-      case FSMChoke is
-	 when idle =>
-	    s_CHOKE_ON  <='0';
-	    s_CHOKE_OFF <='1';
-	 when Chokestate =>
-	    s_CHOKE_ON  <='1';
-	    s_CHOKE_OFF <='0';
-	 when Dead_time0 =>
-	    s_CHOKE_ON  <='1';
-	    s_CHOKE_OFF <='0';
-	 when Dead_time1 =>
-	    s_CHOKE_ON  <='1';
-	    s_CHOKE_OFF <='0';
-	 when Dead_time2 =>
-	    s_CHOKE_ON  <='1';
-	    s_CHOKE_OFF <='0';
-	 when Dead_time3 =>
-	    s_CHOKE_ON  <='1';
-	    s_CHOKE_OFF <='0';
-      end case;
+    end if;
    end process;
 
-   ERROR_P: PROCESS(reset,clk40,ERROR_s2, s_FAKEERROR)
-   begin
-      if reset ='1' then 
-	 
-	 FSMERROR <= Idle;
-
-      elsif rising_edge(clk40) then
-	 
-	 case FSMERROR is
-	    
-	    when idle =>
-	       if activateERROR ='1' then --FROM USB
-		  if (ERROR_s2 or s_FAKEERROR) = "00000000000000"  then
-		     FSMERROR <= Idle;
-		  else
-		     FSMERROR <= ERRORstate;
-		  end if;
-	       else
-		  FSMERROR <= Idle;
-	       end if;
-	       
-	    when ERRORstate =>
-	       if activateERROR ='1' then --FROM USB
-		  if (ERROR_s2 or s_FAKEERROR) = "00000000000000" then
-		     FSMERROR <= Dead_time0;
-		  else
-		     FSMERROR <= ERRORstate;
-		  end if;
-	       else
-		  FSMERROR <= Idle;
-	       end if;
-	       
-	    when Dead_time0 =>
-	       
-	       FSMERROR <= Dead_time1;
-	       
-	    when Dead_time1 =>
-	       
-	       FSMERROR <= Idle;
-	       
-	 end case;
-      end if;
-   end PROCESS;
-
--- Output depends on the current state
-   process (FSMERROR)
-   begin
-      s_ERROR_ON  <='0';
-      s_ERROR_OFF <='1';
-      case FSMERROR is
-	 when idle =>
-	    s_ERROR_ON  <='0';
-	    s_ERROR_OFF <='1';
-	 when ERRORstate =>
-	    s_ERROR_ON  <='1';
-	    s_ERROR_OFF <='0';
-	 when Dead_time0 =>
-	    s_ERROR_ON  <='1';
-	    s_ERROR_OFF <='0';
-	 when Dead_time1 =>
-	    s_ERROR_ON  <='1';
-	    s_ERROR_OFF <='0';
-      end case;
-   end process;
-
-
-
- ERROR_ON       <= s_ERROR_ON   ;
- ERROR_OFF      <= s_ERROR_OFF  ;
- CHOKE_ON       <= s_CHOKE_ON   ;
- CHOKE_OFF      <= s_CHOKE_OFF  ;
- BURST    	<= s_BURST      ;
- BURSTERROR     <= s_BURSTERROR ;
- Led1           <= s_BURST      ;
- Led3           <= not(s_BURST) ; --Led of EOB
- CHOKE_signal   <= CHOKE_s2     ;
- ERROR_signal   <= ERROR_s2     ;
-
-
-
+     
+process(s_rdpointer) is
+  begin
+    --32 bit output:   --Change the direction of the data in:
+       if(s_rdpointer = "111") then
+         dataout(31 downto 24) <= s_datain(231 downto 224);
+         dataout(23 downto 16) <= s_datain(239 downto 232);
+         dataout(15 downto 8) <=  s_datain(247 downto 240);
+         dataout(7 downto 0) <=   s_datain(255 downto 248);
+         
+       elsif(s_rdpointer = "110") then
+          dataout(31 downto 24) <= s_datain(199 downto 192);
+          dataout(23 downto 16) <= s_datain(207 downto 200);
+          dataout(15 downto 8)  <= s_datain(215 downto 208);
+          dataout(7 downto 0)   <= s_datain(223 downto 216);
+          
+       elsif(s_rdpointer = "101") then
+          dataout(31 downto 24) <= s_datain(167 downto 160);
+          dataout(23 downto 16) <= s_datain(175 downto 168);
+          dataout(15 downto 8)  <= s_datain(183 downto 176);
+          dataout(7 downto 0)   <= s_datain(191 downto 184);
+                                   
+               
+       elsif(s_rdpointer = "100") then
+          dataout(31 downto 24) <= s_datain(135 downto 128);
+          dataout(23 downto 16) <= s_datain(143 downto 136);
+          dataout(15 downto 8)  <= s_datain(151 downto 144);
+          dataout(7 downto 0)   <= s_datain(159 downto 152);
+               
+       elsif(s_rdpointer = "011") then
+          dataout(31 downto 24)  <= s_datain(103 downto 96) ;
+          dataout(23 downto 16)  <= s_datain(111 downto 104) ;
+          dataout(15 downto 8)   <= s_datain(119 downto 112) ;
+          dataout(7 downto 0)    <= s_datain(127 downto 120) ;
+               
+       elsif(s_rdpointer = "010") then
+          dataout(31 downto 24)  <= s_datain(71 downto 64) ;
+          dataout(23 downto 16)  <= s_datain(79 downto 72) ;
+          dataout(15 downto 8)   <= s_datain(87 downto 80) ;
+          dataout(7 downto 0)    <= s_datain(95 downto 88) ;
+               
+       elsif(s_rdpointer = "001") then
+          dataout(31 downto 24)  <= s_datain(39 downto 32) ;
+          dataout(23 downto 16)  <= s_datain(47 downto 40) ;
+          dataout(15 downto 8)   <= s_datain(55 downto 48) ;
+          dataout(7 downto 0)    <= s_datain(63 downto 56) ;
+               
+       elsif(s_rdpointer = "000") then
+          dataout(31 downto 24)  <= s_datain(7 downto 0);
+          dataout(23 downto 16)  <= s_datain(15 downto 8);
+          dataout(15 downto 8)   <= s_datain(23 downto 16);
+          dataout(7 downto 0)    <= s_datain(31 downto 24);
+               
+       end if;
+end process;
+                    
 END RTL;

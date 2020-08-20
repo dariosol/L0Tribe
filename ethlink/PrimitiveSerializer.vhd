@@ -7,9 +7,9 @@ package component_PrimitiveSerializer is
 type PrimitiveSerializer_inputs_t is record
 
    -- input list
+   clk   : STD_LOGIC;
    aclr  : STD_LOGIC;
    datain: STD_LOGIC_VECTOR (255 DOWNTO 0);
-   clk   : STD_LOGIC;
    rdreq : STD_LOGIC;
 end record;
 
@@ -20,7 +20,7 @@ type PrimitiveSerializer_outputs_t is record
 
    -- output list
    dataout    : STD_LOGIC_VECTOR (31 DOWNTO 0);
-   readfromfifo   : STD_LOGIC;
+   rdpointer  : STD_LOGIC_VECTOR(2 downto 0);
 end record;
 
 --**************************************************************
@@ -102,7 +102,7 @@ port
    datain      : in STD_LOGIC_VECTOR (255 DOWNTO 0);
    clk         : in STD_LOGIC;
    rdreq       : in STD_LOGIC;
-   readfromfifo: out STD_LOGIC;
+   rdpointer   : out STD_LOGIC_VECTOR(2 downto 0);
    dataout     : out STD_LOGIC_VECTOR (31 DOWNTO 0)
 );
 end component;
@@ -119,7 +119,7 @@ altPrimitiveSerializer_inst : altPrimitiveSerializer port map
    clk          => inputs.clk,
    rdreq        => inputs.rdreq,
    dataout      => outputs.dataout,
-   readfromfifo => outputs.readfromfifo
+   rdpointer    => outputs.rdpointer
    );
 
 end rtl;

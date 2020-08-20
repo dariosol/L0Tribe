@@ -1,6 +1,6 @@
 Flow report for TestBench_LS
-Tue Aug 11 18:38:49 2020
-Quartus Prime Version 18.1.1 Build 646 04/11/2019 SJ Standard Edition
+Wed Aug 19 14:39:09 2020
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 
 
 ---------------------
@@ -21,9 +21,9 @@ Quartus Prime Version 18.1.1 Build 646 04/11/2019 SJ Standard Edition
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2019  Intel Corporation. All rights reserved.
+Copyright (C) 2018  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
-and other software and tools, and any partner logic 
+and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
@@ -33,29 +33,28 @@ the Intel FPGA IP License Agreement, or other applicable license
 agreement, including, without limitation, that your use is for
 the sole purpose of programming logic devices manufactured by
 Intel and sold by Intel or its authorized distributors.  Please
-refer to the applicable agreement for further details, at
-https://fpgasoftware.intel.com/eula.
+refer to the applicable agreement for further details.
 
 
 
 +-------------------------------------------------------------------------------------+
 ; Flow Summary                                                                        ;
 +-----------------------------------+-------------------------------------------------+
-; Flow Status                       ; Successful - Tue Aug 11 18:38:48 2020           ;
-; Quartus Prime Version             ; 18.1.1 Build 646 04/11/2019 SJ Standard Edition ;
+; Flow Status                       ; Successful - Wed Aug 19 14:37:29 2020           ;
+; Quartus Prime Version             ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
 ; Revision Name                     ; TestBench_LS                                    ;
 ; Top-level Entity Name             ; TestBench_LS                                    ;
 ; Family                            ; Stratix IV                                      ;
 ; Device                            ; EP4SGX230KF40C2                                 ;
 ; Timing Models                     ; Final                                           ;
-; Logic utilization                 ; 36 %                                            ;
-;     Combinational ALUTs           ; 52,307 / 182,400 ( 29 % )                       ;
+; Logic utilization                 ; 39 %                                            ;
+;     Combinational ALUTs           ; 53,907 / 182,400 ( 30 % )                       ;
 ;     Memory ALUTs                  ; 462 / 91,200 ( < 1 % )                          ;
-;     Dedicated logic registers     ; 41,644 / 182,400 ( 23 % )                       ;
-; Total registers                   ; 43008                                           ;
+;     Dedicated logic registers     ; 46,340 / 182,400 ( 25 % )                       ;
+; Total registers                   ; 47704                                           ;
 ; Total pins                        ; 459 / 888 ( 52 % )                              ;
 ; Total virtual pins                ; 0                                               ;
-; Total block memory bits           ; 8,795,184 / 14,625,792 ( 60 % )                 ;
+; Total block memory bits           ; 9,470,000 / 14,625,792 ( 65 % )                 ;
 ; DSP block 18-bit elements         ; 4 / 1,288 ( < 1 % )                             ;
 ; Total GXB Receiver Channel PCS    ; 0 / 24 ( 0 % )                                  ;
 ; Total GXB Receiver Channel PMA    ; 0 / 36 ( 0 % )                                  ;
@@ -71,59 +70,87 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 08/11/2020 18:07:14 ;
+; Start date & time ; 08/19/2020 14:01:25 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; TestBench_LS        ;
 +-------------------+---------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                                                      ;
-+--------------------------------------+-------------------------------------------------------------------------------------+---------------+-------------+------------+
-; Assignment Name                      ; Value                                                                               ; Default Value ; Entity Name ; Section Id ;
-+--------------------------------------+-------------------------------------------------------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID                ; 18587649568712.159716203228181                                                      ; --            ; --          ; --         ;
-; ECO_REGENERATE_REPORT                ; On                                                                                  ; Off           ; --          ; --         ;
-; ENABLE_SIGNALTAP                     ; Off                                                                                 ; --            ; --          ; --         ;
-; FITTER_EFFORT                        ; Standard Fit                                                                        ; Auto Fit      ; --          ; --         ;
-; FLOW_ENABLE_IO_ASSIGNMENT_ANALYSIS   ; On                                                                                  ; Off           ; --          ; --         ;
-; MAX_CORE_JUNCTION_TEMP               ; 85                                                                                  ; --            ; --          ; --         ;
-; MIN_CORE_JUNCTION_TEMP               ; 0                                                                                   ; --            ; --          ; --         ;
-; MISC_FILE                            ; testbench_ls/synthesis/../testbench_ls.cmp                                          ; --            ; --          ; --         ;
-; MISC_FILE                            ; testbench_ls/synthesis/../../testbench_ls.qsys                                      ; --            ; --          ; --         ;
-; MISC_FILE                            ; testbench_ls/synthesis/submodules/alt_mem_ddrx_define.iv                            ; --            ; --          ; --         ;
-; MISC_FILE                            ; primitiveFIFO_bb.v                                                                  ; --            ; --          ; --         ;
-; MISC_FILE                            ; pll40MHz_bb.v                                                                       ; --            ; --          ; --         ;
-; MISC_FILE                            ; pll40MHz.ppf                                                                        ; --            ; --          ; --         ;
-; MISC_FILE                            ; pll125MHz_bb.v                                                                      ; --            ; --          ; --         ;
-; MISC_FILE                            ; pll125MHz.ppf                                                                       ; --            ; --          ; --         ;
-; MISC_FILE                            ; FifoToRAM_bb.v                                                                      ; --            ; --          ; --         ;
-; MISC_FILE                            ; ethlink/altbufferfifo.cmp                                                           ; --            ; --          ; --         ;
-; MUX_RESTRUCTURE                      ; Off                                                                                 ; Auto          ; --          ; --         ;
-; NUM_PARALLEL_PROCESSORS              ; All                                                                                 ; --            ; --          ; --         ;
-; OPTIMIZATION_MODE                    ; Aggressive Performance                                                              ; Balanced      ; --          ; --         ;
-; OPTIMIZATION_TECHNIQUE               ; Speed                                                                               ; Balanced      ; --          ; --         ;
-; PARTITION_COLOR                      ; -- (Not supported for targeted family)                                              ; --            ; --          ; Top        ;
-; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family)                                              ; --            ; --          ; Top        ;
-; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family)                                              ; --            ; --          ; Top        ;
-; PHYSICAL_SYNTHESIS_COMBO_LOGIC       ; On                                                                                  ; Off           ; --          ; --         ;
-; PHYSICAL_SYNTHESIS_REGISTER_RETIMING ; On                                                                                  ; Off           ; --          ; --         ;
-; PLACEMENT_EFFORT_MULTIPLIER          ; 4.0                                                                                 ; 1.0           ; --          ; --         ;
-; POWER_BOARD_THERMAL_MODEL            ; None (CONSERVATIVE)                                                                 ; --            ; --          ; --         ;
-; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                                               ; --            ; --          ; --         ;
-; PROJECT_OUTPUT_DIRECTORY             ; output_files                                                                        ; --            ; --          ; --         ;
-; ROUTER_TIMING_OPTIMIZATION_LEVEL     ; MAXIMUM                                                                             ; Normal        ; --          ; --         ;
-; SEARCH_PATH                          ; /home/na62torino/Data/TestBench_LS/ethlink/mac/sgmii/triple_speed_ethernet-library/ ; --            ; --          ; --         ;
-; SEARCH_PATH                          ; /home/na62torino/Data/TestBench_LS/ethlink/mac/sgmii/                               ; --            ; --          ; --         ;
-; SEARCH_PATH                          ; /home/na62torino/Data/TestBench_LS/ethlink/mac/rgmii/                               ; --            ; --          ; --         ;
-; SLD_FILE                             ; testbench_ls/synthesis/testbench_ls.regmap                                          ; --            ; --          ; --         ;
-; SLD_FILE                             ; testbench_ls/synthesis/testbench_ls.debuginfo                                       ; --            ; --          ; --         ;
-; SLD_INFO                             ; QSYS_NAME testbench_ls HAS_SOPCINFO 1 GENERATION_ID 1594911167                      ; --            ; --          ; --         ;
-; SMART_RECOMPILE                      ; On                                                                                  ; Off           ; --          ; --         ;
-; SOPCINFO_FILE                        ; testbench_ls/synthesis/../../testbench_ls.sopcinfo                                  ; --            ; --          ; --         ;
-; SYNTHESIS_ONLY_QIP                   ; On                                                                                  ; --            ; --          ; --         ;
-; USE_SIGNALTAP_FILE                   ; stpToCheck3And4.stp                                                                 ; --            ; --          ; --         ;
-+--------------------------------------+-------------------------------------------------------------------------------------+---------------+-------------+------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                                                                                                                                                                                                                                                             ;
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------+-------------+------------------+
+; Assignment Name                      ; Value                                                                                                                                                                                                                                                                                                ; Default Value ; Entity Name ; Section Id       ;
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------+-------------+------------------+
+; COMPILER_SIGNATURE_ID                ; 4328719380.159783848327040                                                                                                                                                                                                                                                                           ; --            ; --          ; --               ;
+; ECO_REGENERATE_REPORT                ; On                                                                                                                                                                                                                                                                                                   ; Off           ; --          ; --               ;
+; ENABLE_SIGNALTAP                     ; On                                                                                                                                                                                                                                                                                                   ; --            ; --          ; --               ;
+; FITTER_EFFORT                        ; Standard Fit                                                                                                                                                                                                                                                                                         ; Auto Fit      ; --          ; --               ;
+; FLOW_ENABLE_IO_ASSIGNMENT_ANALYSIS   ; On                                                                                                                                                                                                                                                                                                   ; Off           ; --          ; --               ;
+; MAX_CORE_JUNCTION_TEMP               ; 85                                                                                                                                                                                                                                                                                                   ; --            ; --          ; --               ;
+; MIN_CORE_JUNCTION_TEMP               ; 0                                                                                                                                                                                                                                                                                                    ; --            ; --          ; --               ;
+; MISC_FILE                            ; testbench_ls/synthesis/../testbench_ls.cmp                                                                                                                                                                                                                                                           ; --            ; --          ; --               ;
+; MISC_FILE                            ; testbench_ls/synthesis/../../testbench_ls.qsys                                                                                                                                                                                                                                                       ; --            ; --          ; --               ;
+; MISC_FILE                            ; testbench_ls/synthesis/submodules/alt_mem_ddrx_define.iv                                                                                                                                                                                                                                             ; --            ; --          ; --               ;
+; MISC_FILE                            ; primitiveFIFO_bb.v                                                                                                                                                                                                                                                                                   ; --            ; --          ; --               ;
+; MISC_FILE                            ; pll40MHz_bb.v                                                                                                                                                                                                                                                                                        ; --            ; --          ; --               ;
+; MISC_FILE                            ; pll40MHz.ppf                                                                                                                                                                                                                                                                                         ; --            ; --          ; --               ;
+; MISC_FILE                            ; pll125MHz_bb.v                                                                                                                                                                                                                                                                                       ; --            ; --          ; --               ;
+; MISC_FILE                            ; pll125MHz.ppf                                                                                                                                                                                                                                                                                        ; --            ; --          ; --               ;
+; MISC_FILE                            ; FifoToRAM_bb.v                                                                                                                                                                                                                                                                                       ; --            ; --          ; --               ;
+; MISC_FILE                            ; ethlink/altbufferfifo.cmp                                                                                                                                                                                                                                                                            ; --            ; --          ; --               ;
+; MUX_RESTRUCTURE                      ; Off                                                                                                                                                                                                                                                                                                  ; Auto          ; --          ; --               ;
+; NUM_PARALLEL_PROCESSORS              ; All                                                                                                                                                                                                                                                                                                  ; --            ; --          ; --               ;
+; OPTIMIZATION_MODE                    ; Aggressive Performance                                                                                                                                                                                                                                                                               ; Balanced      ; --          ; --               ;
+; OPTIMIZATION_TECHNIQUE               ; Speed                                                                                                                                                                                                                                                                                                ; Balanced      ; --          ; --               ;
+; PARTITION_COLOR                      ; -- (Not supported for targeted family)                                                                                                                                                                                                                                                               ; --            ; --          ; Top              ;
+; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family)                                                                                                                                                                                                                                                               ; --            ; --          ; Top              ;
+; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family)                                                                                                                                                                                                                                                               ; --            ; --          ; Top              ;
+; PHYSICAL_SYNTHESIS_COMBO_LOGIC       ; On                                                                                                                                                                                                                                                                                                   ; Off           ; --          ; --               ;
+; PHYSICAL_SYNTHESIS_REGISTER_RETIMING ; On                                                                                                                                                                                                                                                                                                   ; Off           ; --          ; --               ;
+; PLACEMENT_EFFORT_MULTIPLIER          ; 4.0                                                                                                                                                                                                                                                                                                  ; 1.0           ; --          ; --               ;
+; POWER_BOARD_THERMAL_MODEL            ; None (CONSERVATIVE)                                                                                                                                                                                                                                                                                  ; --            ; --          ; --               ;
+; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                                                                                                                                                                                                                                                                ; --            ; --          ; --               ;
+; PROJECT_OUTPUT_DIRECTORY             ; output_files                                                                                                                                                                                                                                                                                         ; --            ; --          ; --               ;
+; ROUTER_TIMING_OPTIMIZATION_LEVEL     ; MAXIMUM                                                                                                                                                                                                                                                                                              ; Normal        ; --          ; --               ;
+; SEARCH_PATH                          ; /home/na62torino/Data/TestBench_LS/ethlink/mac/sgmii/triple_speed_ethernet-library/                                                                                                                                                                                                                  ; --            ; --          ; --               ;
+; SEARCH_PATH                          ; /home/na62torino/Data/TestBench_LS/ethlink/mac/sgmii/                                                                                                                                                                                                                                                ; --            ; --          ; --               ;
+; SEARCH_PATH                          ; /home/na62torino/Data/TestBench_LS/ethlink/mac/rgmii/                                                                                                                                                                                                                                                ; --            ; --          ; --               ;
+; SLD_FILE                             ; testbench_ls/synthesis/testbench_ls.regmap                                                                                                                                                                                                                                                           ; --            ; --          ; --               ;
+; SLD_FILE                             ; testbench_ls/synthesis/testbench_ls.debuginfo                                                                                                                                                                                                                                                        ; --            ; --          ; --               ;
+; SLD_FILE                             ; db/Serializer_auto_stripped.stp                                                                                                                                                                                                                                                                      ; --            ; --          ; --               ;
+; SLD_INFO                             ; QSYS_NAME testbench_ls HAS_SOPCINFO 1 GENERATION_ID 1597838318                                                                                                                                                                                                                                       ; --            ; --          ; --               ;
+; SLD_NODE_CREATOR_ID                  ; 110                                                                                                                                                                                                                                                                                                  ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_ENTITY_NAME                 ; sld_signaltap                                                                                                                                                                                                                                                                                        ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT        ; SLD_RAM_BLOCK_TYPE=AUTO                                                                                                                                                                                                                                                                              ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT        ; SLD_NODE_INFO=805334528                                                                                                                                                                                                                                                                              ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT        ; SLD_POWER_UP_TRIGGER=0                                                                                                                                                                                                                                                                               ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT        ; SLD_STORAGE_QUALIFIER_INVERSION_MASK_LENGTH=0                                                                                                                                                                                                                                                        ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT        ; SLD_SEGMENT_SIZE=1024                                                                                                                                                                                                                                                                                ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT        ; SLD_ATTRIBUTE_MEM_MODE=OFF                                                                                                                                                                                                                                                                           ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT        ; SLD_STATE_FLOW_USE_GENERATED=0                                                                                                                                                                                                                                                                       ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT        ; SLD_STATE_BITS=11                                                                                                                                                                                                                                                                                    ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT        ; SLD_BUFFER_FULL_STOP=1                                                                                                                                                                                                                                                                               ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT        ; SLD_CURRENT_RESOURCE_WIDTH=1                                                                                                                                                                                                                                                                         ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT        ; SLD_INCREMENTAL_ROUTING=1                                                                                                                                                                                                                                                                            ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT        ; SLD_TRIGGER_LEVEL=1                                                                                                                                                                                                                                                                                  ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT        ; SLD_SAMPLE_DEPTH=1024                                                                                                                                                                                                                                                                                ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT        ; SLD_TRIGGER_IN_ENABLED=0                                                                                                                                                                                                                                                                             ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT        ; SLD_TRIGGER_PIPELINE=0                                                                                                                                                                                                                                                                               ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT        ; SLD_RAM_PIPELINE=0                                                                                                                                                                                                                                                                                   ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT        ; SLD_COUNTER_PIPELINE=0                                                                                                                                                                                                                                                                               ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT        ; SLD_ADVANCED_TRIGGER_ENTITY=basic,1,                                                                                                                                                                                                                                                                 ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT        ; SLD_TRIGGER_LEVEL_PIPELINE=1                                                                                                                                                                                                                                                                         ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT        ; SLD_ENABLE_ADVANCED_TRIGGER=0                                                                                                                                                                                                                                                                        ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT        ; SLD_DATA_BITS=659                                                                                                                                                                                                                                                                                    ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT        ; SLD_TRIGGER_BITS=83                                                                                                                                                                                                                                                                                  ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT        ; SLD_STORAGE_QUALIFIER_BITS=659                                                                                                                                                                                                                                                                       ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT        ; SLD_INVERSION_MASK=000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT        ; SLD_INVERSION_MASK_LENGTH=273                                                                                                                                                                                                                                                                        ; --            ; --          ; auto_signaltap_0 ;
+; SMART_RECOMPILE                      ; On                                                                                                                                                                                                                                                                                                   ; Off           ; --          ; --               ;
+; SOPCINFO_FILE                        ; testbench_ls/synthesis/../../testbench_ls.sopcinfo                                                                                                                                                                                                                                                   ; --            ; --          ; --               ;
+; SYNTHESIS_ONLY_QIP                   ; On                                                                                                                                                                                                                                                                                                   ; --            ; --          ; --               ;
+; USE_SIGNALTAP_FILE                   ; Serializer.stp                                                                                                                                                                                                                                                                                       ; --            ; --          ; --               ;
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------+-------------+------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------+
@@ -131,22 +158,26 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name             ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis    ; 00:09:48     ; 1.0                     ; 3566 MB             ; 00:10:24                           ;
-; I/O Assignment Analysis ; 00:02:18     ; 1.0                     ; 1934 MB             ; 00:02:18                           ;
-; Fitter                  ; 00:19:04     ; 1.2                     ; 3926 MB             ; 00:35:45                           ;
-; Total                   ; 00:31:10     ; --                      ; --                  ; 00:48:27                           ;
+; Analysis & Synthesis    ; 00:10:25     ; 1.0                     ; 3746 MB             ; 00:11:02                           ;
+; I/O Assignment Analysis ; 00:02:42     ; 1.0                     ; 2094 MB             ; 00:02:42                           ;
+; Fitter                  ; 00:21:36     ; 1.1                     ; 4241 MB             ; 00:42:52                           ;
+; Assembler               ; 00:00:28     ; 1.0                     ; 1613 MB             ; 00:00:28                           ;
+; Timing Analyzer         ; 00:01:37     ; 1.2                     ; 2322 MB             ; 00:01:59                           ;
+; Total                   ; 00:36:48     ; --                      ; --                  ; 00:59:03                           ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                                 ;
-+-------------------------+------------------------+----------------+------------+----------------+
-; Module Name             ; Machine Hostname       ; OS Name        ; OS Version ; Processor type ;
-+-------------------------+------------------------+----------------+------------+----------------+
-; Analysis & Synthesis    ; na62torino-WorkStation ; Ubuntu 16.04.6 ; 16         ; x86_64         ;
-; I/O Assignment Analysis ; na62torino-WorkStation ; Ubuntu 16.04.6 ; 16         ; x86_64         ;
-; Fitter                  ; na62torino-WorkStation ; Ubuntu 16.04.6 ; 16         ; x86_64         ;
-+-------------------------+------------------------+----------------+------------+----------------+
++-------------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                           ;
++-------------------------+------------------+--------------+--------------+----------------+
+; Module Name             ; Machine Hostname ; OS Name      ; OS Version   ; Processor type ;
++-------------------------+------------------+--------------+--------------+----------------+
+; Analysis & Synthesis    ; na62l0tpdev      ; CentOS Linux ; CentOS Linux ; x86_64         ;
+; I/O Assignment Analysis ; na62l0tpdev      ; CentOS Linux ; CentOS Linux ; x86_64         ;
+; Fitter                  ; na62l0tpdev      ; CentOS Linux ; CentOS Linux ; x86_64         ;
+; Assembler               ; na62l0tpdev      ; CentOS Linux ; CentOS Linux ; x86_64         ;
+; Timing Analyzer         ; na62l0tpdev      ; CentOS Linux ; CentOS Linux ; x86_64         ;
++-------------------------+------------------+--------------+--------------+----------------+
 
 
 ------------
@@ -155,6 +186,8 @@ https://fpgasoftware.intel.com/eula.
 quartus_map --read_settings_files=on --write_settings_files=off TestBench_LS -c TestBench_LS
 quartus_fit --read_settings_files=off --write_settings_files=off TestBench_LS -c TestBench_LS --plan
 quartus_fit --read_settings_files=off --write_settings_files=off TestBench_LS -c TestBench_LS
+quartus_asm --read_settings_files=off --write_settings_files=off TestBench_LS -c TestBench_LS
+quartus_sta TestBench_LS -c TestBench_LS
 
 
 
