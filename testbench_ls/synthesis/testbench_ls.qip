@@ -2,7 +2,7 @@ set_global_assignment -entity "testbench_ls" -library "testbench_ls" -name IP_TO
 set_global_assignment -entity "testbench_ls" -library "testbench_ls" -name IP_TOOL_VERSION "18.1"
 set_global_assignment -entity "testbench_ls" -library "testbench_ls" -name IP_TOOL_ENV "Qsys"
 set_global_assignment -library "testbench_ls" -name SOPCINFO_FILE [file join $::quartus(qip_path) "../../testbench_ls.sopcinfo"]
-set_global_assignment -entity "testbench_ls" -library "testbench_ls" -name SLD_INFO "QSYS_NAME testbench_ls HAS_SOPCINFO 1 GENERATION_ID 1597838318"
+set_global_assignment -entity "testbench_ls" -library "testbench_ls" -name SLD_INFO "QSYS_NAME testbench_ls HAS_SOPCINFO 1 GENERATION_ID 1598450704"
 set_global_assignment -library "testbench_ls" -name MISC_FILE [file join $::quartus(qip_path) "../testbench_ls.cmp"]
 set_global_assignment -library "testbench_ls" -name SLD_FILE [file join $::quartus(qip_path) "testbench_ls.regmap"]
 set_global_assignment -library "testbench_ls" -name SLD_FILE [file join $::quartus(qip_path) "testbench_ls.debuginfo"]
@@ -16,7 +16,7 @@ set_global_assignment -entity "testbench_ls" -library "testbench_ls" -name IP_CO
 set_global_assignment -entity "testbench_ls" -library "testbench_ls" -name IP_COMPONENT_REPORT_HIERARCHY "On"
 set_global_assignment -entity "testbench_ls" -library "testbench_ls" -name IP_COMPONENT_INTERNAL "Off"
 set_global_assignment -entity "testbench_ls" -library "testbench_ls" -name IP_COMPONENT_VERSION "MS4w"
-set_global_assignment -entity "testbench_ls" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTU5NzgzODMxOA==::QXV0byBHRU5FUkFUSU9OX0lE"
+set_global_assignment -entity "testbench_ls" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTU5ODQ1MDcwNA==::QXV0byBHRU5FUkFUSU9OX0lE"
 set_global_assignment -entity "testbench_ls" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::U3RyYXRpeCBJVg==::QXV0byBERVZJQ0VfRkFNSUxZ"
 set_global_assignment -entity "testbench_ls" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0U=::RVA0U0dYMjMwS0Y0MEMy::QXV0byBERVZJQ0U="
 set_global_assignment -entity "testbench_ls" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfU1BFRURHUkFERQ==::Mg==::QXV0byBERVZJQ0VfU1BFRURHUkFERQ=="
@@ -1623,7 +1623,7 @@ set_global_assignment -entity "testbench_ls_input_IO" -library "testbench_ls" -n
 set_global_assignment -entity "testbench_ls_input_IO" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "ZWRnZVR5cGU=::UklTSU5H::RWRnZSBUeXBl"
 set_global_assignment -entity "testbench_ls_input_IO" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "Z2VuZXJhdGVJUlE=::ZmFsc2U=::R2VuZXJhdGUgSVJR"
 set_global_assignment -entity "testbench_ls_input_IO" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "c2ltRG9UZXN0QmVuY2hXaXJpbmc=::ZmFsc2U=::SGFyZHdpcmUgUElPIGlucHV0cyBpbiB0ZXN0IGJlbmNo"
-set_global_assignment -entity "testbench_ls_input_IO" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "d2lkdGg=::OA==::V2lkdGggKDEtMzIgYml0cyk="
+set_global_assignment -entity "testbench_ls_input_IO" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "d2lkdGg=::MTY=::V2lkdGggKDEtMzIgYml0cyk="
 set_global_assignment -entity "testbench_ls_input_IO" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "Y2xvY2tSYXRl::MjAwMDAwMDAw::Y2xvY2tSYXRl"
 set_global_assignment -entity "testbench_ls_input_IO" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "ZGVyaXZlZF9oYXNfdHJp::ZmFsc2U=::ZGVyaXZlZF9oYXNfdHJp"
 set_global_assignment -entity "testbench_ls_input_IO" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "ZGVyaXZlZF9oYXNfb3V0::ZmFsc2U=::ZGVyaXZlZF9oYXNfb3V0"
@@ -1638,7 +1638,7 @@ set_global_assignment -entity "testbench_ls_from_ETH_to_DDR" -library "testbench
 set_global_assignment -entity "testbench_ls_from_ETH_to_DDR" -library "testbench_ls" -name IP_COMPONENT_REPORT_HIERARCHY "On"
 set_global_assignment -entity "testbench_ls_from_ETH_to_DDR" -library "testbench_ls" -name IP_COMPONENT_INTERNAL "Off"
 set_global_assignment -entity "testbench_ls_from_ETH_to_DDR" -library "testbench_ls" -name IP_COMPONENT_VERSION "MS4w"
-set_global_assignment -entity "testbench_ls_from_ETH_to_DDR" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTU5NzgzODMxOA==::QXV0byBHRU5FUkFUSU9OX0lE"
+set_global_assignment -entity "testbench_ls_from_ETH_to_DDR" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTU5ODQ1MDcwNA==::QXV0byBHRU5FUkFUSU9OX0lE"
 set_global_assignment -entity "testbench_ls_from_ETH_to_DDR" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "QVVUT19VTklRVUVfSUQ=::dGVzdGJlbmNoX2xzX2Zyb21fRVRIX3RvX0REUg==::QXV0byBVTklRVUVfSUQ="
 set_global_assignment -entity "testbench_ls_from_ETH_to_DDR" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::U3RyYXRpeCBJVg==::QXV0byBERVZJQ0VfRkFNSUxZ"
 set_global_assignment -entity "testbench_ls_from_ETH_to_DDR" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0U=::RVA0U0dYMjMwS0Y0MEMy::QXV0byBERVZJQ0U="
@@ -1796,14 +1796,14 @@ set_global_assignment -entity "dispatcher" -library "testbench_ls" -name IP_COMP
 set_global_assignment -entity "dispatcher" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "TU9ERQ==::MQ==::VHJhbnNmZXIgTW9kZQ=="
 set_global_assignment -entity "dispatcher" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "UkVTUE9OU0VfUE9SVA==::Mg==::UkVTUE9OU0VfUE9SVA=="
 set_global_assignment -entity "dispatcher" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "REVTQ1JJUFRPUl9JTlRFUkZBQ0U=::MA==::REVTQ1JJUFRPUl9JTlRFUkZBQ0U="
-set_global_assignment -entity "dispatcher" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "REVTQ1JJUFRPUl9GSUZPX0RFUFRI::MTI4::RGVzY3JpcHRvciBGSUZPIERlcHRo"
+set_global_assignment -entity "dispatcher" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "REVTQ1JJUFRPUl9GSUZPX0RFUFRI::NTEy::RGVzY3JpcHRvciBGSUZPIERlcHRo"
 set_global_assignment -entity "dispatcher" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "RU5IQU5DRURfRkVBVFVSRVM=::MA==::RW5hYmxlIEV4dGVuZGVkIEZlYXR1cmUgU3VwcG9ydA=="
 set_global_assignment -entity "dispatcher" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "REVTQ1JJUFRPUl9XSURUSA==::MTI4::REVTQ1JJUFRPUl9XSURUSA=="
 set_global_assignment -entity "dispatcher" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "REVTQ1JJUFRPUl9CWVRFRU5BQkxFX1dJRFRI::MTY=::REVTQ1JJUFRPUl9CWVRFRU5BQkxFX1dJRFRI"
 set_global_assignment -entity "dispatcher" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "Q1NSX0FERFJFU1NfV0lEVEg=::Mw==::Q1NSX0FERFJFU1NfV0lEVEg="
 set_global_assignment -entity "dispatcher" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "REFUQV9XSURUSA==::MjU2::REFUQV9XSURUSA=="
 set_global_assignment -entity "dispatcher" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "REFUQV9GSUZPX0RFUFRI::MjA0OA==::REFUQV9GSUZPX0RFUFRI"
-set_global_assignment -entity "dispatcher" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "TUFYX0JZVEU=::NDA5Ng==::TUFYX0JZVEU="
+set_global_assignment -entity "dispatcher" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "TUFYX0JZVEU=::MTYzODQ=::TUFYX0JZVEU="
 set_global_assignment -entity "dispatcher" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "VFJBTlNGRVJfVFlQRQ==::RnVsbCBXb3JkIEFjY2Vzc2VzIE9ubHk=::VFJBTlNGRVJfVFlQRQ=="
 set_global_assignment -entity "dispatcher" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "QlVSU1RfRU5BQkxF::MQ==::QlVSU1RfRU5BQkxF"
 set_global_assignment -entity "dispatcher" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "TUFYX0JVUlNUX0NPVU5U::NA==::TUFYX0JVUlNUX0NPVU5U"
@@ -1816,7 +1816,7 @@ set_global_assignment -entity "testbench_ls_dma_fifo_susbystem" -library "testbe
 set_global_assignment -entity "testbench_ls_dma_fifo_susbystem" -library "testbench_ls" -name IP_COMPONENT_REPORT_HIERARCHY "On"
 set_global_assignment -entity "testbench_ls_dma_fifo_susbystem" -library "testbench_ls" -name IP_COMPONENT_INTERNAL "Off"
 set_global_assignment -entity "testbench_ls_dma_fifo_susbystem" -library "testbench_ls" -name IP_COMPONENT_VERSION "MS4w"
-set_global_assignment -entity "testbench_ls_dma_fifo_susbystem" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTU5NzgzODMxOA==::QXV0byBHRU5FUkFUSU9OX0lE"
+set_global_assignment -entity "testbench_ls_dma_fifo_susbystem" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTU5ODQ1MDcwNA==::QXV0byBHRU5FUkFUSU9OX0lE"
 set_global_assignment -entity "testbench_ls_dma_fifo_susbystem" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "QVVUT19VTklRVUVfSUQ=::dGVzdGJlbmNoX2xzX2RtYV9maWZvX3N1c2J5c3RlbQ==::QXV0byBVTklRVUVfSUQ="
 set_global_assignment -entity "testbench_ls_dma_fifo_susbystem" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::U3RyYXRpeCBJVg==::QXV0byBERVZJQ0VfRkFNSUxZ"
 set_global_assignment -entity "testbench_ls_dma_fifo_susbystem" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0U=::RVA0U0dYMjMwS0Y0MEMy::QXV0byBERVZJQ0U="
@@ -1840,8 +1840,8 @@ set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_1_dma" -library "
 set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_1_dma" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "REFUQV9XSURUSA==::MjU2::RGF0YSBXaWR0aA=="
 set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_1_dma" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "VVNFX0ZJWF9BRERSRVNTX1dJRFRI::MA==::VXNlIHByZS1kZXRlcm1pbmVkIG1hc3RlciBhZGRyZXNzIHdpZHRo"
 set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_1_dma" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "REFUQV9GSUZPX0RFUFRI::MjA0OA==::RGF0YSBQYXRoIEZJRk8gRGVwdGg="
-set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_1_dma" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "REVTQ1JJUFRPUl9GSUZPX0RFUFRI::MTI4::RGVzY3JpcHRvciBGSUZPIERlcHRo"
-set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_1_dma" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "TUFYX0JZVEU=::NDA5Ng==::TWF4aW11bSBUcmFuc2ZlciBMZW5ndGg="
+set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_1_dma" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "REVTQ1JJUFRPUl9GSUZPX0RFUFRI::NTEy::RGVzY3JpcHRvciBGSUZPIERlcHRo"
+set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_1_dma" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "TUFYX0JZVEU=::MTYzODQ=::TWF4aW11bSBUcmFuc2ZlciBMZW5ndGg="
 set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_1_dma" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "VFJBTlNGRVJfVFlQRQ==::RnVsbCBXb3JkIEFjY2Vzc2VzIE9ubHk=::VHJhbnNmZXIgVHlwZQ=="
 set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_1_dma" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "QlVSU1RfRU5BQkxF::MQ==::QnVyc3QgRW5hYmxl"
 set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_1_dma" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "TUFYX0JVUlNUX0NPVU5U::NA==::TWF4aW11bSBCdXJzdCBDb3VudA=="
@@ -1873,7 +1873,7 @@ set_global_assignment -entity "read_master" -library "testbench_ls" -name IP_COM
 set_global_assignment -entity "read_master" -library "testbench_ls" -name IP_COMPONENT_VERSION "MTguMQ=="
 set_global_assignment -entity "read_master" -library "testbench_ls" -name IP_COMPONENT_DESCRIPTION "QSBtb2R1bGUgcmVzcG9uc2libGUgZm9yIHN0cmVhbWluZyBkYXRhIGZyb20gbWVtb3J5"
 set_global_assignment -entity "read_master" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "REFUQV9XSURUSA==::MjU2::RGF0YSBXaWR0aA=="
-set_global_assignment -entity "read_master" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "TEVOR1RIX1dJRFRI::MTM=::TGVuZ3RoIFdpZHRo"
+set_global_assignment -entity "read_master" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "TEVOR1RIX1dJRFRI::MTU=::TGVuZ3RoIFdpZHRo"
 set_global_assignment -entity "read_master" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "RklGT19ERVBUSA==::MjA0OA==::RklGTyBEZXB0aA=="
 set_global_assignment -entity "read_master" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "VVNFX0ZJWF9BRERSRVNTX1dJRFRI::MA==::VXNlIHByZS1kZXRlcm1pbmVkIG1hc3RlciBhZGRyZXNzIHdpZHRo"
 set_global_assignment -entity "read_master" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "U1RSSURFX0VOQUJMRQ==::MA==::U3RyaWRlIEFkZHJlc3NpbmcgRW5hYmxl"
@@ -1913,7 +1913,7 @@ set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_4" -library "test
 set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_4" -library "testbench_ls" -name IP_COMPONENT_REPORT_HIERARCHY "On"
 set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_4" -library "testbench_ls" -name IP_COMPONENT_INTERNAL "Off"
 set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_4" -library "testbench_ls" -name IP_COMPONENT_VERSION "MS4w"
-set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_4" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTU5NzgzODMxOA==::QXV0byBHRU5FUkFUSU9OX0lE"
+set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_4" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTU5ODQ1MDcwNA==::QXV0byBHRU5FUkFUSU9OX0lE"
 set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_4" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "QVVUT19VTklRVUVfSUQ=::dGVzdGJlbmNoX2xzX2RtYV9maWZvX3N1YnN5c3RlbV80::QXV0byBVTklRVUVfSUQ="
 set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_4" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::U3RyYXRpeCBJVg==::QXV0byBERVZJQ0VfRkFNSUxZ"
 set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_4" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0U=::RVA0U0dYMjMwS0Y0MEMy::QXV0byBERVZJQ0U="
@@ -1937,8 +1937,8 @@ set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_3_dma" -library "
 set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_3_dma" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "REFUQV9XSURUSA==::MjU2::RGF0YSBXaWR0aA=="
 set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_3_dma" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "VVNFX0ZJWF9BRERSRVNTX1dJRFRI::MA==::VXNlIHByZS1kZXRlcm1pbmVkIG1hc3RlciBhZGRyZXNzIHdpZHRo"
 set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_3_dma" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "REFUQV9GSUZPX0RFUFRI::MjA0OA==::RGF0YSBQYXRoIEZJRk8gRGVwdGg="
-set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_3_dma" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "REVTQ1JJUFRPUl9GSUZPX0RFUFRI::MTI4::RGVzY3JpcHRvciBGSUZPIERlcHRo"
-set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_3_dma" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "TUFYX0JZVEU=::NDA5Ng==::TWF4aW11bSBUcmFuc2ZlciBMZW5ndGg="
+set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_3_dma" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "REVTQ1JJUFRPUl9GSUZPX0RFUFRI::NTEy::RGVzY3JpcHRvciBGSUZPIERlcHRo"
+set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_3_dma" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "TUFYX0JZVEU=::MTYzODQ=::TWF4aW11bSBUcmFuc2ZlciBMZW5ndGg="
 set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_3_dma" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "VFJBTlNGRVJfVFlQRQ==::RnVsbCBXb3JkIEFjY2Vzc2VzIE9ubHk=::VHJhbnNmZXIgVHlwZQ=="
 set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_3_dma" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "QlVSU1RfRU5BQkxF::MQ==::QnVyc3QgRW5hYmxl"
 set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_3_dma" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "TUFYX0JVUlNUX0NPVU5U::NA==::TWF4aW11bSBCdXJzdCBDb3VudA=="
@@ -1967,7 +1967,7 @@ set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_3" -library "test
 set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_3" -library "testbench_ls" -name IP_COMPONENT_REPORT_HIERARCHY "On"
 set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_3" -library "testbench_ls" -name IP_COMPONENT_INTERNAL "Off"
 set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_3" -library "testbench_ls" -name IP_COMPONENT_VERSION "MS4w"
-set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_3" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTU5NzgzODMxOA==::QXV0byBHRU5FUkFUSU9OX0lE"
+set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_3" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTU5ODQ1MDcwNA==::QXV0byBHRU5FUkFUSU9OX0lE"
 set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_3" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "QVVUT19VTklRVUVfSUQ=::dGVzdGJlbmNoX2xzX2RtYV9maWZvX3N1YnN5c3RlbV8z::QXV0byBVTklRVUVfSUQ="
 set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_3" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::U3RyYXRpeCBJVg==::QXV0byBERVZJQ0VfRkFNSUxZ"
 set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_3" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0U=::RVA0U0dYMjMwS0Y0MEMy::QXV0byBERVZJQ0U="
@@ -1985,7 +1985,7 @@ set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_2" -library "test
 set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_2" -library "testbench_ls" -name IP_COMPONENT_REPORT_HIERARCHY "On"
 set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_2" -library "testbench_ls" -name IP_COMPONENT_INTERNAL "Off"
 set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_2" -library "testbench_ls" -name IP_COMPONENT_VERSION "MS4w"
-set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_2" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTU5NzgzODMxOA==::QXV0byBHRU5FUkFUSU9OX0lE"
+set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_2" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTU5ODQ1MDcwNA==::QXV0byBHRU5FUkFUSU9OX0lE"
 set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_2" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "QVVUT19VTklRVUVfSUQ=::dGVzdGJlbmNoX2xzX2RtYV9maWZvX3N1YnN5c3RlbV8y::QXV0byBVTklRVUVfSUQ="
 set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_2" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::U3RyYXRpeCBJVg==::QXV0byBERVZJQ0VfRkFNSUxZ"
 set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_2" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0U=::RVA0U0dYMjMwS0Y0MEMy::QXV0byBERVZJQ0U="
@@ -2003,7 +2003,7 @@ set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_1" -library "test
 set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_1" -library "testbench_ls" -name IP_COMPONENT_REPORT_HIERARCHY "On"
 set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_1" -library "testbench_ls" -name IP_COMPONENT_INTERNAL "Off"
 set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_1" -library "testbench_ls" -name IP_COMPONENT_VERSION "MS4w"
-set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_1" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTU5NzgzODMxOA==::QXV0byBHRU5FUkFUSU9OX0lE"
+set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_1" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTU5ODQ1MDcwNA==::QXV0byBHRU5FUkFUSU9OX0lE"
 set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_1" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "QVVUT19VTklRVUVfSUQ=::dGVzdGJlbmNoX2xzX2RtYV9maWZvX3N1YnN5c3RlbV8x::QXV0byBVTklRVUVfSUQ="
 set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_1" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::U3RyYXRpeCBJVg==::QXV0byBERVZJQ0VfRkFNSUxZ"
 set_global_assignment -entity "testbench_ls_dma_fifo_subsystem_1" -library "testbench_ls" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0U=::RVA0U0dYMjMwS0Y0MEMy::QXV0byBERVZJQ0U="
@@ -7746,20 +7746,20 @@ set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::q
 set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_sys_timer.v"]
 set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_pilot_sig.v"]
 set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_nios_cpu.v"]
-set_global_assignment -library "testbench_ls" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_nios_cpu_cpu_ic_tag_ram.mif"]
-set_global_assignment -library "testbench_ls" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_nios_cpu_cpu_bht_ram.mif"]
+set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_nios_cpu_cpu_test_bench.v"]
 set_global_assignment -library "testbench_ls" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_nios_cpu_cpu_rf_ram_a.mif"]
 set_global_assignment -library "testbench_ls" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_nios_cpu_cpu_rf_ram_b.mif"]
-set_global_assignment -library "testbench_ls" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_nios_cpu_cpu_dc_tag_ram.mif"]
+set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_nios_cpu_cpu.v"]
 set_global_assignment -library "testbench_ls" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_nios_cpu_cpu_ociram_default_contents.mif"]
-set_global_assignment -library "testbench_ls" -name SDC_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_nios_cpu_cpu.sdc"]
-set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_nios_cpu_cpu_test_bench.v"]
-set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_nios_cpu_cpu_mult_cell.v"]
-set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_nios_cpu_cpu_debug_slave_tck.v"]
+set_global_assignment -library "testbench_ls" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_nios_cpu_cpu_dc_tag_ram.mif"]
+set_global_assignment -library "testbench_ls" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_nios_cpu_cpu_ic_tag_ram.mif"]
 set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_nios_cpu_cpu_debug_slave_sysclk.v"]
 set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_nios_cpu_cpu_debug_slave_wrapper.v"]
-set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_nios_cpu_cpu.v"]
+set_global_assignment -library "testbench_ls" -name SDC_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_nios_cpu_cpu.sdc"]
+set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_nios_cpu_cpu_mult_cell.v"]
 set_global_assignment -library "testbench_ls" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_nios_cpu_cpu.ocp"]
+set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_nios_cpu_cpu_debug_slave_tck.v"]
+set_global_assignment -library "testbench_ls" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_nios_cpu_cpu_bht_ram.mif"]
 set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_jtag.v"]
 set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_input_IO.v"]
 set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_from_ETH_to_DDR.v"]
@@ -7855,66 +7855,66 @@ set_global_assignment -library "testbench_ls" -name SOURCE_FILE [file join $::qu
 set_global_assignment -library "testbench_ls" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_ddr2_ram_s0_software/sequencer_defines.h"]
 set_global_assignment -library "testbench_ls" -name TCL_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_ddr2_ram_s0_make_qsys_seq.tcl"]
 set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_ddr2_ram_s0.v"]
-set_global_assignment -library "testbench_ls" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_mem_if_sequencer_rst.sv"]
-set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_mem_if_sequencer_cpu_no_ifdef_params_synth_cpu_inst.v"]
-set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_mem_if_sequencer_cpu_no_ifdef_params_synth_cpu_inst_test_bench.v"]
-set_global_assignment -library "testbench_ls" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/sequencer_scc_mgr.sv"]
-set_global_assignment -library "testbench_ls" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/sequencer_scc_siii_wrapper.sv"]
-set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/sequencer_scc_siii_phase_decode.v"]
-set_global_assignment -library "testbench_ls" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/sequencer_scc_sv_wrapper.sv"]
-set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/sequencer_scc_sv_phase_decode.v"]
-set_global_assignment -library "testbench_ls" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/sequencer_scc_acv_wrapper.sv"]
-set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/sequencer_scc_acv_phase_decode.v"]
-set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/sequencer_scc_reg_file.v"]
-set_global_assignment -library "testbench_ls" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/sequencer_reg_file.sv"]
-set_global_assignment -library "testbench_ls" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/sequencer_phy_mgr.sv"]
-set_global_assignment -library "testbench_ls" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/sequencer_data_mgr.sv"]
-set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/rw_manager_ddr2.v"]
-set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/rw_manager_ac_ROM_reg.v"]
-set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/rw_manager_bitcheck.v"]
-set_global_assignment -library "testbench_ls" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/rw_manager_core.sv"]
-set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/rw_manager_data_broadcast.v"]
-set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/rw_manager_data_decoder.v"]
-set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/rw_manager_datamux.v"]
-set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/rw_manager_di_buffer.v"]
-set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/rw_manager_di_buffer_wrap.v"]
-set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/rw_manager_dm_decoder.v"]
-set_global_assignment -library "testbench_ls" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/rw_manager_generic.sv"]
-set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/rw_manager_inst_ROM_reg.v"]
-set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/rw_manager_jumplogic.v"]
-set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/rw_manager_lfsr72.v"]
-set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/rw_manager_lfsr36.v"]
-set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/rw_manager_lfsr12.v"]
-set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/rw_manager_pattern_fifo.v"]
-set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/rw_manager_ram.v"]
-set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/rw_manager_ram_csr.v"]
-set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/rw_manager_read_datapath.v"]
-set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/rw_manager_write_decoder.v"]
-set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/rw_manager_ac_ROM_no_ifdef_params.v"]
-set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/rw_manager_inst_ROM_no_ifdef_params.v"]
-set_global_assignment -library "testbench_ls" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_mem_if_sequencer_mem_no_ifdef_params.sv"]
-set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_avalon_mm_bridge.v"]
-set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_ddr2_ram_s0_mm_interconnect_0.v"]
-set_global_assignment -library "testbench_ls" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_ddr2_ram_s0_irq_mapper.sv"]
-set_global_assignment -library "testbench_ls" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_ddr2_ram_s0_mm_interconnect_0_router.sv"]
-set_global_assignment -library "testbench_ls" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_ddr2_ram_s0_mm_interconnect_0_router_001.sv"]
-set_global_assignment -library "testbench_ls" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_ddr2_ram_s0_mm_interconnect_0_router_002.sv"]
-set_global_assignment -library "testbench_ls" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_ddr2_ram_s0_mm_interconnect_0_router_003.sv"]
-set_global_assignment -library "testbench_ls" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_ddr2_ram_s0_mm_interconnect_0_router_006.sv"]
-set_global_assignment -library "testbench_ls" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_ddr2_ram_s0_mm_interconnect_0_router_008.sv"]
-set_global_assignment -library "testbench_ls" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_ddr2_ram_s0_mm_interconnect_0_cmd_demux.sv"]
-set_global_assignment -library "testbench_ls" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_ddr2_ram_s0_mm_interconnect_0_cmd_demux_001.sv"]
 set_global_assignment -library "testbench_ls" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_ddr2_ram_s0_mm_interconnect_0_cmd_demux_002.sv"]
-set_global_assignment -library "testbench_ls" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_ddr2_ram_s0_mm_interconnect_0_cmd_mux.sv"]
-set_global_assignment -library "testbench_ls" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_ddr2_ram_s0_mm_interconnect_0_cmd_mux_003.sv"]
-set_global_assignment -library "testbench_ls" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_ddr2_ram_s0_mm_interconnect_0_cmd_mux_005.sv"]
-set_global_assignment -library "testbench_ls" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_ddr2_ram_s0_mm_interconnect_0_rsp_demux_003.sv"]
-set_global_assignment -library "testbench_ls" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_ddr2_ram_s0_mm_interconnect_0_rsp_demux_005.sv"]
-set_global_assignment -library "testbench_ls" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_ddr2_ram_s0_mm_interconnect_0_rsp_mux.sv"]
-set_global_assignment -library "testbench_ls" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_ddr2_ram_s0_mm_interconnect_0_rsp_mux_001.sv"]
+set_global_assignment -library "testbench_ls" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/sequencer_scc_acv_wrapper.sv"]
+set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/rw_manager_datamux.v"]
+set_global_assignment -library "testbench_ls" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/sequencer_scc_sv_wrapper.sv"]
+set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/rw_manager_read_datapath.v"]
+set_global_assignment -library "testbench_ls" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_ddr2_ram_s0_mm_interconnect_0_cmd_demux_001.sv"]
 set_global_assignment -library "testbench_ls" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_ddr2_ram_s0_mm_interconnect_0_rsp_mux_002.sv"]
-set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_ddr2_ram_s0_mm_interconnect_0_avalon_st_adapter.v"]
+set_global_assignment -library "testbench_ls" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/sequencer_data_mgr.sv"]
+set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/rw_manager_ac_ROM_no_ifdef_params.v"]
+set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/rw_manager_bitcheck.v"]
+set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/rw_manager_di_buffer_wrap.v"]
+set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_ddr2_ram_s0_mm_interconnect_0.v"]
+set_global_assignment -library "testbench_ls" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_ddr2_ram_s0_mm_interconnect_0_rsp_demux_003.sv"]
+set_global_assignment -library "testbench_ls" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_ddr2_ram_s0_mm_interconnect_0_router_003.sv"]
+set_global_assignment -library "testbench_ls" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/sequencer_scc_mgr.sv"]
+set_global_assignment -library "testbench_ls" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_ddr2_ram_s0_mm_interconnect_0_router_002.sv"]
+set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_avalon_mm_bridge.v"]
+set_global_assignment -library "testbench_ls" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_ddr2_ram_s0_irq_mapper.sv"]
+set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/rw_manager_lfsr36.v"]
+set_global_assignment -library "testbench_ls" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_ddr2_ram_s0_mm_interconnect_0_router.sv"]
+set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/rw_manager_inst_ROM_reg.v"]
 set_global_assignment -library "testbench_ls" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_ddr2_ram_s0_mm_interconnect_0_avalon_st_adapter_error_adapter_0.sv"]
+set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/sequencer_scc_reg_file.v"]
+set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/rw_manager_di_buffer.v"]
+set_global_assignment -library "testbench_ls" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_ddr2_ram_s0_mm_interconnect_0_rsp_mux.sv"]
+set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/rw_manager_ram_csr.v"]
+set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/sequencer_scc_sv_phase_decode.v"]
+set_global_assignment -library "testbench_ls" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_ddr2_ram_s0_mm_interconnect_0_router_001.sv"]
+set_global_assignment -library "testbench_ls" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_ddr2_ram_s0_mm_interconnect_0_router_008.sv"]
+set_global_assignment -library "testbench_ls" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_ddr2_ram_s0_mm_interconnect_0_cmd_mux_003.sv"]
+set_global_assignment -library "testbench_ls" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/sequencer_phy_mgr.sv"]
+set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/rw_manager_lfsr12.v"]
+set_global_assignment -library "testbench_ls" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/rw_manager_generic.sv"]
+set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/rw_manager_ram.v"]
+set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/rw_manager_ddr2.v"]
+set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/rw_manager_write_decoder.v"]
+set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_ddr2_ram_s0_mm_interconnect_0_avalon_st_adapter.v"]
+set_global_assignment -library "testbench_ls" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/sequencer_scc_siii_wrapper.sv"]
+set_global_assignment -library "testbench_ls" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_ddr2_ram_s0_mm_interconnect_0_router_006.sv"]
+set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/sequencer_scc_siii_phase_decode.v"]
+set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/rw_manager_inst_ROM_no_ifdef_params.v"]
+set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_mem_if_sequencer_cpu_no_ifdef_params_synth_cpu_inst_test_bench.v"]
+set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/rw_manager_data_decoder.v"]
+set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_mem_if_sequencer_cpu_no_ifdef_params_synth_cpu_inst.v"]
+set_global_assignment -library "testbench_ls" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_ddr2_ram_s0_mm_interconnect_0_cmd_mux.sv"]
+set_global_assignment -library "testbench_ls" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_mem_if_sequencer_rst.sv"]
+set_global_assignment -library "testbench_ls" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_ddr2_ram_s0_mm_interconnect_0_rsp_demux_005.sv"]
+set_global_assignment -library "testbench_ls" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_mem_if_sequencer_mem_no_ifdef_params.sv"]
+set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/rw_manager_pattern_fifo.v"]
+set_global_assignment -library "testbench_ls" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/sequencer_reg_file.sv"]
+set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/rw_manager_ac_ROM_reg.v"]
+set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/rw_manager_data_broadcast.v"]
+set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/sequencer_scc_acv_phase_decode.v"]
+set_global_assignment -library "testbench_ls" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_ddr2_ram_s0_mm_interconnect_0_cmd_mux_005.sv"]
+set_global_assignment -library "testbench_ls" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_ddr2_ram_s0_mm_interconnect_0_rsp_mux_001.sv"]
+set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/rw_manager_jumplogic.v"]
+set_global_assignment -library "testbench_ls" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/rw_manager_core.sv"]
+set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/rw_manager_lfsr72.v"]
+set_global_assignment -library "testbench_ls" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_ddr2_ram_s0_mm_interconnect_0_cmd_demux.sv"]
+set_global_assignment -library "testbench_ls" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/rw_manager_dm_decoder.v"]
 set_global_assignment -library "testbench_ls" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_ddr2_ram_s0_AC_ROM.hex"]
 set_global_assignment -library "testbench_ls" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_ddr2_ram_s0_inst_ROM.hex"]
 set_global_assignment -library "testbench_ls" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/testbench_ls_ddr2_ram_s0_sequencer_mem.hex"]

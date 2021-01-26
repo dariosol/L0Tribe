@@ -278,8 +278,8 @@ module TestBench_LS(
    //FIFO  containing primitives
    wire [255:0] 				fifoDATA[4:0];
    wire [255:0]					fifoQ[4:0];
-   wire [7:0] 					fifoWRusedW[4:0];
-   wire [7:0] 					fifoRDusedW[4:0];
+   wire [9:0] 					fifoWRusedW[4:0];
+   wire [9:0] 					fifoRDusedW[4:0];
    
    wire [4:0] 					fifoSEND;
 
@@ -568,19 +568,19 @@ module TestBench_LS(
 
    always @ (fifoWRusedW)
      if(ctrl_sig[0]) begin //IN BUST
-	if (fifoWRusedW[0] < 11'h80) interrupt[0] = 1'b1; //if I have less than 128 words, ask NIOS to transfer
+	if (fifoWRusedW[0] < 10'h200) interrupt[0] = 1'b1; //if I have less than 512 words, ask NIOS to transfer
 	else interrupt[0] = 1'b0;
 
-	if (fifoWRusedW[1] < 11'h80) interrupt[1] = 1'b1; //if I have less than 128 words, ask NIOS to transfer
+	if (fifoWRusedW[1] < 10'h200) interrupt[1] = 1'b1; //if I have less than 512 words, ask NIOS to transfer
 	else interrupt[1] = 1'b0;
 
-	if (fifoWRusedW[2] < 11'h80) interrupt[2] = 1'b1; //if I have less than 128 words, ask NIOS to transfer
+	if (fifoWRusedW[2] < 10'h200) interrupt[2] = 1'b1; //if I have less than 512 words, ask NIOS to transfer
 	else interrupt[2] = 1'b0;
 
-	if (fifoWRusedW[3] < 11'h80) interrupt[3] = 1'b1; //if I have less than 128 words, ask NIOS to transfer
+	if (fifoWRusedW[3] < 10'h200) interrupt[3] = 1'b1; //if I have less than 512 words, ask NIOS to transfer
 	else interrupt[3] = 1'b0;
 
-	if (fifoWRusedW[4] < 11'h80) interrupt[4] = 1'b1; //if I have less than 128 words, ask NIOS to transfer
+	if (fifoWRusedW[4] < 10'h200) interrupt[4] = 1'b1; //if I have less than 512 words, ask NIOS to transfer
 	else interrupt[4] = 1'b0;	
      end
      else begin

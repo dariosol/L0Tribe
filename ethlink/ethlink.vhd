@@ -6,7 +6,7 @@
 -- Author     : na62torino  <na62torino@na62torino-WorkStation>
 -- Company    : 
 -- Created    : 2020-02-12
--- Last update: 2020-08-18
+-- Last update: 2020-12-03
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -1688,8 +1688,8 @@ begin
     SubFillBuffer(i, ri.clk125, ro.clk125, o, r.clk125, n);
     SubSendPrimitive(i, ri.clk125, ro.clk125, o, r.clk125, n);
     SubSendPrimitiveRGMII(i, ri.clk125, ro.clk125, o, r.clk125, n);
---    SubReceive32bit(i, ri.clk125, ro.clk125, o, r.clk125, n);
-    SubReceive32bitRGMII(i, ri.clk125, ro.clk125, o, r.clk125, n);
+    SubReceive32bit(i, ri.clk125, ro.clk125, o, r.clk125, n);
+--    SubReceive32bitRGMII(i, ri.clk125, ro.clk125, o, r.clk125, n);
     
     
     -- allouts/regs/nets updates

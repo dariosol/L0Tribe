@@ -1,16 +1,16 @@
-Analysis & Synthesis Status : Successful - Wed Aug 19 14:12:10 2020
-Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Standard Edition
+Analysis & Synthesis Status : Successful - Wed Dec  2 17:30:24 2020
+Quartus Prime Version : 18.1.1 Build 646 04/11/2019 SJ Standard Edition
 Revision Name : TestBench_LS
 Top-level Entity Name : TestBench_LS
 Family : Stratix IV
 Logic utilization : N/A
-    Combinational ALUTs : 53,518
+    Combinational ALUTs : 54,409
     Memory ALUTs : 330
-    Dedicated logic registers : 46,877
-Total registers : 48241
+    Dedicated logic registers : 51,095
+Total registers : 52459
 Total pins : 450
 Total virtual pins : 0
-Total block memory bits : 9,473,214
+Total block memory bits : 11,175,998
 DSP block 18-bit elements : 4
 Total GXB Receiver Channel PCS : 0
 Total GXB Receiver Channel PMA : 0

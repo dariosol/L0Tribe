@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="testbench_ls" kind="system" version="18.1" fabric="QSYS">
- <!-- Format version 18.1 625 (Future versions may contain additional information.) -->
- <!-- 2020.08.19.13:59:31 -->
+ <!-- Format version 18.1 646 (Future versions may contain additional information.) -->
+ <!-- 2020.08.26.16:06:04 -->
  <!-- A collection of modules and connections -->
  <parameter name="clockCrossingAdapter">
   <type>com.altera.sopcmodel.ensemble.EClockAdapter</type>
@@ -53,7 +53,7 @@
  </parameter>
  <parameter name="generationId">
   <type>int</type>
-  <value>1597838318</value>
+  <value>1598450704</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>true</visible>
@@ -43696,7 +43696,7 @@ parameters are a RESULT of the module parameters. -->
 the requested settings for a module instance. -->
   <parameter name="AUTO_GENERATION_ID">
    <type>java.lang.Integer</type>
-   <value>1597838318</value>
+   <value>1598450704</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -45571,7 +45571,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.DESCRIPTOR_FIFO_DEPTH</name>
-   <value>128</value>
+   <value>512</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.DMA_MODE</name>
@@ -45599,7 +45599,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.MAX_BYTE</name>
-   <value>4096</value>
+   <value>16384</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.MAX_STRIDE</name>
@@ -45703,7 +45703,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="DESCRIPTOR_FIFO_DEPTH">
    <type>int</type>
-   <value>128</value>
+   <value>512</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -45719,7 +45719,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="MAX_BYTE">
    <type>int</type>
-   <value>4096</value>
+   <value>16384</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -47374,7 +47374,7 @@ parameters are a RESULT of the module parameters. -->
 the requested settings for a module instance. -->
   <parameter name="AUTO_GENERATION_ID">
    <type>java.lang.Integer</type>
-   <value>1597838318</value>
+   <value>1598450704</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -49249,7 +49249,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.DESCRIPTOR_FIFO_DEPTH</name>
-   <value>128</value>
+   <value>512</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.DMA_MODE</name>
@@ -49277,7 +49277,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.MAX_BYTE</name>
-   <value>4096</value>
+   <value>16384</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.MAX_STRIDE</name>
@@ -49381,7 +49381,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="DESCRIPTOR_FIFO_DEPTH">
    <type>int</type>
-   <value>128</value>
+   <value>512</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -49397,7 +49397,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="MAX_BYTE">
    <type>int</type>
-   <value>4096</value>
+   <value>16384</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -51052,7 +51052,7 @@ parameters are a RESULT of the module parameters. -->
 the requested settings for a module instance. -->
   <parameter name="AUTO_GENERATION_ID">
    <type>java.lang.Integer</type>
-   <value>1597838318</value>
+   <value>1598450704</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -52927,7 +52927,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.DESCRIPTOR_FIFO_DEPTH</name>
-   <value>128</value>
+   <value>512</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.DMA_MODE</name>
@@ -52955,7 +52955,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.MAX_BYTE</name>
-   <value>4096</value>
+   <value>16384</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.MAX_STRIDE</name>
@@ -53059,7 +53059,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="DESCRIPTOR_FIFO_DEPTH">
    <type>int</type>
-   <value>128</value>
+   <value>512</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -53075,7 +53075,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="MAX_BYTE">
    <type>int</type>
-   <value>4096</value>
+   <value>16384</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -54730,7 +54730,7 @@ parameters are a RESULT of the module parameters. -->
 the requested settings for a module instance. -->
   <parameter name="AUTO_GENERATION_ID">
    <type>java.lang.Integer</type>
-   <value>1597838318</value>
+   <value>1598450704</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -56605,7 +56605,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.DESCRIPTOR_FIFO_DEPTH</name>
-   <value>128</value>
+   <value>512</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.DMA_MODE</name>
@@ -56633,7 +56633,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.MAX_BYTE</name>
-   <value>4096</value>
+   <value>16384</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.MAX_STRIDE</name>
@@ -56737,7 +56737,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="DESCRIPTOR_FIFO_DEPTH">
    <type>int</type>
-   <value>128</value>
+   <value>512</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -56753,7 +56753,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="MAX_BYTE">
    <type>int</type>
-   <value>4096</value>
+   <value>16384</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -58408,7 +58408,7 @@ parameters are a RESULT of the module parameters. -->
 the requested settings for a module instance. -->
   <parameter name="AUTO_GENERATION_ID">
    <type>java.lang.Integer</type>
-   <value>1597838318</value>
+   <value>1598450704</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -60283,7 +60283,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.DESCRIPTOR_FIFO_DEPTH</name>
-   <value>128</value>
+   <value>512</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.DMA_MODE</name>
@@ -60311,7 +60311,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.MAX_BYTE</name>
-   <value>4096</value>
+   <value>16384</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.MAX_STRIDE</name>
@@ -60415,7 +60415,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="DESCRIPTOR_FIFO_DEPTH">
    <type>int</type>
-   <value>128</value>
+   <value>512</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -60431,7 +60431,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="MAX_BYTE">
    <type>int</type>
-   <value>4096</value>
+   <value>16384</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -62086,7 +62086,7 @@ parameters are a RESULT of the module parameters. -->
 the requested settings for a module instance. -->
   <parameter name="AUTO_GENERATION_ID">
    <type>java.lang.Integer</type>
-   <value>1597838318</value>
+   <value>1598450704</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -66517,7 +66517,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.DATA_WIDTH</name>
-   <value>8</value>
+   <value>16</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.DO_TEST_BENCH_WIRING</name>
@@ -66569,7 +66569,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.altr,gpio-bank-width</name>
-   <value>8</value>
+   <value>16</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.resetvalue</name>
@@ -66661,7 +66661,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="width">
    <type>int</type>
-   <value>8</value>
+   <value>16</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -67269,7 +67269,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>in_port</name>
     <direction>Input</direction>
-    <width>8</width>
+    <width>16</width>
     <role>export</role>
    </port>
   </interface>
@@ -67295,7 +67295,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.DATA_WIDTH</name>
-   <value>8</value>
+   <value>16</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.DO_TEST_BENCH_WIRING</name>
@@ -67347,7 +67347,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.altr,gpio-bank-width</name>
-   <value>8</value>
+   <value>16</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.resetvalue</name>
@@ -67439,7 +67439,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="width">
    <type>int</type>
-   <value>8</value>
+   <value>16</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -68047,7 +68047,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>in_port</name>
     <direction>Input</direction>
-    <width>8</width>
+    <width>16</width>
     <role>export</role>
    </port>
   </interface>
@@ -68073,7 +68073,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.DATA_WIDTH</name>
-   <value>8</value>
+   <value>16</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.DO_TEST_BENCH_WIRING</name>
@@ -68125,7 +68125,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.altr,gpio-bank-width</name>
-   <value>8</value>
+   <value>16</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.resetvalue</name>
@@ -68217,7 +68217,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="width">
    <type>int</type>
-   <value>8</value>
+   <value>16</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -68825,7 +68825,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>in_port</name>
     <direction>Input</direction>
-    <width>8</width>
+    <width>16</width>
     <role>export</role>
    </port>
   </interface>
@@ -68851,7 +68851,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.DATA_WIDTH</name>
-   <value>8</value>
+   <value>16</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.DO_TEST_BENCH_WIRING</name>
@@ -68903,7 +68903,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.altr,gpio-bank-width</name>
-   <value>8</value>
+   <value>16</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.resetvalue</name>
@@ -68995,7 +68995,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="width">
    <type>int</type>
-   <value>8</value>
+   <value>16</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -69603,7 +69603,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>in_port</name>
     <direction>Input</direction>
-    <width>8</width>
+    <width>16</width>
     <role>export</role>
    </port>
   </interface>
@@ -69629,7 +69629,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.DATA_WIDTH</name>
-   <value>8</value>
+   <value>16</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.DO_TEST_BENCH_WIRING</name>
@@ -69681,7 +69681,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.altr,gpio-bank-width</name>
-   <value>8</value>
+   <value>16</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.resetvalue</name>
@@ -69773,7 +69773,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="width">
    <type>int</type>
-   <value>8</value>
+   <value>16</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -70381,7 +70381,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>in_port</name>
     <direction>Input</direction>
-    <width>8</width>
+    <width>16</width>
     <role>export</role>
    </port>
   </interface>
@@ -70407,7 +70407,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.DATA_WIDTH</name>
-   <value>8</value>
+   <value>16</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.DO_TEST_BENCH_WIRING</name>
@@ -70459,7 +70459,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.altr,gpio-bank-width</name>
-   <value>8</value>
+   <value>16</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.resetvalue</name>
@@ -70551,7 +70551,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="width">
    <type>int</type>
-   <value>8</value>
+   <value>16</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -71159,7 +71159,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>in_port</name>
     <direction>Input</direction>
-    <width>8</width>
+    <width>16</width>
     <role>export</role>
    </port>
   </interface>
@@ -98249,6 +98249,6 @@ parameters are a RESULT of the module parameters. -->
   <displayName>Reset Connection</displayName>
   <version>18.1</version>
  </plugin>
- <reportVersion>18.1 625</reportVersion>
- <uniqueIdentifier>525400C8DB1F000001740695F483</uniqueIdentifier>
+ <reportVersion>18.1 646</reportVersion>
+ <uniqueIdentifier>10E7C63FEFC7000001742B1643C8</uniqueIdentifier>
 </EnsembleReport>

@@ -3,55 +3,55 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 900mV 85C Model Setup 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[0]'
-Slack : -1.470
-TNS   : -1296.543
+Slack : -1.930
+TNS   : -2191.021
 
 Type  : Slow 900mV 85C Model Setup 'OSC_50_BANK6'
-Slack : -0.748
-TNS   : -5.245
+Slack : -0.661
+TNS   : -6.222
 
 Type  : Slow 900mV 85C Model Setup 'input_clock_125'
-Slack : -0.426
-TNS   : -0.998
+Slack : -0.512
+TNS   : -2.067
 
 Type  : Slow 900mV 85C Model Setup 'M1_DDR2_clk[0]'
-Slack : 0.097
-TNS   : 0.000
-
-Type  : Slow 900mV 85C Model Setup 'M2_DDR2_clk[1]'
-Slack : 0.114
+Slack : 0.094
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Setup 'M1_DDR2_clk[1]'
-Slack : 0.115
+Slack : 0.107
+TNS   : 0.000
+
+Type  : Slow 900mV 85C Model Setup 'M2_DDR2_clk[1]'
+Slack : 0.107
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Setup 'M2_DDR2_clk[0]'
-Slack : 0.129
+Slack : 0.131
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Setup 'rx_input_clock[1]'
-Slack : 0.232
-TNS   : 0.000
-
-Type  : Slow 900mV 85C Model Setup 'rx_input_clock[3]'
-Slack : 0.242
+Slack : 0.241
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Setup 'rx_input_clock[2]'
+Slack : 0.243
+TNS   : 0.000
+
+Type  : Slow 900mV 85C Model Setup 'rx_input_clock[3]'
 Slack : 0.244
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Setup 'rx_input_clock[0]'
-Slack : 0.277
-TNS   : 0.000
-
-Type  : Slow 900mV 85C Model Setup 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[3]'
-Slack : 0.342
+Slack : 0.267
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Setup 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[0]'
-Slack : 0.486
+Slack : 0.401
+TNS   : 0.000
+
+Type  : Slow 900mV 85C Model Setup 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[3]'
+Slack : 0.593
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Setup 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[2]'
@@ -62,44 +62,48 @@ Type  : Slow 900mV 85C Model Setup 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generate
 Slack : 0.695
 TNS   : 0.000
 
+Type  : Slow 900mV 85C Model Setup 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[3]'
+Slack : 0.789
+TNS   : 0.000
+
 Type  : Slow 900mV 85C Model Setup 'c0|ethlink_inst|\MAC:1:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
-Slack : 0.720
+Slack : 0.861
 TNS   : 0.000
 
-Type  : Slow 900mV 85C Model Setup 'c0|ethlink_inst|\MAC:2:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
-Slack : 0.929
-TNS   : 0.000
-
-Type  : Slow 900mV 85C Model Setup 'c0|ethlink_inst|\MAC:1:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|pll|clk[0]'
-Slack : 0.951
+Type  : Slow 900mV 85C Model Setup 'c0|ethlink_inst|\MAC:2:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|pll|clk[0]'
+Slack : 0.875
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Setup 'c0|ethlink_inst|\MAC:3:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
-Slack : 1.105
-TNS   : 0.000
-
-Type  : Slow 900mV 85C Model Setup 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[3]'
-Slack : 1.190
+Slack : 1.038
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Setup 'c0|ethlink_inst|\MAC:0:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
-Slack : 1.205
+Slack : 1.182
+TNS   : 0.000
+
+Type  : Slow 900mV 85C Model Setup 'c0|ethlink_inst|\MAC:2:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
+Slack : 1.197
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Setup 'tx_output_clock[0]'
-Slack : 1.221
+Slack : 1.224
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Setup 'tx_output_clock[1]'
-Slack : 1.284
+Slack : 1.287
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Setup 'tx_output_clock[2]'
-Slack : 1.301
+Slack : 1.305
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Setup 'tx_output_clock[3]'
-Slack : 1.316
+Slack : 1.313
+TNS   : 0.000
+
+Type  : Slow 900mV 85C Model Setup 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[5]'
+Slack : 1.328
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Setup 'u0|ddr2_ram|testbench_ls_ddr2_ram_p0_leveling_clk'
@@ -110,87 +114,83 @@ Type  : Slow 900mV 85C Model Setup 'u0|ddr2_ram_1|testbench_ls_ddr2_ram_p0_level
 Slack : 1.356
 TNS   : 0.000
 
-Type  : Slow 900mV 85C Model Setup 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[5]'
-Slack : 1.624
-TNS   : 0.000
-
 Type  : Slow 900mV 85C Model Setup 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[5]'
-Slack : 1.878
+Slack : 1.595
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Setup 'pll40MHz0|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 3.060
-TNS   : 0.000
-
-Type  : Slow 900mV 85C Model Setup 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[6]'
-Slack : 4.704
+Slack : 2.198
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Setup 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[6]'
-Slack : 4.976
+Slack : 4.703
+TNS   : 0.000
+
+Type  : Slow 900mV 85C Model Setup 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[6]'
+Slack : 4.828
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Setup 'altera_reserved_tck'
-Slack : 40.248
-TNS   : 0.000
-
-Type  : Slow 900mV 85C Model Hold 'rx_input_clock[2]'
-Slack : 0.059
-TNS   : 0.000
-
-Type  : Slow 900mV 85C Model Hold 'rx_input_clock[1]'
-Slack : 0.108
+Slack : 41.491
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Hold 'rx_input_clock[0]'
-Slack : 0.140
+Slack : 0.065
 TNS   : 0.000
 
-Type  : Slow 900mV 85C Model Hold 'c0|ethlink_inst|\MAC:0:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
-Slack : 0.149
+Type  : Slow 900mV 85C Model Hold 'rx_input_clock[1]'
+Slack : 0.070
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Hold 'rx_input_clock[3]'
-Slack : 0.178
+Slack : 0.114
 TNS   : 0.000
 
-Type  : Slow 900mV 85C Model Hold 'input_clock_125'
-Slack : 0.186
-TNS   : 0.000
-
-Type  : Slow 900mV 85C Model Hold 'c0|ethlink_inst|\MAC:1:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
-Slack : 0.197
-TNS   : 0.000
-
-Type  : Slow 900mV 85C Model Hold 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[5]'
-Slack : 0.201
+Type  : Slow 900mV 85C Model Hold 'rx_input_clock[2]'
+Slack : 0.146
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Hold 'c0|ethlink_inst|\MAC:2:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
-Slack : 0.204
+Slack : 0.184
+TNS   : 0.000
+
+Type  : Slow 900mV 85C Model Hold 'input_clock_125'
+Slack : 0.185
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Hold 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[0]'
-Slack : 0.209
+Slack : 0.185
 TNS   : 0.000
 
-Type  : Slow 900mV 85C Model Hold 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[6]'
-Slack : 0.213
+Type  : Slow 900mV 85C Model Hold 'c0|ethlink_inst|\MAC:3:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
+Slack : 0.205
+TNS   : 0.000
+
+Type  : Slow 900mV 85C Model Hold 'c0|ethlink_inst|\MAC:1:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
+Slack : 0.207
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Hold 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[3]'
-Slack : 0.232
+Slack : 0.229
 TNS   : 0.000
 
-Type  : Slow 900mV 85C Model Hold 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[0]'
-Slack : 0.234
-TNS   : 0.000
-
-Type  : Slow 900mV 85C Model Hold 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[3]'
-Slack : 0.235
+Type  : Slow 900mV 85C Model Hold 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[6]'
+Slack : 0.231
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Hold 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[6]'
+Slack : 0.231
+TNS   : 0.000
+
+Type  : Slow 900mV 85C Model Hold 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[0]'
+Slack : 0.233
+TNS   : 0.000
+
+Type  : Slow 900mV 85C Model Hold 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[5]'
+Slack : 0.235
+TNS   : 0.000
+
+Type  : Slow 900mV 85C Model Hold 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[3]'
 Slack : 0.235
 TNS   : 0.000
 
@@ -198,8 +198,8 @@ Type  : Slow 900mV 85C Model Hold 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|p
 Slack : 0.236
 TNS   : 0.000
 
-Type  : Slow 900mV 85C Model Hold 'c0|ethlink_inst|\MAC:3:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
-Slack : 0.237
+Type  : Slow 900mV 85C Model Hold 'c0|ethlink_inst|\MAC:0:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
+Slack : 0.246
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Hold 'OSC_50_BANK6'
@@ -207,51 +207,51 @@ Slack : 0.254
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Hold 'altera_reserved_tck'
-Slack : 0.265
+Slack : 0.266
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Hold 'pll40MHz0|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 0.350
+Slack : 0.351
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Hold 'u0|ddr2_ram_1|testbench_ls_ddr2_ram_p0_leveling_clk'
-Slack : 0.436
+Slack : 0.426
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Hold 'u0|ddr2_ram|testbench_ls_ddr2_ram_p0_leveling_clk'
-Slack : 0.449
-TNS   : 0.000
-
-Type  : Slow 900mV 85C Model Hold 'M1_DDR2_clk[1]'
-Slack : 0.665
+Slack : 0.437
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Hold 'M2_DDR2_clk[0]'
+Slack : 0.671
+TNS   : 0.000
+
+Type  : Slow 900mV 85C Model Hold 'M1_DDR2_clk[1]'
 Slack : 0.673
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Hold 'M1_DDR2_clk[0]'
-Slack : 0.683
+Slack : 0.687
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Hold 'M2_DDR2_clk[1]'
-Slack : 0.690
+Slack : 0.697
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Hold 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[2]'
-Slack : 1.421
+Slack : 1.408
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Hold 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[2]'
-Slack : 1.429
-TNS   : 0.000
-
-Type  : Slow 900mV 85C Model Hold 'tx_output_clock[3]'
-Slack : 2.729
+Slack : 1.421
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Hold 'tx_output_clock[1]'
-Slack : 2.735
+Slack : 2.725
+TNS   : 0.000
+
+Type  : Slow 900mV 85C Model Hold 'tx_output_clock[3]'
+Slack : 2.734
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Hold 'tx_output_clock[0]'
@@ -259,174 +259,174 @@ Slack : 2.770
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Hold 'tx_output_clock[2]'
-Slack : 2.792
+Slack : 2.787
 TNS   : 0.000
 
-Type  : Slow 900mV 85C Model Hold 'c0|ethlink_inst|\MAC:1:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|pll|clk[0]'
-Slack : 4.984
+Type  : Slow 900mV 85C Model Hold 'c0|ethlink_inst|\MAC:2:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|pll|clk[0]'
+Slack : 4.979
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Recovery 'OSC_50_BANK6'
-Slack : -1.264
-TNS   : -13.838
-
-Type  : Slow 900mV 85C Model Recovery 'c0|ethlink_inst|\MAC:3:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
-Slack : 0.235
-TNS   : 0.000
-
-Type  : Slow 900mV 85C Model Recovery 'c0|ethlink_inst|\MAC:1:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
-Slack : 0.260
-TNS   : 0.000
-
-Type  : Slow 900mV 85C Model Recovery 'c0|ethlink_inst|\MAC:2:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
-Slack : 0.419
-TNS   : 0.000
+Slack : -1.141
+TNS   : -14.323
 
 Type  : Slow 900mV 85C Model Recovery 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[3]'
-Slack : 0.450
-TNS   : 0.000
-
-Type  : Slow 900mV 85C Model Recovery 'c0|ethlink_inst|\MAC:0:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
-Slack : 0.506
+Slack : 0.307
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Recovery 'input_clock_125'
-Slack : 0.649
+Slack : 0.312
+TNS   : 0.000
+
+Type  : Slow 900mV 85C Model Recovery 'c0|ethlink_inst|\MAC:2:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
+Slack : 0.508
+TNS   : 0.000
+
+Type  : Slow 900mV 85C Model Recovery 'c0|ethlink_inst|\MAC:1:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
+Slack : 0.538
+TNS   : 0.000
+
+Type  : Slow 900mV 85C Model Recovery 'c0|ethlink_inst|\MAC:0:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
+Slack : 0.573
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Recovery 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[3]'
-Slack : 0.728
-TNS   : 0.000
-
-Type  : Slow 900mV 85C Model Recovery 'rx_input_clock[0]'
-Slack : 0.787
+Slack : 0.609
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Recovery 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[0]'
-Slack : 1.245
+Slack : 0.649
 TNS   : 0.000
 
-Type  : Slow 900mV 85C Model Recovery 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[0]'
-Slack : 1.324
-TNS   : 0.000
-
-Type  : Slow 900mV 85C Model Recovery 'pll40MHz0|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 1.495
-TNS   : 0.000
-
-Type  : Slow 900mV 85C Model Recovery 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[6]'
-Slack : 1.499
-TNS   : 0.000
-
-Type  : Slow 900mV 85C Model Recovery 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[5]'
-Slack : 1.512
-TNS   : 0.000
-
-Type  : Slow 900mV 85C Model Recovery 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[5]'
-Slack : 1.580
-TNS   : 0.000
-
-Type  : Slow 900mV 85C Model Recovery 'rx_input_clock[1]'
-Slack : 1.613
+Type  : Slow 900mV 85C Model Recovery 'c0|ethlink_inst|\MAC:3:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
+Slack : 0.667
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Recovery 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[6]'
-Slack : 1.722
+Slack : 0.842
 TNS   : 0.000
 
-Type  : Slow 900mV 85C Model Recovery 'rx_input_clock[2]'
-Slack : 1.779
+Type  : Slow 900mV 85C Model Recovery 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[0]'
+Slack : 0.997
+TNS   : 0.000
+
+Type  : Slow 900mV 85C Model Recovery 'rx_input_clock[0]'
+Slack : 1.063
+TNS   : 0.000
+
+Type  : Slow 900mV 85C Model Recovery 'pll40MHz0|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 1.101
+TNS   : 0.000
+
+Type  : Slow 900mV 85C Model Recovery 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[5]'
+Slack : 1.330
+TNS   : 0.000
+
+Type  : Slow 900mV 85C Model Recovery 'rx_input_clock[1]'
+Slack : 1.492
+TNS   : 0.000
+
+Type  : Slow 900mV 85C Model Recovery 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[5]'
+Slack : 1.581
+TNS   : 0.000
+
+Type  : Slow 900mV 85C Model Recovery 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[6]'
+Slack : 1.773
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Recovery 'rx_input_clock[3]'
-Slack : 2.285
+Slack : 1.780
+TNS   : 0.000
+
+Type  : Slow 900mV 85C Model Recovery 'rx_input_clock[2]'
+Slack : 1.921
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Recovery 'altera_reserved_tck'
-Slack : 48.451
+Slack : 46.945
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Removal 'input_clock_125'
-Slack : 0.373
+Slack : 0.386
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Removal 'rx_input_clock[2]'
-Slack : 0.398
+Slack : 0.431
 TNS   : 0.000
 
-Type  : Slow 900mV 85C Model Removal 'rx_input_clock[1]'
-Slack : 0.405
-TNS   : 0.000
-
-Type  : Slow 900mV 85C Model Removal 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[5]'
-Slack : 0.438
+Type  : Slow 900mV 85C Model Removal 'c0|ethlink_inst|\MAC:0:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
+Slack : 0.434
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Removal 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[5]'
 Slack : 0.439
 TNS   : 0.000
 
-Type  : Slow 900mV 85C Model Removal 'c0|ethlink_inst|\MAC:0:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
-Slack : 0.447
+Type  : Slow 900mV 85C Model Removal 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[5]'
+Slack : 0.439
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Removal 'c0|ethlink_inst|\MAC:3:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
-Slack : 0.452
-TNS   : 0.000
-
-Type  : Slow 900mV 85C Model Removal 'rx_input_clock[3]'
-Slack : 0.458
+Slack : 0.443
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Removal 'altera_reserved_tck'
-Slack : 0.462
-TNS   : 0.000
-
-Type  : Slow 900mV 85C Model Removal 'rx_input_clock[0]'
-Slack : 0.489
-TNS   : 0.000
-
-Type  : Slow 900mV 85C Model Removal 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[0]'
-Slack : 0.492
+Slack : 0.448
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Removal 'c0|ethlink_inst|\MAC:2:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
-Slack : 0.498
+Slack : 0.450
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Removal 'c0|ethlink_inst|\MAC:1:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
-Slack : 0.507
+Slack : 0.454
+TNS   : 0.000
+
+Type  : Slow 900mV 85C Model Removal 'rx_input_clock[3]'
+Slack : 0.454
+TNS   : 0.000
+
+Type  : Slow 900mV 85C Model Removal 'rx_input_clock[1]'
+Slack : 0.476
+TNS   : 0.000
+
+Type  : Slow 900mV 85C Model Removal 'rx_input_clock[0]'
+Slack : 0.492
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Removal 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[0]'
-Slack : 0.527
+Slack : 0.493
+TNS   : 0.000
+
+Type  : Slow 900mV 85C Model Removal 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[0]'
+Slack : 0.506
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Removal 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[6]'
-Slack : 0.569
-TNS   : 0.000
-
-Type  : Slow 900mV 85C Model Removal 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[6]'
-Slack : 0.582
+Slack : 0.692
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Removal 'OSC_50_BANK6'
-Slack : 0.785
+Slack : 0.764
 TNS   : 0.000
 
-Type  : Slow 900mV 85C Model Removal 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[3]'
-Slack : 1.164
+Type  : Slow 900mV 85C Model Removal 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[6]'
+Slack : 0.942
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Removal 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[3]'
-Slack : 1.639
+Slack : 1.627
+TNS   : 0.000
+
+Type  : Slow 900mV 85C Model Removal 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[3]'
+Slack : 1.802
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Removal 'pll40MHz0|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 2.285
+Slack : 2.626
 TNS   : 0.000
 
-Type  : Slow 900mV 85C Model Minimum Pulse Width 'c0|ethlink_inst|\MAC:1:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|pll|clk[0]'
+Type  : Slow 900mV 85C Model Minimum Pulse Width 'c0|ethlink_inst|\MAC:2:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|pll|clk[0]'
 Slack : 0.113
 TNS   : 0.000
 
@@ -447,59 +447,59 @@ Slack : 0.643
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Minimum Pulse Width 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[1]'
-Slack : 0.658
+Slack : 0.657
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Minimum Pulse Width 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[1]'
-Slack : 0.661
+Slack : 0.662
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Minimum Pulse Width 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[0]'
-Slack : 1.696
+Slack : 1.697
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Minimum Pulse Width 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[0]'
-Slack : 1.698
+Slack : 1.704
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Minimum Pulse Width 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[3]'
-Slack : 1.903
+Slack : 1.902
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Minimum Pulse Width 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[3]'
 Slack : 1.905
 TNS   : 0.000
 
+Type  : Slow 900mV 85C Model Minimum Pulse Width 'rx_input_clock[0]'
+Slack : 3.026
+TNS   : 0.000
+
 Type  : Slow 900mV 85C Model Minimum Pulse Width 'rx_input_clock[1]'
-Slack : 3.037
+Slack : 3.040
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Minimum Pulse Width 'rx_input_clock[3]'
-Slack : 3.042
+Slack : 3.045
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Minimum Pulse Width 'rx_input_clock[2]'
-Slack : 3.044
-TNS   : 0.000
-
-Type  : Slow 900mV 85C Model Minimum Pulse Width 'rx_input_clock[0]'
-Slack : 3.047
-TNS   : 0.000
-
-Type  : Slow 900mV 85C Model Minimum Pulse Width 'c0|ethlink_inst|\MAC:3:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
-Slack : 3.131
+Slack : 3.053
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Minimum Pulse Width 'c0|ethlink_inst|\MAC:0:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
-Slack : 3.147
+Slack : 3.141
+TNS   : 0.000
+
+Type  : Slow 900mV 85C Model Minimum Pulse Width 'c0|ethlink_inst|\MAC:3:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
+Slack : 3.184
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Minimum Pulse Width 'c0|ethlink_inst|\MAC:2:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
-Slack : 3.183
+Slack : 3.190
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Minimum Pulse Width 'c0|ethlink_inst|\MAC:1:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
-Slack : 3.186
+Slack : 3.191
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Minimum Pulse Width 'input_clock_125'
@@ -523,63 +523,63 @@ Slack : 6.667
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Minimum Pulse Width 'OSC_50_BANK6'
-Slack : 9.421
+Slack : 9.422
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Minimum Pulse Width 'pll40MHz0|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 11.958
+Slack : 11.959
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Minimum Pulse Width 'altera_reserved_tck'
-Slack : 49.301
+Slack : 49.302
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Setup 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[0]'
-Slack : -1.247
-TNS   : -732.265
-
-Type  : Slow 900mV 0C Model Setup 'OSC_50_BANK6'
-Slack : -0.477
-TNS   : -2.763
+Slack : -1.663
+TNS   : -1410.451
 
 Type  : Slow 900mV 0C Model Setup 'input_clock_125'
-Slack : -0.405
-TNS   : -0.936
+Slack : -0.492
+TNS   : -1.988
+
+Type  : Slow 900mV 0C Model Setup 'OSC_50_BANK6'
+Slack : -0.416
+TNS   : -3.107
 
 Type  : Slow 900mV 0C Model Setup 'M1_DDR2_clk[0]'
-Slack : 0.090
+Slack : 0.087
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Setup 'M2_DDR2_clk[1]'
-Slack : 0.100
+Slack : 0.094
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Setup 'M1_DDR2_clk[1]'
-Slack : 0.105
+Slack : 0.098
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Setup 'M2_DDR2_clk[0]'
-Slack : 0.108
+Slack : 0.110
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Setup 'rx_input_clock[1]'
-Slack : 0.530
+Slack : 0.534
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Setup 'rx_input_clock[2]'
-Slack : 0.541
+Slack : 0.546
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Setup 'rx_input_clock[3]'
 Slack : 0.549
 TNS   : 0.000
 
-Type  : Slow 900mV 0C Model Setup 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[3]'
-Slack : 0.562
+Type  : Slow 900mV 0C Model Setup 'rx_input_clock[0]'
+Slack : 0.558
 TNS   : 0.000
 
-Type  : Slow 900mV 0C Model Setup 'rx_input_clock[0]'
-Slack : 0.567
+Type  : Slow 900mV 0C Model Setup 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[0]'
+Slack : 0.630
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Setup 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[2]'
@@ -590,48 +590,48 @@ Type  : Slow 900mV 0C Model Setup 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated
 Slack : 0.709
 TNS   : 0.000
 
-Type  : Slow 900mV 0C Model Setup 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[0]'
-Slack : 0.729
+Type  : Slow 900mV 0C Model Setup 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[3]'
+Slack : 0.815
+TNS   : 0.000
+
+Type  : Slow 900mV 0C Model Setup 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[3]'
+Slack : 0.952
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Setup 'c0|ethlink_inst|\MAC:1:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
-Slack : 0.898
+Slack : 1.024
 TNS   : 0.000
 
-Type  : Slow 900mV 0C Model Setup 'c0|ethlink_inst|\MAC:2:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
-Slack : 1.080
-TNS   : 0.000
-
-Type  : Slow 900mV 0C Model Setup 'c0|ethlink_inst|\MAC:1:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|pll|clk[0]'
-Slack : 1.220
+Type  : Slow 900mV 0C Model Setup 'c0|ethlink_inst|\MAC:2:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|pll|clk[0]'
+Slack : 1.142
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Setup 'c0|ethlink_inst|\MAC:3:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
-Slack : 1.221
+Slack : 1.184
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Setup 'tx_output_clock[0]'
-Slack : 1.260
-TNS   : 0.000
-
-Type  : Slow 900mV 0C Model Setup 'tx_output_clock[1]'
-Slack : 1.322
-TNS   : 0.000
-
-Type  : Slow 900mV 0C Model Setup 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[3]'
-Slack : 1.328
+Slack : 1.263
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Setup 'c0|ethlink_inst|\MAC:0:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
-Slack : 1.329
+Slack : 1.318
+TNS   : 0.000
+
+Type  : Slow 900mV 0C Model Setup 'tx_output_clock[1]'
+Slack : 1.325
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Setup 'tx_output_clock[2]'
-Slack : 1.331
+Slack : 1.328
+TNS   : 0.000
+
+Type  : Slow 900mV 0C Model Setup 'c0|ethlink_inst|\MAC:2:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
+Slack : 1.340
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Setup 'tx_output_clock[3]'
-Slack : 1.351
+Slack : 1.346
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Setup 'u0|ddr2_ram|testbench_ls_ddr2_ram_p0_leveling_clk'
@@ -643,94 +643,94 @@ Slack : 1.370
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Setup 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[5]'
-Slack : 1.780
+Slack : 1.538
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Setup 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[5]'
-Slack : 2.239
+Slack : 1.774
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Setup 'pll40MHz0|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 3.138
-TNS   : 0.000
-
-Type  : Slow 900mV 0C Model Setup 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[6]'
-Slack : 4.963
+Slack : 2.306
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Setup 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[6]'
-Slack : 5.194
+Slack : 4.961
+TNS   : 0.000
+
+Type  : Slow 900mV 0C Model Setup 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[6]'
+Slack : 5.078
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Setup 'altera_reserved_tck'
-Slack : 40.804
-TNS   : 0.000
-
-Type  : Slow 900mV 0C Model Hold 'rx_input_clock[2]'
-Slack : 0.057
-TNS   : 0.000
-
-Type  : Slow 900mV 0C Model Hold 'rx_input_clock[1]'
-Slack : 0.087
+Slack : 42.050
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Hold 'rx_input_clock[0]'
-Slack : 0.111
+Slack : 0.052
 TNS   : 0.000
 
-Type  : Slow 900mV 0C Model Hold 'c0|ethlink_inst|\MAC:0:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
-Slack : 0.136
-TNS   : 0.000
-
-Type  : Slow 900mV 0C Model Hold 'input_clock_125'
-Slack : 0.173
-TNS   : 0.000
-
-Type  : Slow 900mV 0C Model Hold 'c0|ethlink_inst|\MAC:1:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
-Slack : 0.174
+Type  : Slow 900mV 0C Model Hold 'rx_input_clock[1]'
+Slack : 0.062
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Hold 'rx_input_clock[3]'
-Slack : 0.176
+Slack : 0.095
+TNS   : 0.000
+
+Type  : Slow 900mV 0C Model Hold 'rx_input_clock[2]'
+Slack : 0.130
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Hold 'c0|ethlink_inst|\MAC:2:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
-Slack : 0.187
+Slack : 0.160
+TNS   : 0.000
+
+Type  : Slow 900mV 0C Model Hold 'input_clock_125'
+Slack : 0.166
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Hold 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[0]'
-Slack : 0.192
+Slack : 0.171
 TNS   : 0.000
 
-Type  : Slow 900mV 0C Model Hold 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[5]'
-Slack : 0.198
-TNS   : 0.000
-
-Type  : Slow 900mV 0C Model Hold 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[6]'
-Slack : 0.205
-TNS   : 0.000
-
-Type  : Slow 900mV 0C Model Hold 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[3]'
-Slack : 0.226
-TNS   : 0.000
-
-Type  : Slow 900mV 0C Model Hold 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[6]'
-Slack : 0.228
+Type  : Slow 900mV 0C Model Hold 'c0|ethlink_inst|\MAC:1:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
+Slack : 0.183
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Hold 'c0|ethlink_inst|\MAC:3:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
-Slack : 0.229
+Slack : 0.193
+TNS   : 0.000
+
+Type  : Slow 900mV 0C Model Hold 'c0|ethlink_inst|\MAC:0:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
+Slack : 0.219
+TNS   : 0.000
+
+Type  : Slow 900mV 0C Model Hold 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[3]'
+Slack : 0.222
+TNS   : 0.000
+
+Type  : Slow 900mV 0C Model Hold 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[6]'
+Slack : 0.222
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Hold 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[0]'
-Slack : 0.229
+Slack : 0.226
 TNS   : 0.000
 
-Type  : Slow 900mV 0C Model Hold 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[3]'
-Slack : 0.229
+Type  : Slow 900mV 0C Model Hold 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[6]'
+Slack : 0.226
+TNS   : 0.000
+
+Type  : Slow 900mV 0C Model Hold 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[5]'
+Slack : 0.228
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Hold 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[5]'
+Slack : 0.228
+TNS   : 0.000
+
+Type  : Slow 900mV 0C Model Hold 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[3]'
 Slack : 0.229
 TNS   : 0.000
 
@@ -743,47 +743,47 @@ Slack : 0.265
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Hold 'pll40MHz0|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 0.339
+Slack : 0.340
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Hold 'u0|ddr2_ram_1|testbench_ls_ddr2_ram_p0_leveling_clk'
-Slack : 0.454
+Slack : 0.445
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Hold 'u0|ddr2_ram|testbench_ls_ddr2_ram_p0_leveling_clk'
-Slack : 0.465
+Slack : 0.455
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Hold 'M1_DDR2_clk[1]'
-Slack : 0.713
+Slack : 0.723
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Hold 'M2_DDR2_clk[0]'
-Slack : 0.727
+Slack : 0.728
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Hold 'M1_DDR2_clk[0]'
-Slack : 0.730
+Slack : 0.735
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Hold 'M2_DDR2_clk[1]'
-Slack : 0.736
+Slack : 0.745
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Hold 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[2]'
-Slack : 1.431
+Slack : 1.420
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Hold 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[2]'
-Slack : 1.439
-TNS   : 0.000
-
-Type  : Slow 900mV 0C Model Hold 'tx_output_clock[3]'
-Slack : 2.749
+Slack : 1.432
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Hold 'tx_output_clock[1]'
-Slack : 2.757
+Slack : 2.748
+TNS   : 0.000
+
+Type  : Slow 900mV 0C Model Hold 'tx_output_clock[3]'
+Slack : 2.752
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Hold 'tx_output_clock[0]'
@@ -791,174 +791,174 @@ Slack : 2.797
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Hold 'tx_output_clock[2]'
-Slack : 2.818
+Slack : 2.813
 TNS   : 0.000
 
-Type  : Slow 900mV 0C Model Hold 'c0|ethlink_inst|\MAC:1:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|pll|clk[0]'
-Slack : 4.821
+Type  : Slow 900mV 0C Model Hold 'c0|ethlink_inst|\MAC:2:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|pll|clk[0]'
+Slack : 4.818
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Recovery 'OSC_50_BANK6'
-Slack : -0.972
-TNS   : -9.485
+Slack : -0.879
+TNS   : -9.917
 
-Type  : Slow 900mV 0C Model Recovery 'c0|ethlink_inst|\MAC:3:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
-Slack : 0.408
-TNS   : 0.000
-
-Type  : Slow 900mV 0C Model Recovery 'c0|ethlink_inst|\MAC:1:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
-Slack : 0.487
-TNS   : 0.000
-
-Type  : Slow 900mV 0C Model Recovery 'c0|ethlink_inst|\MAC:2:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
-Slack : 0.587
+Type  : Slow 900mV 0C Model Recovery 'input_clock_125'
+Slack : 0.425
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Recovery 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[3]'
-Slack : 0.588
+Slack : 0.470
+TNS   : 0.000
+
+Type  : Slow 900mV 0C Model Recovery 'c0|ethlink_inst|\MAC:2:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
+Slack : 0.658
+TNS   : 0.000
+
+Type  : Slow 900mV 0C Model Recovery 'c0|ethlink_inst|\MAC:1:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
+Slack : 0.712
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Recovery 'c0|ethlink_inst|\MAC:0:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
-Slack : 0.679
-TNS   : 0.000
-
-Type  : Slow 900mV 0C Model Recovery 'input_clock_125'
-Slack : 0.731
+Slack : 0.719
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Recovery 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[3]'
-Slack : 0.869
+Slack : 0.742
 TNS   : 0.000
 
-Type  : Slow 900mV 0C Model Recovery 'rx_input_clock[0]'
-Slack : 0.996
+Type  : Slow 900mV 0C Model Recovery 'c0|ethlink_inst|\MAC:3:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
+Slack : 0.815
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Recovery 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[0]'
-Slack : 1.411
-TNS   : 0.000
-
-Type  : Slow 900mV 0C Model Recovery 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[0]'
-Slack : 1.552
-TNS   : 0.000
-
-Type  : Slow 900mV 0C Model Recovery 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[6]'
-Slack : 1.661
-TNS   : 0.000
-
-Type  : Slow 900mV 0C Model Recovery 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[5]'
-Slack : 1.672
-TNS   : 0.000
-
-Type  : Slow 900mV 0C Model Recovery 'pll40MHz0|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 1.676
-TNS   : 0.000
-
-Type  : Slow 900mV 0C Model Recovery 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[5]'
-Slack : 1.727
-TNS   : 0.000
-
-Type  : Slow 900mV 0C Model Recovery 'rx_input_clock[1]'
-Slack : 1.739
+Slack : 0.941
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Recovery 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[6]'
-Slack : 1.858
+Slack : 1.067
 TNS   : 0.000
 
-Type  : Slow 900mV 0C Model Recovery 'rx_input_clock[2]'
-Slack : 1.861
+Type  : Slow 900mV 0C Model Recovery 'rx_input_clock[0]'
+Slack : 1.208
+TNS   : 0.000
+
+Type  : Slow 900mV 0C Model Recovery 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[0]'
+Slack : 1.209
+TNS   : 0.000
+
+Type  : Slow 900mV 0C Model Recovery 'pll40MHz0|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 1.214
+TNS   : 0.000
+
+Type  : Slow 900mV 0C Model Recovery 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[5]'
+Slack : 1.528
+TNS   : 0.000
+
+Type  : Slow 900mV 0C Model Recovery 'rx_input_clock[1]'
+Slack : 1.625
+TNS   : 0.000
+
+Type  : Slow 900mV 0C Model Recovery 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[5]'
+Slack : 1.729
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Recovery 'rx_input_clock[3]'
-Slack : 2.326
+Slack : 1.903
+TNS   : 0.000
+
+Type  : Slow 900mV 0C Model Recovery 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[6]'
+Slack : 1.908
+TNS   : 0.000
+
+Type  : Slow 900mV 0C Model Recovery 'rx_input_clock[2]'
+Slack : 2.010
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Recovery 'altera_reserved_tck'
-Slack : 48.470
+Slack : 47.052
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Removal 'input_clock_125'
-Slack : 0.355
-TNS   : 0.000
-
-Type  : Slow 900mV 0C Model Removal 'rx_input_clock[1]'
-Slack : 0.399
+Slack : 0.361
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Removal 'rx_input_clock[2]'
-Slack : 0.401
-TNS   : 0.000
-
-Type  : Slow 900mV 0C Model Removal 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[5]'
-Slack : 0.425
-TNS   : 0.000
-
-Type  : Slow 900mV 0C Model Removal 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[5]'
-Slack : 0.425
+Slack : 0.398
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Removal 'c0|ethlink_inst|\MAC:0:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
-Slack : 0.431
+Slack : 0.421
+TNS   : 0.000
+
+Type  : Slow 900mV 0C Model Removal 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[5]'
+Slack : 0.424
+TNS   : 0.000
+
+Type  : Slow 900mV 0C Model Removal 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[5]'
+Slack : 0.424
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Removal 'c0|ethlink_inst|\MAC:3:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
-Slack : 0.437
-TNS   : 0.000
-
-Type  : Slow 900mV 0C Model Removal 'rx_input_clock[3]'
-Slack : 0.442
+Slack : 0.429
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Removal 'altera_reserved_tck'
-Slack : 0.446
+Slack : 0.435
+TNS   : 0.000
+
+Type  : Slow 900mV 0C Model Removal 'c0|ethlink_inst|\MAC:2:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
+Slack : 0.435
+TNS   : 0.000
+
+Type  : Slow 900mV 0C Model Removal 'c0|ethlink_inst|\MAC:1:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
+Slack : 0.438
+TNS   : 0.000
+
+Type  : Slow 900mV 0C Model Removal 'rx_input_clock[3]'
+Slack : 0.453
+TNS   : 0.000
+
+Type  : Slow 900mV 0C Model Removal 'rx_input_clock[1]'
+Slack : 0.462
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Removal 'rx_input_clock[0]'
 Slack : 0.471
 TNS   : 0.000
 
-Type  : Slow 900mV 0C Model Removal 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[0]'
-Slack : 0.473
-TNS   : 0.000
-
-Type  : Slow 900mV 0C Model Removal 'c0|ethlink_inst|\MAC:2:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
-Slack : 0.480
-TNS   : 0.000
-
-Type  : Slow 900mV 0C Model Removal 'c0|ethlink_inst|\MAC:1:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
-Slack : 0.488
-TNS   : 0.000
-
 Type  : Slow 900mV 0C Model Removal 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[0]'
-Slack : 0.506
+Slack : 0.475
 TNS   : 0.000
 
-Type  : Slow 900mV 0C Model Removal 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[6]'
-Slack : 0.556
+Type  : Slow 900mV 0C Model Removal 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[0]'
+Slack : 0.487
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Removal 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[6]'
-Slack : 0.561
+Slack : 0.657
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Removal 'OSC_50_BANK6'
-Slack : 0.763
+Slack : 0.743
 TNS   : 0.000
 
-Type  : Slow 900mV 0C Model Removal 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[3]'
-Slack : 1.109
+Type  : Slow 900mV 0C Model Removal 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[6]'
+Slack : 0.879
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Removal 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[3]'
-Slack : 1.558
+Slack : 1.579
+TNS   : 0.000
+
+Type  : Slow 900mV 0C Model Removal 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[3]'
+Slack : 1.701
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Removal 'pll40MHz0|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 2.103
+Slack : 2.486
 TNS   : 0.000
 
-Type  : Slow 900mV 0C Model Minimum Pulse Width 'c0|ethlink_inst|\MAC:1:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|pll|clk[0]'
+Type  : Slow 900mV 0C Model Minimum Pulse Width 'c0|ethlink_inst|\MAC:2:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|pll|clk[0]'
 Slack : 0.115
 TNS   : 0.000
 
@@ -971,7 +971,7 @@ Slack : 0.510
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Minimum Pulse Width 'u0|ddr2_ram_1|testbench_ls_ddr2_ram_p0_leveling_clk'
-Slack : 0.662
+Slack : 0.661
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Minimum Pulse Width 'u0|ddr2_ram|testbench_ls_ddr2_ram_p0_leveling_clk'
@@ -983,7 +983,7 @@ Slack : 0.680
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Minimum Pulse Width 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[1]'
-Slack : 0.680
+Slack : 0.681
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Minimum Pulse Width 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[0]'
@@ -991,15 +991,19 @@ Slack : 1.714
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Minimum Pulse Width 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[0]'
-Slack : 1.716
+Slack : 1.720
+TNS   : 0.000
+
+Type  : Slow 900mV 0C Model Minimum Pulse Width 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[3]'
+Slack : 1.922
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Minimum Pulse Width 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[3]'
 Slack : 1.923
 TNS   : 0.000
 
-Type  : Slow 900mV 0C Model Minimum Pulse Width 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[3]'
-Slack : 1.924
+Type  : Slow 900mV 0C Model Minimum Pulse Width 'rx_input_clock[0]'
+Slack : 3.060
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Minimum Pulse Width 'rx_input_clock[1]'
@@ -1007,39 +1011,35 @@ Slack : 3.070
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Minimum Pulse Width 'rx_input_clock[3]'
-Slack : 3.072
+Slack : 3.078
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Minimum Pulse Width 'rx_input_clock[2]'
-Slack : 3.075
-TNS   : 0.000
-
-Type  : Slow 900mV 0C Model Minimum Pulse Width 'rx_input_clock[0]'
-Slack : 3.077
-TNS   : 0.000
-
-Type  : Slow 900mV 0C Model Minimum Pulse Width 'c0|ethlink_inst|\MAC:3:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
-Slack : 3.128
+Slack : 3.079
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Minimum Pulse Width 'c0|ethlink_inst|\MAC:0:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
-Slack : 3.144
+Slack : 3.139
 TNS   : 0.000
 
-Type  : Slow 900mV 0C Model Minimum Pulse Width 'c0|ethlink_inst|\MAC:2:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
-Slack : 3.197
+Type  : Slow 900mV 0C Model Minimum Pulse Width 'c0|ethlink_inst|\MAC:3:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
+Slack : 3.194
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Minimum Pulse Width 'c0|ethlink_inst|\MAC:1:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
-Slack : 3.198
+Slack : 3.204
+TNS   : 0.000
+
+Type  : Slow 900mV 0C Model Minimum Pulse Width 'c0|ethlink_inst|\MAC:2:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
+Slack : 3.204
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Minimum Pulse Width 'input_clock_125'
-Slack : 3.215
+Slack : 3.214
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Minimum Pulse Width 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[5]'
-Slack : 4.223
+Slack : 4.221
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Minimum Pulse Width 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[5]'
@@ -1059,35 +1059,35 @@ Slack : 9.422
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Minimum Pulse Width 'pll40MHz0|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 11.939
+Slack : 11.940
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Minimum Pulse Width 'altera_reserved_tck'
-Slack : 49.258
+Slack : 49.259
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Setup 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[0]'
-Slack : -0.171
-TNS   : -0.431
-
-Type  : Fast 900mV 0C Model Setup 'M1_DDR2_clk[0]'
-Slack : 0.064
-TNS   : 0.000
+Slack : -0.101
+TNS   : -0.314
 
 Type  : Fast 900mV 0C Model Setup 'M1_DDR2_clk[1]'
-Slack : 0.066
+Slack : 0.060
+TNS   : 0.000
+
+Type  : Fast 900mV 0C Model Setup 'M1_DDR2_clk[0]'
+Slack : 0.061
+TNS   : 0.000
+
+Type  : Fast 900mV 0C Model Setup 'M2_DDR2_clk[1]'
+Slack : 0.072
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Setup 'M2_DDR2_clk[0]'
 Slack : 0.075
 TNS   : 0.000
 
-Type  : Fast 900mV 0C Model Setup 'M2_DDR2_clk[1]'
-Slack : 0.077
-TNS   : 0.000
-
 Type  : Fast 900mV 0C Model Setup 'input_clock_125'
-Slack : 0.195
+Slack : 0.125
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Setup 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[2]'
@@ -1099,27 +1099,27 @@ Slack : 0.690
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Setup 'rx_input_clock[1]'
-Slack : 0.909
+Slack : 0.910
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Setup 'rx_input_clock[2]'
-Slack : 0.920
+Slack : 0.921
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Setup 'rx_input_clock[3]'
-Slack : 0.928
+Slack : 0.929
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Setup 'rx_input_clock[0]'
-Slack : 0.932
+Slack : 0.931
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Setup 'OSC_50_BANK6'
-Slack : 0.986
+Slack : 1.037
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Setup 'tx_output_clock[0]'
-Slack : 1.311
+Slack : 1.313
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Setup 'u0|ddr2_ram|testbench_ls_ddr2_ram_p0_leveling_clk'
@@ -1131,143 +1131,143 @@ Slack : 1.337
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Setup 'tx_output_clock[1]'
-Slack : 1.365
+Slack : 1.367
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Setup 'tx_output_clock[2]'
-Slack : 1.378
+Slack : 1.381
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Setup 'tx_output_clock[3]'
-Slack : 1.391
-TNS   : 0.000
-
-Type  : Fast 900mV 0C Model Setup 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[3]'
-Slack : 1.679
+Slack : 1.390
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Setup 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[0]'
-Slack : 1.705
-TNS   : 0.000
-
-Type  : Fast 900mV 0C Model Setup 'c0|ethlink_inst|\MAC:1:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
-Slack : 1.975
-TNS   : 0.000
-
-Type  : Fast 900mV 0C Model Setup 'c0|ethlink_inst|\MAC:2:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
-Slack : 2.094
+Slack : 1.554
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Setup 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[3]'
-Slack : 2.202
+Slack : 1.828
+TNS   : 0.000
+
+Type  : Fast 900mV 0C Model Setup 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[3]'
+Slack : 1.970
+TNS   : 0.000
+
+Type  : Fast 900mV 0C Model Setup 'c0|ethlink_inst|\MAC:1:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
+Slack : 2.059
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Setup 'c0|ethlink_inst|\MAC:3:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
-Slack : 2.259
+Slack : 2.173
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Setup 'c0|ethlink_inst|\MAC:0:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
-Slack : 2.294
+Slack : 2.232
 TNS   : 0.000
 
-Type  : Fast 900mV 0C Model Setup 'c0|ethlink_inst|\MAC:1:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|pll|clk[0]'
-Slack : 3.065
+Type  : Fast 900mV 0C Model Setup 'c0|ethlink_inst|\MAC:2:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
+Slack : 2.239
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Setup 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[5]'
-Slack : 3.087
+Slack : 2.830
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Setup 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[5]'
-Slack : 3.357
+Slack : 2.945
+TNS   : 0.000
+
+Type  : Fast 900mV 0C Model Setup 'c0|ethlink_inst|\MAC:2:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|pll|clk[0]'
+Slack : 3.032
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Setup 'pll40MHz0|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 3.858
-TNS   : 0.000
-
-Type  : Fast 900mV 0C Model Setup 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[6]'
-Slack : 6.982
+Slack : 3.327
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Setup 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[6]'
-Slack : 7.130
+Slack : 6.983
+TNS   : 0.000
+
+Type  : Fast 900mV 0C Model Setup 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[6]'
+Slack : 7.073
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Setup 'altera_reserved_tck'
-Slack : 44.269
+Slack : 44.931
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Hold 'rx_input_clock[0]'
-Slack : -0.265
-TNS   : -0.523
+Slack : -0.373
+TNS   : -0.739
 
 Type  : Fast 900mV 0C Model Hold 'rx_input_clock[2]'
-Slack : -0.158
-TNS   : -0.313
+Slack : -0.149
+TNS   : -0.295
 
 Type  : Fast 900mV 0C Model Hold 'rx_input_clock[3]'
-Slack : -0.110
-TNS   : -0.110
+Slack : -0.087
+TNS   : -0.087
 
 Type  : Fast 900mV 0C Model Hold 'rx_input_clock[1]'
-Slack : -0.058
-TNS   : -0.058
+Slack : -0.056
+TNS   : -0.056
 
 Type  : Fast 900mV 0C Model Hold 'input_clock_125'
-Slack : 0.075
-TNS   : 0.000
-
-Type  : Fast 900mV 0C Model Hold 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[5]'
-Slack : 0.095
-TNS   : 0.000
-
-Type  : Fast 900mV 0C Model Hold 'c0|ethlink_inst|\MAC:0:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
-Slack : 0.096
-TNS   : 0.000
-
-Type  : Fast 900mV 0C Model Hold 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[6]'
-Slack : 0.106
+Slack : 0.081
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Hold 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[0]'
-Slack : 0.109
+Slack : 0.110
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Hold 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[6]'
-Slack : 0.127
+Slack : 0.115
 TNS   : 0.000
 
-Type  : Fast 900mV 0C Model Hold 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[3]'
-Slack : 0.130
-TNS   : 0.000
-
-Type  : Fast 900mV 0C Model Hold 'c0|ethlink_inst|\MAC:1:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
-Slack : 0.131
-TNS   : 0.000
-
-Type  : Fast 900mV 0C Model Hold 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[0]'
-Slack : 0.133
-TNS   : 0.000
-
-Type  : Fast 900mV 0C Model Hold 'c0|ethlink_inst|\MAC:3:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
-Slack : 0.134
-TNS   : 0.000
-
-Type  : Fast 900mV 0C Model Hold 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[3]'
-Slack : 0.134
-TNS   : 0.000
-
-Type  : Fast 900mV 0C Model Hold 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[5]'
-Slack : 0.134
+Type  : Fast 900mV 0C Model Hold 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[5]'
+Slack : 0.117
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Hold 'c0|ethlink_inst|\MAC:2:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
-Slack : 0.136
+Slack : 0.128
+TNS   : 0.000
+
+Type  : Fast 900mV 0C Model Hold 'c0|ethlink_inst|\MAC:3:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
+Slack : 0.128
+TNS   : 0.000
+
+Type  : Fast 900mV 0C Model Hold 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[0]'
+Slack : 0.131
+TNS   : 0.000
+
+Type  : Fast 900mV 0C Model Hold 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[6]'
+Slack : 0.131
+TNS   : 0.000
+
+Type  : Fast 900mV 0C Model Hold 'c0|ethlink_inst|\MAC:1:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
+Slack : 0.132
+TNS   : 0.000
+
+Type  : Fast 900mV 0C Model Hold 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[3]'
+Slack : 0.132
+TNS   : 0.000
+
+Type  : Fast 900mV 0C Model Hold 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[3]'
+Slack : 0.133
+TNS   : 0.000
+
+Type  : Fast 900mV 0C Model Hold 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[5]'
+Slack : 0.133
+TNS   : 0.000
+
+Type  : Fast 900mV 0C Model Hold 'c0|ethlink_inst|\MAC:0:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
+Slack : 0.134
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Hold 'OSC_50_BANK6'
-Slack : 0.138
+Slack : 0.139
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Hold 'altera_reserved_tck'
@@ -1279,218 +1279,218 @@ Slack : 0.188
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Hold 'u0|ddr2_ram_1|testbench_ls_ddr2_ram_p0_leveling_clk'
-Slack : 0.701
+Slack : 0.699
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Hold 'u0|ddr2_ram|testbench_ls_ddr2_ram_p0_leveling_clk'
-Slack : 0.711
+Slack : 0.708
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Hold 'M1_DDR2_clk[1]'
-Slack : 0.871
+Slack : 0.876
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Hold 'M1_DDR2_clk[0]'
-Slack : 0.875
+Slack : 0.877
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Hold 'M2_DDR2_clk[0]'
-Slack : 0.882
+Slack : 0.880
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Hold 'M2_DDR2_clk[1]'
-Slack : 0.883
+Slack : 0.886
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Hold 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[2]'
-Slack : 1.546
+Slack : 1.543
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Hold 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[2]'
-Slack : 1.556
-TNS   : 0.000
-
-Type  : Fast 900mV 0C Model Hold 'tx_output_clock[3]'
-Slack : 2.807
+Slack : 1.555
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Hold 'tx_output_clock[1]'
-Slack : 2.813
+Slack : 2.807
+TNS   : 0.000
+
+Type  : Fast 900mV 0C Model Hold 'tx_output_clock[3]'
+Slack : 2.809
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Hold 'tx_output_clock[0]'
-Slack : 2.837
+Slack : 2.838
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Hold 'tx_output_clock[2]'
-Slack : 2.863
+Slack : 2.860
 TNS   : 0.000
 
-Type  : Fast 900mV 0C Model Hold 'c0|ethlink_inst|\MAC:1:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|pll|clk[0]'
-Slack : 3.585
+Type  : Fast 900mV 0C Model Hold 'c0|ethlink_inst|\MAC:2:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|pll|clk[0]'
+Slack : 3.582
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Recovery 'OSC_50_BANK6'
-Slack : 0.672
-TNS   : 0.000
-
-Type  : Fast 900mV 0C Model Recovery 'c0|ethlink_inst|\MAC:1:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
-Slack : 1.690
-TNS   : 0.000
-
-Type  : Fast 900mV 0C Model Recovery 'c0|ethlink_inst|\MAC:3:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
-Slack : 1.718
-TNS   : 0.000
-
-Type  : Fast 900mV 0C Model Recovery 'c0|ethlink_inst|\MAC:2:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
-Slack : 1.798
+Slack : 0.735
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Recovery 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[3]'
-Slack : 1.827
-TNS   : 0.000
-
-Type  : Fast 900mV 0C Model Recovery 'c0|ethlink_inst|\MAC:0:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
-Slack : 1.844
+Slack : 1.703
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Recovery 'input_clock_125'
-Slack : 1.899
+Slack : 1.739
+TNS   : 0.000
+
+Type  : Fast 900mV 0C Model Recovery 'c0|ethlink_inst|\MAC:2:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
+Slack : 1.809
+TNS   : 0.000
+
+Type  : Fast 900mV 0C Model Recovery 'c0|ethlink_inst|\MAC:1:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
+Slack : 1.842
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Recovery 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[3]'
-Slack : 1.932
+Slack : 1.857
 TNS   : 0.000
 
-Type  : Fast 900mV 0C Model Recovery 'rx_input_clock[0]'
-Slack : 2.194
+Type  : Fast 900mV 0C Model Recovery 'c0|ethlink_inst|\MAC:0:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
+Slack : 1.902
 TNS   : 0.000
 
-Type  : Fast 900mV 0C Model Recovery 'rx_input_clock[1]'
-Slack : 2.723
+Type  : Fast 900mV 0C Model Recovery 'c0|ethlink_inst|\MAC:3:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
+Slack : 1.944
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Recovery 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[0]'
-Slack : 2.741
+Slack : 2.315
 TNS   : 0.000
 
-Type  : Fast 900mV 0C Model Recovery 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[0]'
-Slack : 2.793
-TNS   : 0.000
-
-Type  : Fast 900mV 0C Model Recovery 'pll40MHz0|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 2.801
-TNS   : 0.000
-
-Type  : Fast 900mV 0C Model Recovery 'rx_input_clock[2]'
-Slack : 2.861
-TNS   : 0.000
-
-Type  : Fast 900mV 0C Model Recovery 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[6]'
-Slack : 2.873
-TNS   : 0.000
-
-Type  : Fast 900mV 0C Model Recovery 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[5]'
-Slack : 2.882
-TNS   : 0.000
-
-Type  : Fast 900mV 0C Model Recovery 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[5]'
-Slack : 2.997
+Type  : Fast 900mV 0C Model Recovery 'rx_input_clock[0]'
+Slack : 2.388
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Recovery 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[6]'
-Slack : 3.091
+Slack : 2.487
+TNS   : 0.000
+
+Type  : Fast 900mV 0C Model Recovery 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[0]'
+Slack : 2.563
+TNS   : 0.000
+
+Type  : Fast 900mV 0C Model Recovery 'pll40MHz0|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 2.636
+TNS   : 0.000
+
+Type  : Fast 900mV 0C Model Recovery 'rx_input_clock[1]'
+Slack : 2.678
+TNS   : 0.000
+
+Type  : Fast 900mV 0C Model Recovery 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[5]'
+Slack : 2.805
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Recovery 'rx_input_clock[3]'
-Slack : 3.223
+Slack : 2.869
+TNS   : 0.000
+
+Type  : Fast 900mV 0C Model Recovery 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[5]'
+Slack : 2.935
+TNS   : 0.000
+
+Type  : Fast 900mV 0C Model Recovery 'rx_input_clock[2]'
+Slack : 2.951
+TNS   : 0.000
+
+Type  : Fast 900mV 0C Model Recovery 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[6]'
+Slack : 3.074
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Recovery 'altera_reserved_tck'
-Slack : 49.420
-TNS   : 0.000
-
-Type  : Fast 900mV 0C Model Removal 'rx_input_clock[1]'
-Slack : 0.230
-TNS   : 0.000
-
-Type  : Fast 900mV 0C Model Removal 'rx_input_clock[2]'
-Slack : 0.231
+Slack : 48.456
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Removal 'input_clock_125'
-Slack : 0.232
+Slack : 0.231
 TNS   : 0.000
 
-Type  : Fast 900mV 0C Model Removal 'rx_input_clock[3]'
-Slack : 0.251
-TNS   : 0.000
-
-Type  : Fast 900mV 0C Model Removal 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[5]'
-Slack : 0.252
-TNS   : 0.000
-
-Type  : Fast 900mV 0C Model Removal 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[5]'
-Slack : 0.254
+Type  : Fast 900mV 0C Model Removal 'rx_input_clock[2]'
+Slack : 0.244
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Removal 'c0|ethlink_inst|\MAC:0:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
-Slack : 0.258
+Slack : 0.251
+TNS   : 0.000
+
+Type  : Fast 900mV 0C Model Removal 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[5]'
+Slack : 0.253
+TNS   : 0.000
+
+Type  : Fast 900mV 0C Model Removal 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[5]'
+Slack : 0.254
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Removal 'c0|ethlink_inst|\MAC:3:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
-Slack : 0.261
+Slack : 0.256
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Removal 'altera_reserved_tck'
-Slack : 0.268
-TNS   : 0.000
-
-Type  : Fast 900mV 0C Model Removal 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[0]'
-Slack : 0.270
-TNS   : 0.000
-
-Type  : Fast 900mV 0C Model Removal 'c0|ethlink_inst|\MAC:2:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
-Slack : 0.274
+Slack : 0.260
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Removal 'c0|ethlink_inst|\MAC:1:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
-Slack : 0.279
+Slack : 0.261
+TNS   : 0.000
+
+Type  : Fast 900mV 0C Model Removal 'c0|ethlink_inst|\MAC:2:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
+Slack : 0.263
+TNS   : 0.000
+
+Type  : Fast 900mV 0C Model Removal 'rx_input_clock[3]'
+Slack : 0.267
+TNS   : 0.000
+
+Type  : Fast 900mV 0C Model Removal 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[0]'
+Slack : 0.269
+TNS   : 0.000
+
+Type  : Fast 900mV 0C Model Removal 'rx_input_clock[1]'
+Slack : 0.276
+TNS   : 0.000
+
+Type  : Fast 900mV 0C Model Removal 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[0]'
+Slack : 0.277
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Removal 'rx_input_clock[0]'
 Slack : 0.283
 TNS   : 0.000
 
-Type  : Fast 900mV 0C Model Removal 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[0]'
-Slack : 0.289
-TNS   : 0.000
-
 Type  : Fast 900mV 0C Model Removal 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[6]'
-Slack : 0.329
-TNS   : 0.000
-
-Type  : Fast 900mV 0C Model Removal 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[6]'
-Slack : 0.351
+Slack : 0.424
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Removal 'OSC_50_BANK6'
-Slack : 0.461
+Slack : 0.448
+TNS   : 0.000
+
+Type  : Fast 900mV 0C Model Removal 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[6]'
+Slack : 0.554
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Removal 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[3]'
-Slack : 0.710
+Slack : 1.111
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Removal 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[3]'
-Slack : 0.998
+Slack : 1.384
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Removal 'pll40MHz0|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 1.383
+Slack : 1.522
 TNS   : 0.000
 
-Type  : Fast 900mV 0C Model Minimum Pulse Width 'c0|ethlink_inst|\MAC:1:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|pll|clk[0]'
+Type  : Fast 900mV 0C Model Minimum Pulse Width 'c0|ethlink_inst|\MAC:2:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|pll|clk[0]'
 Slack : 0.168
 TNS   : 0.000
 
@@ -1523,51 +1523,51 @@ Slack : 1.701
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Minimum Pulse Width 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[0]'
-Slack : 1.703
+Slack : 1.706
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Minimum Pulse Width 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[3]'
-Slack : 2.080
+Slack : 2.079
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Minimum Pulse Width 'u0|ddr2_ram|pll0|upll_memphy|auto_generated|pll1|clk[3]'
 Slack : 2.080
 TNS   : 0.000
 
-Type  : Fast 900mV 0C Model Minimum Pulse Width 'rx_input_clock[3]'
-Slack : 2.834
-TNS   : 0.000
-
-Type  : Fast 900mV 0C Model Minimum Pulse Width 'rx_input_clock[2]'
-Slack : 2.835
+Type  : Fast 900mV 0C Model Minimum Pulse Width 'rx_input_clock[0]'
+Slack : 2.833
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Minimum Pulse Width 'rx_input_clock[1]'
-Slack : 2.838
+Slack : 2.840
 TNS   : 0.000
 
-Type  : Fast 900mV 0C Model Minimum Pulse Width 'rx_input_clock[0]'
-Slack : 2.842
+Type  : Fast 900mV 0C Model Minimum Pulse Width 'rx_input_clock[3]'
+Slack : 2.843
+TNS   : 0.000
+
+Type  : Fast 900mV 0C Model Minimum Pulse Width 'rx_input_clock[2]'
+Slack : 2.845
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Minimum Pulse Width 'input_clock_125'
 Slack : 3.202
 TNS   : 0.000
 
-Type  : Fast 900mV 0C Model Minimum Pulse Width 'c0|ethlink_inst|\MAC:2:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
-Slack : 3.219
-TNS   : 0.000
-
-Type  : Fast 900mV 0C Model Minimum Pulse Width 'c0|ethlink_inst|\MAC:1:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
+Type  : Fast 900mV 0C Model Minimum Pulse Width 'c0|ethlink_inst|\MAC:3:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
 Slack : 3.220
 TNS   : 0.000
 
-Type  : Fast 900mV 0C Model Minimum Pulse Width 'c0|ethlink_inst|\MAC:3:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
-Slack : 3.221
+Type  : Fast 900mV 0C Model Minimum Pulse Width 'c0|ethlink_inst|\MAC:0:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
+Slack : 3.224
 TNS   : 0.000
 
-Type  : Fast 900mV 0C Model Minimum Pulse Width 'c0|ethlink_inst|\MAC:0:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
-Slack : 3.228
+Type  : Fast 900mV 0C Model Minimum Pulse Width 'c0|ethlink_inst|\MAC:1:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
+Slack : 3.224
+TNS   : 0.000
+
+Type  : Fast 900mV 0C Model Minimum Pulse Width 'c0|ethlink_inst|\MAC:2:MAC|sgmii|alttse1_inst|altera_tse_pcs_pma_inst|the_altera_tse_pma_lvds_rx|altlvds_rx_component|auto_generated|rx[0]|clk0'
+Slack : 3.224
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Minimum Pulse Width 'u0|ddr2_ram_1|pll0|upll_memphy|auto_generated|pll1|clk[5]'
@@ -1591,11 +1591,11 @@ Slack : 9.352
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Minimum Pulse Width 'pll40MHz0|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 12.153
+Slack : 12.155
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Minimum Pulse Width 'altera_reserved_tck'
-Slack : 49.130
+Slack : 49.131
 TNS   : 0.000
 
 ------------------------------------------------------------
