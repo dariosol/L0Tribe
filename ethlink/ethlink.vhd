@@ -6,7 +6,7 @@
 -- Author     : na62torino  <na62torino@na62torino-WorkStation>
 -- Company    : 
 -- Created    : 2020-02-12
--- Last update: 2020-12-03
+-- Last update: 2021-03-10
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -421,12 +421,12 @@ begin
       r.clk125.framecounter_copy       := ro.clk125.framecounter;
 
 
-      r.clk125.offset(0) := X"02";
-      r.clk125.offset(1) := X"02";
-      r.clk125.offset(2) := X"04";
-      r.clk125.offset(3) := X"02";
-      r.clk125.offset(4) := X"02";
-      r.clk125.offset(5) := X"02";
+      r.clk125.offset(0) := X"02";--CHOD
+      r.clk125.offset(1) := X"02";--XX
+      r.clk125.offset(2) := X"02";--NewCHOD
+      r.clk125.offset(3) := X"02";--XX
+      r.clk125.offset(4) := X"02";--XX
+      r.clk125.offset(5) := X"02";--XX
 
       r.clk125.primitiveFIFOempty(0)   := i.primitiveFIFOempty0;
       r.clk125.primitiveFIFOempty(1)   := i.primitiveFIFOempty1;
@@ -793,24 +793,24 @@ begin
         n.MAC(index).inputs.wdestport(FF_PORT) := SLV(2, 4);
 
         if index = 0 then
-          n.MAC(index).inputs.wdestaddr(FF_PORT) := SLV(4, 8);  -- data to 1st
-                                                                -- input of L0TP
+          n.MAC(index).inputs.wdestaddr(FF_PORT) := SLV(4, 8);  -- data to CHOD
+                                                                -- 
           ---MTP DEFAULTS:
           r.SourceID(index)    := X"F4";
           r.SubSourceID(index) := X"F4";
         end if;
 
         if index = 1 then
-          n.MAC(index).inputs.wdestaddr(FF_PORT) := SLV(5, 8);  -- data to 2nd
-                                                                -- input of L0TP
+          n.MAC(index).inputs.wdestaddr(FF_PORT) := SLV(5, 8);  -- not used
+                                                                
           ---MTP DEFAULTS:
           r.SourceID(index)    := X"F5";
           r.SubSourceID(index) := X"F5";
         end if;
 
         if index = 2 then
-          n.MAC(index).inputs.wdestaddr(FF_PORT) := SLV(6, 8);  -- data to 3rd
-                                                                -- input of L0TP
+          n.MAC(index).inputs.wdestaddr(FF_PORT) := SLV(9, 8);  -- data to NewCHOD
+                                                                -- 
           r.SourceID(index)    := X"F6";
           r.SubSourceID(index) := X"F6";
         end if;
@@ -1057,7 +1057,7 @@ begin
         n.enet_MAC(index).inputs.wdestport(FF_PORT) := SLV(2, 4);
 
         if index = 0 then
-          n.enet_MAC(index).inputs.wdestaddr(FF_PORT) := SLV(11, 8);  -- data to 1st
+          n.enet_MAC(index).inputs.wdestaddr(FF_PORT) := SLV(12, 8);  -- data to 1st
                                                                 -- input of L0TP
           ---MTP DEFAULTS:
           r.SourceID(index+4)    := X"FB";
@@ -1065,7 +1065,7 @@ begin
         end if;
 
         if index = 1 then
-          n.enet_MAC(index).inputs.wdestaddr(FF_PORT) := SLV(10, 8);  -- data to 2nd
+          n.enet_MAC(index).inputs.wdestaddr(FF_PORT) := SLV(11, 8);  -- data to 2nd
                                                                 -- input of L0TP
           ---MTP DEFAULTS:
           r.SourceID(index+4)    := X"FA";

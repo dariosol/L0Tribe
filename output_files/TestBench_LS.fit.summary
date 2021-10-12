@@ -1,4 +1,4 @@
-Fitter Status : Successful - Wed Dec  2 17:58:48 2020
+Fitter Status : Successful - Wed Mar 24 18:10:34 2021
 Quartus Prime Version : 18.1.1 Build 646 04/11/2019 SJ Standard Edition
 Revision Name : TestBench_LS
 Top-level Entity Name : TestBench_LS
@@ -6,10 +6,10 @@ Family : Stratix IV
 Device : EP4SGX230KF40C2
 Timing Models : Final
 Logic utilization : 41 %
-    Combinational ALUTs : 54,812 / 182,400 ( 30 % )
+    Combinational ALUTs : 54,829 / 182,400 ( 30 % )
     Memory ALUTs : 462 / 91,200 ( < 1 % )
-    Dedicated logic registers : 50,559 / 182,400 ( 28 % )
-Total registers : 51923
+    Dedicated logic registers : 50,575 / 182,400 ( 28 % )
+Total registers : 51939
 Total pins : 459 / 888 ( 52 % )
 Total virtual pins : 0
 Total block memory bits : 11,172,784 / 14,625,792 ( 76 % )

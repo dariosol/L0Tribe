@@ -14,7 +14,6 @@ module TestBench_LS(
 		    
 		    //Clock 40 MHz To L0TP:
 		    SMA_clkout_p,
-		  
 		    //////// External PLL //////////
 		    MAX_I2C_SCLK,
 		    MAX_I2C_SDAT,
@@ -243,8 +242,8 @@ module TestBench_LS(
    output 				       OTG_OE_n;
    output 				       OTG_RESET_n;
    output 				       OTG_WE_n;
-   output 				       BCRST;
-   output 				       ECRST;
+   input 				       BCRST;//modificato
+   input 				       ECRST;
 
 
    //===== ==================================================
@@ -332,15 +331,15 @@ module TestBench_LS(
 
 
    //SOB EOB DISPATCHER
-   SOBEOBDispatcher SOBEOBDispatcher0(
-				      .clk(clk_pll_40),
-				      .BURST(ctrl_sig[0]),
-				      .reset(~rstn),
-				      .ECRST(wECRST),
-				      .BCRST(wBCRST)
-				      );
+   //SOBEOBDispatcher SOBEOBDispatcher0(
+//				      .clk(clk_pll_40),
+	//			      .BURST(ctrl_sig[0]),
+	//			      .reset(~rstn),
+	//			      .ECRST(wECRST),
+	//			      .BCRST(wBCRST)
+	//			      );
    
-
+	
    //port 0
    primitiveFIFO fifo0 (
 			.aclr(~rstn),
@@ -517,7 +516,8 @@ module TestBench_LS(
 		     .clkin_125         (clk_pll_125),
 		     .cpu_resetn        ( rstn),
 		     .USER_DIPSW        ( SW ),
-		     .startdata         (ctrl_sig[0]),
+		   //  .startdata         (ctrl_sig[0]),
+		     .startdata         (ECRST),
 		     
 		     .datasend0         (fifoQ[0]),
 		     .readfromfifo0     (fifoRR[0]),
@@ -566,29 +566,30 @@ module TestBench_LS(
 		     );
 
 
-   always @ (fifoWRusedW)
-     if(ctrl_sig[0]) begin //IN BUST
-	if (fifoWRusedW[0] < 10'h200) interrupt[0] = 1'b1; //if I have less than 512 words, ask NIOS to transfer
-	else interrupt[0] = 1'b0;
+		always @ (fifoWRusedW)
+		  //if(ctrl_sig[0]) begin //IN BUST
+			if(ECRST) begin //IN BUST//modificato
+		if (fifoWRusedW[0] < 10'h200) interrupt[0] = 1'b1; //if I have less than 512 words, ask NIOS to transfer
+		else interrupt[0] = 1'b0;
 
-	if (fifoWRusedW[1] < 10'h200) interrupt[1] = 1'b1; //if I have less than 512 words, ask NIOS to transfer
-	else interrupt[1] = 1'b0;
+		if (fifoWRusedW[1] < 10'h200) interrupt[1] = 1'b1; //if I have less than 512 words, ask NIOS to transfer
+		else interrupt[1] = 1'b0;
 
-	if (fifoWRusedW[2] < 10'h200) interrupt[2] = 1'b1; //if I have less than 512 words, ask NIOS to transfer
-	else interrupt[2] = 1'b0;
+		if (fifoWRusedW[2] < 10'h200) interrupt[2] = 1'b1; //if I have less than 512 words, ask NIOS to transfer
+		else interrupt[2] = 1'b0;
 
-	if (fifoWRusedW[3] < 10'h200) interrupt[3] = 1'b1; //if I have less than 512 words, ask NIOS to transfer
-	else interrupt[3] = 1'b0;
+		if (fifoWRusedW[3] < 10'h200) interrupt[3] = 1'b1; //if I have less than 512 words, ask NIOS to transfer
+		else interrupt[3] = 1'b0;
 
-	if (fifoWRusedW[4] < 10'h200) interrupt[4] = 1'b1; //if I have less than 512 words, ask NIOS to transfer
-	else interrupt[4] = 1'b0;	
-     end
-     else begin
-	interrupt = detectorUnderInit;
-     end
+		if (fifoWRusedW[4] < 10'h200) interrupt[4] = 1'b1; //if I have less than 512 words, ask NIOS to transfer
+		else interrupt[4] = 1'b0;	
+		  end
+		  else begin
+		interrupt = detectorUnderInit;
+		  end
 
 
-	  
+		  
 always @ (FSMReset) begin
    
          case (FSMReset)
@@ -648,10 +649,10 @@ end // always @ (FSMReset)
    
    assign rstn =    s_software_CPU_RESET_n;
        
-   assign SMA_clkout_p = clk_pll_40;
+   assign SMA_clkout_p = clk_pll_125;
    
-   assign ECRST        = wECRST;
-   assign BCRST        = wBCRST;
+   //assign ECRST        = wECRST;
+   //assign BCRST        = wBCRST;
    
    ///LED: Negative Logic
    assign LED[0] = ~lock40MHz;
@@ -660,7 +661,7 @@ end // always @ (FSMReset)
    assign LED[3] = ~ctrl_sig[1];
    assign LED[4] = ~ctrl_sig[2];
    assign LED[5] = ~ctrl_sig[3];
-   assign LED[6] = 1'b1;
+   assign LED[6] = ~ECRST;
    assign LED[7] = 1'b1;
 
    

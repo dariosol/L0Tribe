@@ -90,7 +90,7 @@ static void ISR_transfer_callback(void * context){
   volatile int* ISR_input_ptr = (volatile int *) context;
 
   *ISR_input_ptr = IORD_ALTERA_AVALON_PIO_EDGE_CAP(PILOT_SIG_BASE);
-  IOWR_ALTERA_AVALON_PIO_EDGE_CAP(PILOT_SIG_BASE,0xf);
+  IOWR_ALTERA_AVALON_PIO_EDGE_CAP(PILOT_SIG_BASE,0x5);
   ISR_transfer_flag = *ISR_input_ptr;
 }
 
@@ -152,8 +152,8 @@ int main()
   /////////////////INITIALIZATION OF INTERRUPTS://////////////////////////////////
   ////////////////////////////////////////////////////////////////////////////////
   
-  IOWR_ALTERA_AVALON_PIO_IRQ_MASK(PILOT_SIG_BASE,0xf); //enabling interrupt on all 4 inputs
-  IOWR_ALTERA_AVALON_PIO_EDGE_CAP(PILOT_SIG_BASE,0xf); //clearing older interrupts
+  IOWR_ALTERA_AVALON_PIO_IRQ_MASK(PILOT_SIG_BASE,0x5); //enabling interrupt on all 4 inputs
+  IOWR_ALTERA_AVALON_PIO_EDGE_CAP(PILOT_SIG_BASE,0x5); //clearing older interrupts
   alt_ic_isr_register(PILOT_SIG_IRQ_INTERRUPT_CONTROLLER_ID, PILOT_SIG_IRQ, ISR_transfer_callback, ISR_input_ptr,0x0);//setting interrupt callback
   ISR_transfer_flag = 0;
   
@@ -496,8 +496,8 @@ int main()
     }
   }
 
-  alt_u32 SOB = alt_nticks() * alt_ticks_per_second();
-  alt_u32 EOB = alt_nticks() * alt_ticks_per_second();
+  alt_u32 SOB = alt_nticks();
+  alt_u32 EOB = alt_nticks();
 
   printf("SOB, time: %lu \n",alt_nticks()* alt_ticks_per_second());
 
@@ -505,34 +505,43 @@ int main()
 
   while(1) {
 
-    if(EOB-SOB > 6.5e6) break;
+    //    if(EOB-SOB > 6.5e6) break;
 
    
-    for(int i=0;i<4;++i) {
-
-      if(addr_update[i]) {
+    // for(int i=0;i<4;++i) {
+    
+      if(addr_update[0]) {
 	//Preparing new transer and waiting for ISR
-	rd_adr_p[i] = rd_adr_p[i] + gdiv4;
-	alt_msgdma_construct_standard_mm_to_st_descriptor(dev_ptr[i], a_descriptor_ptr[i], rd_adr_p[i], g, control);
-	addr_update[i] = 0;
-	ninterrupt[i]+=1;
+	rd_adr_p[0] = rd_adr_p[0] + gdiv4;
+	alt_msgdma_construct_standard_mm_to_st_descriptor(dev_ptr[0], a_descriptor_ptr[0], rd_adr_p[0], g, control);
+	addr_update[0] = 0;
+	//	ninterrupt[0]+=1;
+	}
+      //}
+      if(addr_update[2]) {
+	//Preparing new transer and waiting for ISR
+	rd_adr_p[2] = rd_adr_p[2] + gdiv4;
+	alt_msgdma_construct_standard_mm_to_st_descriptor(dev_ptr[2], a_descriptor_ptr[2], rd_adr_p[2], g, control);
+	addr_update[2] = 0;
+	//	ninterrupt[2]+=1;
       }
-    }
+      
 
 
     ////////INTERRUPTS TO REFILL THE FIFOS:///////////////////////////////////////    
-    if((ISR_transfer_flag&1) == 1 && addr_update[0]==0) {
+      
+      if((ISR_transfer_flag&1) == 1 && addr_update[0]==0) {//CHOD
       alt_msgdma_standard_descriptor_async_transfer(dev_ptr[0],a_descriptor_ptr[0]);
       addr_update[0] = 1;
       ISR_transfer_flag &= ~(1UL << 0);
-    }
+      }
     
-    if((ISR_transfer_flag&2) == 2 && addr_update[1]==0) {
-      alt_msgdma_standard_descriptor_async_transfer(dev_ptr[1],a_descriptor_ptr[1]);
-      addr_update[1] = 1;
-      ISR_transfer_flag &= ~(1UL << 1);
+    if((ISR_transfer_flag&4) == 4 && addr_update[2]==0) {//NewCHOD
+      alt_msgdma_standard_descriptor_async_transfer(dev_ptr[2],a_descriptor_ptr[2]);
+      addr_update[2] = 1;
+      ISR_transfer_flag &= ~(1UL << 2);
     }
-    	
+    /*    	
     if((ISR_transfer_flag&4) == 4 && addr_update[2]==0) {
       alt_msgdma_standard_descriptor_async_transfer(dev_ptr[2],a_descriptor_ptr[2]);
       addr_update[2] = 1;
@@ -544,7 +553,7 @@ int main()
       addr_update[3] = 1;
       ISR_transfer_flag &= ~(1UL << 3);
     }
-
+    */
     ////////MM-REGISTERS TO REFILL THE FIFOS:///////////////////////////////////////    
     //CHOD:
     //if(*(FIFOUSEDW0)< 512 && addr_update[0]==0) { //Primitive FIFO usedw < 0x80: send new data
@@ -572,8 +581,8 @@ int main()
     //     addr_update[4] = 1;
     //  }
     // }
-    EOB = alt_nticks() * alt_ticks_per_second();
-    if(EOB-SOB > 6.5e6) break;
+    EOB = alt_nticks();
+    if(EOB-SOB > 10.5e3) break;
   }
   
   IOWR(CTRL_SIG_BASE,0,0);

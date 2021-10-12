@@ -372,7 +372,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AG9       :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG10      :        :                   :         : 5C        :                
 VREFB5AN0                    : AG11      : power  :                   :         : 5A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG12      :        :                   :         : 5A        :                
-BCRST                        : AG13      : output : 3.0-V PCI         :         : 5A        : Y              
+BCRST                        : AG13      : input  : 3.0-V PCI         :         : 5A        : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG14      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG15      :        :                   :         : 4A        :                
 M1_DDR2_dq[36]               : AG16      : bidir  : SSTL-18 Class I   :         : 4B        : Y              
@@ -719,7 +719,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AT5       :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : AT6       :        :                   :         : 5A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AT7       :        :                   :         : 5A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AT8       :        :                   :         : 5A        :                
-ECRST                        : AT9       : output : 3.0-V PCI         :         : 5A        : Y              
+ECRST                        : AT9       : input  : 3.0-V PCI         :         : 5A        : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AT10      :        :                   :         : 5A        :                
 nCEO                         : AT11      :        :                   :         : 1A        :                
 M1_DDR2_dq[55]               : AT12      : bidir  : SSTL-18 Class I   :         : 4A        : Y              

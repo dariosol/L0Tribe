@@ -142,8 +142,8 @@ BSP_CFLAGS_OPTIMIZATION = -O3
 
 # C/C++ compiler warning level. "-Wall" is commonly used.This setting defines 
 # the value of BSP_CFLAGS_WARNINGS in Makefile. 
-BSP_CFLAGS_WARNINGS = -Wall
-
+#BSP_CFLAGS_WARNINGS = -Wall
+BSP_CFLAGS_WARNINGS = 
 # C compiler command. 
 CC = nios2-elf-gcc -xc
 
