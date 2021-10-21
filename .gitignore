@@ -3,6 +3,5 @@ incremental_db/*
 greybox_tmp/*
 software/.metadata/.plugins/org.eclipse.core.resources/.history/*
 *.bkp
-output_files/*
 fpga0.ports
 debugon.txt
